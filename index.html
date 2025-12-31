@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PuzzleHub | Premium Brain Games</title>
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --bg-card: #161b22;
+            --accent-primary: #7b61ff;
+            --accent-hover: #917cff;
+            --text-light: #f0f6fc;
+            --text-dim: #8b949e;
+            --border-color: #30363d;
+            --glass: rgba(10, 11, 16, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--accent-primary);
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 15px rgba(123, 97, 255, 0.4);
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-light);
+        }
+
+        .search-wrapper {
+            position: relative;
+            flex: 0 1 400px;
+        }
+
+        .search-input {
+            width: 100%;
+            background: #0d1117;
+            border: 1px solid var(--border-color);
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2);
+        }
+
+        /* --- Main Content --- */
+        .hero {
+            padding: 3rem 5% 1rem;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 2rem 5%;
+        }
+
+        /* --- Game Card --- */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+        }
+
+        .card-image-box {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .btn-play {
+            background: var(--accent-primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            transform: translateY(20px);
+            transition: 0.4s;
+        }
+
+        .card:hover .btn-play {
+            transform: translateY(0);
+        }
+
+        .card-body {
+            padding: 1.2rem;
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.6rem;
+        }
+
+        /* --- Modal System --- */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px;
+        }
+
+        .modal-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 85vh;
+            margin: 20px auto;
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(123, 97, 255, 0.3);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .close-btn:hover {
+            color: var(--accent-primary);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* --- Footer --- */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 5%;
+            text-align: center;
+            color: var(--text-dim);
+            margin-top: 4rem;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            .search-wrapper { width: 100%; }
+            .hero h1 { font-size: 1.8rem; }
+            .modal { padding: 0; }
+            .modal-container { height: 100vh; margin: 0; border-radius: 0; }
+            .close-btn { top: 15px; right: 15px; z-index: 2100; background: rgba(0,0,0,0.6); padding: 5px 15px; border-radius: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="#" class="brand">
+        <div class="logo-icon">P</div>
+        <span class="brand-name">PuzzleHub</span>
+    </a>
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search your favorite games...">
+    </div>
+</header>
+
+<div class="hero">
+    <h1 id="heroTitle">Popular Puzzle Games</h1>
+    <p id="gameCounter">Discover and play the best brain challengers.</p>
+</div>
+
+<main id="gameGrid" class="game-grid">
+    </main>
+
+<div id="gameModal" class="modal">
+    <div class="modal-container">
+        <button class="close-btn" onclick="closeGame()">
+            <span>CLOSE GAME</span> ✕
+        </button>
+        <iframe id="gameFrame" src="" allowfullscreen></iframe>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 PuzzleHub Gaming Platform</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
+</footer>
+
+<script>
+    // Embedded Data directly from your feed.html
+    const FEED_XML = `
+<rss version="2.0">
+<channel>
+<item><id>74709</id><title>Draw To Smash Zombie</title><description>Draw To Smash Zombie is an exciting drawing logic puzzle game. Draw lines to smash the zombies.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/rw198uk8lylevqyln8jpyfea1zf9zp9d/</url><thumb>https://img.gamemonetize.com/rw198uk8lylevqyln8jpyfea1zf9zp9d/512x384.jpg</thumb></item>
+<item><id>74137</id><title>Doll Doll</title><description>Doll Doll is a fun fighting game combined with collection elements.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/qgrkhk9dgtmc5vfjl82jzl0sdj4i22mj/</url><thumb>https://img.gamemonetize.com/qgrkhk9dgtmc5vfjl82jzl0sdj4i22mj/512x384.jpg</thumb></item>
+<item><id>73918</id><title>Prison Escape Puzzle Master</title><description>Think prison life is boring? Think again! Challenge your brain.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/mha46qn18vus7r51xk5tupuye600smef/</url><thumb>https://img.gamemonetize.com/mha46qn18vus7r51xk5tupuye600smef/512x384.jpg</thumb></item>
+<item><id>74598</id><title>Counting For Kids</title><description>Unique educational game for children to learn math.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/6vgagh1gaq7i4007brxrq206j7t45tn3/</url><thumb>https://img.gamemonetize.com/6vgagh1gaq7i4007brxrq206j7t45tn3/512x384.jpg</thumb></item>
+<item><id>74272</id><title>Idle Tomato Clicker</title><description>A fun idle simulator game. Grow and click tomatoes.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/v54l0afl1irg98zufy8x57rghqum03ih/</url><thumb>https://img.gamemonetize.com/v54l0afl1irg98zufy8x57rghqum03ih/512x384.jpg</thumb></item>
+<item><id>74082</id><title>Winter Tetrix Trails</title><description>Relaxing shape-filling puzzle game with winter theme.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/q830yihrtp9gvpbekcxeoazfxqyjkkia/</url><thumb>https://img.gamemonetize.com/q830yihrtp9gvpbekcxeoazfxqyjkkia/512x384.jpg</thumb></item>
+<item><id>74580</id><title>Merge Bullet Army Game</title><description>Run and stack the bullets to shoot enemies.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/d5y2dcsgmttfsmt146e796g16nnpcdpu/</url><thumb>https://img.gamemonetize.com/d5y2dcsgmttfsmt146e796g16nnpcdpu/512x384.jpg</thumb></item>
+<item><id>74159</id><title>Mega Sweet Fruits Popper</title><description>Welcome to fruits popper. 125 exciting levels to clear.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/bzlbckwgoew0dwj7nenqq840dj9mtcen/</url><thumb>https://img.gamemonetize.com/bzlbckwgoew0dwj7nenqq840dj9mtcen/512x384.jpg</thumb></item>
+<item><id>74597</id><title>And Again</title><description>Help the main character solve mystery puzzles.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/r222w4gt6l2rszwx3rj788jfj10ba2ob/</url><thumb>https://img.gamemonetize.com/r222w4gt6l2rszwx3rj788jfj10ba2ob/512x384.jpg</thumb></item>
+<item><id>74255</id><title>Bubble Man Running Game</title><description>Thrilling mobile game with bubble mechanics.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ih38502mhtn929xtnxkz362u32dooqkl/</url><thumb>https://img.gamemonetize.com/ih38502mhtn929xtnxkz362u32dooqkl/512x384.jpg</thumb></item>
+<item><id>74554</id><title>Block Jam Match Game</title><description>Strategic block matching adventure.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/4otjsjz31jgy4a3yr2p0bv98wiygri1u/</url><thumb>https://img.gamemonetize.com/4otjsjz31jgy4a3yr2p0bv98wiygri1u/512x384.jpg</thumb></item>
+<item><id>74572</id><title>Goods Triple Match 3D</title><description>Satisfying match 3 puzzle challenge in 3D.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/xhywxdf6g4miazad5puvp5dknu1s0nxs/</url><thumb>https://img.gamemonetize.com/xhywxdf6g4miazad5puvp5dknu1s0nxs/512x384.jpg</thumb></item>
+<item><id>73883</id><title>Suika Game 2</title><description>Engaging and meditative fruit puzzle game.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/utcobvmr6c5qjr8p93yr0ba78l4fewtm/</url><thumb>https://img.gamemonetize.com/utcobvmr6c5qjr8p93yr0ba78l4fewtm/512x384.jpg</thumb></item>
+<item><id>74487</id><title>Birds Sort Color Match Puzzle</title><description>Gentle world of sorting colored birds.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/i7b34e3h3odt7n6qawle56nlyypm0h2r/</url><thumb>https://img.gamemonetize.com/i7b34e3h3odt7n6qawle56nlyypm0h2r/512x384.jpg</thumb></item>
+<item><id>74494</id><title>Arrow Escape Puzzle Game</title><description>Clever arrow puzzle that tests your logic.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/e465er9wtcqxeuiaikb122ak32yxs7fh/</url><thumb>https://img.gamemonetize.com/e465er9wtcqxeuiaikb122ak32yxs7fh/512x384.jpg</thumb></item>
+<item><id>74329</id><title>Fragments of Wonder</title><description>Dive into a colorful match three adventure.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/id9pzqw3x5y5akv44lzvv23gseg63cm9/</url><thumb>https://img.gamemonetize.com/id9pzqw3x5y5akv44lzvv23gseg63cm9/512x384.jpg</thumb></item>
+<item><id>74420</id><title>Word Match 3D</title><description>Addictive 3D word matching puzzle game.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/m27uyguq2k1men8en9f2hckdoytglv9g/</url><thumb>https://img.gamemonetize.com/m27uyguq2k1men8en9f2hckdoytglv9g/512x384.jpg</thumb></item>
+<item><id>74441</id><title>K Pop Nail Studio</title><description>Run a nail salon for K-pop idols.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/qx1i9urbjg9rcbcjm4b18lurjnvc2gx7/</url><thumb>https://img.gamemonetize.com/qx1i9urbjg9rcbcjm4b18lurjnvc2gx7/512x384.jpg</thumb></item>
+<item><id>74483</id><title>Wood Block Brain Puzzle</title><description>Classic and addictive wood block puzzle.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/9o7pp1cj2kgu8onu66xjp545xpywi2ze/</url><thumb>https://img.gamemonetize.com/9o7pp1cj2kgu8onu66xjp545xpywi2ze/512x384.jpg</thumb></item>
+<item><id>74257</id><title>Nut Bolt Puzzle Game</title><description>Become a pro at unscrewing nuts and bolts.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/qf25ickz6rnca426qr18uwsneubpx6rj/</url><thumb>https://img.gamemonetize.com/qf25ickz6rnca426qr18uwsneubpx6rj/512x384.jpg</thumb></item>
+<item><id>73361</id><title>Farm House Crash Match</title><description>Match crops in this farm house crash adventure.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/2mlw18zjwhj5gk57wjhmz7bgwpe5h7db/</url><thumb>https://img.gamemonetize.com/2mlw18zjwhj5gk57wjhmz7bgwpe5h7db/512x384.jpg</thumb></item>
+<item><id>74207</id><title>Survive The Night</title><description>Are you ready for the most terrifying night?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/2pjzp1topm9l3t6teqmnk2ym27iporsp/</url><thumb>https://img.gamemonetize.com/2pjzp1topm9l3t6teqmnk2ym27iporsp/512x384.jpg</thumb></item>
+<item><id>74162</id><title>Santa Claus Xmas Run</title><description>Fun Christmas themed running puzzle.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/88vl3rdrsq1lrzhnq33q3ck9dngyg4el/</url><thumb>https://img.gamemonetize.com/88vl3rdrsq1lrzhnq33q3ck9dngyg4el/512x384.jpg</thumb></item>
+<item><id>74111</id><title>MathMates 3D</title><description>A fun 3D math adventure for your brain.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/an1qn67onw104whrxlc1tro20zajqytj/</url><thumb>https://img.gamemonetize.com/an1qn67onw104whrxlc1tro20zajqytj/512x384.jpg</thumb></item>
+<item><id>74367</id><title>Labubu Memory Challenge</title><description>Fun and engaging memory training game.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ujddtcm8dnx4ry5qvtwqntf89kfzfi4i/</url><thumb>https://img.gamemonetize.com/ujddtcm8dnx4ry5qvtwqntf89kfzfi4i/512x384.jpg</thumb></item>
+<item><id>73564</id><title>Chill Waves Mini Games</title><description>Collection of relaxing and meditative games.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/zw602ze7mimrlu4y6ok48uhh297971zn/</url><thumb>https://img.gamemonetize.com/zw602ze7mimrlu4y6ok48uhh297971zn/512x384.jpg</thumb></item>
+<item><id>73743</id><title>Connect Dots Puzzle</title><description>Captivating journey of mind-bending dot puzzles.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/sdzab1fve8n864qjvyt8uilelg4heyd6/</url><thumb>https://img.gamemonetize.com/sdzab1fve8n864qjvyt8uilelg4heyd6/512x384.jpg</thumb></item>
+<item><id>74268</id><title>Ear Doctor Care Game</title><description>Simulation game to treat and care for ears.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/n3i3rbf2wsitkfibi62vhntgc9rm73r9/</url><thumb>https://img.gamemonetize.com/n3i3rbf2wsitkfibi62vhntgc9rm73r9/512x384.jpg</thumb></item>
+<item><id>74208</id><title>Connect Hero</title><description>Puzzle game where you control a cannon.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/eub830b0mgebekb5aidmy5rvpc2crurz/</url><thumb>https://img.gamemonetize.com/eub830b0mgebekb5aidmy5rvpc2crurz/512x384.jpg</thumb></item>
+<item><id>73398</id><title>Double Klondike Solitaire</title><description>Ultimate solitaire test with double decks.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/kbac8c4u2b42ezncjx0049awdderpzxm/</url><thumb>https://img.gamemonetize.com/kbac8c4u2b42ezncjx0049awdderpzxm/512x384.jpg</thumb></item>
+<item><id>73211</id><title>Memory Lane</title><description>Reach the goal platform in each level.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8ww1qvuf37fo6hnmscv4m3hja4f096he/</url><thumb>https://img.gamemonetize.com/8ww1qvuf37fo6hnmscv4m3hja4f096he/512x384.jpg</thumb></item>
+<item><id>73998</id><title>Ping Pong Ball Game</title><description>Practice your virtual ping pong skills.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/b1uqdtule8d5duwapga2ju5983obn4e6/</url><thumb>https://img.gamemonetize.com/b1uqdtule8d5duwapga2ju5983obn4e6/512x384.jpg</thumb></item>
+<item><id>74015</id><title>Flag Merging Puzzle</title><description>Discover flags of the world through merging.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/6jjp0jsq0vvvt1yep2h8lp2i1oxmdtm5/</url><thumb>https://img.gamemonetize.com/6jjp0jsq0vvvt1yep2h8lp2i1oxmdtm5/512x384.jpg</thumb></item>
+<item><id>73344</id><title>M2 BLOCKS 2048</title><description>Addictive and strategic 2048 variation.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/kspqjp4u64fwgdnq0v025uri509teye1/</url><thumb>https://img.gamemonetize.com/kspqjp4u64fwgdnq0v025uri509teye1/512x384.jpg</thumb></item>
+<item><id>73856</id><title>Christmas Onet Connect</title><description>Relaxing Christmas themed mahjong game.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/d9nv7htz1ahz633c0vcjiv25qutmwyf2/</url><thumb>https://img.gamemonetize.com/d9nv7htz1ahz633c0vcjiv25qutmwyf2/512x384.jpg</thumb></item>
+<item><id>73982</id><title>Nuts For Winter</title><description>Physics-based puzzle about squirrels.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/myw0pwlknsc217kcq47bwf988w79g70x/</url><thumb>https://img.gamemonetize.com/myw0pwlknsc217kcq47bwf988w79g70x/512x384.jpg</thumb></item>
+<item><id>74077</id><title>Winter Hexa Stack</title><description>Cozy winter-themed hexa stack puzzle.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/hibeqes1lf3e0eb1hofflskm5cysjrok/</url><thumb>https://img.gamemonetize.com/hibeqes1lf3e0eb1hofflskm5cysjrok/512x384.jpg</thumb></item>
+<item><id>73566</id><title>Mini Games Fun Therapy</title><description>Super relaxing collection of mini games.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/0l63e7y0zqkpwjovwfwcsa0a88z6anbw/</url><thumb>https://img.gamemonetize.com/0l63e7y0zqkpwjovwfwcsa0a88z6anbw/512x384.jpg</thumb></item>
+<item><id>73829</id><title>Nuts Bolts Screw Puzzle</title><description>Relaxing screw and bolt puzzle challenge.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/bmene1v8w9vlbu0fesbiym9wa9tvtqd8/</url><thumb>https://img.gamemonetize.com/bmene1v8w9vlbu0fesbiym9wa9tvtqd8/512x384.jpg</thumb></item>
+<item><id>72225</id><title>Word Search 2025</title><description>Best word search puzzle game of 2025.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ppnf5uy8xk2zjtqzqbrkvtc0yuitwp5o/</url><thumb>https://img.gamemonetize.com/ppnf5uy8xk2zjtqzqbrkvtc0yuitwp5o/512x384.jpg</thumb></item>
+<item><id>73641</id><title>Fruit Block Tetra Puzzle</title><description>Fast and fun fruit block puzzle game.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/j6megw9uguvx0ar4mom5cl0137zjo5d9/</url><thumb>https://img.gamemonetize.com/j6megw9uguvx0ar4mom5cl0137zjo5d9/512x384.jpg</thumb></item>
+<item><id>73815</id><title>Go Golf</title><description>Fun sports puzzle. Hit the ball into the hole.</description><category>Sports</category><url>https://html5.gamemonetize.com/vyoai08811vqppdfilocq5k1f7emjsxg/</url><thumb>https://img.gamemonetize.com/vyoai08811vqppdfilocq5k1f7emjsxg/512x384.jpg</thumb></item>
+</channel></rss>`;
+
+    const grid = document.getElementById('gameGrid');
+    const modal = document.getElementById('gameModal');
+    const frame = document.getElementById('gameFrame');
+    const search = document.getElementById('searchInput');
+    const counter = document.getElementById('gameCounter');
+    
+    let gameList = [];
+
+    // Parse XML and setup data
+    function init() {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(FEED_XML, "text/xml");
+        const items = xmlDoc.getElementsByTagName("item");
+
+        gameList = Array.from(items).map(item => ({
+            title: item.getElementsByTagName("title")[0]?.textContent,
+            desc: item.getElementsByTagName("description")[0]?.textContent,
+            category: item.getElementsByTagName("category")[0]?.textContent,
+            url: item.getElementsByTagName("url")[0]?.textContent,
+            thumb: item.getElementsByTagName("thumb")[0]?.textContent
+        }));
+
+        render(gameList);
+
+        // Search Logic
+        search.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = gameList.filter(g => 
+                g.title.toLowerCase().includes(query) || 
+                g.category.toLowerCase().includes(query)
+            );
+            render(filtered);
+            document.getElementById('heroTitle').textContent = query ? `Search Results for "${query}"` : "Popular Puzzle Games";
+        });
+    }
+
+    function render(data) {
+        grid.innerHTML = '';
+        counter.textContent = `Showing ${data.length} games available for instant play.`;
+
+        data.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.onclick = () => {
+                frame.src = game.url;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            };
+
+            card.innerHTML = `
+                <div class="card-image-box">
+                    <img src="${game.thumb}" alt="${game.title}" class="card-image" loading="lazy">
+                    <div class="card-overlay">
+                        <button class="btn-play">PLAY NOW</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">${game.category}</span>
+                    <h3 class="card-title">${game.title}</h3>
+                    <p class="card-desc">${game.desc}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    window.closeGame = function() {
+        modal.style.display = 'none';
+        frame.src = '';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close on background click
+    modal.addEventListener('click', (e) => {
+        if(e.target === modal) closeGame();
+    });
+
+    init();
+</script>
+
+</body>
+</html>
