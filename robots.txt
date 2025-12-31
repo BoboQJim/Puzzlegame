@@ -1,0 +1,23 @@
+# Global configuration for PuzzleHub Gaming Platform
+User-agent: *
+
+# Allow all search engines to crawl the site
+Allow: /
+Allow: /index.html
+
+# Prevent crawling of internal search parameter results to avoid duplicate content
+Disallow: /*?s=
+Disallow: /*?search=
+Disallow: /search/
+
+# Resource optimization
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+
+# Host and Sitemap
+Host: yourdomain.com
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Specific crawl delay for aggressive bots (optional)
+Crawl-delay: 10
