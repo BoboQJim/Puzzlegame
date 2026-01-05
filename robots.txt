@@ -16,8 +16,8 @@ Allow: /css/
 Allow: /js/
 
 # Host and Sitemap
-Host: yourdomain.com
-Sitemap: https://yourdomain.com/sitemap.xml
+Host: puzzlegame.squoosh.online
+Sitemap: https://puzzlegame.squoosh.online/sitemap.xml
 
 # Specific crawl delay for aggressive bots (optional)
 Crawl-delay: 10
