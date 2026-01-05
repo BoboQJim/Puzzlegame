@@ -17,6 +17,3 @@ Allow: /js/
 
 # Sitemap
 Sitemap: https://puzzlegame.squoosh.online/sitemap.xml
-
-# Specific crawl delay for aggressive bots (optional)
-Crawl-delay: 10
