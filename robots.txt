@@ -15,8 +15,7 @@ Allow: /assets/
 Allow: /css/
 Allow: /js/
 
-# Host and Sitemap
-Host: puzzlegame.squoosh.online
+# Sitemap
 Sitemap: https://puzzlegame.squoosh.online/sitemap.xml
 
 # Specific crawl delay for aggressive bots (optional)
