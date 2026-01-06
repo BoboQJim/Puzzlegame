@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://puzzlegame.squoosh.online/favicon.ico">
+    <title>Recommended Games | PuzzleHub</title>
+    <meta name="description" content="Explore our curated collection of the best puzzle and logic games. Hand-picked for maximum fun and brain training.">
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --bg-card: #161b22;
+            --accent-primary: #7b61ff;
+            --accent-hover: #917cff;
+            --text-light: #f0f6fc;
+            --text-dim: #8b949e;
+            --border-color: #30363d;
+            --glass: rgba(10, 11, 16, 0.95);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
+
+        /* --- Reuse Header Styles --- */
+        header { background: var(--glass); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); padding: 1rem 5%; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-icon { width: 35px; height: 35px; background: var(--accent-primary); border-radius: 8px; display: grid; place-items: center; font-weight: bold; color: white; }
+        .brand-name { font-size: 1.4rem; font-weight: 800; color: var(--text-light); }
+
+        /* --- Page Specific Header --- */
+        .page-header {
+            padding: 2rem 5% 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            background: linear-gradient(180deg, rgba(123, 97, 255, 0.05) 0%, transparent 100%);
+        }
+
+        .page-title { font-size: 2rem; font-weight: 800; color: var(--text-light); }
+        .page-subtitle { color: var(--text-dim); font-size: 1rem; margin-top: 5px; }
+        
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--accent-primary); border-color: var(--accent-primary); transform: translateX(-5px); }
+
+        /* --- Enhanced Grid & Cards --- */
+        .rec-container { padding: 3rem 5%; }
+        .rec-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 30px; 
+        }
+
+        .game-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 40px rgba(123, 97, 255, 0.15);
+        }
+
+        .img-wrapper {
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .game-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .game-card:hover .game-img { transform: scale(1.1); }
+
+        .play-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: 0.3s;
+            backdrop-filter: blur(2px);
+        }
+
+        .game-card:hover .play-overlay { opacity: 1; }
+
+        .play-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 0 20px rgba(123, 97, 255, 0.6);
+            transform: scale(0.8);
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .game-card:hover .play-icon { transform: scale(1); }
+
+        .card-content { padding: 1.5rem; }
+
+        .game-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .badge-hot { background: rgba(255, 71, 87, 0.15); color: #ff4757; }
+        .badge-new { background: rgba(0, 230, 118, 0.15); color: #00e676; }
+        .badge-puzzle { background: rgba(123, 97, 255, 0.15); color: var(--accent-primary); }
+
+        .rating { color: #ffca28; font-size: 0.9rem; font-weight: 600; }
+
+        .game-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .game-desc {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.5;
+        }
+
+        /* --- Modal (Copied for consistency) --- */
+        .modal { display: none; position: fixed; inset: 0; z-index: 2000; background: #000; }
+        .modal-container { position: relative; width: 100%; height: 100%; }
+        .modal-controls { position: absolute; top: 15px; right: 20px; display: flex; gap: 10px; z-index: 2001; }
+        .control-btn { background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 42px; height: 42px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .control-btn:hover { color: var(--accent-primary); border-color: var(--accent-primary); }
+        iframe { width: 100%; height: 100%; border: none; }
+
+        /* Footer */
+        footer { border-top: 1px solid var(--border-color); padding: 3rem 5%; text-align: center; color: var(--text-dim); margin-top: auto; }
+
+        @media (max-width: 768px) {
+            .page-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .back-btn { width: 100%; justify-content: center; }
+            .rec-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .card-content { padding: 1rem; }
+            .game-desc { display: none; } /* Hide desc on mobile for cleaner look */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="brand">
+        <div class="logo-icon">P</div>
+        <span class="brand-name">PuzzleHub</span>
+    </a>
+</header>
+
+<div class="page-header">
+    <div>
+        <h1 class="page-title">Curated Recommendations</h1>
+        <p class="page-subtitle">Hand-picked puzzles and brain teasers just for you.</p>
+    </div>
+    <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
+
+<div class="rec-container">
+    <div class="rec-grid" id="recommendationGrid">
+        </div>
+</div>
+
+<footer class="seo-footer">
+    <p>&copy; 2026 PuzzleHub Gaming Platform. All rights reserved.</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
+</footer>
+
+<div id="gameModal" class="modal">
+    <div class="modal-container">
+        <div class="modal-controls">
+            <button id="fullScreenBtn" class="control-btn" title="Toggle Fullscreen">
+                <svg id="fsIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path id="fsPath" d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+            </button>
+            <button class="control-btn" onclick="closeGame()" title="Close">✕</button>
+        </div>
+        <iframe id="gameFrame" src="" allow="autoplay; fullscreen; keyboard"></iframe>
+    </div>
+</div>
+
+<script>
+    // Configuration Data for Recommended Games
+    const REC_GAMES = [
+        {
+            title: "Screw Master 3D: Pin Puzzle",
+            desc: "A challenging physics-based puzzle where you must strategically unscrew bolts to make metal plates fall.",
+            tag: "Puzzle",
+            rating: "4.9",
+            badge: "hot",
+            img: "https://img.gamemonetize.com/7kzc77ikesq2bdej5ip6ecevhvsfyqsq/512x384.jpg",
+            url: "https://puzzlegame.squoosh.online/screw-master-3d-pin-puzzle-guide.html"
+        },
+        {
+            title: "Tangle Rope 3D",
+            desc: "Untie the knots in this relaxing 3D logic puzzle.",
+            tag: "Logic",
+            rating: "4.9",
+            badge: "new",
+            img: "https://img.gamemonetize.com/k8yhilloxf4llvucp4plg5uqs5gx1m7p/512x384.jpg",
+            url: "https://html5.gamemonetize.com/k8yhilloxf4llvucp4plg5uqs5gx1m7p/"
+        },
+        {
+            title: "Fish Jam",
+            desc: "Guide the fish to the water in this sliding puzzle.",
+            tag: "Strategy",
+            rating: "4.7",
+            badge: "puzzle",
+            img: "https://img.gamemonetize.com/mqfk9thmev713aqwxcvyq90e41edjue7/512x384.jpg",
+            url: "https://html5.gamemonetize.com/mqfk9thmev713aqwxcvyq90e41edjue7/"
+        },
+        {
+            title: "Town Manager",
+            desc: "Build and manage your own little town in this sim.",
+            tag: "Sim",
+            rating: "4.6",
+            badge: "hot",
+            img: "https://img.gamemonetize.com/9il8nht0oggvuw8ijs546qm26d2p8a6f/512x384.jpg",
+            url: "https://html5.gamemonetize.com/9il8nht0oggvuw8ijs546qm26d2p8a6f/"
+        },
+        {
+            title: "Memory Fruits",
+            desc: "Test your memory skills with colorful fruits.",
+            tag: "Memory",
+            rating: "4.5",
+            badge: "puzzle",
+            img: "https://img.gamemonetize.com/gpf1x5uumgcrxs2z070pw24op6h4ppqd/512x384.jpg",
+            url: "https://html5.gamemonetize.com/gpf1x5uumgcrxs2z070pw24op6h4ppqd/"
+        },
+        {
+            title: "Push Gold",
+            desc: "Push the gold blocks to their destination.",
+            tag: "Sokoban",
+            rating: "4.8",
+            badge: "new",
+            img: "https://img.gamemonetize.com/dv7mvugfv11ml7sih07edfvus2fziyfk/512x384.jpg",
+            url: "https://html5.gamemonetize.com/dv7mvugfv11ml7sih07edfvus2fziyfk/"
+        },
+        {
+            title: "Shape Puzzle",
+            desc: "Fit the shapes into the correct slots perfectly.",
+            tag: "Zen",
+            rating: "4.9",
+            badge: "hot",
+            img: "https://img.gamemonetize.com/dpbl07ksovtacdqlan1u5fp52gf43hia/512x384.jpg",
+            url: "https://html5.gamemonetize.com/dpbl07ksovtacdqlan1u5fp52gf43hia/"
+        },
+        {
+            title: "Jewelry Match",
+            desc: "A sparkling match-3 adventure for everyone.",
+            tag: "Match-3",
+            rating: "4.6",
+            badge: "puzzle",
+            img: "https://img.gamemonetize.com/spacg9g3ocw5proj2m7p2bxe8fmet3dy/512x384.jpg",
+            url: "https://html5.gamemonetize.com/spacg9g3ocw5proj2m7p2bxe8fmet3dy/"
+        }
+    ];
+
+    // --- Core Logic ---
+
+    const modal = document.getElementById('gameModal');
+    const frame = document.getElementById('gameFrame');
+    const fsPath = document.getElementById('fsPath');
+
+    function renderGames() {
+        const grid = document.getElementById('recommendationGrid');
+        grid.innerHTML = '';
+
+        REC_GAMES.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'game-card';
+            card.onclick = () => openGame(game.url);
+            
+            // Badge Logic
+            let badgeClass = 'badge-puzzle';
+            if(game.badge === 'hot') badgeClass = 'badge-hot';
+            if(game.badge === 'new') badgeClass = 'badge-new';
+
+            card.innerHTML = `
+                <div class="img-wrapper">
+                    <img src="${game.img}" alt="${game.title}" class="game-img" loading="lazy">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="game-meta">
+                        <span class="badge ${badgeClass}">${game.tag}</span>
+                        <span class="rating">★ ${game.rating}</span>
+                    </div>
+                    <h3 class="game-title">${game.title}</h3>
+                    <p class="game-desc">${game.desc}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    // Modal & Fullscreen Logic
+    window.openGame = function(url) {
+        frame.src = url;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    };
+
+    window.closeGame = function() {
+        if (document.fullscreenElement) {
+            document.exitFullscreen().catch(() => {});
+        }
+        modal.style.display = 'none';
+        frame.src = '';
+        document.body.style.overflow = 'auto';
+    };
+
+    // Initialize Fullscreen Toggle
+    document.getElementById('fullScreenBtn').addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            const elem = modal; 
+            if (elem.requestFullscreen) elem.requestFullscreen();
+            else if (elem.webkitRequestFullscreen) elem.webkitRequestFullscreen();
+        } else {
+            if (document.exitFullscreen) document.exitFullscreen();
+        }
+    });
+
+    // Watch for fullscreen changes to update icon
+    const updateFsUI = () => {
+        const isFs = !!document.fullscreenElement;
+        const enterPath = "M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3";
+        const exitPath = "M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3";
+        fsPath.setAttribute('d', isFs ? exitPath : enterPath);
+    };
+
+    document.addEventListener('fullscreenchange', updateFsUI);
+    document.addEventListener('webkitfullscreenchange', updateFsUI);
+
+    // Initialize Page
+    renderGames();
+</script>
+
+</body>
+</html>
