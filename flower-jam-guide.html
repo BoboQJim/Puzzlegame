@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://puzzlegame.squoosh.online/favicon.ico">
+    <link rel="canonical" href="https://puzzlegame.squoosh.online/games/flower-jam-guide">
+    <title>Flower Jam Guide: Master Flower Matching & Sorting Strategy | PuzzleHub</title>
+    <meta name="description" content="Master Flower Jam with our ultimate strategy guide. Learn blossom matching techniques, unlock garden rewards, and use power-ups effectively in this top-rated HTML5 sorting game. Play Flower Jam instantly in your browser.">
+    <meta name="keywords" content="Flower Jam Guide, Flower Match Puzzle, Blossom Sorting Strategy, Brain Training Garden Game, Browser Logic Games, No Install Flower Game, Flower Jam Walkthrough">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --bg-card: #161b22;
+            --accent-primary: #7b61ff;
+            --accent-secondary: #917cff;
+            --accent-gradient: linear-gradient(135deg, #7b61ff 0%, #5a3dff 100%);
+            --accent-gradient-hover: linear-gradient(135deg, #917cff 0%, #7b61ff 100%);
+            --text-light: #f0f6fc;
+            --text-dim: #8b949e;
+            --border-color: #30363d;
+            --glass: rgba(10, 11, 16, 0.85);
+            --modal-overlay: rgba(0, 0, 0, 0.7);
+            --btn-shadow: 0 4px 15px rgba(123, 97, 255, 0.3);
+            --btn-shadow-hover: 0 6px 20px rgba(123, 97, 255, 0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
+
+        header {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-icon { width: 35px; height: 35px; background: var(--accent-primary); border-radius: 8px; display: grid; place-items: center; font-weight: bold; color: white; box-shadow: 0 0 15px rgba(123, 97, 255, 0.4); }
+        .brand-name { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text-light); }
+        .back-link { color: var(--accent-primary); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .back-link:hover { color: var(--accent-secondary); }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem 5%; }
+        .guide-header { margin-bottom: 2rem; }
+        .guide-meta { display: flex; align-items: center; gap: 1rem; color: var(--text-dim); font-size: 0.9rem; margin: 1rem 0 2rem; }
+        .publish-date, .game-category { display: flex; align-items: center; gap: 6px; }
+
+        .guide-content { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+        .guide-content h2 { font-size: 1.5rem; margin: 1.5rem 0 1rem; color: var(--accent-primary); }
+        .guide-content p { margin-bottom: 1rem; line-height: 1.8; }
+        .content-image { width: 100%; border-radius: 12px; margin: 1.5rem 0; border: 1px solid var(--border-color); }
+
+        .video-container { position: relative; width: 100%; padding-top: 56.25%; margin: 1.5rem 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+        .tips-list { margin: 1rem 0 1.5rem 1.5rem; }
+        .tips-list li { margin-bottom: 0.8rem; }
+
+        .game-link-section { background: linear-gradient(135deg, rgba(123, 97, 255, 0.1) 0%, rgba(123, 97, 255, 0.05) 100%); border: 1px solid rgba(123, 97, 255, 0.2); border-radius: 16px; padding: 2rem; margin-bottom: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
+        .game-link-title { font-size: 1.3rem; font-weight: 700; }
+        .game-card { display: flex; gap: 1.5rem; align-items: center; }
+        .game-thumbnail { width: 120px; height: 90px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+        .game-info { flex-grow: 1; }
+        .game-title { font-weight: 700; margin-bottom: 0.3rem; }
+        .game-desc { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem; }
+
+        .play-btn { background: var(--accent-gradient); color: white; padding: 12px 32px; border-radius: 50px; font-weight: 700; border: none; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px; box-shadow: var(--btn-shadow); text-decoration: none; font-size: 1rem; }
+        .play-btn:hover { background: var(--accent-gradient-hover); box-shadow: var(--btn-shadow-hover); transform: translateY(-2px); }
+
+        .game-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); backdrop-filter: blur(4px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 2rem 5%; }
+        .game-modal { width: 100%; max-width: 800px; background: var(--bg-card); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); position: relative; height: 90vh; max-height: 600px; }
+        .modal-controls { position: absolute; top: 15px; right: 15px; display: flex; gap: 10px; z-index: 2001; }
+        .modal-control-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-dark); color: var(--text-light); border: 1px solid var(--border-color); display: grid; place-items: center; cursor: pointer; transition: all 0.3s ease; font-size: 1.1rem; }
+        .modal-control-btn:hover { background: var(--accent-primary); border-color: var(--accent-primary); box-shadow: 0 0 10px rgba(123, 97, 255, 0.5); }
+        .game-iframe { width: 100%; height: 100%; border: none; display: block; }
+
+        footer { border-top: 1px solid var(--border-color); padding: 3rem 5%; text-align: center; color: var(--text-dim); margin-top: 4rem; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; padding: 1rem 3%; }
+            .guide-content, .game-link-section { padding: 1.5rem; }
+            .game-card { flex-direction: column; text-align: center; }
+            .game-thumbnail { width: 100%; height: auto; max-width: 200px; }
+            .play-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="https://puzzlegame.squoosh.online/" class="brand">
+            <div class="logo-icon">P</div>
+            <span class="brand-name">PuzzleHub</span>
+        </a>
+        <a href="https://puzzlegame.squoosh.online/" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+    </header>
+
+    <main class="container">
+        <div class="guide-header">
+            <h1>Flower Jam Guide: How to Master the Blossom Sorting Puzzle</h1>
+            <div class="guide-meta">
+                <span class="publish-date"><i class="fas fa-calendar"></i> Updated: 7 January 2026</span>
+                <span class="game-category"><i class="fas fa-leaf"></i> Category: Logic / Matching</span>
+            </div>
+        </div>
+
+        <div class="guide-content">
+            <p><strong>Flower Jam</strong> is a vibrant and addictive browser puzzle game that tasks players with organizing a chaotic garden. Unlike standard matching games, Flower Jam requires you to strategically move colorful blossom stacks to clear the grid. Whether you are looking for a relaxing brain break or a challenging logic test, this game offers the perfect balance of aesthetics and strategy. Read on to discover how to master every level.</p>
+
+            <h2>1. Getting Started: Basic Sorting Rules</h2>
+            <p>In Flower Jam, your goal is to clear the board by matching identical flowers. When you place a stack next to another of the same color, they will merge. The key is to plan your moves ahead—don't fill up your temporary slots too quickly! Proper placement is the foundation of a high score.</p>
+            
+            <img src="https://puzzlegame.squoosh.online/image/Flower-Jam-ScreenShot-01.jpg" alt="Flower Jam Basic Gameplay and Starting Guide" class="content-image">
+
+            <h2>2. Advanced Tactics: Triggering Combos</h2>
+            <p>As levels progress, the grid becomes tighter. To succeed, you must focus on triggering <strong>Chain Reactions</strong>. By clearing one set of flowers that leads to another match, you earn bonus points and free up critical space on the board. Watch the flower layers carefully to anticipate your next three moves.</p>
+
+            <h2>3. Using Power-ups Wisely</h2>
+            <p>When the garden gets too crowded, power-ups are your best friends. Use the <strong>Lawn mower</strong> to remove a single blocking stack, or the <strong>Other props</strong> to assist in eliminating when you're out of obvious moves. Saving these for the final stages of a level is often the difference between victory and a "Game Over."</p>
+            
+            <img src="https://puzzlegame.squoosh.online/image/Flower-Jam-ScreenShot-02.jpg" alt="Flower Jam Power-ups and Advanced Strategy" class="content-image">
+
+            <h2>Full Gameplay Walkthrough</h2>
+            <p>Stuck on a specific stage? Watch our curated Flower Jam gameplay collection to see professional techniques for clearing the most difficult garden layouts.</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iBGspxvLVVo?si=VCL7AkzQc-lAOPHy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <h2>Why Play Flower Jam on PuzzleHub?</h2>
+            <p>We offer a <strong>premium, lag-free experience</strong> for Flower Jam players worldwide. Our platform is optimized for users in North America, Europe, and Asia, ensuring fast loading times and smooth 60FPS gameplay. No download or installation is required—just click and play instantly in your browser.</p>
+			<p>If you encounter any issues or have feedback on specific levels, please contact us at <a href="mailto:support@squoosh.online?subject=Hexa Sort 3D Level Feedback" 
+       style="color: #7b61ff; font-weight: 600; text-decoration: none; border-bottom: 1px dashed #7b61ff;">support@squoosh.online</a>. We are constantly updating our guides based on player input.</p>
+        </div>
+
+        <div class="game-link-section">
+            <h3 class="game-link-title">Start Your Garden Journey</h3>
+            <div class="game-card">
+                <img src="https://img.gamemonetize.com/ppx2i06fap9svhemacqrl5mfx4iw4cge/512x384.jpg" alt="Flower Jam Game Icon" class="game-thumbnail">
+                <div class="game-info">
+                    <h3 class="game-title">Flower Jam</h3>
+                    <p class="game-desc">A beautiful and relaxing flower-sorting puzzle. Match blossoms, clear the grid, and enjoy the zen garden atmosphere. Free to play online.</p>
+                    <button class="play-btn" id="openGameModal">
+                        <i class="fas fa-play"></i> Play Flower Jam
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="game-modal-overlay" id="gameModalOverlay">
+        <div class="game-modal" id="gameModal">
+            <div class="modal-controls">
+                <button class="modal-control-btn" id="closeGameModal" title="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button class="modal-control-btn" id="fullscreenGameBtn" title="Fullscreen">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+            <iframe 
+                class="game-iframe" 
+                id="gameIframe" 
+                src="https://html5.gamemonetize.com/ppx2i06fap9svhemacqrl5mfx4iw4cge/" 
+                allowfullscreen 
+                sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-popups"
+                referrerpolicy="no-referrer">
+            </iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 PuzzleHub Gaming Platform</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
+    </footer>
+
+    <script>
+        const openBtn = document.getElementById('openGameModal');
+        const overlay = document.getElementById('gameModalOverlay');
+        const closeBtn = document.getElementById('closeGameModal');
+        const fsBtn = document.getElementById('fullscreenGameBtn');
+        const modal = document.getElementById('gameModal');
+        const iframe = document.getElementById('gameIframe');
+
+        openBtn.addEventListener('click', () => {
+            overlay.style.display = 'flex';
+            iframe.src = iframe.src;
+        });
+
+        const closeModal = () => {
+            overlay.style.display = 'none';
+            if (document.fullscreenElement) document.exitFullscreen().catch(e => {});
+        };
+
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+
+        fsBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                modal.requestFullscreen().catch(e => {});
+            } else {
+                document.exitFullscreen().catch(e => {});
+            }
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+            fsBtn.innerHTML = document.fullscreenElement ? '<i class="fas fa-compress"></i>' : '<i class="fas fa-expand"></i>';
+        });
+    </script>
+</body>
+</html>
