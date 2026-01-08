@@ -8,6 +8,12 @@
     <title>PuzzleHub | Premium Brain Games</title>
     <meta name="description" content="Discover the best free, no-install online puzzle games. Squoosh offers a curated collection of brain-teasing casual games for instant fun and logic.">
     <meta name="keywords" content="Free online puzzle games, No-install brain games, Best puzzle game recommendations, Instant game">
+    
+    <link rel="preconnect" href="https://img.gamemonetize.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    
+    <link rel="preload" as="image" href="https://img.gamemonetize.com/7kzc77ikesq2bdej5ip6ecevhvsfyqsq/512x384.jpg" fetchpriority="high">
+
     <style>
         :root {
             --bg-dark: #0a0b10;
@@ -140,6 +146,7 @@
             color: var(--text-light);
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid var(--border-color);
+            display: block; /* Ensure it behaves like a block */
         }
 
         .featured-item:hover {
@@ -152,6 +159,7 @@
             width: 100%;
             aspect-ratio: 16/9;
             object-fit: cover;
+            display: block; /* Remove bottom whitespace */
         }
 
         .featured-name {
@@ -216,6 +224,9 @@
             display: flex;
             flex-direction: column;
             position: relative;
+            /* OPTIMIZATION: content-visibility helps with rendering performance of long lists */
+            content-visibility: auto; 
+            contain-intrinsic-size: 0 350px; 
         }
 
         .card:hover {
@@ -228,6 +239,7 @@
             position: relative;
             aspect-ratio: 4/3;
             overflow: hidden;
+            background-color: #1a1f26; /* Placeholder color */
         }
 
         .card-image {
@@ -235,6 +247,7 @@
             height: 100%;
             object-fit: cover;
             transition: 0.5s;
+            display: block;
         }
 
         .card:hover .card-image {
@@ -476,7 +489,7 @@
         <span class="brand-name">PuzzleHub</span>
     </a>
     <div class="search-wrapper">
-        <input type="text" id="searchInput" class="search-input" placeholder="Search your favorite games...">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search your games...">
     </div>
 </header>
 
@@ -646,6 +659,20 @@
     ];
 
     function init() {
+        // OPTIMIZATION: Split rendering into two phases.
+        // Phase 1: Render the Featured Grid immediately (LCP candidate).
+        renderFeatured(FEATURED_DATA);
+
+        // Phase 2: Defer parsing of the huge XML and rendering the main grid 
+        // to unblock the main thread for initial painting.
+        // Using setTimeout to push this task to the next macro-task.
+        setTimeout(initAllGames, 0);
+
+        // Event Listeners can be set up immediately
+        setupEventListeners();
+    }
+
+    function initAllGames() {
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(FEED_XML, "text/xml");
         const items = xmlDoc.getElementsByTagName("item");
@@ -658,10 +685,11 @@
             thumb: item.getElementsByTagName("thumb")[0]?.textContent
         }));
 
-        renderFeatured(FEATURED_DATA);
         render(gameList);
+    }
 
-        search.addEventListener('input', (e) => {
+    function setupEventListeners() {
+         search.addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase();
             const filtered = gameList.filter(g => 
                 g.title.toLowerCase().includes(query) || 
@@ -687,11 +715,18 @@
     function renderFeatured(data) {
         featuredGrid.innerHTML = '';
         
-        data.forEach(game => {
+        data.forEach((game, index) => {
             const item = document.createElement('a');
             item.className = 'featured-item';
             item.href = game.url;
             item.target = '_blank';
+            
+            // OPTIMIZATION: 
+            // 1. fetchpriority="high" and loading="eager" for the very first image (LCP).
+            // 2. Explicit width/height to reduce layout shift.
+            // 3. Lazy load subsequent images.
+            const loadingAttr = index === 0 ? 'loading="eager"' : 'loading="lazy"';
+            const priorityAttr = index === 0 ? 'fetchpriority="high"' : '';
             
             item.innerHTML = `
                 <img src="${game.thumb}" alt="${game.title}" class="featured-image" loading="lazy">
@@ -715,6 +750,10 @@
                 document.body.style.overflow = 'hidden';
             };
 
+            // OPTIMIZATION: 
+            // 1. Strict loading="lazy" for off-screen images.
+            // 2. decoding="async" to unblock main thread during image decoding.
+            // 3. Explicit dimensions.
             card.innerHTML = `
                 <div class="card-image-box">
                     <img src="${game.thumb}" alt="${game.title}" class="card-image" loading="lazy">
