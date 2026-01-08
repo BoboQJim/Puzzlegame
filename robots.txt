@@ -1,19 +1,28 @@
-# Global configuration for PuzzleHub Gaming Platform
+# Robots.txt for PuzzleGame Squoosh Platform
+# Optimized for Google, Bing, and major international crawlers
+
 User-agent: *
 
-# Allow all search engines to crawl the site
+# Allow crawling of the main content structure
 Allow: /
-Allow: /index.html
+Allow: /recommendations
+Allow: /all-games
+Allow: /*-guide
 
-# Prevent crawling of internal search parameter results to avoid duplicate content
-Disallow: /*?s=
-Disallow: /*?search=
-Disallow: /search/
-
-# Resource optimization
+# Allow bots to access CSS, JS, and Images for proper rendering
+# Crucial for SEO on modern JavaScript frameworks
 Allow: /assets/
 Allow: /css/
 Allow: /js/
+Allow: /images/
 
-# Sitemap
+# Disallow internal search results and dynamic parameters
+# This prevents duplicate content issues and preserves crawl budget
+Disallow: /*?q=
+Disallow: /*?s=
+Disallow: /*?sort=
+Disallow: /search/
+Disallow: /api/
+
+# Sitemap Location
 Sitemap: https://puzzlegame.squoosh.online/sitemap.xml
