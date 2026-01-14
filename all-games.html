@@ -6,10 +6,12 @@
     <link rel="icon" href="https://puzzlegame.squoosh.online/favicon.ico">
     <link rel="canonical" href="https://puzzlegame.squoosh.online/all-games">
     
-    <title>All Puzzle Games Library | Squoosh Online - Play Now</title>
-    <meta name="description" content="Explore our complete collection of free online puzzle games. Squoosh Online offers a global library of brain teasers, logic puzzles, and casual games available to play instantly worldwide with no install required.">
-    <meta name="keywords" content="complete puzzle game list, free online logic games, no download puzzles, browser games gallery, brain training collection">
+    <title>All Puzzle Games Library | Play 2000+ Free Online Games - Squoosh Online</title>
+    <meta name="description" content="Browse our massive library of over 2000 free online puzzle games. Instant play, no download required. Find logic puzzles, match-3, and brain teasers optimized for global players.">
+    <meta name="keywords" content="all puzzle games, game library, free html5 games, browser games list, no install puzzles, infinite scroll games">
     
+    <link rel="preconnect" href="https://img.gamemonetize.com">
+
     <style>
         :root {
             --bg-dark: #0a0b10;
@@ -22,260 +24,106 @@
             --glass: rgba(10, 11, 16, 0.85);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; overflow-x: hidden; min-height: 100vh; }
 
         /* Header */
-        header {
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        header { background: var(--glass); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); padding: 1rem 5%; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-icon { width: 35px; height: 35px; background: var(--accent-primary); border-radius: 8px; display: grid; place-items: center; font-weight: bold; color: white; box-shadow: 0 0 15px rgba(123, 97, 255, 0.4); }
+        .brand-name { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text-light); }
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
+        .search-wrapper { position: relative; flex-grow: 0; width: 300px; }
+        .search-input { width: 100%; background: #0d1117; border: 1px solid var(--border-color); padding: 0.7rem 1.2rem; border-radius: 50px; color: white; outline: none; transition: 0.3s; }
+        .search-input:focus { border-color: var(--accent-primary); box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2); }
 
-        .logo-icon {
-            width: 35px;
-            height: 35px;
-            background: var(--accent-primary);
-            border-radius: 8px;
-            display: grid;
-            place-items: center;
-            font-weight: bold;
-            color: white;
-            box-shadow: 0 0 15px rgba(123, 97, 255, 0.4);
-        }
+        /* Page Layout */
+        .page-header { padding: 2rem 5% 1rem; }
+        .breadcrumb { margin-bottom: 1rem; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--accent-primary); text-decoration: none; }
+        .breadcrumb span { color: var(--text-dim); margin: 0 8px; }
+        .page-title-area h1 { font-size: 2rem; margin-bottom: 0.5rem; background: linear-gradient(to right, #fff, var(--text-dim)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .page-desc { color: var(--text-dim); max-width: 800px; }
 
-        .brand-name {
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: var(--text-light);
-        }
-
-        .search-wrapper {
-            position: relative;
-            flex-grow: 0;
-            width: 300px;
-        }
-
-        .search-input {
-            width: 100%;
-            background: #0d1117;
-            border: 1px solid var(--border-color);
-            padding: 0.7rem 1.2rem;
-            border-radius: 50px;
-            color: white;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .search-input:focus {
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2);
-        }
-
-        /* Breadcrumb & Hero */
-        .page-header {
-            padding: 2rem 5% 1rem;
-        }
-
-        .breadcrumb {
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .breadcrumb a {
-            color: var(--accent-primary);
-            text-decoration: none;
-        }
-
-        .breadcrumb span {
-            color: var(--text-dim);
-            margin: 0 8px;
-        }
-
-        .page-title-area h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #fff, var(--text-dim));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .page-desc {
-            color: var(--text-dim);
-            max-width: 800px;
-        }
-
-        /* Game Grid */
+        /* Game Grid - Optimized Layout */
         .game-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 25px;
-            padding: 2rem 5% 4rem;
+            padding: 2rem 5% 2rem;
+            min-height: 50vh; /* Prevent layout shift before load */
         }
 
-        /* Card Component */
+        /* Card Component - Performance Optimized */
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             overflow: hidden;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: transform 0.2s ease, box-shadow 0.2s ease; /* Faster transition for better INP */
             display: flex;
             flex-direction: column;
+            /* PERFORMANCE: Content Visibility to skip rendering off-screen cards */
+            content-visibility: auto;
+            contain-intrinsic-size: 0 350px; 
         }
 
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-primary);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
-        }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent-primary); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
 
-        .card-image-box {
-            position: relative;
-            aspect-ratio: 4/3;
-            overflow: hidden;
-        }
+        .card-image-box { position: relative; aspect-ratio: 4/3; overflow: hidden; background-color: #1a1f26; }
+        .card-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; display: block; }
+        .card:hover .card-image { transform: scale(1.05); }
 
-        .card-image {
+        .card-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: grid; place-items: center; opacity: 0; transition: 0.2s; }
+        .card:hover .card-overlay { opacity: 1; }
+
+        .btn-play { background: var(--accent-primary); color: white; padding: 10px 24px; border-radius: 50px; font-weight: 700; border: none; pointer-events: none; /* Let click pass to card */ }
+
+        .card-body { padding: 1.2rem; }
+        .card-tag { font-size: 0.7rem; color: var(--accent-primary); text-transform: uppercase; font-weight: 800; margin-bottom: 8px; display: block; }
+        .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text-light); }
+        .card-desc { font-size: 0.85rem; color: var(--text-dim); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 2.6rem; }
+
+        /* Loading Spinner & Sentinels */
+        .loading-sentinel {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s;
-        }
-
-        .card:hover .card-image {
-            transform: scale(1.1);
-        }
-
-        .card-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.5);
-            display: grid;
-            place-items: center;
-            opacity: 0;
-            transition: 0.3s;
-        }
-
-        .card:hover .card-overlay {
-            opacity: 1;
-        }
-
-        .btn-play {
-            background: var(--accent-primary);
-            color: white;
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-weight: 700;
-            border: none;
-        }
-
-        .card-body {
-            padding: 1.2rem;
-        }
-
-        .card-tag {
-            font-size: 0.7rem;
-            color: var(--accent-primary);
-            text-transform: uppercase;
-            font-weight: 800;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .card-desc {
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            height: 2.6rem;
-        }
-
-        /* Modal & Controls */
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 2000;
-            background: rgba(0, 0, 0, 0.95);
-        }
-
-        .modal-container {
-            width: 100%;
-            max-width: 1200px;
-            height: 85vh;
-            margin: 20px auto;
-            background: #000;
-            position: relative;
-        }
-
-        .modal-controls {
-            position: absolute;
-            top: 15px;
-            right: 20px;
+            height: 60px;
             display: flex;
-            gap: 10px;
-            z-index: 2100;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 4rem;
         }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .spinner {
+            width: 30px;
+            height: 30px;
+            border: 3px solid rgba(123, 97, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--accent-primary);
+            animation: spin 1s ease-in-out infinite;
+            display: none; /* Hidden by default */
         }
+        .spinner.active { display: block; }
+        
+        @keyframes spin { to { transform: rotate(360deg); } }
 
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 3rem 5%;
-            text-align: center;
-            color: var(--text-dim);
-        }
+        /* Modal */
+        .modal { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(0, 0, 0, 0.95); }
+        .modal-container { width: 100%; max-width: 1200px; height: 85vh; margin: 20px auto; background: #000; position: relative; border-radius: 12px; overflow: hidden; }
+        .modal-controls { position: absolute; top: 15px; right: 20px; display: flex; gap: 10px; z-index: 2100; }
+        .ctrl-btn { background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 42px; height: 42px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+        .ctrl-btn:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+        iframe { width: 100%; height: 100%; border: none; }
 
-        /* Mobile Styles */
+        footer { border-top: 1px solid var(--border-color); padding: 3rem 5%; text-align: center; color: var(--text-dim); }
+
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 12px; }
             .search-wrapper { width: 100%; }
-            .game-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .game-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 1rem 3% 2rem; }
             .card-body { padding: 0.8rem; }
             .card-desc { display: none; }
+            .page-title-area h1 { font-size: 1.6rem; }
         }
     </style>
     
@@ -295,34 +143,38 @@
         <span class="brand-name">PuzzleHub</span>
     </a>
     <div class="search-wrapper">
-        <input type="text" id="searchInput" class="search-input" placeholder="Search all games...">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search 2000+ games..." aria-label="Search games">
     </div>
 </header>
 
 <div class="page-header">
     <nav class="breadcrumb">
-        <a href="index.html">Home</a> <span>/</span> <a href="all-games.html">All Games</a>
+        <a href="index.html">Home</a> <span>/</span> <span style="color: var(--text-light);">All Games</span>
     </nav>
     <section class="page-title-area">
         <h1>Full Puzzle Game Library</h1>
-        <p class="page-desc" id="gameCounter">Browsing our comprehensive collection of browser-based puzzles. Play anywhere, anytime.</p>
+        <p class="page-desc" id="statusText">Browsing our comprehensive collection of browser-based puzzles. Play anywhere, anytime.</p>
     </section>
 </div>
 
 <main>
     <div id="gameGrid" class="game-grid">
         </div>
+    
+    <div class="loading-sentinel">
+        <div class="spinner" id="loadSpinner"></div>
+    </div>
 </main>
 
 <div id="gameModal" class="modal">
     <div class="modal-container">
         <div class="modal-controls">
-            <button id="fullScreenBtn" style="background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 42px; height: 42px; border-radius: 8px; cursor: pointer;">
-                <svg id="fsIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <button id="fullScreenBtn" class="ctrl-btn" title="Fullscreen">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path id="fsPath" d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
                 </svg>
             </button>
-            <button onclick="closeGame()" style="background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 42px; height: 42px; border-radius: 8px; cursor: pointer;">✕</button>
+            <button onclick="closeGame()" class="ctrl-btn" title="Close">✕</button>
         </div>
         <iframe id="gameFrame" src="" allow="autoplay; fullscreen; keyboard"></iframe>
     </div>
@@ -334,7 +186,8 @@
 </footer>
 
 <script>
-    // Data Source (Synced with Index)
+    // --- Data Source (Truncated for optimization demo, handles large lists efficiently) ---
+    // In production, this string would contain the full 2000+ items.
     const FEED_XML = `
 <rss version="2.0">
 <channel>
@@ -2363,60 +2216,97 @@
 <item><id>43152</id><title>Ragdoll Fighter Online</title><description>Ragdoll Fighter is a game where you need to test your battling skills against another ragdoll. Both you and the enemy have a health bar and a specific health count. You can use the joystick in order to control the character direction. You need to attack with your hands and feet, even use any weapons at your disposal in order to kill the enemy.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/a1bd46t1kzpm2w146kkyqmd90tmnetle/</url><thumb>https://img.gamemonetize.com/a1bd46t1kzpm2w146kkyqmd90tmnetle/512x384.jpg</thumb></item>
 </channel></rss>`;
 
+    // --- Performance Optimization Variables ---
     const grid = document.getElementById('gameGrid');
     const modal = document.getElementById('gameModal');
     const frame = document.getElementById('gameFrame');
     const search = document.getElementById('searchInput');
-    const counter = document.getElementById('gameCounter');
+    const statusText = document.getElementById('statusText');
+    const loadSpinner = document.getElementById('loadSpinner');
     const fullScreenBtn = document.getElementById('fullScreenBtn');
     const fsPath = document.getElementById('fsPath');
     
-    let gameList = [];
-
+    // State Management
+    let allGames = [];          // Stores the parsed game objects
+    let filteredGames = [];     // Stores the currently filtered list (for search)
+    let displayList = [];       // Pointer to which list we are currently displaying
+    
+    // Pagination / Infinite Scroll Settings
+    const ITEMS_PER_PAGE = 24;  // Load 24 games at a time (small chunk to keep Main Thread free)
+    let currentPage = 0;
+    
+    // Initialize
     function init() {
+        // 1. Parse XML (Heavy operation, done once)
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(FEED_XML, "text/xml");
         const items = xmlDoc.getElementsByTagName("item");
 
-        gameList = Array.from(items).map(item => ({
-            title: item.getElementsByTagName("title")[0]?.textContent,
-            desc: item.getElementsByTagName("description")[0]?.textContent,
-            category: item.getElementsByTagName("category")[0]?.textContent,
-            url: item.getElementsByTagName("url")[0]?.textContent,
-            thumb: item.getElementsByTagName("thumb")[0]?.textContent
+        // Convert HTMLCollection to Array for better performance methods
+        allGames = Array.from(items).map(item => ({
+            title: item.getElementsByTagName("title")[0]?.textContent || "Untitled",
+            desc: item.getElementsByTagName("description")[0]?.textContent || "No description available.",
+            category: item.getElementsByTagName("category")[0]?.textContent || "Puzzle",
+            url: item.getElementsByTagName("url")[0]?.textContent || "#",
+            thumb: item.getElementsByTagName("thumb")[0]?.textContent || ""
         }));
 
-        render(gameList);
+        // Initial State
+        displayList = allGames;
+        statusText.textContent = `Browsing ${allGames.length} free puzzle games.`;
+        
+        // 2. Render first batch immediately (Fast LCP)
+        loadMoreGames();
 
-        search.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
-            const filtered = gameList.filter(g => 
-                g.title.toLowerCase().includes(query) || 
-                g.category.toLowerCase().includes(query)
-            );
-            render(filtered);
-        });
+        // 3. Setup Infinite Scroll Observer
+        setupInfiniteScroll();
 
-        fullScreenBtn.addEventListener('click', toggleFullscreen);
-        document.addEventListener('fullscreenchange', updateFullscreenUI);
+        // 4. Setup Event Listeners
+        setupEvents();
     }
 
-    function render(data) {
-        grid.innerHTML = '';
-        counter.textContent = `Explore our ${data.length} premium puzzle titles, available for instant browser play.`;
+    // --- Infinite Scroll Logic ---
+    function setupInfiniteScroll() {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                // If user sees the spinner/bottom, load next batch
+                loadMoreGames();
+            }
+        }, {
+            root: null, // viewport
+            rootMargin: '200px', // Preload before user hits absolute bottom
+            threshold: 0.1
+        });
 
-        data.forEach(game => {
+        const sentinel = document.querySelector('.loading-sentinel');
+        observer.observe(sentinel);
+    }
+
+    function loadMoreGames() {
+        const start = currentPage * ITEMS_PER_PAGE;
+        const end = start + ITEMS_PER_PAGE;
+        
+        // Check if we have more items to show
+        if (start >= displayList.length) {
+            loadSpinner.classList.remove('active');
+            return;
+        }
+
+        loadSpinner.classList.add('active');
+
+        // Extract the chunk to render
+        const chunk = displayList.slice(start, end);
+        
+        // Use DocumentFragment to minimize reflows (Performance Key)
+        const fragment = document.createDocumentFragment();
+
+        chunk.forEach(game => {
             const article = document.createElement('article');
             article.className = 'card';
-            article.onclick = () => {
-                frame.src = game.url;
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            };
-
+            // Use native lazy loading and async decoding
             article.innerHTML = `
                 <div class="card-image-box">
-                    <img src="${game.thumb}" alt="Play ${game.title}" class="card-image" loading="lazy">
+                    <img src="${game.thumb}" alt="Play ${game.title}" class="card-image" loading="lazy" decoding="async" width="512" height="384">
                     <div class="card-overlay"><button class="btn-play">PLAY NOW</button></div>
                 </div>
                 <div class="card-body">
@@ -2425,8 +2315,66 @@
                     <p class="card-desc">${game.desc}</p>
                 </div>
             `;
-            grid.appendChild(article);
+            
+            // Event delegation is better, but per-element click is fine for this scale if elements are virtualized or paginated
+            article.onclick = () => openGame(game.url);
+            fragment.appendChild(article);
         });
+
+        // Append batch to DOM in one operation
+        requestAnimationFrame(() => {
+            grid.appendChild(fragment);
+            currentPage++;
+            
+            // Hide spinner if no more items
+            if (currentPage * ITEMS_PER_PAGE >= displayList.length) {
+                loadSpinner.classList.remove('active');
+            }
+        });
+    }
+
+    // --- Search Optimization (Debounce) ---
+    function setupEvents() {
+        // Debounce Search: Wait 300ms after typing stops before filtering
+        let timeout = null;
+        search.addEventListener('input', (e) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                performSearch(e.target.value.toLowerCase());
+            }, 300);
+        });
+
+        fullScreenBtn.addEventListener('click', toggleFullscreen);
+        document.addEventListener('fullscreenchange', updateFullscreenUI);
+    }
+
+    function performSearch(query) {
+        // Reset Grid
+        grid.innerHTML = '';
+        currentPage = 0;
+        window.scrollTo(0, 0);
+
+        if (!query) {
+            displayList = allGames;
+            statusText.textContent = `Browsing ${allGames.length} free puzzle games.`;
+        } else {
+            // Filter logic
+            displayList = allGames.filter(g => 
+                g.title.toLowerCase().includes(query) || 
+                g.category.toLowerCase().includes(query)
+            );
+            statusText.textContent = `Found ${displayList.length} results for "${query}".`;
+        }
+
+        // Trigger load of first batch of results
+        loadMoreGames();
+    }
+
+    // --- Modal & Game Logic ---
+    function openGame(url) {
+        frame.src = url;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
     }
 
     window.closeGame = function() {
@@ -2455,6 +2403,7 @@
         fsPath.setAttribute('d', isFullscreen() ? exitPath : enterPath);
     }
 
+    // Start App
     init();
 </script>
 
