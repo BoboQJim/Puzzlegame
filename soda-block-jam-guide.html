@@ -6,10 +6,9 @@
     <link rel="icon" href="https://puzzlegame.squoosh.online/favicon.ico">
     <link rel="canonical" href="https://puzzlegame.squoosh.online/games/soda-block-jam-guide">
     
-    <title>Soda Block Jam Guide:Match Strategy | PuzzleHub</title>
+    <title>Soda Block Jam Guide: Match Strategy | PuzzleHub</title>
     
     <meta name="description" content="Master Soda Block Jam with our ultimate strategy guide. Learn how to clear 3D color blocks, manage your tray space, and beat the hardest levels. Watch our speedrun to Level 10 and play this addictive puzzle game online for free.">
-    
     <meta name="keywords" content="Soda Block Jam, 3D Block Puzzle, Color Match Strategy, Jam Puzzle Game, Level 10 Walkthrough, Brain Teaser, Free Online Game, No Install Puzzle">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,346 +29,58 @@
             --btn-shadow-hover: 0 6px 20px rgba(123, 97, 255, 0.4);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+        header { background: var(--glass); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); padding: 1rem 5%; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-icon { width: 35px; height: 35px; background: var(--accent-primary); border-radius: 8px; display: grid; place-items: center; font-weight: bold; color: white; box-shadow: 0 0 15px rgba(123, 97, 255, 0.4); }
+        .brand-name { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text-light); }
+        .back-link { color: var(--accent-primary); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .back-link:hover { color: var(--accent-secondary); }
 
-        /* --- Header & Navigation --- */
-        header {
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem 5%; }
+        .guide-header { margin-bottom: 2rem; }
+        .guide-meta { display: flex; align-items: center; gap: 1rem; color: var(--text-dim); font-size: 0.9rem; margin: 1rem 0 2rem; }
+        .publish-date, .game-category { display: flex; align-items: center; gap: 6px; }
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
+        .guide-content { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+        .guide-content h2 { font-size: 1.5rem; margin: 1.5rem 0 1rem; color: var(--accent-primary); }
+        .guide-content p { margin-bottom: 1rem; line-height: 1.8; }
 
-        .logo-icon {
-            width: 35px;
-            height: 35px;
-            background: var(--accent-primary);
-            border-radius: 8px;
-            display: grid;
-            place-items: center;
-            font-weight: bold;
-            color: white;
-            box-shadow: 0 0 15px rgba(123, 97, 255, 0.4);
-        }
+        .article-img { display: block; margin-left: auto; margin-right: auto; max-width: 100%; height: auto; border-radius: 12px; margin-top: 20px; margin-bottom: 20px; border: 1px solid var(--border-color); }
+        
+        .video-container { position: relative; width: 100%; padding-top: 56.25%; margin: 1.5rem 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-        .brand-name {
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: var(--text-light);
-        }
+        .tips-list { margin: 1rem 0 1.5rem 1.5rem; }
+        .tips-list li { margin-bottom: 0.8rem; }
 
-        .back-link {
-            color: var(--accent-primary);
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-        }
+        .game-link-section { background: linear-gradient(135deg, rgba(123, 97, 255, 0.1) 0%, rgba(123, 97, 255, 0.05) 100%); border: 1px solid rgba(123, 97, 255, 0.2); border-radius: 16px; padding: 2rem; margin-bottom: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
+        .game-link-title { font-size: 1.3rem; font-weight: 700; }
+        .game-card { display: flex; gap: 1.5rem; align-items: center; }
+        .game-thumbnail { width: 200px; height: 150px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+        .game-info { flex-grow: 1; }
+        .game-title { font-weight: 700; margin-bottom: 0.3rem; }
+        .game-desc { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem; }
 
-        .back-link:hover {
-            color: var(--accent-secondary);
-        }
+        .play-btn { background: var(--accent-gradient); color: white; padding: 12px 32px; border-radius: 50px; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; display: inline-flex; align-items: center; gap: 10px; box-shadow: var(--btn-shadow); text-decoration: none; font-size: 1rem; }
+        .play-btn:hover { background: var(--accent-gradient-hover); box-shadow: var(--btn-shadow-hover); transform: translateY(-2px); }
 
-        /* --- Main Content --- */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem 5%;
-        }
+        .game-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); backdrop-filter: blur(4px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 2rem 5%; }
+        .game-modal { width: 100%; max-width: 800px; background: var(--bg-card); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); position: relative; height: 90vh; max-height: 600px; }
+        .modal-controls { position: absolute; top: 15px; right: 15px; display: flex; gap: 10px; z-index: 2001; }
+        .modal-control-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-dark); color: var(--text-light); border: 1px solid var(--border-color); display: grid; place-items: center; cursor: pointer; transition: 0.3s; }
+        .modal-control-btn:hover { background: var(--accent-primary); border-color: var(--accent-primary); }
+        .game-iframe { width: 100%; height: 100%; border: none; display: block; }
 
-        .guide-header {
-            margin-bottom: 2rem;
-        }
+        footer { border-top: 1px solid var(--border-color); padding: 3rem 5%; text-align: center; color: var(--text-dim); margin-top: 4rem; }
 
-        .guide-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: var(--text-dim);
-            font-size: 0.9rem;
-            margin: 1rem 0 2rem;
-        }
-
-        .publish-date {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .game-category {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .guide-content {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .guide-content h2 {
-            font-size: 1.5rem;
-            margin: 1.5rem 0 1rem;
-            color: var(--accent-primary);
-        }
-
-        .guide-content p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .content-image {
-            width: 100%;
-            border-radius: 12px;
-            margin: 1.5rem 0;
-            border: 1px solid var(--border-color);
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            margin: 1.5rem 0;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .tips-list {
-            margin: 1rem 0 1.5rem 1.5rem;
-        }
-
-        .tips-list li {
-            margin-bottom: 0.8rem;
-        }
-
-        .game-link-section {
-            background: linear-gradient(135deg, rgba(123, 97, 255, 0.1) 0%, rgba(123, 97, 255, 0.05) 100%);
-            border: 1px solid rgba(123, 97, 255, 0.2);
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .game-link-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        .game-card {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .game-thumbnail {
-            width: 120px;
-            height: 90px;
-            border-radius: 8px;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-
-        .game-info {
-            flex-grow: 1;
-        }
-
-        .game-title {
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-        }
-
-        .game-desc {
-            color: var(--text-dim);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        /* --- Styled Play Button --- */
-        .play-btn {
-            background: var(--accent-gradient);
-            color: white;
-            padding: 12px 32px;
-            border-radius: 50px;
-            font-weight: 700;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: var(--btn-shadow);
-            text-decoration: none;
-            font-size: 1rem;
-        }
-
-        .play-btn:hover {
-            background: var(--accent-gradient-hover);
-            box-shadow: var(--btn-shadow-hover);
-            transform: translateY(-2px);
-        }
-
-        .play-btn i {
-            font-size: 1.2rem;
-        }
-
-        /* --- Game Modal (Floating Window) --- */
-        .game-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--modal-overlay);
-            backdrop-filter: blur(4px);
-            z-index: 2000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem 5%;
-        }
-
-        .game-modal {
-            width: 100%;
-            max-width: 800px;
-            background: var(--bg-card);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            position: relative;
-            height: 90vh;
-            max-height: 600px;
-        }
-
-        /* --- Modal Control Buttons (Close & Fullscreen) --- */
-        .modal-controls {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            display: flex;
-            gap: 10px;
-            z-index: 2001;
-        }
-
-        .modal-control-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--bg-dark);
-            color: var(--text-light);
-            border: 1px solid var(--border-color);
-            display: grid;
-            place-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-        }
-
-        .modal-control-btn:hover {
-            background: var(--accent-primary);
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 10px rgba(123, 97, 255, 0.5);
-        }
-
-        /* --- Game Iframe --- */
-        .game-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-
-        /* --- Footer --- */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 3rem 5%;
-            text-align: center;
-            color: var(--text-dim);
-            margin-top: 4rem;
-        }
-
-        /* --- Mobile Responsiveness --- */
         @media (max-width: 768px) {
-            header { 
-                flex-direction: column; 
-                gap: 15px; 
-                padding: 1rem 3%;
-            }
-            
-            .guide-content, .game-link-section {
-                padding: 1.5rem;
-            }
-            
-            .game-card {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .game-thumbnail {
-                width: 100%;
-                height: auto;
-                max-width: 200px;
-            }
-            
-            .play-btn {
-                width: 100%;
-                justify-content: center;
-                padding: 12px 24px;
-            }
-
-            .game-modal {
-                height: 85vh;
-                max-height: 500px;
-            }
-
-            .modal-control-btn {
-                width: 35px;
-                height: 35px;
-                font-size: 1rem;
-            }
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .game-card { flex-direction: column; text-align: center; }
+            .game-thumbnail { width: 100%; max-width: 200px; }
+            .play-btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -403,9 +114,9 @@
                 <li><strong>Fill:</strong> You must fill 100% of a block's slots before it becomes eligible for removal.</li>
                 <li><strong>Escape:</strong> Once filled, navigate the block to the matching colored exit on the edge of the box to clear it from the board.</li>
             </ul>
-            
-			<img style="display: block; margin-left: auto; margin-right: auto;" src="https://puzzlegame.squoosh.online/image/Soda-Block-Jam-ScreenShot-01.jpg" alt="" width="225" height="405">
-			
+           
+            <img src="https://puzzlegame.squoosh.online/image/Soda-Block-Jam-ScreenShot-01.jpg" alt="Soda Block Jam Gameplay Mechanics" class="article-img">
+
             <h2>Pro Tips for High Scores</h2>
             <p>To beat the clock and maximize your score in Soda Block Jam, efficiency is everything. Follow these strategies to become a master sorter:</p>
             
@@ -418,8 +129,9 @@
 						
             <h2>Challenge: Speedrun to Level 10</h2>
             <p>Think you have fast fingers? Watch this gameplay highlight where we breeze through the first 10 levels in one go. Pay attention to how the player manages the tray capacity during fast-paced clearing.</p>
+            
             <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/GijV5iXxa3I" title="Soda Block Jam Gameplay Challenge" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/GijV5iXxa3I" title="Soda Block Jam Walkthrough" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
             </div>
 
             <h2>Conquering Hard Levels</h2>
@@ -427,9 +139,9 @@
             <p><strong>1. Avoid Deadlocks:</strong> Never move a block into a position where it blocks another piece's only path to its bottles or exit. Think of it like a sliding puzzle—leave yourself wiggle room.</p>
             <p><strong>2. Clear from the Outside In:</strong> Focus on removing blocks near the edges first. This opens up the central area, giving you more space to maneuver the tricky blocks to their bottles.</p>
             <p><strong>3. Bottle Management:</strong> Be careful not to cover vital bottles with large blocks. Ensure the resources you need are always accessible.</p>			
-            
-            <img style="display: block; margin-left: auto; margin-right: auto;" src="https://puzzlegame.squoosh.online/image/Soda-Block-Jam-ScreenShot-02.jpg" alt="" width="225" height="402">
-            
+         
+            <img src="https://puzzlegame.squoosh.online/image/Soda-Block-Jam-ScreenShot-02.jpg" alt="Soda Block Jam Hard Level Strategy" class="article-img">
+			
             <p>Stuck on a specific puzzle? We are here to help! Contact us at <a href="mailto:support@squoosh.online?subject=Soda Block Jam Level Help" style="color: var(--accent-primary); font-weight: 600; text-decoration: none;">support@squoosh.online</a> and we can provide specific hints.</p>
         </div>
 
@@ -458,17 +170,16 @@
                     <i class="fas fa-expand"></i>
                 </button>
             </div>
-            <iframe class="game-iframe" id="gameIframe" src="https://html5.gamemonetize.com/sx9e751be41mwvzz7w9ynub5ejuhxm6d/" allowfullscreen></iframe>
+            <iframe class="game-iframe" id="gameIframe" src="" data-src="https://html5.gamemonetize.com/sx9e751be41mwvzz7w9ynub5ejuhxm6d/" allowfullscreen loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 PuzzleHub Gaming Platform</p>
+        <p>&copy; 2026 PuzzleHub Gaming - Free No-Install Puzzles</p>
         <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
-    </footer>
+	</footer>
 
     <script>
-        // Get Elements
         const openGameModalBtn = document.getElementById('openGameModal');
         const gameModalOverlay = document.getElementById('gameModalOverlay');
         const closeGameModalBtn = document.getElementById('closeGameModal');
@@ -479,54 +190,32 @@
         // Open Game Modal
         openGameModalBtn.addEventListener('click', () => {
             gameModalOverlay.style.display = 'flex';
-            // Refresh iframe to restart game (optional)
-            gameIframe.src = gameIframe.src;
+            // OPTIMIZATION: Only load iframe when requested to prevent background 404s/errors
+            if (!gameIframe.src || gameIframe.src === "about:blank") {
+                gameIframe.src = gameIframe.getAttribute('data-src');
+            }
         });
 
-        // Close Game Modal
         const closeGameModal = () => {
             gameModalOverlay.style.display = 'none';
-            // Exit fullscreen if active
-            if (document.fullscreenElement) {
-                document.exitFullscreen().catch(err => console.error(err));
-            }
+            // OPTIMIZATION: Reset src to stop game sound/logic and free memory
+            gameIframe.src = 'about:blank';
+            if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
         };
 
         closeGameModalBtn.addEventListener('click', closeGameModal);
+        gameModalOverlay.addEventListener('click', (e) => { if (e.target === gameModalOverlay) closeGameModal(); });
 
-        // Close modal when clicking overlay
-        gameModalOverlay.addEventListener('click', (e) => {
-            if (e.target === gameModalOverlay) {
-                closeGameModal();
-            }
-        });
-
-        // Toggle Fullscreen
         fullscreenGameBtn.addEventListener('click', () => {
             if (!document.fullscreenElement) {
-                // Enter fullscreen
-                gameModal.requestFullscreen().catch(err => {
-                    console.error(`Error attempting to enable fullscreen: ${err.message}`);
-                });
-                // Change icon
-                fullscreenGameBtn.innerHTML = '<i class="fas fa-compress"></i>';
+                gameModal.requestFullscreen().catch(err => console.error(err));
             } else {
-                // Exit fullscreen
-                document.exitFullscreen().catch(err => {
-                    console.error(`Error attempting to exit fullscreen: ${err.message}`);
-                });
-                // Revert icon
-                fullscreenGameBtn.innerHTML = '<i class="fas fa-expand"></i>';
+                document.exitFullscreen().catch(err => console.error(err));
             }
         });
 
-        // Update fullscreen icon when toggling via keyboard
         document.addEventListener('fullscreenchange', () => {
-            if (document.fullscreenElement) {
-                fullscreenGameBtn.innerHTML = '<i class="fas fa-compress"></i>';
-            } else {
-                fullscreenGameBtn.innerHTML = '<i class="fas fa-expand"></i>';
-            }
+            fullscreenGameBtn.innerHTML = document.fullscreenElement ? '<i class="fas fa-compress"></i>' : '<i class="fas fa-expand"></i>';
         });
     </script>
 </body>
