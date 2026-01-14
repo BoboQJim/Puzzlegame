@@ -118,7 +118,7 @@
         /* --- SEO & Weight Enhancement Section --- */
         .seo-section { padding: 4rem 5%; background: #0d1117; border-top: 1px solid var(--border-color); }
         .seo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
-        .seo-block h2 { color: var(--accent-primary); font-size: 1.1rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        .seo-block h3 { color: var(--accent-primary); font-size: 1.1rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
         .seo-block p { font-size: 0.9rem; color: var(--text-dim); text-align: justify; line-height: 1.7; }
 
         footer { border-top: 1px solid var(--border-color); padding: 3rem 5%; text-align: center; color: var(--text-dim); background: var(--bg-dark); }
@@ -150,15 +150,15 @@
     <section class="seo-section">
         <div class="seo-grid">
             <div class="seo-block">
-                <h2>Global Access Performance</h2>
+                <h3>Global Access Performance</h3>
                 <p>PuzzleHub provides cross-platform logic games optimized for low latency across all geographic regions. Whether playing from North America, Europe, or Asia, our HTML5 engine ensures smooth performance without downloads.</p>
             </div>
             <div class="seo-block">
-                <h2>Elite Curation</h2>
+                <h3>Elite Curation</h3>
                 <p>Our curated recommendations represent the peak of browser-based gaming. Each title is evaluated for cognitive engagement, technical stability, and mobile responsiveness, contributing to our standing as a high-authority puzzle library.</p>
             </div>
             <div class="seo-block">
-                <h2>Logic & Brain Training</h2>
+                <h3>Logic & Brain Training</h3>
                 <p>Designed for all ages, these puzzles enhance spatial reasoning and problem-solving skills. By integrating advanced 3D physics and memory-based mechanics, we offer a comprehensive suite for digital brain training.</p>
             </div>
         </div>
@@ -262,7 +262,7 @@
                         <span class="badge ${bClass}">${game.tag}</span>
                         <span class="rating">★ ${game.rating}</span>
                     </div>
-                    <h3 class="game-title">${game.title}</h3>
+                    <h2 class="game-title">${game.title}</h2>
                     <p class="game-desc">${game.desc}</p>
                 </div>
             `;
