@@ -25,6 +25,21 @@
   </url>
 
   <url>
+    <loc>https://puzzlegame.squoosh.online/soda-block-jam-guide</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://puzzlegame.squoosh.online/image/Soda-Block-Jam-ScreenShot-01.jpg</image:loc>
+      <image:title>Soda Block Jam ScreenShot 1</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://puzzlegame.squoosh.online/image/Soda-Block-Jam-ScreenShot-02.jpg</image:loc>
+      <image:title>Soda Block Jam ScreenShot 2</image:title>
+    </image:image>
+  </url>
+  
+  <url>
     <loc>https://puzzlegame.squoosh.online/hexa-2048-puzzle-block-merge-guide</loc>
     <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
