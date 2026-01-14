@@ -48,7 +48,7 @@
         .guide-content h2 { font-size: 1.5rem; margin: 1.5rem 0 1rem; color: var(--accent-primary); }
         .guide-content p { margin-bottom: 1rem; line-height: 1.8; }
 
-        .article-img { display: block; margin-left: auto; margin-right: auto; max-width: 100%; height: auto; border-radius: 12px; margin-top: 20px; margin-bottom: 20px; border: 1px solid var(--border-color); }
+        .article-img { display: block; margin: 20px auto; max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); }
         
         .video-container { position: relative; width: 100%; padding-top: 56.25%; margin: 1.5rem 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
@@ -170,7 +170,7 @@
                     <i class="fas fa-expand"></i>
                 </button>
             </div>
-            <iframe class="game-iframe" id="gameIframe" src="" data-src="https://html5.gamemonetize.com/sx9e751be41mwvzz7w9ynub5ejuhxm6d/" allowfullscreen loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe class="game-iframe" id="gameIframe" src="about:blank" data-src="https://html5.gamemonetize.com/sx9e751be41mwvzz7w9ynub5ejuhxm6d/" allowfullscreen loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
     </div>
 
@@ -187,18 +187,20 @@
         const gameModal = document.getElementById('gameModal');
         const gameIframe = document.getElementById('gameIframe');
 
-        // Open Game Modal
+        // Core fix logic: Ensure that clicking Check Now loads the correct URL.
         openGameModalBtn.addEventListener('click', () => {
             gameModalOverlay.style.display = 'flex';
-            // OPTIMIZATION: Only load iframe when requested to prevent background 404s/errors
-            if (!gameIframe.src || gameIframe.src === "about:blank") {
-                gameIframe.src = gameIframe.getAttribute('data-src');
+            const targetUrl = gameIframe.getAttribute('data-src');
+            
+            // If the current iframe is blank or not at the target address, then load it.
+            if (gameIframe.src !== targetUrl) {
+                gameIframe.src = targetUrl;
             }
         });
 
         const closeGameModal = () => {
             gameModalOverlay.style.display = 'none';
-            // OPTIMIZATION: Reset src to stop game sound/logic and free memory
+            // Maintain about:blank status to optimize performance and cookies.
             gameIframe.src = 'about:blank';
             if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
         };
