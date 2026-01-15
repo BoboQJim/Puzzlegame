@@ -48,10 +48,51 @@
         .guide-content h2 { font-size: 1.5rem; margin: 1.5rem 0 1rem; color: var(--accent-primary); }
         .guide-content p { margin-bottom: 1rem; line-height: 1.8; }
 
-        .article-img { display: block; margin: 20px auto; max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); }
+        .article-img { display: block; margin: 20px auto; max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
         
-        .video-container { position: relative; width: 100%; padding-top: 56.25%; margin: 1.5rem 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .video-container { 
+            position: relative; 
+            width: 100%; 
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            margin: 1.5rem 0; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            border: 1px solid var(--border-color); 
+            background: #000;
+            cursor: pointer;
+        }
+        .video-container iframe, 
+        .video-container .video-placeholder { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover;
+        }
+        .video-container .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 68px;
+            height: 48px;
+            background-color: rgba(33, 33, 33, 0.8);
+            border-radius: 12px;
+            z-index: 5;
+            display: grid;
+            place-items: center;
+            transition: all 0.3s ease;
+        }
+        .video-container:hover .play-button {
+            background-color: #f00;
+        }
+        .video-container .play-button::before {
+            content: '';
+            border-style: solid;
+            border-width: 10px 0 10px 16px;
+            border-color: transparent transparent transparent #fff;
+        }
 
         .tips-list { margin: 1rem 0 1.5rem 1.5rem; }
         .tips-list li { margin-bottom: 0.8rem; }
@@ -99,7 +140,7 @@
         <div class="guide-header">
             <h1>Merge Cooking Game Guide: Build Your Fast Food Empire</h1>
             <div class="guide-meta">
-                <span class="publish-date"><i class="fas fa-calendar"></i> Published: 16 January 2026</span>
+                <span class="publish-date"><i class="fas fa-calendar"></i> Published: 15 January 2026</span>
                 <span class="game-category"><i class="fas fa-utensils"></i> Category: Merge / Simulation</span>
             </div>
         </div>
@@ -130,8 +171,9 @@
             <h2>Gameplay Walkthrough: Kitchen Chaos</h2>
             <p>Watch this gameplay video to see how to handle a wave of orders efficiently. Notice how the player balances generating new resources while clearing space for high-level merges.</p>
             
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/i0Ex5kz11b8" title="Merge Cooking Game Walkthrough" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            <div class="video-container" id="video-wrapper" data-vid="i0Ex5kz11b8">
+                <img src="https://img.youtube.com/vi/i0Ex5kz11b8/sddefault.jpg" alt="Video Thumbnail" class="video-placeholder">
+                <div class="play-button"></div>
             </div>
 
             <h2>Advanced Challenge: The Mega Orders</h2>
@@ -172,11 +214,23 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 PuzzleHub Gaming - Free No-Install Puzzles</p>
+        <p>&copy; 2026 PuzzleHub Gaming Platform</p>
         <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
     </footer>
 
     <script>
+        const videoWrapper = document.getElementById('video-wrapper');
+        if (videoWrapper) {
+            videoWrapper.addEventListener('click', function() {
+                const vid = this.getAttribute('data-vid');
+                this.innerHTML = `<iframe width="100%" height="100%" 
+                    src="https://www.youtube.com/embed/${vid}?autoplay=1&rel=0" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+            });
+        }
+
         const openGameModalBtn = document.getElementById('openGameModal');
         const gameModalOverlay = document.getElementById('gameModalOverlay');
         const closeGameModalBtn = document.getElementById('closeGameModal');
@@ -184,7 +238,6 @@
         const gameModal = document.getElementById('gameModal');
         const gameIframe = document.getElementById('gameIframe');
 
-        // Smart Load Logic: Only set src when user clicks play
         openGameModalBtn.addEventListener('click', () => {
             gameModalOverlay.style.display = 'flex';
             const targetUrl = gameIframe.getAttribute('data-src');
@@ -195,7 +248,6 @@
 
         const closeGameModal = () => {
             gameModalOverlay.style.display = 'none';
-            // Unload game to save resources and stop audio
             gameIframe.src = 'about:blank';
             if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
         };
