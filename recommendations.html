@@ -10,6 +10,8 @@
     <meta name="description" content="Discover hand-picked premium puzzle games at PuzzleHub. Our global library features 3D physics puzzles, logic teasers, and strategy games available worldwide.">
     <meta name="keywords" content="recommended puzzle games, online logic puzzles, free browser games, global gaming hub, brain training, mobile friendly puzzles">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
             --bg-dark: #0a0b10;
@@ -35,11 +37,13 @@
 
         /* --- Page Hero Section --- */
         .page-header {
-            padding: 3rem 5% 2rem;
+            padding: 3rem 5% 1rem;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
             background: radial-gradient(circle at 50% 0%, rgba(123, 97, 255, 0.12) 0%, transparent 70%);
+            flex-wrap: wrap;
+            gap: 20px;
         }
         .page-title { font-size: 2.2rem; font-weight: 800; color: white; }
         .page-subtitle { color: var(--text-dim); font-size: 1.1rem; margin-top: 8px; max-width: 600px; }
@@ -58,6 +62,44 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .back-btn:hover { background: var(--accent-primary); border-color: var(--accent-primary); transform: translateX(-5px); }
+
+        /* --- Search Bar Styles (New) --- */
+        .search-container {
+            padding: 0 5%;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        .search-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 14px 20px 14px 50px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2);
+        }
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-dim);
+            pointer-events: none;
+            font-size: 1.1rem;
+        }
 
         /* --- Grid & Cards (Desktop) --- */
         .rec-container { padding: 1rem 5% 5rem; flex-grow: 1; }
@@ -97,6 +139,16 @@
         .rating { color: #ffca28; font-size: 0.95rem; font-weight: 700; }
         .game-title { font-size: 1.3rem; font-weight: 700; color: white; margin-bottom: 8px; line-height: 1.2; }
         .game-desc { font-size: 0.9rem; color: var(--text-dim); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5; }
+
+        /* No Results Styling */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem;
+            color: var(--text-dim);
+            display: none; /* Hidden by default */
+        }
+        .no-results i { font-size: 2.5rem; margin-bottom: 1rem; display: block; opacity: 0.5; }
 
         /* --- MOBILE OPTIMIZATION (2 items per row) --- */
         @media (max-width: 768px) {
@@ -149,9 +201,21 @@
         <a href="index.html" class="back-btn">Back to Home</a>
     </div>
 
+    <div class="search-container">
+        <div class="search-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="gameSearch" class="search-input" placeholder="Search game titles or descriptions...">
+        </div>
+    </div>
+
     <div class="rec-container">
         <div class="rec-grid" id="recommendationGrid">
             </div>
+        <div id="noResults" class="no-results">
+            <i class="fas fa-search-minus"></i>
+            <h3>No games found matching your search</h3>
+            <p>Try using different keywords or partial names.</p>
+        </div>
     </div>
 
     <section class="seo-section">
@@ -199,7 +263,7 @@
         },
         {
             title: "Hexa 2048 Puzzle Block Merge Guide: Strategy to Reach 4096 & Beyond",
-            desc: "Hexa 2048 Challenge: My record is 2048. ðŸ† Think you can merge higher? Experience the addictive puzzle that tests your strategy. No download neededâ€”Click to Play!",
+            desc: "Hexa 2048 Challenge: My record is 2048. ?? Think you can merge higher? Experience the addictive puzzle that tests your strategy. No download needed¡ªClick to Play!",
             tag: "2048",
             rating: "4.5",
             badge: "new",
@@ -216,7 +280,7 @@
             url: "https://puzzlegame.squoosh.online/color-rings-block-puzzle-guide"
         },
         {
-            title: "Screw Master 3D: Pin Puzzle Guide â€“ Master Every Level with These Pro Tips",
+            title: "Screw Master 3D: Pin Puzzle Guide ¨C Master Every Level with These Pro Tips",
             desc: "A challenging physics-based puzzle where you must strategically unscrew bolts to make metal plates fall.",
             tag: "Puzzle",
             rating: "4.9",
@@ -255,12 +319,29 @@
 
     /**
      * Renders game cards into the grid
+     * Supports optional search filter
      */
-    function renderGames() {
+    function renderGames(searchTerm = "") {
         const grid = document.getElementById('recommendationGrid');
+        const noResults = document.getElementById('noResults');
         grid.innerHTML = '';
+        
+        const term = searchTerm.toLowerCase().trim();
+        
+        // Filter games based on search term (matches title or description)
+        const filteredGames = REC_GAMES.filter(game => 
+            game.title.toLowerCase().includes(term) || 
+            game.desc.toLowerCase().includes(term)
+        );
 
-        REC_GAMES.forEach(game => {
+        // Show/Hide No Results Message
+        if (filteredGames.length === 0) {
+            noResults.style.display = 'block';
+        } else {
+            noResults.style.display = 'none';
+        }
+
+        filteredGames.forEach(game => {
             let bClass = 'badge-puzzle';
             if(game.badge === 'hot') bClass = 'badge-hot';
             if(game.badge === 'new') bClass = 'badge-new';
@@ -276,7 +357,7 @@
                 <div class="card-content">
                     <div class="game-meta">
                         <span class="badge ${bClass}">${game.tag}</span>
-                        <span class="rating">â˜… ${game.rating}</span>
+                        <span class="rating">¡ï ${game.rating}</span>
                     </div>
                     <h2 class="game-title">${game.title}</h2>
                     <p class="game-desc">${game.desc}</p>
@@ -286,8 +367,17 @@
         });
     }
 
-    // Initialize the render process
-    document.addEventListener('DOMContentLoaded', renderGames);
+    // Initialize the render process and setup event listeners
+    document.addEventListener('DOMContentLoaded', () => {
+        renderGames(); // Initial Render
+
+        const searchInput = document.getElementById('gameSearch');
+        
+        // Add event listener for real-time filtering
+        searchInput.addEventListener('input', (e) => {
+            renderGames(e.target.value);
+        });
+    });
 </script>
 <script type="module">
   // Import the functions you need from the SDKs you need
