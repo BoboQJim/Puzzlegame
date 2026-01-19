@@ -1,151 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <url>
-    <loc>https://puzzlegame.squoosh.online/</loc>
-    <lastmod>2026-01-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
+    <url>
+        <loc>https://puzzlegame.squoosh.online/</loc>
+        <lastmod>2026-01-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
 
-  <url>
-    <loc>https://puzzlegame.squoosh.online/recommendation</loc>
-    <lastmod>2026-01-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
+    <url>
+        <loc>https://puzzlegame.squoosh.online/all-games</loc>
+        <lastmod>2026-01-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
-  <url>
-    <loc>https://puzzlegame.squoosh.online/all-games</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
+    <url>
+        <loc>https://puzzlegame.squoosh.online/recommendation</loc>
+        <lastmod>2026-01-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
-  <url>
-    <loc>https://puzzlegame.squoosh.online/recommendation/merge-cooking-game-guide</loc>
-    <lastmod>2026-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Merge-Cooking-Game-ScreenShot-01.jpg</image:loc>
-      <image:title>Merge Cooking Game ScreenShot 1</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Merge-Cooking-Game-ScreenShot-02.jpg</image:loc>
-      <image:title>Merge Cooking Game ScreenShot 2</image:title>
-    </image:image>
-  </url>
- 
-  <url>
-    <loc>https://puzzlegame.squoosh.online/recommendation/soda-block-jam-guide</loc>
-    <lastmod>2026-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Soda-Block-Jam-ScreenShot-01.jpg</image:loc>
-      <image:title>Soda Block Jam ScreenShot 1</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Soda-Block-Jam-ScreenShot-02.jpg</image:loc>
-      <image:title>Soda Block Jam ScreenShot 2</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://puzzlegame.squoosh.online/recommendation/hexa-2048-puzzle-block-merge-guide</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Hexa-2048-Puzzle-Block-Merge-ScreenShot-01.jpg</image:loc>
-      <image:title>Hexa 2048 Puzzle Block Merge ScreenShot 1</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Hexa-2048-Puzzle-Block-Merge-ScreenShot-02.jpg</image:loc>
-      <image:title>Hexa 2048 Puzzle Block Merge ScreenShot 2</image:title>
-    </image:image>
-  </url>
+    <url>
+        <loc>https://puzzlegame.squoosh.online/recommendation/hexa-2048-puzzle-block-merge-guide</loc>
+        <lastmod>2026-01-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Hexa-2048-Puzzle-Block-Merge-ScreenShot-01.jpg</image:loc>
+            <image:title>Hexa 2048 Puzzle Block Merge Screenshot 1</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Hexa-2048-Puzzle-Block-Merge-ScreenShot-02.jpg</image:loc>
+            <image:title>Hexa 2048 Puzzle Block Merge Screenshot 2</image:title>
+        </image:image>
+    </url>
 
-  <url>
-    <loc>https://puzzlegame.squoosh.online/recommendation/color-rings-block-puzzle-guide</loc>
-    <lastmod>2026-01-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Color-Rings-Block-Puzzle-ScreenShot-01.jpg</image:loc>
-      <image:title>Color Rings Block Puzzle ScreenShot 1</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Color-Rings-Block-Puzzle-ScreenShot-02.jpg</image:loc>
-      <image:title>Color Rings Block Puzzle ScreenShot 2</image:title>
-    </image:image>
-  </url>
+    <url>
+        <loc>https://puzzlegame.squoosh.online/recommendation/color-rings-block-puzzle-guide</loc>
+        <lastmod>2026-01-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
 
-  <url>
-    <loc>https://puzzlegame.squoosh.online/recommendation/screw-master-3d-pin-puzzle-guide</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Screw-Master-3D-ScreenShot-01.jpg</image:loc>
-      <image:title>Screw Master 3D Gameplay Screenshot 1</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Screw-Master-3D-ScreenShot-02.jpg</image:loc>
-      <image:title>Screw Master 3D Gameplay Screenshot 2</image:title>
-    </image:image>
-  </url>
+    <url>
+        <loc>https://puzzlegame.squoosh.online/recommendation/screw-master-3d-pin-puzzle-guide</loc>
+        <lastmod>2026-01-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Screw-Master-3D-ScreenShot-01.jpg</image:loc>
+            <image:title>Screw Master 3D Gameplay 1</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Screw-Master-3D-ScreenShot-02.jpg</image:loc>
+            <image:title>Screw Master 3D Gameplay 2</image:title>
+        </image:image>
+    </url>
 
-  <url>
-    <loc>https://puzzlegame.squoosh.online/recommendation/hexa-sort-3d-guide</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Hexa-Sort-3D-ScreenShot-01.jpg</image:loc>
-      <image:title>Hexa Sort 3D Puzzle Logic Level 1</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Hexa-Sort-3D-ScreenShot-02.jpg</image:loc>
-      <image:title>Hexa Sort 3D Strategy Guide</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Hexa-Sort-3D-ScreenShot-03.jpg</image:loc>
-      <image:title>Hexa Sort 3D Advanced Sorting</image:title>
-    </image:image>
-  </url>
+    <url>
+        <loc>https://puzzlegame.squoosh.online/recommendation/hexa-sort-3d-guide</loc>
+        <lastmod>2026-01-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Hexa-Sort-3D-ScreenShot-01.jpg</image:loc>
+            <image:title>Hexa Sort 3D Strategy 1</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Hexa-Sort-3D-ScreenShot-02.jpg</image:loc>
+            <image:title>Hexa Sort 3D Strategy 2</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Hexa-Sort-3D-ScreenShot-03.jpg</image:loc>
+            <image:title>Hexa Sort 3D Strategy 3</image:title>
+        </image:image>
+    </url>
 
-  <url>
-    <loc>https://puzzlegame.squoosh.online/recommendation/flower-jam-guide</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Flower-Jam-ScreenShot-01.jpg</image:loc>
-      <image:title>Flower Jam Puzzle Matching Mechanics</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Flower-Jam-ScreenShot-02.jpg</image:loc>
-      <image:title>Flower Jam Level Solution</image:title>
-    </image:image>
-  </url>
+    <url>
+        <loc>https://puzzlegame.squoosh.online/recommendation/flower-jam-guide</loc>
+        <lastmod>2026-01-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Flower-Jam-ScreenShot-01.jpg</image:loc>
+            <image:title>Flower Jam Puzzle Screenshot 1</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Flower-Jam-ScreenShot-02.jpg</image:loc>
+            <image:title>Flower Jam Puzzle Screenshot 2</image:title>
+        </image:image>
+    </url>
 
-  <url>
-    <loc>https://puzzlegame.squoosh.online/recommendation/water-color-sort-game-guide</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Water-Color-Sort-Game-ScreenShot-01.jpg</image:loc>
-      <image:title>Water Color Sort Game Interface</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://puzzlegame.squoosh.online/image/Water-Color-Sort-Game-ScreenShot-02.jpg</image:loc>
-      <image:title>Water Color Sort Liquid Transfer Step</image:title>
-    </image:image>
-  </url>
+    <url>
+        <loc>https://puzzlegame.squoosh.online/recommendation/water-color-sort-game-guide</loc>
+        <lastmod>2026-01-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Water-Color-Sort-Game-ScreenShot-01.jpg</image:loc>
+            <image:title>Water Color Sort Walkthrough 1</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Water-Color-Sort-Game-ScreenShot-02.jpg</image:loc>
+            <image:title>Water Color Sort Walkthrough 2</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://puzzlegame.squoosh.online/recommendation/merge-cooking-game-guide</loc>
+        <lastmod>2026-01-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Merge-Cooking-Game-ScreenShot-01.jpg</image:loc>
+            <image:title>Merge Cooking Game Preview 1</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Merge-Cooking-Game-ScreenShot-02.jpg</image:loc>
+            <image:title>Merge Cooking Game Preview 2</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://puzzlegame.squoosh.online/recommendation/soda-block-jam-guide</loc>
+        <lastmod>2026-01-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Soda-Block-Jam-ScreenShot-01.jpg</image:loc>
+            <image:title>Soda Block Jam Logic 1</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Soda-Block-Jam-ScreenShot-02.jpg</image:loc>
+            <image:title>Soda Block Jam Logic 2</image:title>
+        </image:image>
+    </url>
 
 </urlset>
