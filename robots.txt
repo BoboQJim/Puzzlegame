@@ -5,7 +5,7 @@ User-agent: *
 
 # Allow crawling of the main content structure
 Allow: /
-Allow: /recommendations
+Allow: /recommendation
 Allow: /all-games
 Allow: /*-guide
 
