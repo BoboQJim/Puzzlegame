@@ -123,6 +123,42 @@
             .game-thumbnail { width: 100%; max-width: 200px; }
             .play-btn { width: 100%; justify-content: center; }
         }
+		
+        .similar-section { margin-top: 4rem; }
+        .section-title { font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
+        .section-title::after { content: ""; flex: 1; height: 1px; background: var(--border-color); }
+        
+        .similar-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 15px; 
+        }
+        
+        .similar-card { 
+            background: var(--bg-card); border: 1px solid var(--border-color); 
+            border-radius: 10px; overflow: hidden; text-decoration: none; 
+            transition: all 0.3s ease; display: flex; flex-direction: column;
+        }
+        .similar-card:hover { transform: translateY(-5px); border-color: var(--accent-primary); }
+        
+        .similar-thumb { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: #21262d; }
+        
+        .similar-info { padding: 10px; text-align: center; }
+        .similar-name { 
+            color: var(--text-light); font-weight: 600; font-size: 0.9rem; 
+            display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; 
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 1rem 3%; }
+            .guide-content { padding: 1.5rem; }
+            h1 { font-size: 1.6rem; }
+            .similar-grid { gap: 8px; } 
+            .similar-info { padding: 6px 4px; }
+            .similar-name { font-size: 0.75rem; } 
+        }
+
+        footer { text-align: center; padding: 4rem 0 2rem; color: var(--text-dim); border-top: 1px solid var(--border-color); margin-top: 3rem; font-size: 0.8rem; }
     </style>
 	<script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -207,6 +243,11 @@
                 </div>
             </div>
         </div>
+    <section class="similar-section">
+        <h3 class="section-title"><i class="fas fa-th-large"></i> Similar Puzzles</h3>
+        <div class="similar-grid" id="similarGrid">
+            </div>
+    </section>
     </main>
 
     <div class="game-modal-overlay" id="gameModalOverlay">
@@ -276,6 +317,42 @@
         document.addEventListener('fullscreenchange', () => {
             fullscreenGameBtn.innerHTML = document.fullscreenElement ? '<i class="fas fa-compress"></i>' : '<i class="fas fa-expand"></i>';
         });
+		
+    const similarConfig = [
+        {
+            name: "Merge Cooking Game Guide: Build Your Fast Food Empire",
+            image: "https://img.gamemonetize.com/3i6pble3gza5vq1z1w2bq473qya3m5y6/512x384.jpg",
+            url: "https://puzzlegame.squoosh.online/recommendation/merge-cooking-game-guide"
+        },
+        {
+            name: "Color Rings Block Puzzle Strategy: How to Master the Endless Challenge",
+            image: "https://img.gamemonetize.com/4gahgihw9ejlfdrdz092ia3ag7xq9qz1/512x384.jpg",
+            url: "https://puzzlegame.squoosh.online/recommendation/color-rings-block-puzzle-guide"
+        },
+        {
+            name: "Hexa 2048 Puzzle Block Merge Guide: Strategy to Reach 4096 & Beyond",
+            image: "https://img.gamemonetize.com/vrwtg1qhbkcyu7rt0eewx89dxmcdn6tv/512x384.jpg",
+            url: "https://puzzlegame.squoosh.online/recommendation/hexa-2048-puzzle-block-merge-guide"
+        }
+    ];
+
+    function renderSimilarEntries() {
+        const container = document.getElementById('similarGrid');
+        similarConfig.forEach(item => {
+            const card = document.createElement('a');
+            card.href = item.url;
+            card.className = 'similar-card';
+            card.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" class="similar-thumb">
+                <div class="similar-info">
+                    <span class="similar-name">${item.name}</span>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', renderSimilarEntries);
     </script>
 <script type="module">
   // Import the functions you need from the SDKs you need
