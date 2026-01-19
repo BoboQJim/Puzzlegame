@@ -11,7 +11,7 @@
   </url>
 
   <url>
-    <loc>https://puzzlegame.squoosh.online/recommendations</loc>
+    <loc>https://puzzlegame.squoosh.online/recommendation</loc>
     <lastmod>2026-01-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
@@ -25,7 +25,22 @@
   </url>
 
   <url>
-    <loc>https://puzzlegame.squoosh.online/soda-block-jam-guide</loc>
+    <loc>https://puzzlegame.squoosh.online/recommendation/merge-cooking-game-guide</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://puzzlegame.squoosh.online/image/Merge-Cooking-Game-ScreenShot-01.jpg</image:loc>
+      <image:title>Merge Cooking Game ScreenShot 1</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://puzzlegame.squoosh.online/image/Merge-Cooking-Game-ScreenShot-02.jpg</image:loc>
+      <image:title>Merge Cooking Game ScreenShot 2</image:title>
+    </image:image>
+  </url>
+ 
+  <url>
+    <loc>https://puzzlegame.squoosh.online/recommendation/soda-block-jam-guide</loc>
     <lastmod>2026-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -40,7 +55,7 @@
   </url>
   
   <url>
-    <loc>https://puzzlegame.squoosh.online/hexa-2048-puzzle-block-merge-guide</loc>
+    <loc>https://puzzlegame.squoosh.online/recommendation/hexa-2048-puzzle-block-merge-guide</loc>
     <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -55,7 +70,7 @@
   </url>
 
   <url>
-    <loc>https://puzzlegame.squoosh.online/color-rings-block-puzzle-guide</loc>
+    <loc>https://puzzlegame.squoosh.online/recommendation/color-rings-block-puzzle-guide</loc>
     <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -70,7 +85,7 @@
   </url>
 
   <url>
-    <loc>https://puzzlegame.squoosh.online/screw-master-3d-pin-puzzle-guide</loc>
+    <loc>https://puzzlegame.squoosh.online/recommendation/screw-master-3d-pin-puzzle-guide</loc>
     <lastmod>2026-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -85,7 +100,7 @@
   </url>
 
   <url>
-    <loc>https://puzzlegame.squoosh.online/hexa-sort-3d-guide</loc>
+    <loc>https://puzzlegame.squoosh.online/recommendation/hexa-sort-3d-guide</loc>
     <lastmod>2026-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -104,7 +119,7 @@
   </url>
 
   <url>
-    <loc>https://puzzlegame.squoosh.online/flower-jam-guide</loc>
+    <loc>https://puzzlegame.squoosh.online/recommendation/flower-jam-guide</loc>
     <lastmod>2026-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -119,7 +134,7 @@
   </url>
 
   <url>
-    <loc>https://puzzlegame.squoosh.online/water-color-sort-game-guide</loc>
+    <loc>https://puzzlegame.squoosh.online/recommendation/water-color-sort-game-guide</loc>
     <lastmod>2026-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
