@@ -24,6 +24,21 @@
     </url>
 
     <url>
+        <loc>https://puzzlegame.squoosh.online/recommendation/sand-blast-guide</loc>
+        <lastmod>2026-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Sand-Blast-ScreenShot01.jpg</image:loc>
+            <image:title>Sand Blast Screenshot 1</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Sand-Blast-ScreenShot02.jpg</image:loc>
+            <image:title>Sand Blast Screenshot 2</image:title>
+        </image:image>
+    </url>
+	
+    <url>
         <loc>https://puzzlegame.squoosh.online/recommendation/hexa-2048-puzzle-block-merge-guide</loc>
         <lastmod>2026-01-19</lastmod>
         <changefreq>monthly</changefreq>
