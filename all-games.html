@@ -2479,6 +2479,33 @@
 
     // Start App
     init();
+	
+    // Enter fullscreen mode
+    function enterFullscreen() {
+        const container = document.querySelector('.modal-container');
+        if (container.requestFullscreen) {
+            container.requestFullscreen();
+        } else if (container.webkitRequestFullscreen) {
+            container.webkitRequestFullscreen();
+        } else if (container.mozRequestFullScreen) {
+            container.mozRequestFullScreen();
+        } else if (container.msRequestFullscreen) {
+            container.msRequestFullscreen();
+        }
+    }
+
+    // Exit fullscreen mode
+    function exitFullscreen() {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    }
 </script>
 
 <script type="module">
