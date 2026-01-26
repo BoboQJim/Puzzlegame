@@ -24,6 +24,21 @@
     </url>
 
     <url>
+        <loc>https://puzzlegame.squoosh.online/recommendation/traffic-jam-hop-on-guide</loc>
+        <lastmod>2026-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Traffic-Jam-Hop-On-ScreenShot-01.jpg</image:loc>
+            <image:title>Traffic Jam Hop On Screenshot 1</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlegame.squoosh.online/image/Traffic-Jam-Hop-On-ScreenShot-02.jpg</image:loc>
+            <image:title>Traffic Jam Hop On Screenshot 2</image:title>
+        </image:image>
+    </url>
+	
+    <url>
         <loc>https://puzzlegame.squoosh.online/recommendation/coin-sort-puzzle-guide</loc>
         <lastmod>2026-01-22</lastmod>
         <changefreq>monthly</changefreq>

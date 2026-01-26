@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://img.gamemonetize.com">
     <link rel="preconnect" href="https://www.google-analytics.com">
     
-    <link rel="preload" as="image" href="https://img.gamemonetize.com/imaqq34l0iw90484l470rs0cfu7pofze/512x384.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="https://img.gamemonetize.com/oqs0yddepvccu05lu6pibq21lthwt8ia/512x384.jpg" fetchpriority="high">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -364,7 +364,10 @@
             transition: 0.3s;
             font-size: 1.2rem;
         }
-
+        .close-btn:hover, #fullScreenBtn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
         .close-btn:hover, #fullScreenBtn:hover {
             color: var(--accent-primary);
             border-color: var(--accent-primary);
@@ -604,9 +607,6 @@
             <a href="https://www.youtube.com/@PuzzleGamesGuideVideo" target="_blank" title="YouTube">
                 <i class="fab fa-youtube"></i>
             </a>
-            <a href="https://www.reddit.com/r/PuzzleGamesChallenge/" target="_blank" title="Reddit">
-                <i class="fab fa-reddit-alien"></i>
-            </a>
         </div>
 
         <p>&copy; 2026 PuzzleHub Gaming Platform</p>
@@ -696,10 +696,11 @@
     
     // Configurable Featured Games Data
     const FEATURED_DATA = [
+        { title: "Traffic Jam Hop On Strategy Guide: Master Parking Logic", thumb: "https://img.gamemonetize.com/oqs0yddepvccu05lu6pibq21lthwt8ia/512x384.jpg", url: "https://puzzlegame.squoosh.online/recommendation/traffic-jam-hop-on-guide" },
         { title: "Coin Sort Puzzle Strategy: Master the 1-to-15 Infinite Loop", thumb: "https://img.gamemonetize.com/imaqq34l0iw90484l470rs0cfu7pofze/512x384.jpg", url: "https://puzzlegame.squoosh.online/recommendation/coin-sort-puzzle-guide" },
         { title: "Sand Blast Strategy Guide: The Ultimate Sand Tetris Experience", thumb: "https://img.gamemonetize.com/ehpcosrryb6e0q9lbqfbp84npyj3eiup/512x384.jpg", url: "https://puzzlegame.squoosh.online/recommendation/sand-blast-guide" },
         { title: "Merge Cooking Game Guide: Build Your Fast Food Empire", thumb: "https://img.gamemonetize.com/3i6pble3gza5vq1z1w2bq473qya3m5y6/512x384.jpg", url: "https://puzzlegame.squoosh.online/recommendation/merge-cooking-game-guide" },
-        { title: "Soda Block Jam Challenge:Non-Stop! How Far Can You Go?", thumb: "https://img.gamemonetize.com/sx9e751be41mwvzz7w9ynub5ejuhxm6d/512x384.jpg", url: "https://puzzlegame.squoosh.online/recommendation/soda-block-jam-guide" },
+
     ];
 
     function init() {
