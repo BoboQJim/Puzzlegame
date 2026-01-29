@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-01-27</lastmod>
+        <lastmod>2026-01-29</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,11 +18,34 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-01-27</lastmod>
+        <lastmod>2026-01-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/color-yarn-sort-guide</loc>
+        <lastmod>2026-01-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Yarn-Sort-ScreenShot-01.jpg</image:loc>
+            <image:title>Color Yarn Sort basic gameplay and mechanics</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Yarn-Sort-ScreenShot-02.jpg</image:loc>
+            <image:title>Using the specific color collection tool in Color Yarn Sort</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Yarn-Sort-ScreenShot-03.jpg</image:loc>
+            <image:title>Using the box extractor tool to clear space</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Yarn-Sort-ScreenShot-GIF-04.gif</image:loc>
+            <image:title>Shuffling the yarn board to create new matches</image:title>
+        </image:image>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/traffic-jam-hop-on-guide</loc>
         <lastmod>2026-01-27</lastmod>
