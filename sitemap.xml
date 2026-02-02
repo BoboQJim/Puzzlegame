@@ -4,25 +4,44 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-01-29</lastmod>
+        <lastmod>2026-02-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-01-27</lastmod>
+        <lastmod>2026-02-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-01-29</lastmod>
+        <lastmod>2026-02-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/tetris-hint-guide</loc>
+        <lastmod>2026-02-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Tetris-Hint-ScreenShot_01.jpg</image:loc>
+            <image:title>Tetris Hint basic gameplay showing the rotation mechanic</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Tetris-Hint-ScreenShot_02.jpg</image:loc>
+            <image:title>Aligning blocks using rotation in Tetris Hint</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Tetris-Hint-ScreenShot_03.jpg</image:loc>
+            <image:title>High level gameplay in Tetris Hint</image:title>
+        </image:image>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/color-yarn-sort-guide</loc>
         <lastmod>2026-01-29</lastmod>
