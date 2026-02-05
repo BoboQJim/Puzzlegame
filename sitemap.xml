@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-02-04</lastmod>
+        <lastmod>2026-02-05</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,11 +18,26 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-02-04</lastmod>
+        <lastmod>2026-02-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/block-puzzle-2048-game-guide</loc>
+        <lastmod>2026-02-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Block-Puzzle-2048-Game-ScreenShot-01.jpg</image:loc>
+            <image:title>Block Puzzle 2048 Game basic gameplay showing stacking and merging numbers</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Block-Puzzle-2048-Game-ScreenShot-02.jpg</image:loc>
+            <image:title>Using the Hammer tool to clear obstacles in Block Puzzle 2048</image:title>
+        </image:image>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/mart-puzzle-flower-match-guide</loc>
         <lastmod>2026-02-04</lastmod>
