@@ -1,28 +1,58 @@
-# Robots.txt for PuzzleGame Platform
-# Optimized for Google, Bing, and major international crawlers
+# Robots.txt for PuzzleChallengeHub.com
+# Optimized for Global SEO, GEO, and AI Search Engines
 
 User-agent: *
-
 # Allow crawling of the main content structure
 Allow: /
-Allow: /recommendation
-Allow: /all-games
-Allow: /*-guide
+Allow: /index.html
+Allow: /recommendation/
+Allow: /all-games.html
+Allow: /assets/js/*.js
+Allow: /assets/css/*.css
 
-# Allow bots to access CSS, JS, and Images for proper rendering
-# Crucial for SEO on modern JavaScript frameworks
-Allow: /assets/
-Allow: /css/
-Allow: /js/
-Allow: /images/
+# Block unnecessary system files or low-priority pages
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /admin/
+Disallow: /config/
+Disallow: /search?*
+Disallow: /*?s=*
+Disallow: /*?ref=*
 
-# Disallow internal search results and dynamic parameters
-# This prevents duplicate content issues and preserves crawl budget
-Disallow: /*?q=
-Disallow: /*?s=
-Disallow: /*?sort=
-Disallow: /search/
-Disallow: /api/
+#AI-optimized search (GEO: Generative Engine Optimization)
+# Allow AI bots to crawl content so that it can be cited in AI search results.
+
+User-agent: GPTBot
+Allow: /
+Allow: /recommendation/
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# Special configuration for mainstream search engines
+
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
 
 # Sitemap Location
 Sitemap: https://puzzlechallengehub.com/sitemap.xml
