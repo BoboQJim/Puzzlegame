@@ -4,25 +4,48 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-02-06</lastmod>
+        <lastmod>2026-02-08</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-02-02</lastmod>
+        <lastmod>2026-02-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-02-06</lastmod>
+        <lastmod>2026-02-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/mahjong-puzzle-game-guide</loc>
+        <lastmod>2026-02-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Puzzle-Game-ScreenShot-01.jpg</image:loc>
+            <image:title>Mahjong Puzzle Game basic gameplay showing matching identical tiles</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Puzzle-Game-ScreenShot-02.jpg</image:loc>
+            <image:title>Using the Shuffle power-up to rearrange tiles</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Puzzle-Game-ScreenShot-03.jpg</image:loc>
+            <image:title>Using the Hint power-up to find matching pairs</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Puzzle-Game-ScreenShot-04.jpg</image:loc>
+            <image:title>Challenging level in Mahjong Puzzle Game with complex tile structures</image:title>
+        </image:image>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/arrows-escape-guide</loc>
         <lastmod>2026-02-06</lastmod>
