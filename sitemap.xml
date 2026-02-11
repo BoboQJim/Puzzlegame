@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-02-08</lastmod>
+        <lastmod>2026-02-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,11 +18,34 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-02-08</lastmod>
+        <lastmod>2026-02-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/color-wood-animal-jam-guide</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Wood-Animal-Jam-ScreenShot-01.jpg</image:loc>
+            <image:title>Color Wood Animal Jam basic gameplay showing color matching edges</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Wood-Animal-Jam-ScreenShot-02.jpg</image:loc>
+            <image:title>Using the Hammer power-up to remove a block</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Wood-Animal-Jam-ScreenShot-03.jpg</image:loc>
+            <image:title>Using the Diamond power-up to clear all blocks of one color" class</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Wood-Animal-Jam-ScreenShot-04.jpg</image:loc>
+            <image:title>Challenging level layout in Color Wood Animal Jam</image:title>
+        </image:image>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/mahjong-puzzle-game-guide</loc>
         <lastmod>2026-02-08</lastmod>
