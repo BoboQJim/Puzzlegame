@@ -4,25 +4,48 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-02-14</lastmod>
+        <lastmod>2026-02-17</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-02-08</lastmod>
+        <lastmod>2026-02-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-02-14</lastmod>
+        <lastmod>2026-02-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/water-pour-jam-guide</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Water-Pour-Jam-ScreenShot-01.jpg</image:loc>
+            <image:title>Water Pour Jam gameplay showing target cup identification</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Water-Pour-Jam-ScreenShot-02.jpg</image:loc>
+            <image:title>Selecting source cups with multiple color layers</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Water-Pour-Jam-ScreenShot-03.jpg</image:loc>
+            <image:title>Pour the corresponding color into the target cup</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Water-Pour-Jam-ScreenShot-04.jpg</image:loc>
+            <image:title>Challenging level in Water Pour Jam with full holding slots</image:title>
+        </image:image>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/cube-arena-2048-merge-numbers-guide</loc>
         <lastmod>2026-02-14</lastmod>
