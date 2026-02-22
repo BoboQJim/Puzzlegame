@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-02-19</lastmod>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,11 +18,30 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-02-19</lastmod>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/mahjong-sort-puzzle-guide</loc>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Sort-Puzzle-ScreenShot-01.jpg</image:loc>
+            <image:title>Mahjong Sort Puzzle basic gameplay showing tile dealing and merging</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Sort-Puzzle-ScreenShot-02.jpg</image:loc>
+            <image:title>Challenging board state in Mahjong Sort Puzzle with many tiles</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Sort-Puzzle-ScreenShot-03.jpg"</image:loc>
+            <image:title>Winning screen of Mahjong Sort Puzzle</image:title>
+        </image:image>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/toilet-paper-jam-guide</loc>
         <lastmod>2026-02-19</lastmod>
