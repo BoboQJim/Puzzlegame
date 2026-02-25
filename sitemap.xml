@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-02-24</lastmod>
+        <lastmod>2026-02-25</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,11 +18,26 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-02-24</lastmod>
+        <lastmod>2026-02-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/merge-cubes-2048-3D-guide</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Merge-Cubes-2048-3D-ScreenShot-01.jpg</image:loc>
+            <image:title>Merge Cubes 2048 3D aiming and shooting mechanics</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Merge-Cubes-2048-3D-ScreenShot-02.jpg</image:loc>
+            <image:title>Endless gameplay and chain reactions in Merge Cubes 2048 3D</image:title>
+        </image:image>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/mystic-blocks-match-guide</loc>
         <lastmod>2026-02-24</lastmod>
