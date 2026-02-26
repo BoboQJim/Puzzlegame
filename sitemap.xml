@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-02-25</lastmod>
+        <lastmod>2026-02-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,11 +18,42 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-02-25</lastmod>
+        <lastmod>2026-02-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/pin-away-puzzle-tap-it-out-guide</loc>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Pin-Away-Puzzle-Tap-It-Out-ScreenShot-01.jpg</image:loc>
+            <image:title>Tapping the white ball to extract the pin in Pin Away Puzzle</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Pin-Away-Puzzle-Tap-It-Out-ScreenShot-02.jpg</image:loc>
+            <image:title>Using the Hint power-up to highlight pullable pins</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Pin-Away-Puzzle-Tap-It-Out-ScreenShot-03.jpg</image:loc>
+            <image:title>Using the Bomb power-up to destroy blocked pins</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Pin-Away-Puzzle-Tap-It-Out-ScreenShot-04.jpg</image:loc>
+            <image:title>Daily check-in rewards screen</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Pin-Away-Puzzle-Tap-It-Out-ScreenShot-05.jpg</image:loc>
+            <image:title>Global leaderboard ranking screen</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Pin-Away-Puzzle-Tap-It-Out-ScreenShot-06.jpg</image:loc>
+            <image:title>In-game shop for backgrounds and wallpapers</image:title>
+        </image:image>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/merge-cubes-2048-3d-guide</loc>
         <lastmod>2026-02-25</lastmod>
