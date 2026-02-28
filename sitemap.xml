@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-02-26</lastmod>
+        <lastmod>2026-02-28</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,11 +18,38 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-02-26</lastmod>
+        <lastmod>2026-02-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/emilys-hotel-solitaire-guide</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Emilys-Hotel-Solitaire-ScreenShot-01.jpg</image:loc>
+            <image:title>Core gameplay of Emily's Hotel Solitaire showing higher and lower card matching</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Emilys-Hotel-Solitaire-ScreenShot-02.jpg</image:loc>
+            <image:title>Deploying the Wild Card to match any card on the board</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Emilys-Hotel-Solitaire-ScreenShot-03.jpg</image:loc>
+            <image:title>Using the Undo tool to reverse a move in Solitaire</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Emilys-Hotel-Solitaire-ScreenShot-04.jpg</image:loc>
+            <image:title>Unlockable pre-game boosters: Magnet, Rocket, and Shield</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Emilys-Hotel-Solitaire-ScreenShot-05.jpg</image:loc>
+            <image:title>Using earned stars to renovate and decorate Emily's hotel</image:title>
+        </image:image>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/pin-away-puzzle-tap-it-out-guide</loc>
         <lastmod>2026-02-26</lastmod>
