@@ -4,25 +4,44 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-02-28</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-02-24</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-02-28</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/food-game-grill-sort-guide</loc>
+        <lastmod>2026-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Food-Game-Grill-Sort-ScreenShot-01.jpg</image:loc>
+            <image:title>Food Game Grill Sort basic rules and matching customer orders</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Food-Game-Grill-Sort-ScreenShot-02.jpg</image:loc>
+            <image:title>Managing the temporary holding tray in Food Game Grill Sort</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Food-Game-Grill-Sort-ScreenShot-03.jpg</image:loc>
+            <image:title>Using power-ups like Clear, Refresh, and Pack in Food Game Grill Sort</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/emilys-hotel-solitaire-guide</loc>
         <lastmod>2026-02-28</lastmod>
