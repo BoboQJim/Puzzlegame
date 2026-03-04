@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-03-03</lastmod>
+        <lastmod>2026-03-04</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,11 +18,26 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-03-03</lastmod>
+        <lastmod>2026-03-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/cute-slices-ball-guide</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cute-Slices-Ball-ScreenShot-01.jpg</image:loc>
+            <image:title>Cute Slices Ball gameplay layout with 6 plates and center slices</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cute-Slices-Ball-ScreenShot-GIF.gif</image:loc>
+            <image:title>Clearing a full plate in Cute Slices Ball gameplay animation</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/hero-rescue-guide</loc>
         <lastmod>2026-03-03</lastmod>
