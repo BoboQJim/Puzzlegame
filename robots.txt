@@ -7,6 +7,8 @@ Allow: /
 Allow: /index.html
 Allow: /recommendation/
 Allow: /all-games.html
+Allow: /about-us.html
+Allow: /contact-us.html
 Allow: /assets/js/*.js
 Allow: /assets/css/*.css
 
