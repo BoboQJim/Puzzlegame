@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-03-04</lastmod>
+        <lastmod>2026-03-05</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,11 +18,30 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-03-04</lastmod>
+        <lastmod>2026-03-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/save-my-girl-guide</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Save-My-Girl-ScreenShot-GIF-01.gif</image:loc>
+            <image:title>A successful choice in Save My Girl, helping the character bypass an obstacle</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Save-My-Girl-ScreenShot-GIF-02.gif</image:loc>
+            <image:title>Chaining consecutive successful choices in Save My Girl levels</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Save-My-Girl-ScreenShot-GIF-03.gif</image:loc>
+            <image:title>Selecting the wrong tool leads to a funny failure animation in Save My Girl</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/cute-slices-ball-guide</loc>
         <lastmod>2026-03-04</lastmod>
