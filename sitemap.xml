@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-03-05</lastmod>
+        <lastmod>2026-03-06</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,11 +18,30 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-03-05</lastmod>
+        <lastmod>2026-03-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/additive-fun-2048-guide</loc>
+        <lastmod>2026-03-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Additive-Fun-2048-ScreenShot-GIF-01.gif</image:loc>
+            <image:title>Animated GIF showing the freestyle picking and dropping mechanics in Additive Fun 2048</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Additive-Fun-2048-ScreenShot-GIF-02.gif</image:loc>
+            <image:title>Opening a victory chest to receive gold coins in Additive Fun 2048</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Additive-Fun-2048-ScreenShot-GIF-03.gif</image:loc>
+            <image:title>Using the Bomb power-up to clear a horizontal row and shift gravity in Additive Fun 2048</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/save-my-girl-guide</loc>
         <lastmod>2026-03-05</lastmod>
