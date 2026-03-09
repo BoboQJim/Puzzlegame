@@ -4,25 +4,52 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-03-06</lastmod>
+        <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-03-02</lastmod>
+        <lastmod>2026-03-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-03-06</lastmod>
+        <lastmod>2026-03-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/princess-rescue-fruit-connect-guide</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Princess-Rescue-Fruit-Connect-ScreenShot-01.jpg</image:loc>
+            <image:title>The user interface of Princess Rescue Fruit Connect showing the trapped princess, the rock pile, and the bulldozer</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Princess-Rescue-Fruit-Connect-ScreenShot-GIF-01.gif</image:loc>
+            <image:title>Animated GIF showing how to correctly link two identical fruits with a clear path</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Princess-Rescue-Fruit-Connect-ScreenShot-GIF-02.gif</image:loc>
+            <image:title>Successfully surviving the timer and clearing the level in Princess Rescue Fruit Connect</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Princess-Rescue-Fruit-Connect-ScreenShot-GIF-03.gif</image:loc>
+            <image:title>Using the Time Freeze power-up to stop the bulldozer and save the princess</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Princess-Rescue-Fruit-Connect-ScreenShot-GIF-04.gif</image:loc>
+            <image:title>Deploying the Hint tool to quickly locate matching fruits during a difficult level</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/additive-fun-2048-guide</loc>
         <lastmod>2026-03-06</lastmod>
