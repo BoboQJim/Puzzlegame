@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-03-09</lastmod>
+        <lastmod>2026-03-10</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,11 +18,34 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-03-09</lastmod>
+        <lastmod>2026-03-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/gun-match-screw-guide</loc>
+        <lastmod>2026-03-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Gun-Match-Screw-ScreenShot-GIF-01.gif</image:loc>
+            <image:title>Animated GIF showing the basic gameplay of clicking colored bullets to load them into matching revolvers</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Gun-Match-Screw-ScreenShot-01.jpg</image:loc>
+            <image:title>Using the Extra Slot power-up to increase holding capacity in Gun Match Screw</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Gun-Match-Screw-ScreenShot-02.jpg/image:loc>
+            <image:title>Activating the Clear Tray power-up to empty all temporary slots</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Gun-Match-Screw-ScreenShot-03.jpg</image:loc>
+            <image:title>Using the Hammer power-up to smash an annoying metal plate blocking the puzzle</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/princess-rescue-fruit-connect-guide</loc>
         <lastmod>2026-03-09</lastmod>
