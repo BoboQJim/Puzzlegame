@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-03-10</lastmod>
+        <lastmod>2026-03-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,11 +18,38 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-03-10</lastmod>
+        <lastmod>2026-03-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/candy-shuffle-guide</loc>
+        <lastmod>2026-03-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Candy-Shuffle-ScreenShot-GIF-01.gif</image:loc>
+            <image:title>Basic swiping mechanics and matching candies in Candy Shuffle</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Candy-Shuffle-ScreenShot-GIF-02.gif</image:loc>
+            <image:title>Using the +5 Moves booster to save a failing level in Candy Shuffle</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Candy-Shuffle-ScreenShot-GIF-03.gif</image:loc>
+            <image:title>Deploying the Hammer booster to crush a specific candy</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Candy-Shuffle-ScreenShot-GIF-04.gif</image:loc>
+            <image:title>Using the Bomb booster to clear a large 3x3 area of candies</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Candy-Shuffle-ScreenShot-GIF-05.gif</image:loc>
+            <image:title>Utilizing the Free Move swap to manipulate the board without losing a turn</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/gun-match-screw-guide</loc>
         <lastmod>2026-03-10</lastmod>
@@ -37,7 +64,7 @@
             <image:title>Using the Extra Slot power-up to increase holding capacity in Gun Match Screw</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://puzzlechallengehub.com/image/Gun-Match-Screw-ScreenShot-02.jpg/image:loc>
+            <image:loc>https://puzzlechallengehub.com/image/Gun-Match-Screw-ScreenShot-02.jpg</image:loc>
             <image:title>Activating the Clear Tray power-up to empty all temporary slots</image:title>
         </image:image>
         <image:image>
