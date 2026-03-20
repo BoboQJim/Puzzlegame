@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <meta name="geo.region" content="US" />
+    <meta name="geo.placename" content="Global" />
+
+    <link rel="icon" href="https://puzzlechallengehub.com/favicon.ico">
+    <link rel="canonical" href="https://puzzlechallengehub.com/collection.html">
+    <title>Game Collections | Play Hexa, Sort, Merge & Screw Puzzles - PuzzleHub</title>
+    <meta name="description" content="Explore our curated puzzle game collections. Dive into specialized zones including Hexa, Sort, Screw, Merge, Match-3, 2048, Mahjong, and Solitaire for instant brain training.">
+    <meta name="keywords" content="Puzzle game collections, Hexa puzzles, Sort games, Screw pin puzzles, Merge games, Block jam, Mahjong, 2048 strategy, Tetris unblocked, Solitaire, Free brain games">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://puzzlechallengehub.com/collection.html">
+    <meta property="og:title" content="Game Collections | Premium Puzzle Zones">
+    <meta property="og:description" content="Browse through 11 premium puzzle game categories. From logic and strategy to match-3 and classic solitaire, find your favorite game zone instantly.">
+    <meta property="og:image" content="https://puzzlechallengehub.com/image/Collection-Hero.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PuzzleHub Game Collections">
+    <meta name="twitter:description" content="Explore top-tier puzzle categories: Hexa, Sort, Merge, 2048, and more. Play instantly!">
+
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "PuzzleHub Game Collections",
+      "description": "A curated directory of puzzle game categories including Hexa, Sort, Screw, Merge, Jam, Block, Mahjong, Match, 2048, Tetris, and Solitaire.",
+      "url": "https://puzzlechallengehub.com/collection.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "PuzzleHub",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://puzzlechallengehub.com/favicon.ico"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --bg-card: #161b22;
+            --accent-primary: #7b61ff;
+            --accent-hover: #917cff;
+            --text-light: #f0f6fc;
+            --text-dim: #8b949e;
+            --border-color: #30363d;
+            --glass: rgba(10, 11, 16, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--accent-primary);
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 15px rgba(123, 97, 255, 0.4);
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-light);
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: #0d1117;
+            border: 1px solid var(--border-color);
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2);
+        }
+
+        /* Hero Area */
+        .hero {
+            padding: 3rem 5% 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(123, 97, 255, 0.1) 0%, rgba(10, 11, 16, 0) 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            background: linear-gradient(to right, #fff, var(--accent-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Collections Grid System */
+        .collections-section {
+            padding: 2rem 5% 4rem;
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            overflow: hidden;
+        }
+
+        .collection-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+            border-color: var(--accent-primary);
+        }
+
+        .collection-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            background: rgba(123, 97, 255, 0.1);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            margin-bottom: 1.5rem;
+            transition: background 0.3s, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .collection-card:hover .collection-icon-wrapper {
+            background: var(--accent-primary);
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .collection-icon {
+            font-size: 2rem;
+            color: var(--accent-primary);
+            transition: color 0.3s;
+        }
+
+        .collection-card:hover .collection-icon {
+            color: white;
+        }
+
+        .collection-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .collection-desc {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* SEO Section optimized for Collections */
+        .seo-content {
+            padding: 4rem 5%;
+            background: #0d1117;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .seo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .seo-container h2 {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .seo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .seo-block h3 {
+            font-size: 1.1rem;
+            color: var(--accent-primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .seo-block p {
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 5%;
+            text-align: center;
+            color: var(--text-dim);
+        }
+        
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-dim);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header { 
+                flex-direction: column; 
+                gap: 12px; 
+                padding: 12px 3%; 
+            }
+            .search-wrapper { 
+                width: 100%; 
+            }
+            .hero h1 { 
+                font-size: 1.8rem; 
+            }
+            .collections-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+            .collection-card {
+                padding: 1.5rem 1rem;
+            }
+            .collection-icon-wrapper {
+                width: 50px;
+                height: 50px;
+            }
+            .collection-icon {
+                font-size: 1.5rem;
+            }
+            .collection-title {
+                font-size: 1.1rem;
+            }
+            .seo-content {
+                padding: 2.5rem 5%;
+            }
+        }
+    </style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "v7w38tv951");
+</script>
+
+</head>
+
+<body>
+
+<header>
+    <a href="/" class="brand">
+        <div class="logo-icon">P</div>
+        <span class="brand-name">PuzzleHub</span>
+    </a>
+    <div class="search-wrapper">
+        <input type="text" id="collectionSearch" class="search-input" placeholder="Search categories (e.g., Hexa, Merge)...">
+    </div>
+</header>
+
+<main>
+    <div class="hero">
+        <h1>Puzzle Game Collections</h1>
+        <p>Dive into our hand-picked puzzle categories. Find exactly what challenges your brain, from logic sorting to classic solitaire.</p>
+    </div>
+    <section class="collections-section">
+        <div class="collections-grid" id="collectionsGrid">
+            
+            <a href="/collection/hexa.html" class="collection-card" aria-label="Hexa Games Collection">
+                <div class="collection-icon-wrapper"><i class="fas fa-cubes collection-icon"></i></div>
+                <h3 class="collection-title">Hexa</h3>
+                <p class="collection-desc">Master geometric challenges by fitting hexagonal blocks perfectly to solve dynamic puzzles.</p>
+            </a>
+
+            <a href="/collection/sort.html" class="collection-card" aria-label="Sort Games Collection">
+                <div class="collection-icon-wrapper"><i class="fas fa-layer-group collection-icon"></i></div>
+                <h3 class="collection-title">Sort</h3>
+                <p class="collection-desc">Organize colors, stack liquids, and match items to restore perfect logical order.</p>
+            </a>
+
+            <a href="/collection/screw.html" class="collection-card" aria-label="Screw Games Collection">
+                <div class="collection-icon-wrapper"><i class="fas fa-screwdriver-wrench collection-icon"></i></div>
+                <h3 class="collection-title">Screw</h3>
+                <p class="collection-desc">Unscrew pins and dismantle intricate wooden and metal mechanical boards strategically.</p>
+            </a>
+
+            <a href="/collection/merge.html" class="collection-card" aria-label="Merge Games Collection">
+                <div class="collection-icon-wrapper"><i class="fas fa-object-group collection-icon"></i></div>
+                <h3 class="collection-title">Merge</h3>
+                <p class="collection-desc">Combine identical items to evolve them, multiply your score, and clear the massive board.</p>
+            </a>
+
+            <a href="/collection/jam.html" class="collection-card" aria-label="Jam Games Collection">
+                <div class="collection-icon-wrapper"><i class="fas fa-boxes-stacked collection-icon"></i></div>
+                <h3 class="collection-title">Jam</h3>
+                <p class="collection-desc">Clear the gridlock! Slide buses, cars, or blocks out of tight traffic jam puzzles.</p>
+            </a>
+
+            <a href="/collection/block.html" class="collection-card" aria-label="Block Games Collection">
+                <div class="collection-icon-wrapper"><i class="fas fa-shapes collection-icon"></i></div>
+                <h3 class="collection-title">Block</h3>
+                <p class="collection-desc">Classic and modern block puzzles. Drag, drop, and fit shapes to keep the board clean.</p>
+            </a>
+
+            <a href="/collection/mahjong.html" class="collection-card" aria-label="Mahjong Games Collection">
+                <div class="collection-icon-wrapper"><i class="fas fa-chess-board collection-icon"></i></div>
+                <h3 class="collection-title">Mahjong</h3>
+                <p class="collection-desc">Match elegant tiles and clear layered boards in these relaxing traditional puzzle games.</p>
+            </a>
+
+            <a href="/collection/match.html" class="collection-card" aria-label="Match Games Collection">
+                <div class="collection-icon-wrapper"><i class="fas fa-puzzle-piece collection-icon"></i></div>
+                <h3 class="collection-title">Match</h3>
+                <p class="collection-desc">Addictive Match-3 wonders. Swap gems, candies, and jewels to trigger massive combos.</p>
+            </a>
+
+            <a href="/collection/2048.html" class="collection-card" aria-label="2048 Games Collection">
+                <div class="collection-icon-wrapper"><i class="fas fa-th collection-icon"></i></div>
+                <h3 class="collection-title">2048</h3>
+                <p class="collection-desc">Slide and merge numbered tiles in strategic math puzzles to reach the ultimate 2048.</p>
+            </a>
+
+            <a href="/collection/tetris.html" class="collection-card" aria-label="Tetris Games Collection">
+                <div class="collection-icon-wrapper"><i class="fas fa-table-cells-large collection-icon"></i></div>
+                <h3 class="collection-title">Tetris</h3>
+                <p class="collection-desc">Drop, rotate, and clear lines in fast-paced arcade puzzles inspired by the classic hit.</p>
+            </a>
+
+            <a href="/collection/solitaire.html" class="collection-card" aria-label="Solitaire Games Collection">
+                <div class="collection-icon-wrapper"><i class="fas fa-heart collection-icon"></i></div>
+                <h3 class="collection-title">Solitaire</h3>
+                <p class="collection-desc">Enjoy timeless card puzzles, including Spider, FreeCell, and classic Klondike variations.</p>
+            </a>
+
+        </div>
+    </section>
+</main>
+
+<section class="seo-content">
+    <div class="seo-container">
+        <h2>Explore the Ultimate Directory of Brain Teasers & Logic Collections</h2>
+        <p>Welcome to the <strong>PuzzleHub Game Collections</strong> directory. We have meticulously organized our vast library of HTML5 web games into 11 distinct categories to help you find your perfect challenge. Whether you're commuting, taking a break, or exercising your cognitive skills, our collections require <strong>zero downloads, no installations, and are 100% free to play</strong> instantly on any device globally.</p>
+
+        <div class="seo-grid">
+            <div class="seo-block">
+                <h3>🧠 Dive Deep into Sub-Genres</h3>
+                <p>Our platform doesn't just offer generic puzzles. We categorize games by their core mechanics. From the geometric planning required in our <strong>Hexa Puzzles</strong>, to the fluid logic needed for <strong>Water Sort</strong>, and the spatial reasoning tested in <strong>Screw & Pin Games</strong>—there is a specialized zone tailored to every specific type of puzzle enthusiast.</p>
+            </div>
+
+            <div class="seo-block">
+                <h3>🚀 Instant Play, Global Accessibility</h3>
+                <p>Designed with a lightweight architecture, PuzzleHub ensures fast loading times regardless of your geographic location. Whether you're accessing our <strong>Merge Games</strong> from North America, Europe, or Asia, our GEO-optimized servers deliver an uninterrupted, seamless gaming experience directly in your browser.</p>
+            </div>
+
+            <div class="seo-block">
+                <h3>🏆 Classic & Modern Mashups</h3>
+                <p>We blend the old with the new. Relive the nostalgia with our <strong>Tetris</strong> and <strong>Solitaire</strong> collections, or explore modern viral hits in the <strong>Block Jam</strong> and <strong>2048 Number Strategy</strong> zones. Our directory is continuously updated with the latest trends in the casual gaming industry.</p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px dashed var(--border-color); font-style: italic; text-align: center;">
+            <p>Elevate your mental agility today. Browse our categories above, click on your favorite theme, and start playing the best online logic games available on PuzzleHub.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-socials">
+        <a href="https://www.facebook.com/puzzlehubgames" target="_blank" rel="noopener noreferrer" title="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.youtube.com/@PuzzleGamesGuideVideo" target="_blank" rel="noopener noreferrer" title="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+
+    <p>&copy; 2026 PuzzleHub Gaming Platform</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">
+        <a href="/privacy-policy.html" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a> | 
+        <a href="/terms-of-service.html" style="color: var(--text-dim); text-decoration: none;">Terms of Service</a>
+        | 
+        <a href="/about-us.html" style="color: var(--text-dim); text-decoration: none;">About Us</a> | 
+        <a href="/contact-us.html" style="color: var(--text-dim); text-decoration: none;">Contact Us</a>
+    </p>
+</footer>
+
+<script>
+    // Simple script to handle live filtering of collections if needed
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('collectionSearch');
+        const cards = document.querySelectorAll('.collection-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            
+            cards.forEach(card => {
+                const title = card.querySelector('.collection-title').textContent.toLowerCase();
+                const desc = card.querySelector('.collection-desc').textContent.toLowerCase();
+                
+                if (title.includes(query) || desc.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAmeasLSfP2N6aDTaHv2g83HXA9fMPVZFE",
+    authDomain: "puzzlechallengehub.firebaseapp.com",
+    projectId: "puzzlechallengehub",
+    storageBucket: "puzzlechallengehub.firebasestorage.app",
+    messagingSenderId: "112608986588",
+    appId: "1:112608986588:web:acc32a06b94fd65f46bb19",
+    measurementId: "G-SX634LMH5N"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>

@@ -3,18 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <meta name="geo.region" content="US" />
+    <meta name="geo.placename" content="Global" />
+
     <link rel="icon" href="https://puzzlechallengehub.com/favicon.ico">
     <link rel="canonical" href="https://puzzlechallengehub.com/">
-    <title>PuzzleHub | Premium Brain Games</title>
-    <meta name="description" content="Discover the best free, no-install online puzzle games. Squoosh offers a curated collection of brain-teasing casual games for instant fun and logic.">
-    <meta name="keywords" content="Free online puzzle games, No-install brain games, Best puzzle game recommendations, Instant game">
+    <title>PuzzleHub | Premium Brain Games & Puzzle Collections</title>
+    <meta name="description" content="Discover the best free, no-install online puzzle games. PuzzleHub offers curated collections like Hexa, Sort, Merge, and Screw puzzles for instant brain-teasing fun.">
+    <meta name="keywords" content="Free online puzzle games, No-install brain games, Hexa puzzles, Sort games, Screw puzzles, Merge games, Best puzzle game recommendations, Instant game">
     
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://puzzlechallengehub.com/">
+    <meta property="og:title" content="PuzzleHub | Premium Brain Games">
+    <meta property="og:description" content="Discover the best free, no-install online puzzle games. Play curated collections of Hexa, Sort, Screw, and Merge logic games instantly.">
+    <meta property="og:image" content="https://puzzlechallengehub.com/image/Puzzle-Hub.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PuzzleHub | Premium Brain Games">
+    <meta name="twitter:description" content="Discover the best free, no-install online puzzle games. Play instantly with no downloads required.">
+
     <link rel="preconnect" href="https://img.gamemonetize.com">
     <link rel="preconnect" href="https://www.google-analytics.com">
     
     <link rel="preload" as="image" href="https://puzzlechallengehub.com/image/Touch-Candy-512x384.jpg" fetchpriority="high">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "PuzzleHub",
+      "url": "https://puzzlechallengehub.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://puzzlechallengehub.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 
     <style>
         :root {
@@ -102,7 +131,7 @@
             box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2);
         }
 
-        /* Featured Section */
+        /* Featured Section & Collection Section Share Styles */
         .featured-section {
             padding: 2rem 5% 1rem;
         }
@@ -189,6 +218,80 @@
             display: flex;
             align-items: center;
             gap: 4px;
+        }
+
+        /* ============================================================ */
+        /* NEW Game Collections Section Styles                          */
+        /* ============================================================ */
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            overflow: hidden;
+        }
+
+        .collection-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.8rem 1.2rem;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            border-color: var(--accent-primary);
+        }
+
+        .collection-icon-wrapper {
+            width: 65px;
+            height: 65px;
+            background: rgba(123, 97, 255, 0.1);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            margin-bottom: 1.2rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .collection-card:hover .collection-icon-wrapper {
+            background: var(--accent-primary);
+            transform: scale(1.1);
+        }
+
+        .collection-icon {
+            font-size: 1.8rem;
+            color: var(--accent-primary);
+            transition: color 0.3s;
+        }
+
+        .collection-card:hover .collection-icon {
+            color: white;
+        }
+
+        .collection-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--text-light);
+        }
+
+        .collection-desc {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         /* All Games Section Header */
@@ -425,7 +528,7 @@
 
         /* Mobile Responsiveness */
         @media (max-width: 1024px) {
-            .featured-grid {
+            .featured-grid, .collections-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
@@ -458,7 +561,7 @@
                 height: 38px;
             }
             
-            .featured-grid {
+            .featured-grid, .collections-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -537,33 +640,77 @@
     </div>
 </header>
 
-<div class="hero">
-    <div id="heroTitle" style="display: block; font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text-light);" role="heading" aria-level="1">
-        Popular Puzzle Games
+<main>
+    <div class="hero">
+        <div id="heroTitle" style="display: block; font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text-light);" role="heading" aria-level="1">
+            Popular Puzzle Games
+        </div>
+        <p id="gameCounter">Discover and play the best brain challengers.</p>
     </div>
-    <p id="gameCounter">Discover and play the best brain challengers.</p>
-</div>
 
-<section class="featured-section">
-    <div class="featured-header">
-        <h2 class="featured-title">★Recommended Games</h2>
-        <a href="/recommendation.html" class="view-more">View More →</a>
-    </div>
-    <div id="featuredGrid" class="featured-grid">
-    </div>
-</section>
+    <section class="featured-section">
+        <div class="featured-header">
+            <h2 class="featured-title">★ Recommended Games</h2>
+            <a href="/recommendation.html" class="view-more">View More →</a>
+        </div>
+        <div id="featuredGrid" class="featured-grid">
+        </div>
+    </section>
 
-<div class="all-games-header">
-    <div class="all-games-header-container">
-        <h2 class="all-games-title">ღAll Games</h2>
-        <a href="/all-games.html" class="view-more">View More →</a>
-    </div>
-</div>
+    <section class="featured-section collections-section">
+        <div class="featured-header">
+            <h2 class="featured-title">📦 Game Collections</h2>
+            <a href="/collection.html" class="view-more" aria-label="View all game collections">View More →</a>
+        </div>
+        <div class="collections-grid">
+            
+            <a href="/collection/hexa.html" class="collection-card" aria-label="Hexa Games Collection">
+                <div class="collection-icon-wrapper">
+                    <i class="fas fa-cubes collection-icon"></i>
+                </div>
+                <h3 class="collection-title">Hexa Puzzles</h3>
+                <p class="collection-desc">Master geometric challenges by fitting hexagonal blocks perfectly to solve puzzles.</p>
+            </a>
 
-<main id="gameGrid" class="game-grid">
+            <a href="/collection/sort.html" class="collection-card" aria-label="Sort Games Collection">
+                <div class="collection-icon-wrapper">
+                    <i class="fas fa-layer-group collection-icon"></i>
+                </div>
+                <h3 class="collection-title">Sort Games</h3>
+                <p class="collection-desc">Organize colors, stack liquids, and match items to restore perfect logical order.</p>
+            </a>
+
+            <a href="/collection/screw.html" class="collection-card" aria-label="Screw Games Collection">
+                <div class="collection-icon-wrapper">
+                    <i class="fas fa-screwdriver-wrench collection-icon"></i>
+                </div>
+                <h3 class="collection-title">Screw Puzzles</h3>
+                <p class="collection-desc">Unscrew and dismantle intricate wooden and metal mechanical boards strategically.</p>
+            </a>
+
+            <a href="/collection/merge.html" class="collection-card" aria-label="Merge Games Collection">
+                <div class="collection-icon-wrapper">
+                    <i class="fas fa-object-group collection-icon"></i>
+                </div>
+                <h3 class="collection-title">Merge Games</h3>
+                <p class="collection-desc">Combine identical items to evolve them, multiply your score, and clear the board.</p>
+            </a>
+
+        </div>
+    </section>
+
+    <div class="all-games-header">
+        <div class="all-games-header-container">
+            <h2 class="all-games-title">ღ All Games</h2>
+            <a href="/all-games.html" class="view-more">View More →</a>
+        </div>
+    </div>
+
+    <div id="gameGrid" class="game-grid">
+    </div>
 </main>
 
-<div id="gameModal" class="modal">
+<div id="gameModal" class="modal" role="dialog" aria-modal="true" aria-label="Game Player">
     <div class="modal-container" style="position: relative; width: 100%; height: 100%;">
         <div class="modal-controls" style="position: absolute; top: 15px; right: 20px; display: flex; flex-direction: row; gap: 10px; z-index: 2001; align-items: center; justify-content: center;">
             <button id="fullScreenBtn" title="Toggle Fullscreen" style="background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 30px; height: 30px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; flex-shrink: 0;">
@@ -571,11 +718,11 @@
                     <path id="fsPath" d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
                 </svg>
             </button>
-            <button onclick="closeGame()" title="Close" style="background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 30px; height: 30px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: 0.3s; flex-shrink: 0;">
+            <button onclick="closeGame()" title="Close Game" style="background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 30px; height: 30px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: 0.3s; flex-shrink: 0;">
                 ✕
             </button>
         </div>
-        <iframe id="gameFrame" src="" allow="autoplay; fullscreen; keyboard"></iframe>
+        <iframe id="gameFrame" src="" allow="autoplay; fullscreen; keyboard" title="Play Game Frame"></iframe>
     </div>
 </div>
 
@@ -615,10 +762,10 @@
 
 	<footer>
         <div class="footer-socials">
-            <a href="https://www.facebook.com/puzzlehubgames" target="_blank" title="Facebook">
+            <a href="https://www.facebook.com/puzzlehubgames" target="_blank" rel="noopener noreferrer" title="Facebook">
                 <i class="fab fa-facebook"></i>
             </a>
-            <a href="https://www.youtube.com/@PuzzleGamesGuideVideo" target="_blank" title="YouTube">
+            <a href="https://www.youtube.com/@PuzzleGamesGuideVideo" target="_blank" rel="noopener noreferrer" title="YouTube">
                 <i class="fab fa-youtube"></i>
             </a>
         </div>
@@ -638,6 +785,30 @@
     const FEED_XML = `
 <rss version="2.0">
 <channel>
+<item><id>77303</id><title>Cosmo Merge</title><description>Cosmo Merge is a relaxing yet addictive space-themed merge puzzle game. Drop celestial bodies into the cosmos and merge identical ones to evolve them into larger, more powerful objects, starting from tiny Asteroids all the way up to the legendary Black Hole! Two Asteroids become a Comet. Two Comets form a Moon. Keep merging planets, gas giants, and stars to climb the cosmic ladder. How high can you score before space runs out? With hand-crafted animated visuals, blazing solar flares, a spinning Black Hole accretion disk, explosive Supernovas and satisfying physics-based gameplay, Cosmo Merge is easy to learn and impossible to put down.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/t0bwvzc20k356u8a3cj2dl5v3lzwsxup/</url><thumb>https://img.gamemonetize.com/t0bwvzc20k356u8a3cj2dl5v3lzwsxup/512x384.jpg</thumb></item>
+<item><id>77143</id><title>Bridge Rush - Draw Bridge Puzzle Game</title><description>Draw a stable road, launch the car, and reach the finish! Bridge Rush is a physics-based puzzle game where you must sketch bridges using limited ink to help your car reach the goal. Plan carefully, optimize your bridge, and earn up to 3 stars across 50 challenging levels. Features: · Draw bridges with limited ink · Realistic car physics · 50 challenging levels · Star rating system · Smooth mobile controls</description><category>Puzzle</category><url>https://html5.gamemonetize.co/p6lzu4o7qvpphso6oh0yjluih0y8oty1/</url><thumb>https://img.gamemonetize.com/p6lzu4o7qvpphso6oh0yjluih0y8oty1/512x384.jpg</thumb></item>
+<item><id>77037</id><title>Cats and Candies</title><description>Cats And Candies is a bright and exciting match-3 puzzle game. Match three or more candies in a row, create powerful combos, and complete levels while helping adorable cats collect sweet treats. The game features 60 levels divided into 3 boxes: Wooden, Stone, and Fire (20 levels each). Every new box introduces fresh goals, obstacles, bonuses, and increasing difficulty. Colorful graphics, a cozy atmosphere, and a fully Russian interface make the game perfect for relaxing and training your logic skills. Complete all the boxes from Wood to Fire and help the cats gather every candy! </description><category>Puzzle</category><url>https://html5.gamemonetize.co/zg094al2x1xw6jh6lsqsc4mcum1ng4b5/</url><thumb>https://img.gamemonetize.com/zg094al2x1xw6jh6lsqsc4mcum1ng4b5/512x384.jpg</thumb></item>
+<item><id>77243</id><title>Cat Tic Tac Toe</title><description>Cat Tic Tac Toe is a fun, casual strategy game where players compete against each other or an AI to form a line of three-horizontally, vertically, or diagonally-on a 3x3 grid. Instead of traditional Xs and Os, the game uses cute cat-themed symbols, making it engaging and visually appealing for players of all ages.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/i8def5p3twouzpx6swp5gl46w2gzy392/</url><thumb>https://img.gamemonetize.com/i8def5p3twouzpx6swp5gl46w2gzy392/512x384.jpg</thumb></item>
+<item><id>77295</id><title>Merge Blocks</title><description>Merge Blocks is an addictive puzzle game combining 2048 and match-3 mechanics. Drag blocks onto a 5x5 board, match 3 or more identical blocks to merge them into higher forms. Create chain reactions for massive combos! Features: - 8 levels of block evolution - 3 power-ups: Undo, Bomb, 2x Score - 3 themes: Light, Dark, Zen - Relaxing procedural music - Cloud save offline play How to play: 1. DRAG blocks from the bottom panel onto the board 2. MATCH 3+ identical adjacent blocks to merge 3. PLAN ahead and create chain reactions 4. SCORE based on block level and combo Perfect for fans of 2048, Threes, and match-3 games!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/1j7atg0orrnccj05jvljx0fomms2n3h7/</url><thumb>https://img.gamemonetize.com/1j7atg0orrnccj05jvljx0fomms2n3h7/512x384.jpg</thumb></item>
+<item><id>77306</id><title>Trace Craft</title><description>Test your precision and creativity in Draw Master! Look at the shape shown above and recreate it by drawing the correct lines. Start with simple shapes and gradually face more complex designs that challenge your accuracy and control. Every level pushes your drawing skills further as patterns become trickier and require careful attention. Easy to begin but increasingly challenging, Draw Master is the perfect test of focus, patience, and steady hands. Can you master every shape and prove your drawing skills? </description><category>Puzzle</category><url>https://html5.gamemonetize.co/24eqhmf9doo7446ocm2pdjemu1nda8fg/</url><thumb>https://img.gamemonetize.com/24eqhmf9doo7446ocm2pdjemu1nda8fg/512x384.jpg</thumb></item>
+<item><id>77308</id><title>Bubbles Blast</title><description>Bubbles Blast is a fast-paced neon bubble shooter set in deep space. Aim and fire colorful glowing bubbles to match 3 or more of the same color and pop them for points. Chain combos for massive scores, trigger chain reactions that send floating bubbles crashing down, and master powerful power-ups: the explosive Bomb, the row-wiping Lightning, and the color-copying Rainbow. With 40 handcrafted levels of increasing difficulty, earn up to 3 stars per stage, unlock 18 achievements, and climb the leaderboard. The grid descends - stay sharp or its game over!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/3j42xeyuddqjl13fl5x8a40pmia4jega/</url><thumb>https://img.gamemonetize.com/3j42xeyuddqjl13fl5x8a40pmia4jega/512x384.jpg</thumb></item>
+<item><id>77176</id><title>LongDog</title><description>Meet the cutest puzzle-solver around! In Long Dog, your goal is to stretch your adorable dog to fill up all the empty tiles on the board. Plan your path carefully-you cant cross over your own body, and you must cover every single spot to win! With 1,000 uniquely generated levels that gradually increase in difficulty, colorful themes, and a helpful hint system for when you get stuck, this cozy brain-teaser will keep you entertained for hours. How long can your dog grow?</description><category>Puzzle</category><url>https://html5.gamemonetize.co/ovy6c3r9pbdatfjzt60cc42slhc4m8v6/</url><thumb>https://img.gamemonetize.com/ovy6c3r9pbdatfjzt60cc42slhc4m8v6/512x384.jpg</thumb></item>
+<item><id>77259</id><title>Box Roller</title><description>Box Roller is an exciting puzzle game where you control a wooden box rolling through terrain to land precisely in the target hole. Each level requires you to calculate the direction, time your movements accurately, and avoid falling off course. The gameplay is simple yet challenging, increasingly addictive, providing a satisfying sense of achievement with each completed level.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/re4al7xbggm63ry58jpcayueocns2mic/</url><thumb>https://img.gamemonetize.com/re4al7xbggm63ry58jpcayueocns2mic/512x384.jpg</thumb></item>
+<item><id>76659</id><title>Best Sweet Candy Shop</title><description>Swapping and matching candies to progress through levels and earn rewards. Crush all the sweets! Come and join for tasty, delicious and adorable desserts! </description><category>Puzzle</category><url>https://html5.gamemonetize.co/lqqr1rja6jn7em838kx0p2x77o2pfhxh/</url><thumb>https://img.gamemonetize.com/lqqr1rja6jn7em838kx0p2x77o2pfhxh/512x384.jpg</thumb></item>
+<item><id>76918</id><title>Solitaire: Card Master</title><description>Master the classic Klondike solitaire! Move cards by alternating color and descending order, build foundations from Ace to King, and clear the board. Enjoy timed challenges, track your moves and score, and use auto-complete for quick wins. With clean design and smooth gameplay, it's the perfect casual card game-become the ultimate Card Master today!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/rahdabvw75x70d6jw48tuhxijpskfjyv/</url><thumb>https://img.gamemonetize.com/rahdabvw75x70d6jw48tuhxijpskfjyv/512x384.jpg</thumb></item>
+<item><id>77232</id><title>Funny Puzzle: Cats</title><description>Each level is a separate picture that needs to be assembled from many pieces. You will have to be patient and attentive to correctly place all the puzzle pieces on the playing field. The game offers a variety of difficulty levels, so everyone can find a suitable one for themselves. In addition, you can compete with other players on the leaderboard to find out which one of you is the best cat puzzle collector. Pleasant music and atmosphere will help you relax and enjoy the game process. The game is a great way to spend time enjoying the company of cute furry friends and solving interesting puzzles.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/k09c6bvd8te8w3tm7qz70scrwu1j2gik/</url><thumb>https://img.gamemonetize.com/k09c6bvd8te8w3tm7qz70scrwu1j2gik/512x384.jpg</thumb></item>
+<item><id>77022</id><title>Liquid Sort Deluxe</title><description>Liquid Sort Deluxe is a relaxing and addictive color sorting puzzle game where you sort colorful liquids into tubes until each tube contains only one color. Plan your moves carefully and challenge your brain with unlimited levels. Unlock an extra tube by watching a short reward ad to make the puzzle easier, or get unlimited time to complete tricky levels.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/5kfk4blc0conr72pdu9nt8561pnbp27a/</url><thumb>https://img.gamemonetize.com/5kfk4blc0conr72pdu9nt8561pnbp27a/512x384.jpg</thumb></item>
+<item><id>77252</id><title>Labubu Arrow Shooter</title><description>Labubu Arrow Shooter is a fun target-shooting game with a playful twist! Aim your arrow and try to hit as many targets as possible. Be careful not to hit the rope, or poor Labubu might fall into the pool! Score as many points as you can, beat your best results, and climb the leaderboard to prove youre the ultimate shooter.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/a8ocp2viaeju61qjxq9hfn8nxfleqv0k/</url><thumb>https://img.gamemonetize.com/a8ocp2viaeju61qjxq9hfn8nxfleqv0k/512x384.jpg</thumb></item>
+<item><id>67957</id><title>Fruit Pop Fiesta</title><description>Welcome to Fruit Pop Fiesta Bubble shooter game! Aim and shoot fruits to get the highest score. Dont let fruits reach the bottom so you dont loose. Enjoy!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/y6dbojw5m18tdimu5o3n1128ddysog24/</url><thumb>https://img.gamemonetize.com/y6dbojw5m18tdimu5o3n1128ddysog24/512x384.jpg</thumb></item>
+<item><id>70174</id><title>Hidden Word Puzzle</title><description>Hidden Word Puzzle Game Challenge your vocabulary and observation skills in this classic word search puzzle! The goal is simple: find the secret word hidden within a grid of jumbled letters. With multiple grid sizes, difficulty options, and two languages to choose from (English and Russian), this game offers endless fun for word enthusiasts of all levels. Whether you have a few minutes to spare or want to dive into a longer challenge, Hidden Word Puzzle is the perfect way to keep your mind sharp. </description><category>Puzzle</category><url>https://html5.gamemonetize.co/60ugltw0ffycu97l5f742t58a57mckpf/</url><thumb>https://img.gamemonetize.com/60ugltw0ffycu97l5f742t58a57mckpf/512x384.jpg</thumb></item>
+<item><id>68061</id><title>Underwater Blast</title><description>Underwater Blast is a colorful and addictive match3 puzzle game set in a lively underwater world. Players swap and match vibrant seashells, sparkling gems, and quirky ocean creatures to create explosive combos and clear challenging boards. With each level, new obstacles like seaweed traps, drifting bubbles, and hidden treasures keep the gameplay fresh and strategic. Powerups and special boosters help you unleash massive chain reactions, rewarding you with dazzling animations and high scores. Dive in and experience a fun, relaxing, yet highly engaging puzzle adventure beneath the waves!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/2hi4m994leltx60qqb43y9xyhd63jcl5/</url><thumb>https://img.gamemonetize.com/2hi4m994leltx60qqb43y9xyhd63jcl5/512x384.jpg</thumb></item>
+<item><id>74996</id><title>Count Master Rush</title><description>Count Masters: Stickman Games About this game Choose the best gate, pass through it, and bring stickman warriors together to clash with the opposing crowd. Become the crowd master and lead your people through the crowded city till the end of this epic race. Crash obstacles and beat everyone on your way, collect coins and upgrade your levels. Defeat the King-stickman in the final battle and take the castle! Looking for some fun and thrill? Then this 3d running game is just for you. Count Masters Rush is one of the most exciting clash games of all times! You start the battle alone but trust us: there are no chances for you to feel lonely. </description><category>Puzzle</category><url>https://html5.gamemonetize.co/41vwvtz70g8h6urd0s5c9k0gte1jhwfr/</url><thumb>https://img.gamemonetize.com/41vwvtz70g8h6urd0s5c9k0gte1jhwfr/512x384.jpg</thumb></item>
+<item><id>77212</id><title>Gem Sort Puzzle</title><description>This chill puzzle game is all about sorting gems into bags. Its simple, fun, and keeps you hooked - perfect for unwinding! Forget your worries and just enjoy sorting those shiny stones.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/jbrmpqi1d5tqzqr2qgiuqn45zt60fizf/</url><thumb>https://img.gamemonetize.com/jbrmpqi1d5tqzqr2qgiuqn45zt60fizf/512x384.jpg</thumb></item>
+<item><id>76771</id><title>Labubu Hidden Burger</title><description>Labubu Hidden Burger is a super fun and colorful online game made especially for kids who love cute characters and exciting challenges! Join adorable Labubu on a tasty adventure where burgers are hidden all around the scene. Your mission is simple: find all the hidden burgers to unlock the next level!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/02yeisitp2cqonheb3x9kzr8iyelauk1/</url><thumb>https://img.gamemonetize.com/02yeisitp2cqonheb3x9kzr8iyelauk1/512x384.jpg</thumb></item>
+<item><id>76744</id><title>Crystal Craash</title><description>Crystal Crush is an addictive gem merge puzzle! Tap groups of 3 or more matching gems to merge them into a new gem with double the value. Chain combos, plan your moves carefully and keep the board alive as long as possible. Use power-ups like Thunder, Bomb and Shuffle to escape tight situations. How high can you score? Simple to learn, hard to master - endless fun for everyone!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/mrccgcvib1l5gzqelr1dknq5upuu39tn/</url><thumb>https://img.gamemonetize.com/mrccgcvib1l5gzqelr1dknq5upuu39tn/512x384.jpg</thumb></item>
+<item><id>77186</id><title>Animal Finding</title><description>Finding Animal is a fun and entertaining observation game where you must quickly find the different animal among a series of similar characters. Each level is a visual challenge that requires focus and keen eyesight. As you progress to higher levels, the number and similarity of characters increase, making it more interesting to find the differences. The game is simple and easy to play but full of challenges, suitable for entertainment and improving observation skills.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/vzupoe16b8i5ylxushh4qccxgzc5j04s/</url><thumb>https://img.gamemonetize.com/vzupoe16b8i5ylxushh4qccxgzc5j04s/512x384.jpg</thumb></item>
+<item><id>77045</id><title>Zen Orbs: Geometric Flow</title><description>Match the rhythm of the void. Rotate the core, capture the glowing orbs, and enter a state of pure geometric flow in this minimalist zen-arcade experience.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/rloxsw12aa85yhnf5i03bpxoy19zx4sm/</url><thumb>https://img.gamemonetize.com/rloxsw12aa85yhnf5i03bpxoy19zx4sm/512x384.jpg</thumb></item>
+<item><id>77072</id><title>INCOWORD</title><description>INCOWORD is a fun and challenging word guessing game based on sounds. Read the gibberish phrase on the white card out loud to figure out the hidden word. Click the card to flip it for a helpful hint! Use your physical keyboard or the on-screen virtual keyboard to type your guesses and press Enter. Play solo from 5 to 10 letter levels, or join a multiplayer room to race against your friends in real-time!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/y4wmrpbd3v374mr8z6vtd97bwbo4kc82/</url><thumb>https://img.gamemonetize.com/y4wmrpbd3v374mr8z6vtd97bwbo4kc82/512x384.jpg</thumb></item>
 <item><id>68190</id><title>Word Connect Train Brain</title><description>Word Connect - Brain Puzzle is a fun and addictive word game where you swipe to connect letters and form hidden words. Train your brain, expand your vocabulary, and challenge hundreds of creative word puzzles. Perfect for word lovers of all ages. Play Word Connect - Brain Puzzle free online and enjoy endless hours of word search fun!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/xvyeg09h6a1hdozy2apfkfueuwrtqsyv/</url><thumb>https://img.gamemonetize.com/xvyeg09h6a1hdozy2apfkfueuwrtqsyv/512x384.jpg</thumb></item>
 <item><id>69409</id><title>Balloon Pop Addition 3D Game</title><description>This is an addition game which requires user to click on the some that has the lowest value, then increased value and so on... When user click on the correct answer, they score and when they click on wrong, they get score deduction.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/38f1ghgchix4htcolh0gygly2edwni0c/</url><thumb>https://img.gamemonetize.com/38f1ghgchix4htcolh0gygly2edwni0c/512x384.jpg</thumb></item>
 <item><id>73561</id><title>Stress Relief Mini Games</title><description>Antistress Relaxing toys Stress Relief is a calm game with stress relief games, satisfying and relaxing games, anxiety relief games, pop it games. Relax your mind and have something to do in boring moments! Have a break! With some amazing creativity, hundreds of designers took it upon themselves to make their own fun toys.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/o5g16n86iol1tfnm6xik4qhhboo19qmo/</url><thumb>https://img.gamemonetize.com/o5g16n86iol1tfnm6xik4qhhboo19qmo/512x384.jpg</thumb></item>
@@ -650,54 +821,6 @@
 <item><id>76944</id><title>Travel Mahjong Deluxe</title><description>Travel Mahjong Deluxe is a relaxing tile-matching puzzle where you match identical tiles and strategically clear the board. Find pairs of beautiful travel-themed tiles that are free on at least one side and remove them to complete each level. As you progress, new layouts and challenges will keep the game fresh and engaging. Use the Hint feature whenever you get stuck, or watch a reward video to gain unlimited time and continue your puzzle-solving adventure. </description><category>Puzzle</category><url>https://html5.gamemonetize.co/jt3p0i9x6suasf9lfdozx7zlyc9sfh4v/</url><thumb>https://img.gamemonetize.com/jt3p0i9x6suasf9lfdozx7zlyc9sfh4v/512x384.jpg</thumb></item>
 <item><id>77041</id><title>Block Blast Puzzle</title><description>Block Blast Puzzle is a fun and addictive puzzle game where you drag and drop colorful blocks onto a grid. Clear rows and columns by filling them completely to earn points. Plan your moves carefully - if theres no space left for the remaining blocks, the game is over!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/fx0o3r69oqzzat8ha5lvjmkdxjlmztxy/</url><thumb>https://img.gamemonetize.com/fx0o3r69oqzzat8ha5lvjmkdxjlmztxy/512x384.jpg</thumb></item>
 <item><id>76788</id><title>The Block Escape</title><description>Block Escape is a relaxing yet challenging 3D puzzle game where your goal is to clear all the colorful blocks from the screen. Each block has an arrow pointing in a specific direction. When you tap a block, it will fly off in that direction-but only if its path is clear! Features: Satisfying and relaxing 3D puzzle mechanics Colorful, high-contrast visual design Endless brain-teasing levels Smooth camera rotation to explore every angle</description><category>Puzzle</category><url>https://html5.gamemonetize.co/qtba3xs4tqydx8kgmnbgl7pdzgkal9t3/</url><thumb>https://img.gamemonetize.com/qtba3xs4tqydx8kgmnbgl7pdzgkal9t3/512x384.jpg</thumb></item>
-<item><id>76782</id><title>Blocks Match 3</title><description>Blocks Match 3 is a thrilling match-3 puzzle! Swap colorful red, green, and blue blocks to form lines of 3+ and clear the board. Race the 5-minute timer to hit your score goal (like 100 points), collect stars, and conquer levels. Blast obstacles with bomb boosters, special clears, and shuffles. Addictive fun for quick sessions!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/fpem3gkt3ogntohzsuwlnkynxy48gybp/</url><thumb>https://img.gamemonetize.com/fpem3gkt3ogntohzsuwlnkynxy48gybp/512x384.jpg</thumb></item>
-<item><id>76703</id><title>Popverse: Bubble Shooter</title><description>Popverse is a bubble shooter game with 20 unique special bubbles and chain reactions. Aim and shoot to match colors. Special bubbles like Bombs, Rainbows, and Lightning create explosive combos. Encounter obstacles like Frozen, Stone, and Portal bubbles. Features include 500+ levels, random puzzles, a props system, daily rewards, and 3-star ratings.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/t683vx4x9lhpy0od7ydrxd093wtcar2p/</url><thumb>https://img.gamemonetize.com/t683vx4x9lhpy0od7ydrxd093wtcar2p/512x384.jpg</thumb></item>
-<item><id>76904</id><title>SlovoLom</title><description>SlovoLom - is an exciting word puzzle , in which you need to make new words from one big word. What awaits you: - training your attention, logic, and vocabulary - Dozens of levels with gradually increasing difficulty - Convenient and intuitive controls - Relaxed gameplay without a timer The game is perfect for both short gaming sessions and long playthroughs.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/zlwhydhcl6xa7w22f0nzascjyq16wgx6/</url><thumb>https://img.gamemonetize.com/zlwhydhcl6xa7w22f0nzascjyq16wgx6/512x384.jpg</thumb></item>
-<item><id>76476</id><title>Find the Missing Number</title><description>Find the Missing Number is a fun and educational math puzzle game. Look at the number sequence and identify the missing number. Choose the correct answer from the given options before time runs out. The game becomes more challenging as the levels progress. Perfect for kids and anyone who wants to improve their number skills while having fun.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/0538lc3y3dy0v6o99zlrvrandv9b7dlu/</url><thumb>https://img.gamemonetize.com/0538lc3y3dy0v6o99zlrvrandv9b7dlu/512x384.jpg</thumb></item>
-<item><id>75065</id><title>Drag n Drop: Word Match</title><description>Word Match - Objects Edition is a lightweight, mobile-responsive HTML5 puzzle game designed specifically for children to learn and play. The game uses an intuitive drag-and-drop mechanic where players match English words to their corresponding emojis.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/qj7yeiz9goiesn7f3pyikb737ashul2b/</url><thumb>https://img.gamemonetize.com/qj7yeiz9goiesn7f3pyikb737ashul2b/512x384.jpg</thumb></item>
-<item><id>77017</id><title>Classic Solitaire Master</title><description>The addictive game you've been playing on your computer for years now goes wherever you do. Whether you know it as Patience, Klondike, or just Solitaire, this popular game is one of the best games around.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/zp0dlpa30e384e5eq9jlue2tilbcueo2/</url><thumb>https://img.gamemonetize.com/zp0dlpa30e384e5eq9jlue2tilbcueo2/512x384.jpg</thumb></item>
-<item><id>74534</id><title>Water Sort Brain Puzzle</title><description>Pour, sort, and relax! Water Sort Puzzle is a casual, fun, and relaxing sorting game that brings you a splash of colorful excitement. If youre looking for a water puzzle to unwind with, this is the perfect pick. Sorting water might seem simple, but this addictive water sorting game will challenge your brain most delightfully. No timers, no pressure - just pure liquid sorting fun at your own pace. Dive into a world of vibrant liquids and calming soundscapes. </description><category>Puzzle</category><url>https://html5.gamemonetize.co/m5aiar530gxx7dbruzqwc4p0tjtub8w4/</url><thumb>https://img.gamemonetize.com/m5aiar530gxx7dbruzqwc4p0tjtub8w4/512x384.jpg</thumb></item>
-<item><id>74773</id><title>People Drop Away Game</title><description>Block Puzzle, Slide Block, and any other hyper-casual game. Drag and drop the block diagonally and match blocks with people to drop into the hole. As you advance through the levels, youll encounter new types of blocks and obstacles that will test your problem-solving skills. Embrace the challenge and see how quickly you can clear the board! When youre stuck, use the hints!!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/a7v3jy4tikz3x54i7wuzhp38yjsigmcp/</url><thumb>https://img.gamemonetize.com/a7v3jy4tikz3x54i7wuzhp38yjsigmcp/512x384.jpg</thumb></item>
-<item><id>74775</id><title>One Line Dot Game</title><description>Can you link all the dots with only one line and without lifting your finger off the screen? ONE LINE ONLY, is a super fun game, easy to play but the increasing difficulty makes it hard to master. Try to connect all the dots for every level, from simple forms to complex draw. This game will challenge your mind and train your brain every day.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/emub8e4grkqy94jp9hn517ifng5aupcl/</url><thumb>https://img.gamemonetize.com/emub8e4grkqy94jp9hn517ifng5aupcl/512x384.jpg</thumb></item>
-<item><id>75387</id><title>Tile Match Puzzle Game</title><description>Are you looking for a new match-3 game? Do you want to find relaxation and joy in it? Prepare to embark on the enchanting world of Tile Explorer, the relaxing match puzzle game that transforms the act of tile matching into an art form. With each level, Tile Explorer invites you to immerse yourself in a puzzle-solving fun, where each tile holds the potential for both challenge and triumph!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/weqtcvcjfb2dv283oqftbxvhmybd9rye/</url><thumb>https://img.gamemonetize.com/weqtcvcjfb2dv283oqftbxvhmybd9rye/512x384.jpg</thumb></item>
-<item><id>76666</id><title>Love Balls Game</title><description>Its time to use your brain and find a way to bump the balls! The rules easy, just draw lines or shapes to bump the balls, you will need your wisdom and imagination. Youll surely love this game once you get how it works!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/2g6s3np3mg8tk5fx6xke6y0vpd6404l5/</url><thumb>https://img.gamemonetize.com/2g6s3np3mg8tk5fx6xke6y0vpd6404l5/512x384.jpg</thumb></item>
-<item><id>76877</id><title>Car Jam Escape</title><description>Car Jam Escape is a puzzle game where players clear a crowded parking lot by moving cars in the correct order. Each vehicle can only move forward in the direction it faces, so players must study the layout and plan carefully. The goal is to guide every car out without collisions or blockages. As levels progress, the puzzles become more complex, requiring logical thinking and strategy. With simple rules and challenging traffic jams, the game offers a fun and brain-teasing experience for puzzle lovers.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/zzsakb3vbjdfp8xd2i34510hyzcggs1w/</url><thumb>https://img.gamemonetize.com/zzsakb3vbjdfp8xd2i34510hyzcggs1w/512x384.jpg</thumb></item>
-<item><id>76785</id><title>Spatial Inverse: Gravity Puzzle Adventure</title><description>Spatial Inverse is an innovative, free-to-play physics puzzle game where you manipulate gravity to guide glowing marbles to their goals. Designed for players who love logic games, brain teasers, and physics simulations, this HTML5 browser game offers a seamless, download-free experience. Set across 15 meticulously designed levels in 3 unique sci-fi worlds, every stage forces you to think differently about direction, momentum, and space. In a universe where ceilings become floors and walls become slides, you must strategically place gadgets like blocks, bounce pads, and portals in the grid, then hit Play and watch gravity.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/dfihn3ljlxlavzngq1oohds53btwffor/</url><thumb>https://img.gamemonetize.com/dfihn3ljlxlavzngq1oohds53btwffor/512x384.jpg</thumb></item>
-<item><id>76895</id><title>LOL Football Funny Face</title><description>Stretch and twist football players' faces by dragging the yellow dots to create the funniest expressions you can imagine in this addictive funny face game! Get creative and explore endless possibilities-from over-the-top caricatures to small, subtle tweaks that still spark big laughs. It's a casual, entertaining experience packed with silly transformations and share-worthy funny moments!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/mys113xfcuti8qt7nlex83gd9b52vyna/</url><thumb>https://img.gamemonetize.com/mys113xfcuti8qt7nlex83gd9b52vyna/512x384.jpg</thumb></item>
-<item><id>76876</id><title>Tic Tac Toe Match Three</title><description>Play the classic game of Tic Tac Toe (XO) in a whole new way with Tic Tac Toe - Match Three. Enjoy this timeless strategy game with fresh puzzles, fun challenges, beautiful graphics, and endless entertainment for all ages. Get ready and start the fun!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/0k029rphqm76farvzqkqqzhaqm1dilqj/</url><thumb>https://img.gamemonetize.com/0k029rphqm76farvzqkqqzhaqm1dilqj/512x384.jpg</thumb></item>
-<item><id>69488</id><title>Mermaid Rescue</title><description>This is a tricky and relaxing puzzle game with lots of funny levels!Deep in the ocean lives a beautiful and mysterious tribe of mermaids. One day, an evil ocean overlord captures the mermaids and imprisons them in a dark underwater prison. As a brave underwater explorer, your mission is to dive into the depths, rescue the trapped mermaids, and restore harmony and tranquility to the ocean.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/nv81k8poduzh7ufo0n85g793jomzczwi/</url><thumb>https://img.gamemonetize.com/nv81k8poduzh7ufo0n85g793jomzczwi/512x384.jpg</thumb></item>
-<item><id>76835</id><title>Tap Me</title><description>Get ready for endless fun in this fastpaced taptojump arcade adventure! Simple Controls: Just tap to jump and keep moving. Endless Gameplay: Dodge obstacles, time your jumps, and see how far you can go. Clean Colorful Design: A smooth, minimalistic style that's easy on the eyes. Challenging Addictive: Difficulty ramps up as you progress-can you beat your high score? Compete Share: Show off your best runs to friends and climb the leaderboards. Whether you have a minute or an hour, this game is perfect for quick breaks and long play sessions alike. Master your timing, stay focused, and jump your way to the top! Ready to</description><category>Puzzle</category><url>https://html5.gamemonetize.co/ey6m32xeqxfpit841la6sl06hcwougni/</url><thumb>https://img.gamemonetize.com/ey6m32xeqxfpit841la6sl06hcwougni/512x384.jpg</thumb></item>
-<item><id>76843</id><title>Labubu Tic Tac Toe</title><description>Labubu Tic Tac Toe takes the classic 3×3 tic-tac-toe board and adds a fun Labubu twist! Two players compete on the same grid, placing Labubu heads as they try to line up three in a row. Sounds simple? It is. But it's also incredibly addictive and fun to play!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/fd6vt8inrlqc5nuvj1zmlqrizpebr212/</url><thumb>https://img.gamemonetize.com/fd6vt8inrlqc5nuvj1zmlqrizpebr212/512x384.jpg</thumb></item>
-<item><id>76818</id><title>WonderGrid</title><description>WonderGrid is a captivating jigsaw puzzle journey through the Seven Wonders of the World. Piece together breathtaking landmarks from across history - from ancient architectural marvels to iconic global treasures - as each puzzle reveals the beauty and grandeur of human achievement. Designed for both casual players and puzzle lovers, WonderGrid offers relaxing gameplay with satisfying challenges. Arrange scattered pieces on the grid, find the perfect fit, and watch each wonder come to life as you complete the image. With increasing complexity and beautifully detailed artwork, every level feels like a rewarding discovery.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/jvpejyv8i9ybwn5utbk3qsi77fuq1jxt/</url><thumb>https://img.gamemonetize.com/jvpejyv8i9ybwn5utbk3qsi77fuq1jxt/512x384.jpg</thumb></item>
-<item><id>76819</id><title>Finsemble</title><description>Finsemble is a delightful underwater jigsaw puzzle adventure where colorful fish come together piece by piece. Dive into a vibrant ocean world and assemble charming fish illustrations, from tiny reef swimmers to majestic sea favorites. Each completed puzzle reveals a lively aquatic scene filled with color, motion, and ocean magic. Relaxing yet engaging, Finsemble is perfect for players of all ages who enjoy calm, satisfying challenges. Drag and place pieces, find the perfect fit, and watch your fishy friends come to life as the picture forms. With increasing puzzle complexity, every level offers a fresh and rewarding experience.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/4kktr0zka0enacci9vm1l4125tqp97pj/</url><thumb>https://img.gamemonetize.com/4kktr0zka0enacci9vm1l4125tqp97pj/512x384.jpg</thumb></item>
-<item><id>76820</id><title>ColorDock</title><description>ColorDock is a fast and satisfying color-matching puzzle where quick thinking meets precise movement. Colored keys rain down from above, and it's up to you to slide the matching boxes into place before they land. Align each falling key with the box of the same color to score points and keep the flow going - one wrong match and the stack can quickly fill up.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/8l6u6bnw390v0em7ltlylzl90q9pittg/</url><thumb>https://img.gamemonetize.com/8l6u6bnw390v0em7ltlylzl90q9pittg/512x384.jpg</thumb></item>
-<item><id>76822</id><title>Farm Fresh Fix</title><description>Farm Fresh Fix is a fun and educational puzzle game where players organize scattered pieces to complete delightful vegetable pictures. Each level presents a different farm-fresh veggie - from crunchy carrots to cheerful tomatoes - waiting to be put back together. Drag, place, and fix the pieces correctly to reveal the full image and move to the next challenge. With 12 engaging levels, the game gradually introduces new vegetables and slightly trickier layouts, making it perfect for young players and casual puzzlers alike. A special learning screen before each puzzle helps players discover the vegetable they're about to assemble.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/t34kffde7jx96x0bxaetb82b9kv6z0vq/</url><thumb>https://img.gamemonetize.com/t34kffde7jx96x0bxaetb82b9kv6z0vq/512x384.jpg</thumb></item>
-<item><id>76685</id><title>Turn on Bulb</title><description>Turn on Bulb - A wire-connecting puzzle game where you rotate tiles to complete the electrical circuit from plug to bulb . How to Play: Tap / Click any wire tile to rotate it 90° Connect all wires from the plug () to the bulb () When the full path is connected - bulb lights up and level complete! </description><category>Puzzle</category><url>https://html5.gamemonetize.co/s48fqhgjkr3e0ty4ylhk98wlghp0jxr0/</url><thumb>https://img.gamemonetize.com/s48fqhgjkr3e0ty4ylhk98wlghp0jxr0/512x384.jpg</thumb></item>
-<item><id>75291</id><title>Water Ball Sorting Puzzle</title><description>Sorting Puzzle Game is a fun, relaxing, and brain-boosting puzzle game designed for players who enjoy logical challenges and color sorting gameplay. In this casual puzzle game, your main task is to sort different items, colors, or objects into the correct containers using smart moves and strategic thinking. Each level offers a unique puzzle that tests your problem-solving skills in an enjoyable way.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/pvktpsvwhq58bo3pe7uqgxalqnwu67pr/</url><thumb>https://img.gamemonetize.com/pvktpsvwhq58bo3pe7uqgxalqnwu67pr/512x384.jpg</thumb></item>
-<item><id>76750</id><title>Fill The Glass With Juice</title><description>A bright and calming puzzle game based on realistic fluid physics. Feel like a virtual juice master! Your task is to help the freshly squeezed orange juice find its way to the glass by drawing whimsical paths and channels for it. Enjoy the spectacle as the juicy orange liquid cheerfully spills and flows along the trajectories you created. The levels gradually become more difficult, introducing new obstacles and challenges that will require your wit and precision. Its the perfect game to relax, train your logic, and enjoy the colorful visuals and engaging gameplay. Will you be able to fill the glass to the brim without spilling a single drop</description><category>Puzzle</category><url>https://html5.gamemonetize.co/2tuolwa5q08wcdroe0ugdv5tdn6e81sr/</url><thumb>https://img.gamemonetize.com/2tuolwa5q08wcdroe0ugdv5tdn6e81sr/512x384.jpg</thumb></item>
-<item><id>76426</id><title>Color Screw 3D</title><description>Color Screw 3D: Master the Twist! Welcome to the ultimate 3D puzzle challenge! Dive into a vibrant world of mechanical puzzles designed to test your strategy and precision. Gameplay Mechanics: Your task is to strategically unscrew colorful bolts and sort them into matching color boxes. Be careful-each box has only 3 available slots! Plan your sequence wisely to clear the structure. Feel the tactile satisfaction as object parts fall away with realistic physics once their support is removed, revealing hidden layers and new secrets beneath. Can you turn chaos into perfect order?</description><category>Puzzle</category><url>https://html5.gamemonetize.co/a1c1pt6p8mtw8p94xp3wtf4z7jc6pqko/</url><thumb>https://img.gamemonetize.com/a1c1pt6p8mtw8p94xp3wtf4z7jc6pqko/512x384.jpg</thumb></item>
-<item><id>76621</id><title>Screw Out 3D: Relax Unwind</title><description>A deeply satisfying 3D puzzle game designed to help you relax, focus, and unwind. Feeling stressed or overwhelmed? Take a break and enjoy the simple pleasure of removing screws, one by one. Screw Out 3D combines relaxing gameplay with realistic physics to create a calming yet engaging puzzle experience.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/fhfhj3abuc7c3qc5slayrnbs3itw8kb3/</url><thumb>https://img.gamemonetize.com/fhfhj3abuc7c3qc5slayrnbs3itw8kb3/512x384.jpg</thumb></item>
-<item><id>76252</id><title>Spikes Everywhere Game</title><description>Welcome to Spikes Everywhere Game, an intense arcade survival challenge where danger comes from every direction. Your mission is to dodge deadly spikes, survive as long as possible, and test your reflexes in a fast-paced environment filled with obstacles. This addictive reflex game combines quick reactions, precision movement, and increasing difficulty to create an exciting gameplay experience. One wrong move can end your run, so stay alert and move carefully to survive.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/5rypbgu68bsz3w09fzt5xtrc5e95r8ay/</url><thumb>https://img.gamemonetize.com/5rypbgu68bsz3w09fzt5xtrc5e95r8ay/512x384.jpg</thumb></item>
-<item><id>76567</id><title>Arrowtix Train Your Brain</title><description>Arrowtix is a satisfying, brain-teasing puzzle game where your goal is to clear the board by sliding tangled arrows out of the grid. But theres a catch: each arrow can only move in the direction its pointing, and its escape path must be completely empty! With 60 tricky levels spread across Normal, Medium, and Hard difficulties, Arrowtix will test your spatial logic and strategic thinking. Can you untangle the mess and clear the board?</description><category>Puzzle</category><url>https://html5.gamemonetize.co/owfeq71m91frtkznchr4zcnfw6fkqoem/</url><thumb>https://img.gamemonetize.com/owfeq71m91frtkznchr4zcnfw6fkqoem/512x384.jpg</thumb></item>
-<item><id>75602</id><title>Circle Dash Ball Game</title><description>Circle Dash Ball ek super fun aur addictive arcade game hai jisme aapko apni ball ko fast moving circle track par control karna hota hai. Is game ka gameplay simple hai lekin challenge bohot high hai, jahan aapko perfect timing aur quick reflexes ki zaroorat hoti hai. Is exciting dash game me aap obstacles se bach kar maximum score achieve karte hain. Har level ke sath speed aur difficulty barhti jati hai jo game ko aur zyada thrilling banati hai. Agar aapko endless runner, ball jumping, dash arcade, aur fast reflex games pasand hain to Circle Dash Ball aapke liye best choice hai.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/st67q8m1phkamkw4ohyva4z4pztxw2g7/</url><thumb>https://img.gamemonetize.com/st67q8m1phkamkw4ohyva4z4pztxw2g7/512x384.jpg</thumb></item>
-<item><id>75690</id><title>Hexa Color Stack Game</title><description>Hexa Color Stack ek super fun aur relaxing puzzle game hai jisme aapko colorful hexagon blocks ko stack aur match karna hota hai. Is game ka gameplay simple hai lekin bohot addictive hai, jahan aapko smart moves aur quick thinking ki zaroorat hoti hai. Har level me aapko different colors ko perfectly arrange karna hota hai. Jitna zyada aap correct stacking karenge utna high score milega. Ye game brain training ke liye best hai aur casual players ke liye perfect time pass game hai. Agar aapko color sorting games, stack puzzle challenges, aur relaxing brain games pasand hain to Hexa Color Stack aapke liye best choice hai.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/cbllo3n7ifhq50bvi7lz5cpj3lovnx22/</url><thumb>https://img.gamemonetize.com/cbllo3n7ifhq50bvi7lz5cpj3lovnx22/512x384.jpg</thumb></item>
-<item><id>76372</id><title>Find Pair: Attention Memory</title><description>It is an exciting game that will help you relax and train your brain at the same time. Your task is to find identical pictures on the board. With each level, the game challenges you by limiting the number of moves. But dont worry! If it gets tough, you can always use hints or get extra moves. Game Features: Good for everyone: Great memory training for kids and adults. Exciting gameplay: Simple rules, but addictive process. Hint system: Use hints to reveal all cards for a few seconds.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/08raxvo3sk6g9yx9ok5xp4m1ctu1v03g/</url><thumb>https://img.gamemonetize.com/08raxvo3sk6g9yx9ok5xp4m1ctu1v03g/512x384.jpg</thumb></item>
-<item><id>76658</id><title>Sport Cars Puzzle Challenge</title><description>Sport Cars Puzzle Challenge is an exciting HTML5 jigsaw puzzle game made for car lovers and puzzle fans alike! Piece together stunning high-performance sports cars by solving beautifully designed puzzles across multiple difficulty levels. Drag and place each piece carefully to complete the image and unlock new challenges.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/1af6nsck9kb4cijtxd5xa7vprmosg1pr/</url><thumb>https://img.gamemonetize.com/1af6nsck9kb4cijtxd5xa7vprmosg1pr/512x384.jpg</thumb></item>
-<item><id>76591</id><title>Draw One Part Brain Puzzle</title><description>Ready to test your creativity and logic? Draw One Part: Brain Puzzle is a fun and clever brain teaser puzzle game that combines thinking with drawing. Each level shows an incomplete picture, and your task is to draw the missing part to solve the puzzle.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/etp03y8ig7ihont4eqw2srhavuvf8w2e/</url><thumb>https://img.gamemonetize.com/etp03y8ig7ihont4eqw2srhavuvf8w2e/512x384.jpg</thumb></item>
-<item><id>76527</id><title>Fruit Drop</title><description>Fruit Drop is an addictive fruit merge puzzle game! Drop kawaii fruits into the jar, merge identical ones to grow bigger fruits and score higher. Inspired by Suika Watermelon Game, Fruit Drop adds unique twists: use CHANGE to swap your next fruit and SHAKE to rattle the jar for surprise merges! Physics-based gameplay, dreamy color transitions and a cute kawaii style make every session relaxing yet challenging. Can you fill the jar without overflowing? Play free online, no download needed. Mobile desktop friendly HTML5 game by MAPI GAMES.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/t1b2yzq19fs21emhb53gbegjig436ltq/</url><thumb>https://img.gamemonetize.com/t1b2yzq19fs21emhb53gbegjig436ltq/512x384.jpg</thumb></item>
-<item><id>76084</id><title>Trace: Learn</title><description>Trace, learn, and create in this fun and colorful educational adventure! Follow guided lines to complete A-Z uppercase and lowercase letters, numbers 0-9, words, and shapes while hearing clear pronunciation and enjoying bright effects. Choose from vibrant colored pencils, use helpful hints when needed, and improve your rating with every perfect trace. Designed especially for kids, this interactive experience makes learning feel like play. Smooth controls, rewarding feedback, and endless practice opportunities keep young learners engaged and motivated. How many letters and shapes can you master?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/a31tnko716tw1v89mmgb514t2c9233vx/</url><thumb>https://img.gamemonetize.com/a31tnko716tw1v89mmgb514t2c9233vx/512x384.jpg</thumb></item>
-<item><id>75993</id><title>Girl Money Rush Game</title><description>Welcome to Girl Money Rush Game, an exciting endless runner adventure where you race forward, collect money, and grow your wealth while avoiding obstacles. Step into a fun and colorful world where quick reflexes and smart decisions help you collect cash, unlock upgrades, and reach the finish line with the highest rewards. This addictive running game combines fast-paced action, money collection challenges, and satisfying progression mechanics to create a thrilling gameplay experience. Perfect for players who enjoy runner games, casual challenges, and fun reward-based gameplay.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/eky9lntiv8s8q8akdr7altr0bif4mbtd/</url><thumb>https://img.gamemonetize.com/eky9lntiv8s8q8akdr7altr0bif4mbtd/512x384.jpg</thumb></item>
-<item><id>76510</id><title>True or False Game 26</title><description>Test your erudition and intuition in this addictive quiz! You have to dive into a world of amazing facts and decide whether to believe what is written or not. We have collected 300 unique questions from various fields: astronomy, biology, history, geography, and anatomy. Your main task is to find out where the truth is hidden and where the statement is actually false. It is a great brain workout that will help you learn many new things and have fun. Compete with yourself, score points, and become a real expert!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/z5whrqhi6brf1s2e621o0ig077o68jl5/</url><thumb>https://img.gamemonetize.com/z5whrqhi6brf1s2e621o0ig077o68jl5/512x384.jpg</thumb></item>
-<item><id>76520</id><title>Ball and Maze</title><description>Ball and Maze Puzzle is a challenging maze game. Slide the ball to move it and collect stars. Collect all the stars and advance to the next level. Join this challenging competition right now! If you enjoyed the game, please dont forget to rate it.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/zstd5764fo8lqve11xk5nizwy6kzjx8x/</url><thumb>https://img.gamemonetize.com/zstd5764fo8lqve11xk5nizwy6kzjx8x/512x384.jpg</thumb></item>
-<item><id>76368</id><title>DiceCraft</title><description>Roll, match, and merge your way to the highest score in Dice Merge! Combine three or more dice with the same number in any direction to create higher values and keep the board alive. Plan your moves carefully as every merge opens new opportunities - but once no combinations remain, the game ends. Simple to learn yet deeply strategic, Dice Merge challenges your logic, foresight, and decision-making with every placement. How long can you keep merging before the board fills up?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/4tn6mxpawaaohrqy8ca5md86qq6s0tji/</url><thumb>https://img.gamemonetize.com/4tn6mxpawaaohrqy8ca5md86qq6s0tji/512x384.jpg</thumb></item>
-<item><id>76523</id><title>Dora Puzzle Challenge</title><description>Dora Puzzle Challenge is a super fun jigsaw game for kids! Solve colorful puzzles, match the pieces, and enjoy a playful adventure while improving memory and problem-solving skills. Perfect for young puzzle lovers!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/7ch18gkjkegxqr1rzc2srjoxxgu03t94/</url><thumb>https://img.gamemonetize.com/7ch18gkjkegxqr1rzc2srjoxxgu03t94/512x384.jpg</thumb></item>
-<item><id>71936</id><title>Logic Vault</title><description>Welcome to Logic Vault, the ultimate cognitive test designed to challenge your wit and deduction across a vast range of mental problems. Each level presents a fresh challenge, cycling through seven core puzzle types: Numeric Sequences, Deduction Scenarios, Simple Matching, Symbol Count, Odd One Out, Quick Arithmetic, and Character Frequency. Success requires instant, accurate selection, as a correct solution is the only key to advancing. Prove your mastery of logic and unlock the next tier of the Vault in this seamless, touch-responsive experience. It works perfectly on all devices.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/vwawtd7ea9kd37jr460vt13ngpc7455i/</url><thumb>https://img.gamemonetize.com/vwawtd7ea9kd37jr460vt13ngpc7455i/512x384.jpg</thumb></item>
-<item><id>71956</id><title>Candy Super Pop</title><description>The Best Match 3 Puzzle Game Prepare yourself for a delightful journey with Super Candy Pop, an entertaining and captivating match-3 puzzle game in which you use strong boosters to blast the entire board rather than just matching candies! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/e5g8s3mv6i3leykw1b747laeo132drc1/</url><thumb>https://img.gamemonetize.com/e5g8s3mv6i3leykw1b747laeo132drc1/512x384.jpg</thumb></item>
-<item><id>73910</id><title>Fruit Sword</title><description>Fruit Sword is a fun casual puzzle game where you arrange different types of fruits in horizontal, vertical, or diagonal lines to score points. Each move requires careful planning to create high-scoring chains and clear the board as quickly as possible. With simple yet engaging gameplay, Fruit Sword offers a light yet challenging entertainment experience.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/jy4my3il5ck2y8i7hkkmtg38qam9guok/</url><thumb>https://img.gamemonetize.com/jy4my3il5ck2y8i7hkkmtg38qam9guok/512x384.jpg</thumb></item>
-<item><id>75672</id><title>Merge Animals Defence</title><description>Merge Animals Defence Step into the lab and unleash your inner mad scientist! Merge DNA of different animals to create a powerful animal army and defend your base from waves of enemies. Strategically combine unique traits-eagle wings to strike from above, tiger claws for close combat, and rabbit speed for quick attacks. Plan your defence, upgrade your mutants, and dominate every battle. A fast-paced strategy shooter with crazy science, colorful graphics, and endless genetic possibilities.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/4ydk4nbmlmvl9vj8tgqmmym9i9pu9hyq/</url><thumb>https://img.gamemonetize.com/4ydk4nbmlmvl9vj8tgqmmym9i9pu9hyq/512x384.jpg</thumb></item>
-<item><id>76265</id><title>Solitaire World</title><description>Solitaire World 125 types of games is inspired by the world's most popular single-player card games, offering classic solitaire gameplay with modern enhancements. Players can enjoy relaxing yet strategic card sorting gameplay designed to keep users engaged for long sessions. Step into Solitaire World, your all-in-one destination for the most popular solitaire card games! Whether youre a seasoned player or a casual gamer, enjoy a wide variety of classic and unique solitaire games.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/9dlilr7dau64qvsartn01t7hy30sqtsr/</url><thumb>https://img.gamemonetize.com/9dlilr7dau64qvsartn01t7hy30sqtsr/512x384.jpg</thumb></item>
-<item><id>76441</id><title>Cartoon Mahjong</title><description>Relax, Match, and Train Your Mind Every Day! Welcome to Cartoon Mahjong, the perfect blend of relaxation and brain training! Enjoy beautifully designed Mahjong puzzles, giving you a new challenge every time you play. Match tiles, clear the board, and improve your focus while enjoying a calm and satisfying gameplay experience. Whether you're a beginner or a Mahjong master, this game offers the perfect balance of fun and strategy. Take a break from your busy day and enjoy a peaceful Mahjong experience designed to relax your mind while keeping it sharp.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/iveauvhq0qosmxyk1qxryzkchvrlofw3/</url><thumb>https://img.gamemonetize.com/iveauvhq0qosmxyk1qxryzkchvrlofw3/512x384.jpg</thumb></item>
-<item><id>76442</id><title>Touch Candy</title><description>Touch Candy is a sweet puzzle game where you arrange colorful candies according to a set pattern to progress through the levels. Observe quickly, calculate strategically, and create combinations to clear the board. The simple yet engaging gameplay, fun visual effects, and increasing difficulty will provide you with hours of fun and challenging entertainment.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/j4lhn17hl5azx54gl4piwh9o4fb1qjl6/</url><thumb>https://img.gamemonetize.com/j4lhn17hl5azx54gl4piwh9o4fb1qjl6/512x384.jpg</thumb></item>
 </channel></rss>`;
 
     const grid = document.getElementById('gameGrid');
@@ -785,6 +908,7 @@
             item.className = 'featured-item';
             item.href = game.url;
             item.target = '_blank';
+            item.setAttribute('aria-label', `Play ${game.title}`);
             
             // OPTIMIZATION: 
             // 1. fetchpriority="high" and loading="eager" for the very first image (LCP).
@@ -794,7 +918,7 @@
             const priorityAttr = index === 0 ? 'fetchpriority="high"' : '';
             
             item.innerHTML = `
-                <img src="${game.thumb}" alt="${game.title}" class="featured-image" loading="lazy">
+                <img src="${game.thumb}" alt="${game.title}" class="featured-image" ${loadingAttr} ${priorityAttr}>
                 <div class="featured-content">
                     <div class="featured-name">${game.title}</div>
                     <div class="featured-date"><i class="far fa-clock"></i> ${game.date}</div>
@@ -812,10 +936,19 @@
         data.forEach(game => {
             const card = document.createElement('div');
             card.className = 'card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `Play ${game.title}`);
+            card.tabIndex = 0; // Make focusable for accessibility
+
             card.onclick = () => {
                 frame.src = game.url;
                 modal.style.display = 'block';
                 document.body.style.overflow = 'hidden';
+            };
+            
+            // Allow opening via Keyboard Enter
+            card.onkeydown = (e) => {
+                if (e.key === 'Enter') card.onclick();
             };
 
             // OPTIMIZATION: 
@@ -824,13 +957,13 @@
             // 3. Explicit dimensions.
             card.innerHTML = `
                 <div class="card-image-box">
-                    <img src="${game.thumb}" alt="${game.title}" class="card-image" loading="lazy">
+                    <img src="${game.thumb}" alt="${game.title}" class="card-image" loading="lazy" decoding="async">
                     <div class="card-overlay">
-                        <button class="btn-play">PLAY NOW</button>
+                        <button class="btn-play" tabindex="-1">PLAY NOW</button>
                     </div>
                 </div>
                 <div class="card-body">
-                    <span  class="card-tag">${game.category}</span>
+                    <span class="card-tag">${game.category}</span>
                     <h3 class="card-title">${game.title}</h3>
                     <p class="card-desc">${game.desc}</p>
                 </div>

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" href="https://puzzlechallengehub.com/favicon.ico">
+    <link rel="canonical" href="https://puzzlechallengehub.com/collection/jam.html">
+    <title>Jam Puzzles Collection - Play Free Online | PuzzleHub</title>
+    <meta name="description" content="Clear the gridlock! Slide buses, cars, or blocks out of tight traffic jam puzzles to find the hidden exit.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --bg-card: #161b22;
+            --accent-primary: #7b61ff;
+            --accent-hover: #917cff;
+            --text-light: #f0f6fc;
+            --text-dim: #8b949e;
+            --border-color: #30363d;
+            --glass: rgba(10, 11, 16, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        header {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--accent-primary);
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 15px rgba(123, 97, 255, 0.4);
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-light);
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: #0d1117;
+            border: 1px solid var(--border-color);
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2);
+        }
+
+        /* Collection Hero Section */
+        .collection-hero {
+            padding: 3rem 5% 2rem;
+            background: linear-gradient(180deg, rgba(123, 97, 255, 0.12) 0%, rgba(10, 11, 16, 0) 100%);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumbs a {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--accent-primary);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-icon-box {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-primary);
+            border-radius: 20px;
+            display: grid;
+            place-items: center;
+            font-size: 2.5rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(123, 97, 255, 0.4);
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .hero-text p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 0 5% 4rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            content-visibility: auto; 
+            contain-intrinsic-size: 0 350px; 
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+        }
+
+        .card-image-box {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background-color: #1a1f26;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+            display: block;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .btn-play {
+            background: var(--accent-primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            transform: translateY(20px);
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .card:hover .btn-play {
+            transform: translateY(0);
+        }
+
+        .card-body {
+            padding: 1.2rem;
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            color: #FDF67C;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-light);
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.6rem;
+            line-height: 1.3rem;
+        }
+
+        /* Modal System */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px;
+        }
+
+        .modal-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 85vh;
+            margin: 20px auto;
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(123, 97, 255, 0.3);
+        }
+
+        .modal-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 15px;
+            z-index: 2100;
+        }
+
+        .close-btn {
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: 1px solid #444;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .close-btn:hover, #fullScreenBtn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 5%;
+            text-align: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+        
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-dim);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 12px; padding: 12px 3%; }
+            .search-wrapper { width: 100%; }
+            .hero-content { flex-direction: column; text-align: center; gap: 15px; }
+            .hero-icon-box { width: 60px; height: 60px; font-size: 2rem; border-radius: 15px;}
+            .hero-text h1 { font-size: 1.8rem; }
+            
+            .game-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 0 3% 2rem;}
+            .card-body { padding: 0.8rem; }
+            .card-title { font-size: 0.9rem; margin-bottom: 4px; }
+            .card-desc { display: none; }
+            .btn-play { padding: 6px 16px; font-size: 0.8rem; }
+            
+            .modal { padding: 0; }
+            .modal-container { height: 100vh; margin: 0; border-radius: 0; }
+            .modal-controls { top: 15px; right: 15px; }
+            #fullScreenBtn, .close-btn { width: 38px; height: 38px; }
+        }
+    </style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "v7w38tv951");
+</script>
+</head>
+
+<body>
+
+<header>
+    <a href="/" class="brand">
+        <div class="logo-icon">P</div>
+        <span class="brand-name">PuzzleHub</span>
+    </a>
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search Jam games...">
+    </div>
+</header>
+
+<main>
+    <div class="collection-hero">
+        <div class="breadcrumbs">
+            <a href="/">Home</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <a href="/collection.html">Collections</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <span>Jam Puzzles</span>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-icon-box">
+                <i class="fas fa-boxes-stacked"></i>
+            </div>
+            <div class="hero-text">
+                <h1>Jam Puzzles Collection</h1>
+                <p>Clear the gridlock! Slide buses, cars, or blocks out of tight traffic jam puzzles to find the hidden exit.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameGrid" class="game-grid"></div>
+</main>
+
+<div id="gameModal" class="modal" role="dialog" aria-modal="true" aria-label="Game Player">
+    <div class="modal-container">
+        <div class="modal-controls">
+            <button id="fullScreenBtn" title="Toggle Fullscreen" style="background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 42px; height: 42px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; flex-shrink: 0;">
+                <svg id="fsIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                    <path id="fsPath" d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+            </button>
+            <button onclick="closeGame()" title="Close Game" class="close-btn">
+                ✕
+            </button>
+        </div>
+        <iframe id="gameFrame" src="" allow="autoplay; fullscreen; keyboard" title="Play Game Frame"></iframe>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-socials">
+        <a href="https://www.facebook.com/puzzlehubgames" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@PuzzleGamesGuideVideo" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2026 PuzzleHub Gaming Platform</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">
+        <a href="/privacy-policy.html" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a> | 
+        <a href="/terms-of-service.html" style="color: var(--text-dim); text-decoration: none;">Terms of Service</a> | 
+        <a href="/about-us.html" style="color: var(--text-dim); text-decoration: none;">About Us</a> | 
+        <a href="/contact-us.html" style="color: var(--text-dim); text-decoration: none;">Contact Us</a>
+    </p>
+</footer>
+
+<script>
+    // Feed data matching the All Games section mechanism
+    const FEED_XML = `
+<rss version="2.0">
+<channel>
+<item><id>76877</id><title>Car Jam Escape</title><description>Car Jam Escape is a puzzle game where players clear a crowded parking lot by moving cars in the correct order. Each vehicle can only move forward in the direction it faces, so players must study the layout and plan carefully. The goal is to guide every car out without collisions or blockages. As levels progress, the puzzles become more complex, requiring logical thinking and strategy. With simple rules and challenging traffic jams, the game offers a fun and brain-teasing experience for puzzle lovers.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/zzsakb3vbjdfp8xd2i34510hyzcggs1w/</url><thumb>https://img.gamemonetize.com/zzsakb3vbjdfp8xd2i34510hyzcggs1w/512x384.jpg</thumb></item>
+<item><id>75379</id><title>Color Wood Animal Jam</title><description>Begin a charming logic puzzle match game in Color Wood Animal Jam. Drag the colorful wooden animal pieces into their correct spots. Complete each delightful jam puzzle. One wrong move can make the color block jam even trickier.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/aiq299yp6g7oyyqmlmsuemyl8ud8jds9/</url><thumb>https://img.gamemonetize.com/aiq299yp6g7oyyqmlmsuemyl8ud8jds9/512x384.jpg</thumb></item>
+<item><id>75393</id><title>Fruit Jam Master</title><description>Enter the juiciest and most addictive puzzle adventure ever. Enjoy a fun logic puzzle game in Fruit Jam Master. You need to help all the animals leave the grassland to win. Pay attention to the color of the food. Animals can only pass through when the food matches their own color.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/utagaibvfznnd8uv6mia0spy81mlubxy/</url><thumb>https://img.gamemonetize.com/utagaibvfznnd8uv6mia0spy81mlubxy/512x384.jpg</thumb></item>
+<item><id>74554</id><title>Block Jam Match Game</title><description>Embark on a thrilling adventure that combines strategic block matching, a heart-pounding bus mini-game, an explosive Bomb Bridge Competition, and a brand-new challenge: the Baloon Rise Challenge! Elevate your gaming experience with strategic moves and test your skills in a puzzle-packed journey.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/4otjsjz31jgy4a3yr2p0bv98wiygri1u/</url><thumb>https://img.gamemonetize.com/4otjsjz31jgy4a3yr2p0bv98wiygri1u/512x384.jpg</thumb></item>
+<item><id>73929</id><title>Parking Jam 2025</title><description>Step into a charming miniature world where parking is more than a task;its a skill to be perfected! In Tiny Wheels: Parking Hero, you control a tiny toy car navigating through playful, stylized parking lots filled with obstacles, tight turns, and clever layouts. Designed with a clean top-down look and smooth controls, every level challenges your accuracy, timing, and strategy. Park without crashing, avoid traffic, and complete each challenge to become the ultimate Parking Hero!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/95snwzd0xk6s5gro5jhlh0wrx7ez7gzr/</url><thumb>https://img.gamemonetize.com/95snwzd0xk6s5gro5jhlh0wrx7ez7gzr/512x384.jpg</thumb></item>
+<item><id>73513</id><title>Animal Bus Traffic Jam</title><description>All aboard for the cutest puzzle ride ever in Animal Bus Traffic Jam. This clever match-3 sort puzzle and casual logic game challenges you to help adorable animal passengers find their correct buses. Each level is a traffic jam of colorful buses filled with cats, dogs, pandas, and more.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/srinp50qip55glw9w2efsi4phsioa5qu/</url><thumb>https://img.gamemonetize.com/srinp50qip55glw9w2efsi4phsioa5qu/512x384.jpg</thumb></item>
+<item><id>71720</id><title>Color Jam 3D</title><description>Color Jam 3D is a fun and relaxing match-and-merge puzzle game! Combine crayons of the same colors to fill the picture and bring stunning images to life with vibrant colors. With engaging gameplay and satisfying color-filling mechanics, Color Jam 3D offers a unique blend of puzzle-solving and artistic expression.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/jwsdzxshoezui2jlv4sd1gf5x5jkrx57/</url><thumb>https://img.gamemonetize.com/jwsdzxshoezui2jlv4sd1gf5x5jkrx57/512x384.jpg</thumb></item>
+<item><id>71434</id><title>Food Jam</title><description>Food Jam is a fun and satisfying puzzle game where you sort fruits, veggies, and drinks into the right takeout carts. With over 500 juicy levels, unlock delicious new themes like desserts and juices! Use unique power-ups to clear tricky jams and keep your customers happy.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/gtnb87wggwo1jk7b2snk4jk2njazmxtj/</url><thumb>https://img.gamemonetize.com/gtnb87wggwo1jk7b2snk4jk2njazmxtj/512x384.jpg</thumb></item>
+<item><id>71784</id><title>Bus Jam</title><description>Bus Jam  Fun Puzzle Adventure with Colorful Challenges! Get ready for Bus Jam, the ultimate bus game that's all about matching passengers to their buses in this relaxing yet brain-teasing bus mania adventure. Its up to you to solve fun, colorful puzzles and clear the way to send each passenger on their dream vacation! In this exciting puzzle game, youll encounter progressively challenging levels as you advance. Your goal? Strategically match passengers with their correctly colored buses! Game Features: Fun  Relaxing Gameplay: Enjoy hours of relaxing and strategic gameplay as you work through puzzles and organize passengers.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/iuiwdzr6jg4daxiduxbn1bz84fgwdfti/</url><thumb>https://img.gamemonetize.com/iuiwdzr6jg4daxiduxbn1bz84fgwdfti/512x384.jpg</thumb></item>
+<item><id>71583</id><title>Soda Block Jam</title><description>Soda Block Jam is a refreshing twist on classic puzzle games. Navigate through vibrant levels by swiping soda crates in continuous motions, collecting soda bottles, and delivering them to their designated exits.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/sx9e751be41mwvzz7w9ynub5ejuhxm6d/</url><thumb>https://img.gamemonetize.com/sx9e751be41mwvzz7w9ynub5ejuhxm6d/512x384.jpg</thumb></item>
+<item><id>69984</id><title>Jam Escape</title><description>Parking Guru is an addictive parkingpuzzle game where you rearrange vehicles to clear a path for the red car to escape the jam. If you're a fan of the classic Rush Hour board game, this puzzle will hook you instantly! Levels for every skill: From simple shuffles to mind-bending brainteasers. Varied vehicle roster: Classic sedans, rugged SUVs, and massive trucks;all with unique silhouettes. Intuitive controls: Drag cars with your mouse, rotate them, and find your way out of even the most tangled traffic. Time  move tracking: Beat your best time or take it slow;set a new personal record or simply enjoy the challenge. Vibrant art</description><category>Puzzle</category><url>https://html5.gamemonetize.com/efg2lhro63ynxm7xu8esecw8sh030iql/</url><thumb>https://img.gamemonetize.com/efg2lhro63ynxm7xu8esecw8sh030iql/512x384.jpg</thumb></item>
+<item><id>67349</id><title>ColorBlockJam</title><description>Move the colored blocks out of the exits of the same color. The game has multiple levels, and various items will randomly appear in each level to enhance the fun of the gameplay. Give it a try.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/xrbjwx8xz6tpwmjusn5v8yl2p3rxom0g/</url><thumb>https://img.gamemonetize.com/xrbjwx8xz6tpwmjusn5v8yl2p3rxom0g/512x384.jpg</thumb></item>
+<item><id>68362</id><title>Screw Sort Puzzle Pin Jam 3D</title><description>Want a fun 3D puzzle that's strangely relaxing? In ScrewSortPuzzle:PinJam3D, you'll remove every screw, sort colorful pins, and match them to the right slots without causing a jam! You will have to keep matching the screws of the right color and put them in the box of the corresponding color. Rotate the board to spot the screws you can safely loosen first. You can experience remove screw mode.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/7hih363nnbpbp77p9818x6i79tfp6yjr/</url><thumb>https://img.gamemonetize.com/7hih363nnbpbp77p9818x6i79tfp6yjr/512x384.jpg</thumb></item>
+<item><id>66020</id><title>Screw Pin Jam Puzzle</title><description>Screw Pin Jam Puzzle is an incredibly creative and strategic puzzle game designed to enhance players spatial imagination and strategic planning abilities. In this game, players face a board composed of complex and intricately placed screws and pins. Each screw and pin could be key to solving the puzzle, requiring careful consideration with every move. Game features include: Diverse level designs: Ranging from simple to complex, each level has a unique layout and difficulty, requiring players to constantly adjust their solution strategies. Intuitive interface: Clear graphics and smooth animation make it easy for players to pick up, while </description><category>Puzzle</category><url>https://html5.gamemonetize.com/xse3bphv6n0hep6k0a8u9m0oztb3ap5o/</url><thumb>https://img.gamemonetize.com/xse3bphv6n0hep6k0a8u9m0oztb3ap5o/512x384.jpg</thumb></item>
+<item><id>67108</id><title>Water Pour Jam</title><description>Ready to push your brain to the limit? Welcome to Water Pour Jam, the fun sort puzzle game that will test your brain and matching skills. Here you will be confronted with colorful cups. Use your logic and observation to pour liquids of the same color into the same bottle so that the colors match perfectly! Get the juice right. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/622ycl50ah4ys2topd20e1f7jaw3zh4d/</url><thumb>https://img.gamemonetize.com/622ycl50ah4ys2topd20e1f7jaw3zh4d/512x384.jpg</thumb></item>
+<item><id>65989</id><title>Crazy Parking Jam Car Jam Game</title><description>Parking Jam is a challenging puzzle game where you untangle a crowded parking lot one car at a time. Use your logic and problem-solving skills to move vehicles in the correct order, clearing the way without causing chaos. With each level, tackle increasingly complex puzzles filled with more cars and tricky obstacles. How to Play Parking Jam Everyones been stuck in a parking jam, but the real challenge is figuring out how to escape! This is a satisfying puzzle game where you click and drag cars to clear them from a crowded parking lot and onto the street.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/b64ue2ic0yzk555vgg24ujxwek2cd0va/</url><thumb>https://img.gamemonetize.com/b64ue2ic0yzk555vgg24ujxwek2cd0va/512x384.jpg</thumb></item>
+<item><id>65890</id><title>Flower Jam</title><description>Enter Flower Jam is a vibrant casual match game with colorful flowers and exciting puzzles. You aim to complete the level by swapping flowers and eliminating them by getting six petals of the same color! Place petals of the same color together to make six petals to eliminate. Get props to help you eliminate tons of flowers.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ppx2i06fap9svhemacqrl5mfx4iw4cge/</url><thumb>https://img.gamemonetize.com/ppx2i06fap9svhemacqrl5mfx4iw4cge/512x384.jpg</thumb></item>
+<item><id>61277</id><title>Jam puzzle Collection</title><description>Begin an exciting brain puzzle experience in the Jam Puzzle Collection. With its easy-to-use one-button controls, this puzzle game makes it easy to start. But also full of time constraints and challenges. At each mode, you need to use your wisdom to solve various puzzles. In a traffic jam, all vehicles can follow the direction of the arrow smoothly.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/rb7xlsqb7l0xkcvb3tfe2q5f4vtf8mmp/</url><thumb>https://img.gamemonetize.com/rb7xlsqb7l0xkcvb3tfe2q5f4vtf8mmp/512x384.jpg</thumb></item>
+<item><id>61352</id><title>Mart Puzzle Bus Jam</title><description>Step into the bustling world of Mart Puzzle - Bus Jam. In this fun and challenging puzzle game,buses are lined up in chaotic traffic jams.Everyone is waiting to get on the bus. You need to sort and match the same people in order according to the character, and when there are ten people, you can click the board to send them on the bus.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/18zxe0w96sqwn5w18tcptis3fchhlz42/</url><thumb>https://img.gamemonetize.com/18zxe0w96sqwn5w18tcptis3fchhlz42/512x384.jpg</thumb></item>
+<item><id>61317</id><title>Toilet Paper Jam</title><description>Welcome to Toilet Paper Jam, a creative and fun brain puzzle game. In this game, your goal is to solve the toilet paper jams. Everyone needs a section of paper. Match similar rolls of toilet paper and use different lengths of paper properly.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/1l0xpv9ap639k6jfiq12mvr4yr3tpixy/</url><thumb>https://img.gamemonetize.com/1l0xpv9ap639k6jfiq12mvr4yr3tpixy/512x384.jpg</thumb></item>
+<item><id>60482</id><title>Traffic Jam Escape: Car Puzzle</title><description>Escape the cars from hitting other cars: Traffic Clear 3D that strategize your moves to navigate through jammed roads and clear the traffic chaos. Fun and Addictive Challenges, Realistic 3D Graphics.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/lncx63oyztfjrfnzhfkf395b2gsx73p5/</url><thumb>https://img.gamemonetize.com/lncx63oyztfjrfnzhfkf395b2gsx73p5/512x384.jpg</thumb></item>
+<item><id>60480</id><title>Bus Match: Color Parking Jam</title><description>Touch or click on vans to move buses in proper way. Match passengers of the same color. Think twice to solve puzzles and clear parking jams in tight spaces. Use options to get through tricky levels when you're stuck.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/xe0a3z54djfnz5qo7zg1fkf76jm9gut1/</url><thumb>https://img.gamemonetize.com/xe0a3z54djfnz5qo7zg1fkf76jm9gut1/512x384.jpg</thumb></item>
+<item><id>58064</id><title>Traffic Jam Hop On</title><description>In Traffic Jam: Hop On, challenge your strategy thinking and quick reflexes! This wonderful puzzle game will take you into a colorful parking lot. Your task is to help all kinds of vehicles get out of traffic jams and start smoothly. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/oqs0yddepvccu05lu6pibq21lthwt8ia/</url><thumb>https://img.gamemonetize.com/oqs0yddepvccu05lu6pibq21lthwt8ia/512x384.jpg</thumb></item>
+<item><id>58568</id><title>Bus Jam Sort</title><description>The passengers are waiting for their bus, sort them out based on their color! Visually, Bus Jam Game is a visual treat, imagine colorful buses, a diverse passengers, and a lively backdrop setting the stage for your bustling triple match puzzle adventure. Smooth animations elevate the fun, making each move a delightful experience in puzzle games.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/wlb9vj2y6oazlm6q8vvostlu8w649f71/</url><thumb>https://img.gamemonetize.com/wlb9vj2y6oazlm6q8vvostlu8w649f71/512x384.jpg</thumb></item>
+<item><id>57760</id><title>WaterJam</title><description>Are you ready to test your sorting skills with the blend of strategy and color flow in the fill water colo sort puzzle? Water Jam Sort Color Puzzle is an addictive and engaging casual game that will test your sorting skills of colorful liquids. Enjoy this color sorting game with vibrant color tubes and water puzzles. Your goal in Water Jam Sort Color Puzzle is simple yet challenging: sort and pour the colored water into matching tubes.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/lnpfiu10yk6atgg474q5gk63ahh21yqj/</url><thumb>https://img.gamemonetize.com/lnpfiu10yk6atgg474q5gk63ahh21yqj/512x384.jpg</thumb></item>
+<item><id>53931</id><title>Seat Jam 3D</title><description>Seat Jam 3D is surely an entertaining puzzle game in which you place the passengers in the correct seats. You simply need to click on the passenger and then click on the correct seat. The first fewlevels are very simple, but before long, youll have to think long and hard before you can put all the passengers in the right seats. Solve the bus rush. They can move up and down, left and right, but not diagonally. Train your brain with engaging puzzles in Seat Jam 3D. Come and join the game!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/p6pwnd4a78hvfowet3e6v7kjxy8qy25v/</url><thumb>https://img.gamemonetize.com/p6pwnd4a78hvfowet3e6v7kjxy8qy25v/512x384.jpg</thumb></item>
+<item><id>52964</id><title>Fish Jam</title><description>Guide the bundled fish to escape back to the sea by moving the fish head towards the open road. They will swim away quickly. It may sound simple, but it gets challenging when there are many fish together. Ready to give it a try?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/mqfk9thmev713aqwxcvyq90e41edjue7/</url><thumb>https://img.gamemonetize.com/mqfk9thmev713aqwxcvyq90e41edjue7/512x384.jpg</thumb></item>
+<item><id>46538</id><title>Parking Jam Delivery Traffic</title><description>Parking Jam Delivery Traffic is a unique and awesome game. It is not a car game, but a traffic management game. You have to control the vehicles in and out, and load them with the goods you need. You can earn money and unlock more parking spaces and manage the traffic situation. Are you ready?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/2m5wywysh674dh6wstym87iazvsftblg/</url><thumb>https://img.gamemonetize.com/2m5wywysh674dh6wstym87iazvsftblg/512x384.jpg</thumb></item>
+</channel></rss>`;
+
+    const grid = document.getElementById('gameGrid');
+    const searchInput = document.getElementById('searchInput');
+    const modal = document.getElementById('gameModal');
+    const frame = document.getElementById('gameFrame');
+    const fullScreenBtn = document.getElementById('fullScreenBtn');
+    const fsPath = document.getElementById('fsPath');
+    
+    let gameList = [];
+
+    function init() {
+        initAllGames();
+        setupEventListeners();
+    }
+
+    // Parse XML data to generate the game list
+    function initAllGames() {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(FEED_XML, "text/xml");
+        const items = xmlDoc.getElementsByTagName("item");
+
+        gameList = Array.from(items).map(item => ({
+            title: item.getElementsByTagName("title")[0]?.textContent,
+            desc: item.getElementsByTagName("description")[0]?.textContent,
+            category: item.getElementsByTagName("category")[0]?.textContent,
+            url: item.getElementsByTagName("url")[0]?.textContent,
+            thumb: item.getElementsByTagName("thumb")[0]?.textContent
+        }));
+
+        renderGames(gameList);
+    }
+
+    // Render cards into the DOM
+    function renderGames(data) {
+        grid.innerHTML = '';
+        data.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `Play ${game.title}`);
+            card.tabIndex = 0;
+
+            // Handle click event to open modal
+            card.onclick = () => {
+                frame.src = game.url;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; 
+            };
+            
+            // Support keyboard accessibility
+            card.onkeydown = (e) => {
+                if (e.key === 'Enter') card.onclick();
+            };
+
+            card.innerHTML = `
+                <div class="card-image-box">
+                    <img src="${game.thumb}" alt="${game.title}" class="card-image" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <button class="btn-play" tabindex="-1">PLAY NOW</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">${game.category}</span>
+                    <h3 class="card-title">${game.title}</h3>
+                    <p class="card-desc">${game.desc}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    function setupEventListeners() {
+        // Search filter logic
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = gameList.filter(g => 
+                g.title.toLowerCase().includes(query) || 
+                g.category.toLowerCase().includes(query)
+            );
+            renderGames(filtered);
+        });
+
+        // Fullscreen toggle event
+        fullScreenBtn.addEventListener('click', toggleFullscreen);
+
+        // Update UI when fullscreen state changes
+        document.addEventListener('fullscreenchange', updateFullscreenUI);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenUI);
+        
+        // Close modal when clicking outside the container
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) closeGame();
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'block') { closeGame(); }
+        });
+
+        updateFullscreenUI();
+    }
+
+    // Modal closing logic
+    window.closeGame = function() {
+        modal.style.display = 'none';
+        frame.src = '';
+        document.body.style.overflow = 'auto';
+        if (isFullscreen()) {
+            exitFullscreen();
+            setTimeout(updateFullscreenUI, 50);
+        }
+    }
+
+    // Fullscreen helper functions
+    function isFullscreen() {
+        return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+    }
+
+    function enterFullscreen() {
+        const container = document.querySelector('.modal-container');
+        if (container.requestFullscreen) { container.requestFullscreen(); } 
+        else if (container.webkitRequestFullscreen) { container.webkitRequestFullscreen(); } 
+        else if (container.mozRequestFullScreen) { container.mozRequestFullScreen(); } 
+        else if (container.msRequestFullscreen) { container.msRequestFullscreen(); }
+    }
+
+    function exitFullscreen() {
+        if (document.exitFullscreen) { document.exitFullscreen(); } 
+        else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); } 
+        else if (document.mozCancelFullScreen) { document.mozCancelFullScreen(); } 
+        else if (document.msExitFullscreen) { document.msExitFullscreen(); }
+    }
+
+    function toggleFullscreen() {
+        if (isFullscreen()) { exitFullscreen(); } else { enterFullscreen(); }
+    }
+
+    function updateFullscreenUI() {
+        const isFs = isFullscreen();
+        const enterPath = "M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3";
+        const exitPath = "M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3";
+        fsPath.setAttribute('d', isFs ? exitPath : enterPath);
+    }
+
+    // Initialize the script
+    init();
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAmeasLSfP2N6aDTaHv2g83HXA9fMPVZFE",
+    authDomain: "puzzlechallengehub.firebaseapp.com",
+    projectId: "puzzlechallengehub",
+    storageBucket: "puzzlechallengehub.firebasestorage.app",
+    messagingSenderId: "112608986588",
+    appId: "1:112608986588:web:acc32a06b94fd65f46bb19",
+    measurementId: "G-SX634LMH5N"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>

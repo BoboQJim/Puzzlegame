@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" href="https://puzzlechallengehub.com/favicon.ico">
+    <link rel="canonical" href="https://puzzlechallengehub.com/collection/solitaire.html">
+    <title>Solitaire Puzzles Collection - Play Free Online | PuzzleHub</title>
+    <meta name="description" content="Enjoy timeless card puzzles, including Spider, FreeCell, and classic Klondike variations. A perfect solo strategy experience.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --bg-card: #161b22;
+            --accent-primary: #7b61ff;
+            --accent-hover: #917cff;
+            --text-light: #f0f6fc;
+            --text-dim: #8b949e;
+            --border-color: #30363d;
+            --glass: rgba(10, 11, 16, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        header {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--accent-primary);
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 15px rgba(123, 97, 255, 0.4);
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-light);
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: #0d1117;
+            border: 1px solid var(--border-color);
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2);
+        }
+
+        /* Collection Hero Section */
+        .collection-hero {
+            padding: 3rem 5% 2rem;
+            background: linear-gradient(180deg, rgba(123, 97, 255, 0.12) 0%, rgba(10, 11, 16, 0) 100%);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumbs a {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--accent-primary);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-icon-box {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-primary);
+            border-radius: 20px;
+            display: grid;
+            place-items: center;
+            font-size: 2.5rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(123, 97, 255, 0.4);
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .hero-text p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 0 5% 4rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            content-visibility: auto; 
+            contain-intrinsic-size: 0 350px; 
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+        }
+
+        .card-image-box {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background-color: #1a1f26;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+            display: Solitaire;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .btn-play {
+            background: var(--accent-primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            transform: translateY(20px);
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .card:hover .btn-play {
+            transform: translateY(0);
+        }
+
+        .card-body {
+            padding: 1.2rem;
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            color: #FDF67C;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: Solitaire;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-light);
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.6rem;
+            line-height: 1.3rem;
+        }
+
+        /* Modal System */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px;
+        }
+
+        .modal-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 85vh;
+            margin: 20px auto;
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(123, 97, 255, 0.3);
+        }
+
+        .modal-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 15px;
+            z-index: 2100;
+        }
+
+        .close-btn {
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: 1px solid #444;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .close-btn:hover, #fullScreenBtn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 5%;
+            text-align: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+        
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-dim);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 12px; padding: 12px 3%; }
+            .search-wrapper { width: 100%; }
+            .hero-content { flex-direction: column; text-align: center; gap: 15px; }
+            .hero-icon-box { width: 60px; height: 60px; font-size: 2rem; border-radius: 15px;}
+            .hero-text h1 { font-size: 1.8rem; }
+            
+            .game-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 0 3% 2rem;}
+            .card-body { padding: 0.8rem; }
+            .card-title { font-size: 0.9rem; margin-bottom: 4px; }
+            .card-desc { display: none; }
+            .btn-play { padding: 6px 16px; font-size: 0.8rem; }
+            
+            .modal { padding: 0; }
+            .modal-container { height: 100vh; margin: 0; border-radius: 0; }
+            .modal-controls { top: 15px; right: 15px; }
+            #fullScreenBtn, .close-btn { width: 38px; height: 38px; }
+        }
+    </style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "v7w38tv951");
+</script>
+</head>
+
+<body>
+
+<header>
+    <a href="/" class="brand">
+        <div class="logo-icon">P</div>
+        <span class="brand-name">PuzzleHub</span>
+    </a>
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search Solitaire games...">
+    </div>
+</header>
+
+<main>
+    <div class="collection-hero">
+        <div class="breadcrumbs">
+            <a href="/">Home</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <a href="/collection.html">Collections</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <span>Solitaire Puzzles</span>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-icon-box">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="hero-text">
+                <h1>Solitaire Card Collection</h1>
+                <p>Enjoy timeless card puzzles, including Spider, FreeCell, and classic Klondike variations. A perfect solo strategy experience.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameGrid" class="game-grid"></div>
+</main>
+
+<div id="gameModal" class="modal" role="dialog" aria-modal="true" aria-label="Game Player">
+    <div class="modal-container">
+        <div class="modal-controls">
+            <button id="fullScreenBtn" title="Toggle Fullscreen" style="background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 42px; height: 42px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; flex-shrink: 0;">
+                <svg id="fsIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: Solitaire;">
+                    <path id="fsPath" d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+            </button>
+            <button onclick="closeGame()" title="Close Game" class="close-btn">
+                ✕
+            </button>
+        </div>
+        <iframe id="gameFrame" src="" allow="autoplay; fullscreen; keyboard" title="Play Game Frame"></iframe>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-socials">
+        <a href="https://www.facebook.com/puzzlehubgames" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@PuzzleGamesGuideVideo" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2026 PuzzleHub Gaming Platform</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">
+        <a href="/privacy-policy.html" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a> | 
+        <a href="/terms-of-service.html" style="color: var(--text-dim); text-decoration: none;">Terms of Service</a> | 
+        <a href="/about-us.html" style="color: var(--text-dim); text-decoration: none;">About Us</a> | 
+        <a href="/contact-us.html" style="color: var(--text-dim); text-decoration: none;">Contact Us</a>
+    </p>
+</footer>
+
+<script>
+    // Feed data Solitaireing the All Games section mechanism
+    const FEED_XML = `
+<rss version="2.0">
+<channel>
+<item><id>77017</id><title>Classic Solitaire Master</title><description>The addictive game you've been playing on your computer for years now goes wherever you do. Whether you know it as Patience, Klondike, or just Solitaire, this popular game is one of the best games around.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/zp0dlpa30e384e5eq9jlue2tilbcueo2/</url><thumb>https://img.gamemonetize.com/zp0dlpa30e384e5eq9jlue2tilbcueo2/512x384.jpg</thumb></item>
+<item><id>76265</id><title>Solitaire World</title><description>Solitaire World 125 types of games is inspired by the world's most popular single-player card games, offering classic solitaire gameplay with modern enhancements. Players can enjoy relaxing yet strategic card sorting gameplay designed to keep users engaged for long sessions. Step into Solitaire World, your all-in-one destination for the most popular solitaire card games! Whether youre a seasoned player or a casual gamer, enjoy a wide variety of classic and unique solitaire games.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/9dlilr7dau64qvsartn01t7hy30sqtsr/</url><thumb>https://img.gamemonetize.com/9dlilr7dau64qvsartn01t7hy30sqtsr/512x384.jpg</thumb></item>
+<item><id>73398</id><title>double klondike solitaire Card</title><description>Ready for the ultimate solitaire test? Try Double Klondike Solitaire! This exciting and strategic twist on the classic game uses TWO decks, doubling the fun and the challenge. Can you clear all the cards and build up the foundations? Perfect for seasoned solitaire players looking for their next obsession!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/kbac8c4u2b42ezncjx0049awdderpzxm/</url><thumb>https://img.gamemonetize.com/kbac8c4u2b42ezncjx0049awdderpzxm/512x384.jpg</thumb></item>
+<item><id>72930</id><title>Solitaire: Card Sorting</title><description>An intellectual card puzzle that combines the mechanics of classic solitaire with the logic of thematic sorting. At each level, you need to organize cards into categories: plants, jewelry, toys, tools, flowers, and many more. Use observation and strategy to clear the field and complete the level within a limited number of moves.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8g0f47j2ywc7mtqftraxeu45z13qw3hg/</url><thumb>https://img.gamemonetize.com/8g0f47j2ywc7mtqftraxeu45z13qw3hg/512x384.jpg</thumb></item>
+<item><id>72693</id><title>Jigsolitaire Deluxe</title><description>Jigsolitaire Deluxe is a refined card-based puzzle where every level turns into the creation of a masterpiece. Move picture cards around the board to connect them into a seamless image ; from famous paintings like Mona Lisa to serene landscapes and still lifes. As the fragments start to align and the image comes to life, you'll feel that satisfying moment of completion. Simple controls, smooth gameplay, and visually stunning artworks make this game both relaxing and rewarding.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/23sgyhikibl5jvylyk2uub6wksiq8tfo/</url><thumb>https://img.gamemonetize.com/23sgyhikibl5jvylyk2uub6wksiq8tfo/512x384.jpg</thumb></item>
+<item><id>69874</id><title>Card Quest: Solitaire</title><description>Embark on an epic journey through the world of cards in Card Quest: Solitaire! This is not just another solitaire  it's a true adventure where every move matters. Master the classic solitaire rules, explore multiple themes, and challenge yourself with unique scoring modes. Whether you're here to relax or to chase the highest score, the quest never ends! With smooth controls, beautiful backgrounds, and unlimited replayability, Card Quest: Solitaire will keep you coming back for just one more game. Are you ready to begin your quest?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/v6qpevlp4d7jt4uhznzfg5g8a4ugerl1/</url><thumb>https://img.gamemonetize.com/v6qpevlp4d7jt4uhznzfg5g8a4ugerl1/512x384.jpg</thumb></item>
+<item><id>68600</id><title>Critter Mahjong Solitaire</title><description>Critter Mahjong Solitaire is a fun and relaxing game where you match cute animal tiles. Join a group of happy jungle animals as you pair them up and complete each level before time runs out. If you get stuck, you can use hints to help. Finishing a level unlocks new challenges and keeps the fun going!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/xilmr8uwpy6paduqr4cv7n7piir8wwtj/</url><thumb>https://img.gamemonetize.com/xilmr8uwpy6paduqr4cv7n7piir8wwtj/512x384.jpg</thumb></item>
+<item><id>64915</id><title>Crescent Solitaire</title><description>Crescent Solitaire is a captivating card game where the objective is to move all cards from the outer tableau piles to the eight foundation piles in the center. Players must stack the aces up to the kings in suit while also placing kings down to aces in suit. Cards can be moved within the tableaus as long as they are of the same suit and the card being placed is directly higher or lower in value than the card beneath it. With its unique crescent layout and strategic gameplay, Crescent Solitaire offers a delightful challenge for fans of traditional solitaire!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/5lokfjcwxjucbc7zbipfher6oee55gep/</url><thumb>https://img.gamemonetize.com/5lokfjcwxjucbc7zbipfher6oee55gep/512x384.jpg</thumb></item>
+<item><id>64938</id><title>Bottle Solitaire</title><description>Game objective: Clear as many bottles as possible. It would be the best if there is only one bottle left in the end and it is located at the very center. Click to select the bottle you want to move. The positions where it can jump to will be automatically shown. Just click on the target position.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/dkn8obuzakhrukr5wwppcltndtmlixv0/</url><thumb>https://img.gamemonetize.com/dkn8obuzakhrukr5wwppcltndtmlixv0/512x384.jpg</thumb></item>
+<item><id>61093</id><title>Mahjongg Solitaire</title><description>Relax and unwind with Mahjongg Solitaire! Match pairs of mahjongg tiles to clear the board and complete each level. With beautiful designs and satisfying puzzles, it's the perfect game for a peaceful challenge!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ep1klxup1xxefe9ucbga0r283x2lvc2m/</url><thumb>https://img.gamemonetize.com/ep1klxup1xxefe9ucbga0r283x2lvc2m/512x384.jpg</thumb></item>
+<item><id>57758</id><title>Nova Solitaire</title><description>Relax Now! Try this Most Addictive Classic Solitaire Card Games for You FREE!. With original nova Solitaire, you can play anywhere, anytime for fun  Relaxing.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/uvk9ohy1txdkje5adf5vf515f9vug84s/</url><thumb>https://img.gamemonetize.com/uvk9ohy1txdkje5adf5vf515f9vug84s/512x384.jpg</thumb></item>
+<item><id>57400</id><title>Napoleon Solitaire</title><description>A Classic Napoleon Solitaire Card Game. Move all the cards from bottom to the top. Beautiful graphics and a lot of fun for everyone! Move all cards from the tableau (bottom of the screen) and the stock (middle of the screen) to the foundations (top of the screen). Cards can be placed onto the foundations if they are one rank higher and of the same suit as the top card. Similarly, cards can be moved within the tableau if they are one rank lower and of the same suit as the card theyre placed on. Its simple, and youll quickly pick it up as you play. Have fun!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/zu7j59kykrdfyu7408dg9u89ukgkw8hy/</url><thumb>https://img.gamemonetize.com/zu7j59kykrdfyu7408dg9u89ukgkw8hy/512x384.jpg</thumb></item>
+<item><id>54478</id><title>Solitaire Card Sort Puzzle</title><description>Solitaire Card Sort Puzzle is a clever color matching and sorting game designed to test your organizational and puzzle solving skills. Your mission in this gentle gaming experience is to sort the cards on the board and place them in perfect color order. However, dont be fooled by the seemingly simple concept. As you progress through the levels, each level becomes progressively more demanding and requires careful planning and strategic thinking to conquer. With user-friendly gameplay and an impressive array of colors, Color Card Sort is a must-try for lovers of matching games, sorting challenges, or fun brain teasers that everyone can enjoy. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/pzn5c388ig1lls7xwgwekbdnhfutjnmu/</url><thumb>https://img.gamemonetize.com/pzn5c388ig1lls7xwgwekbdnhfutjnmu/512x384.jpg</thumb></item>
+<item><id>55963</id><title>Solitaire Match Puzzle</title><description>Hot pot, barbecue, custard tarts, pasta whatever you love is here. Solitaire Match Puzzle is a food-themed puzzle game. The game contains food and desserts from all over the world, every time the game starts there will be a lot of food cards, and these cards overlap each other.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/eich7vpcet72i1u1gzsoxs9u88fir3na/</url><thumb>https://img.gamemonetize.com/eich7vpcet72i1u1gzsoxs9u88fir3na/512x384.jpg</thumb></item>
+<item><id>54621</id><title>Spider Solitaire 3</title><description>Experience Spider Solitaire, one of the popular single-player card games. Arrange cards in descending order and form complete sets of the same suit from King to Ace to remove them. The challenge is to organize two decks into eight tableau piles. With strategic thinking and skill, try to uncover all cards and complete the eight sets. There are varying difficulty levels based on the number of different suits (Diamonds, Spades, Hearts, Clubs) you choose to play with. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/nbc5fzuswyh7ij2dr9p3a68gru8a5r4l/</url><thumb>https://img.gamemonetize.com/nbc5fzuswyh7ij2dr9p3a68gru8a5r4l/512x384.jpg</thumb></item>
+<item><id>54316</id><title> Solitaire Crime Stories</title><description>Solitaire Crime Stories is an exciting new Solitaire game which will carry you away into a world of fascinating criminal investigations, colorful characters and stunning locations. Test your skills by completing interesting levels and unraveling the mysteries of the town of Springdale! Springdale is a small American town that lives in peace and quiet... but that's only at first glance. Everyone hides secrets here, secrets that could tear this carefree town apart. Mysterious murders and dark family secrets are only some of the riddles for our young journalist heroine Lana Whitt to unravel.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/uc6l6weuuo7hvrt4q7n485mxkz7bhwr5/</url><thumb>https://img.gamemonetize.com/uc6l6weuuo7hvrt4q7n485mxkz7bhwr5/512x384.jpg</thumb></item>
+<item><id>53467</id><title>Emilys Hotel Solitaire</title><description>What are you going to do when you go on a journey to a tropical island? Will you spend your time in a lounger, enjoying the hot sun and cold drinks, or become a master surfer? Our heroine Emily has arrived at this heavenly place to make her honorable grandfather Douglas Kirby's dream to build a hotel of his own come true. Forget about your problems and immerse yourselves in the magical atmosphere of a tropical island and a challenging game of Solitaire! Build your own hotel together with Emily, as every victory in Solitaire will let you get closer to your dream of creating the best hotel in the world!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/p24cvl0b8acr8a9wk0ncpflj076ntwz8/</url><thumb>https://img.gamemonetize.com/p24cvl0b8acr8a9wk0ncpflj076ntwz8/512x384.jpg</thumb></item>
+<item><id>52977</id><title>Mahjong Solitaire Game</title><description>Mahjong Solitaire Game is a classic tile-matching puzzle game that takes inspiration from traditional Mahjong games. It features a unique gameplay where players need to connect and eliminate matching tiles on a board made up of stacked Mahjong tiles. By following specific game rules, players must clear all the tiles on the board by matching and eliminating pairs of identical tiles. Test your skills and strategize your moves to clear each level in the Mahjong Solitaire Game.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/s8b8amapfecr6e4hfyc4msukug3mbkra/</url><thumb>https://img.gamemonetize.com/s8b8amapfecr6e4hfyc4msukug3mbkra/512x384.jpg</thumb></item>
+<item><id>51018</id><title>Xmas Mahjong Trio Solitaire</title><description>Embark on a festive adventure with Xmas Mahjong Trio Solitaire. Arrange Mahjong tiles in a horizontal stack of 9, strategically making trios disappear for extra cheer. Be cautious of overflowing stacks, as it signals the end of the game. Unwrap the joy of Xmas in this simple yet engaging holiday experience!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/epdrb1yla4fjg4vrinle4t2nz1uayc68/</url><thumb>https://img.gamemonetize.com/epdrb1yla4fjg4vrinle4t2nz1uayc68/512x384.jpg</thumb></item>
+<item><id>49684</id><title>Easy Solitaire</title><description>Play the simplest solitaire game you can find online. In this game you will be able to access the entire collection of cards. The game will make obvious moves for you to save you time.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ao8knecniu6zudnw4v4h3p6u95ly2mok/</url><thumb>https://img.gamemonetize.com/ao8knecniu6zudnw4v4h3p6u95ly2mok/512x384.jpg</thumb></item>
+<item><id>49459</id><title>Khafre Antique Solitaire</title><description>discover the old culture as well as fantastic tuts and khafre. Enjoy playing Khafre Antique Solitaire, a game of solitaire. Clear the deck as quickly as you can by stacking the cards. Experience the splendor of antiquity while using incredibly pricey cards and deck designs. The game's rules are really straightforward: sort and remove all cards to win. Play additional games only at jhurr.com.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/2d7gi81jp7cdfat2btrffnmj14dasiea/</url><thumb>https://img.gamemonetize.com/2d7gi81jp7cdfat2btrffnmj14dasiea/512x384.jpg</thumb></item>
+<item><id>49772</id><title>Autumn Solitaire Tripeaks</title><description>Play Classic TriPeaks or 100 different autumn levels. Remove all cards from the tableau, you can remove top cards that are 1 higher or 1 lower in value than the open card on the bottom. Click on the closed stack to get a new open card.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/kbtibyzi32lawgjwzo2m0k2tg6rmxk47/</url><thumb>https://img.gamemonetize.com/kbtibyzi32lawgjwzo2m0k2tg6rmxk47/512x384.jpg</thumb></item>
+<item><id>49410</id><title>Klondike Solitaire Turn 3</title><description>A classic solitaire game where you draw cards 3 by 3. You must rebuild the 4 suits to win the game.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/qutgfp3mfdom5gac7ga9vbhjys6rpx0o/</url><thumb>https://img.gamemonetize.com/qutgfp3mfdom5gac7ga9vbhjys6rpx0o/512x384.jpg</thumb></item>
+<item><id>49079</id><title>Mahjong Solitaire: World Tour</title><description>Mahjong Solitaire: World Tour elevates tile-matching. Solve levels to explore global cities in a journey through time. With striking graphics and smooth gameplay, its a must for puzzle lovers. Start your ultimate Mahjong adventure today!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/scp0z5cwaa8x6sh0sznt5gd1boplv8zj/</url><thumb>https://img.gamemonetize.com/scp0z5cwaa8x6sh0sznt5gd1boplv8zj/512x384.jpg</thumb></item>
+<item><id>48230</id><title>Solitaire: Spider and Klondike</title><description>Immerse yourself in the captivating world of solitaire and test your strategic planning and logical thinking abilities. This version offers two popular variations: Spider and Klondike. Spider has three modes (1, 2, and 4 suits). In Spider solitaire, your goal is to arrange cards in ascending order by suit. Untangle the complex web of cards using the fewest moves possible. Klondike offers the standard game with a single deck of cards. Your task is to clear the playing field by building sequences from King to Ace, alternating colors. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/81w3k4zsktl5r97mu2zoc581jsfb0oe4/</url><thumb>https://img.gamemonetize.com/81w3k4zsktl5r97mu2zoc581jsfb0oe4/512x384.jpg</thumb></item>
+<item><id>46232</id><title>Klondike Solitaire Pro</title><description>Enjoy a stylish version of the Klondike card game. A modern reiteration of this classic Solitaire game with undo, hints and many themes to choose from! Solitaire is an exciting way to pass the time - anywhere, any time. Whether you are at home on lazy day, at the office taking a break, or outside with your laptop soaking in the sun, spice up your day with a game of solitaire. Escape a mundane task with a quick win that will rejuvenate your spirit!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/6kxm7nd6969fadmh9nw10c7dv46p4uxm/</url><thumb>https://img.gamemonetize.com/6kxm7nd6969fadmh9nw10c7dv46p4uxm/512x384.jpg</thumb></item>
+<item><id>44226</id><title>Spider Solitaire Pro</title><description>Spider Solitaire is a card game that uses two decks of cards. The more cards, the more exciting the solitaire! You will really need to use your concentration to beat this puzzle game. This version of solitaire is different because it does not involve placing cards into foundation slots. Instead, stack the cards in the tableau in descending order to spin a spider web-like pattern. There is no need to sort by suit. This card game is challenging because it is easy to run out of moves. If you run out of moves, click the stock to add another row of cards to the stacks. Eliminate all the stacks to beat the game!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ljf3pomsy28z01q6lzjoa5v8q5oopqjb/</url><thumb>https://img.gamemonetize.com/ljf3pomsy28z01q6lzjoa5v8q5oopqjb/512x384.jpg</thumb></item>
+<item><id>47210</id><title>Klondike Solitaire Turn One</title><description>A classic solitaire game where you draw cards one by one. You must rebuild the 4 suits to win the game.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/1cq6tv827nhsgsom3yolnvrat7xs4mfi/</url><thumb>https://img.gamemonetize.com/1cq6tv827nhsgsom3yolnvrat7xs4mfi/512x384.jpg</thumb></item>
+</channel></rss>`;
+
+    const grid = document.getElementById('gameGrid');
+    const searchInput = document.getElementById('searchInput');
+    const modal = document.getElementById('gameModal');
+    const frame = document.getElementById('gameFrame');
+    const fullScreenBtn = document.getElementById('fullScreenBtn');
+    const fsPath = document.getElementById('fsPath');
+    
+    let gameList = [];
+
+    function init() {
+        initAllGames();
+        setupEventListeners();
+    }
+
+    // Parse XML data to generate the game list
+    function initAllGames() {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(FEED_XML, "text/xml");
+        const items = xmlDoc.getElementsByTagName("item");
+
+        gameList = Array.from(items).map(item => ({
+            title: item.getElementsByTagName("title")[0]?.textContent,
+            desc: item.getElementsByTagName("description")[0]?.textContent,
+            category: item.getElementsByTagName("category")[0]?.textContent,
+            url: item.getElementsByTagName("url")[0]?.textContent,
+            thumb: item.getElementsByTagName("thumb")[0]?.textContent
+        }));
+
+        renderGames(gameList);
+    }
+
+    // Render cards into the DOM
+    function renderGames(data) {
+        grid.innerHTML = '';
+        data.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `Play ${game.title}`);
+            card.tabIndex = 0;
+
+            // Handle click event to open modal
+            card.onclick = () => {
+                frame.src = game.url;
+                modal.style.display = 'Solitaire';
+                document.body.style.overflow = 'hidden'; 
+            };
+            
+            // Support keyboard accessibility
+            card.onkeydown = (e) => {
+                if (e.key === 'Enter') card.onclick();
+            };
+
+            card.innerHTML = `
+                <div class="card-image-box">
+                    <img src="${game.thumb}" alt="${game.title}" class="card-image" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <button class="btn-play" tabindex="-1">PLAY NOW</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">${game.category}</span>
+                    <h3 class="card-title">${game.title}</h3>
+                    <p class="card-desc">${game.desc}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    function setupEventListeners() {
+        // Search filter logic
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = gameList.filter(g => 
+                g.title.toLowerCase().includes(query) || 
+                g.category.toLowerCase().includes(query)
+            );
+            renderGames(filtered);
+        });
+
+        // Fullscreen toggle event
+        fullScreenBtn.addEventListener('click', toggleFullscreen);
+
+        // Update UI when fullscreen state changes
+        document.addEventListener('fullscreenchange', updateFullscreenUI);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenUI);
+        
+        // Close modal when clicking outside the container
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) closeGame();
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'Solitaire') { closeGame(); }
+        });
+
+        updateFullscreenUI();
+    }
+
+    // Modal closing logic
+    window.closeGame = function() {
+        modal.style.display = 'none';
+        frame.src = '';
+        document.body.style.overflow = 'auto';
+        if (isFullscreen()) {
+            exitFullscreen();
+            setTimeout(updateFullscreenUI, 50);
+        }
+    }
+
+    // Fullscreen helper functions
+    function isFullscreen() {
+        return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+    }
+
+    function enterFullscreen() {
+        const container = document.querySelector('.modal-container');
+        if (container.requestFullscreen) { container.requestFullscreen(); } 
+        else if (container.webkitRequestFullscreen) { container.webkitRequestFullscreen(); } 
+        else if (container.mozRequestFullScreen) { container.mozRequestFullScreen(); } 
+        else if (container.msRequestFullscreen) { container.msRequestFullscreen(); }
+    }
+
+    function exitFullscreen() {
+        if (document.exitFullscreen) { document.exitFullscreen(); } 
+        else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); } 
+        else if (document.mozCancelFullScreen) { document.mozCancelFullScreen(); } 
+        else if (document.msExitFullscreen) { document.msExitFullscreen(); }
+    }
+
+    function toggleFullscreen() {
+        if (isFullscreen()) { exitFullscreen(); } else { enterFullscreen(); }
+    }
+
+    function updateFullscreenUI() {
+        const isFs = isFullscreen();
+        const enterPath = "M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3";
+        const exitPath = "M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3";
+        fsPath.setAttribute('d', isFs ? exitPath : enterPath);
+    }
+
+    // Initialize the script
+    init();
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAmeasLSfP2N6aDTaHv2g83HXA9fMPVZFE",
+    authDomain: "puzzlechallengehub.firebaseapp.com",
+    projectId: "puzzlechallengehub",
+    storageBucket: "puzzlechallengehub.firebasestorage.app",
+    messagingSenderId: "112608986588",
+    appId: "1:112608986588:web:acc32a06b94fd65f46bb19",
+    measurementId: "G-SX634LMH5N"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>

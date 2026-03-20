@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" href="https://puzzlechallengehub.com/favicon.ico">
+    <link rel="canonical" href="https://puzzlechallengehub.com/collection/sort.html">
+    <title>Sort Puzzles Collection - Play Free Online | PuzzleHub</title>
+    <meta name="description" content="Organize colors, stack liquids, and match items to restore perfect logical order. Dive into soothing and satisfying puzzles.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --bg-card: #161b22;
+            --accent-primary: #7b61ff;
+            --accent-hover: #917cff;
+            --text-light: #f0f6fc;
+            --text-dim: #8b949e;
+            --border-color: #30363d;
+            --glass: rgba(10, 11, 16, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        header {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--accent-primary);
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 15px rgba(123, 97, 255, 0.4);
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-light);
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: #0d1117;
+            border: 1px solid var(--border-color);
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2);
+        }
+
+        /* Collection Hero Section */
+        .collection-hero {
+            padding: 3rem 5% 2rem;
+            background: linear-gradient(180deg, rgba(123, 97, 255, 0.12) 0%, rgba(10, 11, 16, 0) 100%);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumbs a {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--accent-primary);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-icon-box {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-primary);
+            border-radius: 20px;
+            display: grid;
+            place-items: center;
+            font-size: 2.5rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(123, 97, 255, 0.4);
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .hero-text p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 0 5% 4rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            content-visibility: auto; 
+            contain-intrinsic-size: 0 350px; 
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+        }
+
+        .card-image-box {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background-color: #1a1f26;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+            display: block;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .btn-play {
+            background: var(--accent-primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            transform: translateY(20px);
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .card:hover .btn-play {
+            transform: translateY(0);
+        }
+
+        .card-body {
+            padding: 1.2rem;
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            color: #FDF67C;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-light);
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.6rem;
+            line-height: 1.3rem;
+        }
+
+        /* Modal System */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px;
+        }
+
+        .modal-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 85vh;
+            margin: 20px auto;
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(123, 97, 255, 0.3);
+        }
+
+        .modal-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 15px;
+            z-index: 2100;
+        }
+
+        .close-btn {
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: 1px solid #444;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .close-btn:hover, #fullScreenBtn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 5%;
+            text-align: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+        
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-dim);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 12px; padding: 12px 3%; }
+            .search-wrapper { width: 100%; }
+            .hero-content { flex-direction: column; text-align: center; gap: 15px; }
+            .hero-icon-box { width: 60px; height: 60px; font-size: 2rem; border-radius: 15px;}
+            .hero-text h1 { font-size: 1.8rem; }
+            
+            .game-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 0 3% 2rem;}
+            .card-body { padding: 0.8rem; }
+            .card-title { font-size: 0.9rem; margin-bottom: 4px; }
+            .card-desc { display: none; }
+            .btn-play { padding: 6px 16px; font-size: 0.8rem; }
+            
+            .modal { padding: 0; }
+            .modal-container { height: 100vh; margin: 0; border-radius: 0; }
+            .modal-controls { top: 15px; right: 15px; }
+            #fullScreenBtn, .close-btn { width: 38px; height: 38px; }
+        }
+    </style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "v7w38tv951");
+</script>
+</head>
+
+<body>
+
+<header>
+    <a href="/" class="brand">
+        <div class="logo-icon">P</div>
+        <span class="brand-name">PuzzleHub</span>
+    </a>
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search Sort games...">
+    </div>
+</header>
+
+<main>
+    <div class="collection-hero">
+        <div class="breadcrumbs">
+            <a href="/">Home</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <a href="/collection.html">Collections</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <span>Sort Puzzles</span>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-icon-box">
+                <i class="fas fa-layer-group"></i>
+            </div>
+            <div class="hero-text">
+                <h1>Sort Games Collection</h1>
+                <p>Organize colors, stack liquids, and match items to restore perfect logical order. Dive into soothing and satisfying puzzles.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameGrid" class="game-grid"></div>
+</main>
+
+<div id="gameModal" class="modal" role="dialog" aria-modal="true" aria-label="Game Player">
+    <div class="modal-container">
+        <div class="modal-controls">
+            <button id="fullScreenBtn" title="Toggle Fullscreen" style="background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 42px; height: 42px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; flex-shrink: 0;">
+                <svg id="fsIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                    <path id="fsPath" d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+            </button>
+            <button onclick="closeGame()" title="Close Game" class="close-btn">
+                ✕
+            </button>
+        </div>
+        <iframe id="gameFrame" src="" allow="autoplay; fullscreen; keyboard" title="Play Game Frame"></iframe>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-socials">
+        <a href="https://www.facebook.com/puzzlehubgames" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@PuzzleGamesGuideVideo" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2026 PuzzleHub Gaming Platform</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">
+        <a href="/privacy-policy.html" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a> | 
+        <a href="/terms-of-service.html" style="color: var(--text-dim); text-decoration: none;">Terms of Service</a> | 
+        <a href="/about-us.html" style="color: var(--text-dim); text-decoration: none;">About Us</a> | 
+        <a href="/contact-us.html" style="color: var(--text-dim); text-decoration: none;">Contact Us</a>
+    </p>
+</footer>
+
+<script>
+    // Feed data matching the All Games section mechanism
+    const FEED_XML = `
+<rss version="2.0">
+<channel>
+<item><id>77005</id><title>Water Sort Puzzle Master</title><description>Water Sort Puzzle Master is a relaxing yet challenging logic puzzle where you organize colorful liquids into the correct tubes. Each level introduces more tubes and colors, increasing the difficulty and testing your strategy skills. Tap to pour water between tubes and sort each color correctly to complete the level. With smooth animations, satisfying liquid physics, and hundreds of levels to solve, this addictive puzzle game is perfect for players who enjoy brain-teasing challenges and relaxing gameplay.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/6q7y013mx7y4lrxwc0ehrdgyeucglv46/</url><thumb>https://img.gamemonetize.com/6q7y013mx7y4lrxwc0ehrdgyeucglv46/512x384.jpg</thumb></item>
+<item><id>74534</id><title>Water Sort Brain Puzzle</title><description>Pour, sort, and relax! Water Sort Puzzle is a casual, fun, and relaxing sorting game that brings you a splash of colorful excitement. If youre looking for a water puzzle to unwind with, this is the perfect pick. Sorting water might seem simple, but this addictive water sorting game will challenge your brain most delightfully. No timers, no pressure - just pure liquid sorting fun at your own pace. Dive into a world of vibrant liquids and calming soundscapes. </description><category>Puzzle</category><url>https://html5.gamemonetize.co/m5aiar530gxx7dbruzqwc4p0tjtub8w4/</url><thumb>https://img.gamemonetize.com/m5aiar530gxx7dbruzqwc4p0tjtub8w4/512x384.jpg</thumb></item>
+<item><id>75291</id><title>Water Ball Sorting Puzzle</title><description>Sorting Puzzle Game is a fun, relaxing, and brain-boosting puzzle game designed for players who enjoy logical challenges and color sorting gameplay. In this casual puzzle game, your main task is to sort different items, colors, or objects into the correct containers using smart moves and strategic thinking. Each level offers a unique puzzle that tests your problem-solving skills in an enjoyable way.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/pvktpsvwhq58bo3pe7uqgxalqnwu67pr/</url><thumb>https://img.gamemonetize.com/pvktpsvwhq58bo3pe7uqgxalqnwu67pr/512x384.jpg</thumb></item>
+<item><id>74784</id><title>Color Sort Impostor Edition</title><description>Color Sort Impostor Edition is a fun and relaxing puzzle game that challenges your logic and focus. Sort the colorful characters into the correct tubes so that each tube contains only one color. The rules are simple, but the puzzles quickly become more challenging as new colors and obstacles appear. Plan your moves carefully, avoid mistakes, and enjoy a smooth, satisfying sorting experience designed for players of all ages.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/bsf4wr41vt498k3e254fziqhs9330qdk/</url><thumb>https://img.gamemonetize.com/bsf4wr41vt498k3e254fziqhs9330qdk/512x384.jpg</thumb></item>
+<item><id>75598</id><title>Fruit Sort Logic</title><description>Fruit Sort Logic is a fun and relaxing puzzle game where you sort colorful fruit juices on shelves. Move the juices around and match three of the same kind to clear a shelf. Space is limited, so each move matters. Clear all shelves to finish the level and unlock new ones. With smooth controls, bright visuals, and endless levels, the game is easy to play and satisfying to master. Perfect for a calm but clever puzzle experience. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/xc9peayspssscylbjy2sy1xoylwpz1zn/</url><thumb>https://img.gamemonetize.com/xc9peayspssscylbjy2sy1xoylwpz1zn/512x384.jpg</thumb></item>
+<item><id>73891</id><title>AquaSort 2: Color Puzzle</title><description>AquaSort 2: Color Puzzle is an engaging and relaxing water-sorting puzzle game designed to challenge your mind and provide hours of satisfying gameplay. Your goal is simple: sort all the colored liquids into their respective bottles until each bottle contains only one color. With hundreds of levels, the complexity increases as you advance, introducing more colors and bottles to manage. The game features adjustable difficulty settings (Easy, Normal, Hard) that dynamically change the level generation to offer a smoother or much tougher challenge, including an increased number of empty bottles on the Hard setting.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/f6bmqv5n3ys6ugmds34q2jf7g0hc1525/</url><thumb>https://img.gamemonetize.com/f6bmqv5n3ys6ugmds34q2jf7g0hc1525/512x384.jpg</thumb></item>
+<item><id>74487</id><title>Birds Sort Color Match Puzzle</title><description>Welcome to the gentle world of Bird Sort Color, where the gentle embrace of nature meets the joy of relaxation! Say goodbye to ordinary puzzles and get ready for an exciting experience with lively avian characters and delightful asmr melodies. Bird Sort Color is the perfect blend of fun and relaxation. Birds need to be with their flocks to fly around the world. Bird migration season is coming. Sort bird flocks, let them fly. For all those who love the Bird Sort puzzle game, big news is here with Bird Sort color match new sorting rule, more challenging, more fun. There are many super-hard levels that youve never found in the first Bird Sort.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/i7b34e3h3odt7n6qawle56nlyypm0h2r/</url><thumb>https://img.gamemonetize.com/i7b34e3h3odt7n6qawle56nlyypm0h2r/512x384.jpg</thumb></item>
+<item><id>73331</id><title>Water Sort Master</title><description>Water Sort Master is the ultimate liquid puzzle game! Test your brain with 6 unique game modes, including Classic, Time Trial, and Mystery. Sort the colored liquids until each flask contains only one color. Featuring thousands of levels, unlockable themes, and helpful power-ups like Undo and Extra Flasks. Features: 6 Game Modes: Classic, Time Trial, Limited Moves, Sequence, Mystery, and Fusion. Over 1000 unique levels. Unlockable themes and bottle styles. Smooth animations and relaxing sound effects. Play on Mobile or Desktop.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ka46hy72vwpoy3pppugopn6ppwm7rkwd/</url><thumb>https://img.gamemonetize.com/ka46hy72vwpoy3pppugopn6ppwm7rkwd/512x384.jpg</thumb></item>
+<item><id>73383</id><title>Food Game Grill Sort</title><description>Welcome to Food Game - Grill Sort, the sizzling casual puzzle simulation game that will make your taste buds tingle. Become a master grill chef as you carefully sort and match delicious skewers on the barbecue! Your goal is simple yet addictively fun. Clear food to earn coins according to customers needs.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/x18szni3pe1a4863gcud2kqig4rhrgfg/</url><thumb>https://img.gamemonetize.com/x18szni3pe1a4863gcud2kqig4rhrgfg/512x384.jpg</thumb></item>
+<item><id>72930</id><title>Solitaire: Card Sorting</title><description>An intellectual card puzzle that combines the mechanics of classic solitaire with the logic of thematic sorting. At each level, you need to organize cards into categories: plants, jewelry, toys, tools, flowers, and many more. Use observation and strategy to clear the field and complete the level within a limited number of moves.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8g0f47j2ywc7mtqftraxeu45z13qw3hg/</url><thumb>https://img.gamemonetize.com/8g0f47j2ywc7mtqftraxeu45z13qw3hg/512x384.jpg</thumb></item>
+<item><id>73390</id><title>Sort Game Toy Sort</title><description>Enjoy some adorable sorting fun in Sort Game: Toy Sort. This delightful match 3 puzzle and casual sort game challenges you to organize colorful dolls and toys. Match and eliminate all dolls within the limited time. When you encounter difficulties, use items to help you quickly clear the level.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/fd5lnyb9yzs3b30o5t1w11m5z1ggl6ho/</url><thumb>https://img.gamemonetize.com/fd5lnyb9yzs3b30o5t1w11m5z1ggl6ho/512x384.jpg</thumb></item>
+<item><id>71918</id><title>Nut Sort: Color Puzzle Game</title><description> Nut Sort: Color Puzzle Game ; a satisfying and addictive logic puzzle that will test your organizational skills! Sort colorful nuts onto matching bolts so that each bolt holds nuts of only one color. Sounds simple? Think again! Each new level introduces more bolts, more colors, and trickier layouts that will truly challenge your brain. How to play: Tap to move nuts between bolts, but plan carefully ; one wrong move can leave you stuck!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/bqo62nz1cpec68bw0mb8z8deln9yrq5a/</url><thumb>https://img.gamemonetize.com/bqo62nz1cpec68bw0mb8z8deln9yrq5a/512x384.jpg</thumb></item>
+<item><id>62680</id><title>Ball Sort Puzzle Free</title><description>Ball Sort Puzzle is a challenging puzzle game that will keep you entertained for hours! Sort the colored balls in the tubes until all of the same-hued balls are in the same tube. A brain-teasing game that is both tough and relaxing!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/sd072z9zvvalrwbem1ha83dl7vep0so0/</url><thumb>https://img.gamemonetize.com/sd072z9zvvalrwbem1ha83dl7vep0so0/512x384.jpg</thumb></item>
+<item><id>69597</id><title>Square Sort Mania</title><description>Square Sort Mania is a fresh, addictive hybrid casual puzzle game. Players place layered square blocks, each with four concentric colored layers onto a grid. If the outermost color of the placed block matches the outermost color of any adjacent block, both blocks destroy in a satisfying pop. This can trigger chain reactions, with the next inner color becoming the new outer layer and repeating the destruction sequence. The result is a visually explosive and strategic experience that blends puzzle-solving with match-style satisfaction.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/m0insptnj0ivme8bm25rn8pd4wbwdb0r/</url><thumb>https://img.gamemonetize.com/m0insptnj0ivme8bm25rn8pd4wbwdb0r/512x384.jpg</thumb></item>
+<item><id>70588</id><title>Sort And Style: Back To School</title><description>Step into the world of Sort And Style: Back To School, a fun mix of sorting and dress-up games for girls! Organize messy desks, lockers, wardrobes, and even bento boxes across 9 exciting levels. Then, challenge your creativity in the final dress-up unit where you style your school look with trendy uniforms, shoes, hairstyles, and accessories. Perfect for fans of organizing games, makeover fun, and school fashion challenges!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/qykgrmfq439njtlgmw9dau4s7zgksbcr/</url><thumb>https://img.gamemonetize.com/qykgrmfq439njtlgmw9dau4s7zgksbcr/512x384.jpg</thumb></item>
+<item><id>70448</id><title>Bubble Sorting Infinite Remastered</title><description>Bubble Sorting Infinite Remastered is a fun and calming puzzle game where you sort colorful bubbles into matching tubes. Just move the bubbles around, stack 3 to 10 of the same color together, and watch them pop away! With endless levels and relaxing gameplay, it's the perfect brain teaser to unwind anytime, anywhere.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ocw34nv8r32gov4k28iufvmnoydpyewx/</url><thumb>https://img.gamemonetize.com/ocw34nv8r32gov4k28iufvmnoydpyewx/512x384.jpg</thumb></item>
+<item><id>69233</id><title>Water Sort Legend</title><description>Water Sort Legend is a brain-teasing puzzle game with a twist of fun, coins, and challenge! Sort colored water into the right tubes ; test your logic, improve your IQ, and unlock new levels as you go! With over 150 handcrafted levels across Easy, Medium, and Hard difficulties, players will never run out of puzzles to solve. Features: Level Unlock System  Beat a level to unlock the next! IQ Estimator  Get a smartness score based on your moves! Coins  Currency System  Earn coins for every win. Upgrade Shop  Spend coins on helpful boosters: Extra Tube Coin Booster Color Helper Sound FX  Clean sounds </description><category>Puzzle</category><url>https://html5.gamemonetize.com/8o2djq26yo34ft65w3ue5teuyavvltfj/</url><thumb>https://img.gamemonetize.com/8o2djq26yo34ft65w3ue5teuyavvltfj/512x384.jpg</thumb></item>
+<item><id>69161</id><title>Color Yarn Sort</title><description> Color Yarn Sort is a fun and relaxing puzzle game where you need to sort colorful spools of yarn into their matching buckets. The challenge? You have limited space to place the buckets, and you must think carefully about which bucket to move forward. Each yarn color must be placed in its corresponding bucket, but you can only move the buckets into the available spaces;there's no room for error!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/w6c1riuqxlu05k18ci5mazjcrl74jz6w/</url><thumb>https://img.gamemonetize.com/w6c1riuqxlu05k18ci5mazjcrl74jz6w/512x384.jpg</thumb></item>
+<item><id>68362</id><title>Screw Sort Puzzle Pin Jam 3D</title><description>Want a fun 3D puzzle that's strangely relaxing? In ScrewSortPuzzle:PinJam3D, you'll remove every screw, sort colorful pins, and match them to the right slots without causing a jam! You will have to keep matching the screws of the right color and put them in the box of the corresponding color. Rotate the board to spot the screws you can safely loosen first. You can experience remove screw mode.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/7hih363nnbpbp77p9818x6i79tfp6yjr/</url><thumb>https://img.gamemonetize.com/7hih363nnbpbp77p9818x6i79tfp6yjr/512x384.jpg</thumb></item>
+<item><id>68050</id><title>Cake Sorting Deluxe</title><description>Cake Sorting Deluxe is a fun and relaxing puzzle game that challenges your sorting skills! Shift cakes across shelves to make matches of three or more. Clear the board, uncover hidden and shadowed cakes, and solve tricky puzzles as you go. With cute visuals, smooth gameplay, and lots of sweet challenges, Cake Sorting Deluxe is a treat for anyone who loves a good puzzle. Ready to mix, match, and clear the shelves?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/66ju6j48hp5fcnxs2r30qg771tai27wk/</url><thumb>https://img.gamemonetize.com/66ju6j48hp5fcnxs2r30qg771tai27wk/512x384.jpg</thumb></item>
+<item><id>67234</id><title>Crazy Goods Sort 3D</title><description>Ready to start a 3D puzzle thats both magical and brain-teasing? Welcome to Crazy Goods Sort 3D, where chaos meets logic, and your job is to restore order. Here, youll be confronted with a pile of boxes that have been tossed around. Sort the same kinds of items into the correct bins so that they match perfectly.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8oyorvtaq3sv2g6j2m67crgl4rpe6vdy/</url><thumb>https://img.gamemonetize.com/8oyorvtaq3sv2g6j2m67crgl4rpe6vdy/512x384.jpg</thumb></item>
+<item><id>63593</id><title>Sorting Fruits Game</title><description>Sorting Fruits is a relaxing and educational game where players organize colorful fruits into their correct baskets. Theres no timer ; just smooth, stress-free gameplay designed to boost focus and sorting skills. With beautiful visuals and easy drag-and-drop controls, it's a perfect game for kids, families, and casual players. Add Sorting Fruits to your platform and offer your audience a calm, enjoyable gaming experience that improves observation and categorization abilities.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/yi7u8p888n1y5f6fmidebsd1pjnopgfa/</url><thumb>https://img.gamemonetize.com/yi7u8p888n1y5f6fmidebsd1pjnopgfa/512x384.jpg</thumb></item>
+<item><id>65567</id><title>Smoothie Sorting</title><description>Get ready for a fruity blast in Smoothie Sorting, the ultimate casual sorting game that blends fun and focus! Sort different fruits into the correct blenders and create delicious smoothies in this addictive puzzle challenge. Each level gets trickier as more fruits and blenders appear ; can you keep up with the chaos? Perfect for quick gameplay sessions, Smoothie Sorting is easy to learn but hard to master. Great for kids and adults alike! Drag, Drop  Blend Fun fruity animations Multiple smoothie flavors </description><category>Puzzle</category><url>https://html5.gamemonetize.com/3ezvmlqkaoqo9th9bnrm019neldh5ywk/</url><thumb>https://img.gamemonetize.com/3ezvmlqkaoqo9th9bnrm019neldh5ywk/512x384.jpg</thumb></item>
+<item><id>64256</id><title>Animal Sort Cute Game Puzzle</title><description>Are you a pet person? Do you wanna run a farm that is full of cute animals? Try Animal Sort, not only be an owner but also be in charge of keeping them in line - the game you should not look away. This is not just a regular puzzle game, but its also a fantastic one with a lot of mini games included. Moreover, we have an additional mode of building the pet city that you definitely wont be able to miss. Lets give it a try!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/2zrl9g52i1i6y0kl7krqm3zwp3yclmuc/</url><thumb>https://img.gamemonetize.com/2zrl9g52i1i6y0kl7krqm3zwp3yclmuc/512x384.jpg</thumb></item>
+<item><id>64520</id><title>Coffee Craze Sorting Game</title><description>You have a coffee mania? Jump into Coffee Craze, where you can show off your barista skills and enjoy a fun sorting game! Sort colorful boxes to make perfect coffee packs quickly. Hurry to serve tasty beverages, tidy up your caf, and keep your customers happy. Get ready for an exciting sorting adventure in Coffee Craze! HIGHLIGHTS Easy and relaxing gameplay. Brain-training fun. Match same color coffee to complete boxes. Addictive and engaging sorting game Coffee Craze with very relaxing gameplay and exciting brain-training levels awaits!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/42pej8tbzwaylcxwcpj16i576tpgo2ty/</url><thumb>https://img.gamemonetize.com/42pej8tbzwaylcxwcpj16i576tpgo2ty/512x384.jpg</thumb></item>
+<item><id>62161</id><title>Color Hoop: Sort Puzzle</title><description>Welcome to Color Hoop: Sort Puzzle Game, the ultimate game of your sorting color and puzzle game solving skills! Immerse yourself in a world of vibrant colors and challenging puzzles, where your mission is to sort and organize many kinds of colorful hoops. This addictive and visually captivating game will keep you entertained for hours on end.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/q2fcgyk3dtprdnf8279v45ssixlwqi9v/</url><thumb>https://img.gamemonetize.com/q2fcgyk3dtprdnf8279v45ssixlwqi9v/512x384.jpg</thumb></item>
+<item><id>63968</id><title>Stack N Sort</title><description>Sort, stack, and organize colorful rings in this fun  addictive puzzle game! Stack N Sort  The Ultimate Sorting Puzzle Challenge! Get ready for a super satisfying and brain-teasing puzzle experience! In Stack N Sort, your goal is to sort and stack colorful rings onto the correct poles. Sounds simple? Think again! With limited space and tricky arrangements, you'll need sharp logic and smart moves to complete each level. How to Play: Tap  drag to move rings between poles! Stack rings of the same color together Plan your moves carefully  Limited </description><category>Shooting</category><url>https://html5.gamemonetize.com/oshs50wl9x5rgupqa2sp52oy87f7xprv/</url><thumb>https://img.gamemonetize.com/oshs50wl9x5rgupqa2sp52oy87f7xprv/512x384.jpg</thumb></item>
+<item><id>63986</id><title>Emoji Sort</title><description>Emoji Sort is a pattern recognition puzzle game where players must fill in empty cells with the correct emojis. Each puzzle presents a grid with missing emojis that follow specific patterns - such as categories, sequences, or associations. Players analyze the existing emojis to identify the pattern (animals, food chains, transportation types, etc.) and select the appropriate emojis to complete the grid. The game features 30 increasingly challenging levels with various pattern types, and includes a hint system to help when players get stuck. Perfect for puzzle enthusiasts who enjoy discovering logical connections between visual elements!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/g3gdro0n97mr5ar67bdj01z64283fh8k/</url><thumb>https://img.gamemonetize.com/g3gdro0n97mr5ar67bdj01z64283fh8k/512x384.jpg</thumb></item>
+<item><id>63416</id><title>Room Sort Floor Plan</title><description>Room Sort Floor Plan is a fun creative puzzle game with elements of sorting and design. In this casual game, you'll go through proper sorting and organization. Designing the perfect layout for every room. Rearrange the floor plan to create your unique home. Each level is a jigsaw puzzle challenge.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/lp2fgoca7wo5l59w216lklkr4p5ump8g/</url><thumb>https://img.gamemonetize.com/lp2fgoca7wo5l59w216lklkr4p5ump8g/512x384.jpg</thumb></item>
+<item><id>63199</id><title>The Sorting Mart</title><description>The Sorting Mart is a store sorting puzzle game that lets you experience the fun of shopping in a store. Rearrange items between shelves to match three identical ones on a shelf, clearing it and letting the upper shelves drop down. Clear entire stacks to shift adjacent shelves and keep matching before time runs out. If you get stuck, use the shuffle button to mix up the shelves and find matches more easily. Challenge your sorting skills as levels become more difficult!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/1mn9i9brct1cd4vjpqkvhki23p13oqvy/</url><thumb>https://img.gamemonetize.com/1mn9i9brct1cd4vjpqkvhki23p13oqvy/512x384.jpg</thumb></item>
+<item><id>62745</id><title>Harvest Store Sorting</title><description>Harvest Store Sorting is a puzzle game set in a pastoral world where you need to sort harvested fruits on shelves. Place the same fruits together until each shelf contains only one type of fruit. The game is fun and engaging, with each level featuring differently shaped shelves and varying numbers of them. Use your sorting skills to organize the shelves neatly within the limited space. If you encounter difficulties, you can also use tools to help you pass the levels more easily.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/g57t0dx2i7kxc0ap32wlknqhyznrofz2/</url><thumb>https://img.gamemonetize.com/g57t0dx2i7kxc0ap32wlknqhyznrofz2/512x384.jpg</thumb></item>
+<item><id>61610</id><title>Hoop Stack Sort Puzzle Game</title><description>In Hoop Stack, your primary objective is to stack colorful hoops onto a central pole with perfect precision. Each color sort hoop needs to be placed carefully to ensure it fits correctly on top of the previous one. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/w4fl93r07raosopumiuh6lee2x61sr7j/</url><thumb>https://img.gamemonetize.com/w4fl93r07raosopumiuh6lee2x61sr7j/512x384.jpg</thumb></item>
+<item><id>61362</id><title>Hexa Stack Sort</title><description>Hexa Stack Sort is a fun and engaging puzzle game that will put your brain to the test! The goal is simple, but the challenge is exciting. You need to match and stack hexagonal blocks of the same color. You can move the blocks around. but be careful not to get stuck. Only blocks of the same color can be stacked together.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/2jcdujtzr4uxhlhufybghe1zev69icka/</url><thumb>https://img.gamemonetize.com/2jcdujtzr4uxhlhufybghe1zev69icka/512x384.jpg</thumb></item>
+<item><id>60411</id><title>nuts puzzle:color sort</title><description>Nut Puzzle: Color Sort is a color matching sorting game where you have to sort all the color bolts. Make sure each bolt contains only bolt models of the same color and advance to the next level! Don't worry if you get stuck, you can always ask for helpful tips! Can you solve all problems? Can run in PC and mobile browsers.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/gq5t2q1hmyr7m5ayiur1ozobes8v35z3/</url><thumb>https://img.gamemonetize.com/gq5t2q1hmyr7m5ayiur1ozobes8v35z3/512x384.jpg</thumb></item>
+<item><id>60693</id><title>Screw Sort Pin Puzzle</title><description>Dive into the clever world of Screw Sort-Pin Puzzle, where logic and strategy come together! Your task is to sort the colorful screws, click three screws of the same color as the glass, the glass will be shot. You need to pull pins in the right order to avoid chaos!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/i16gs0nj7cyxux1jz21kajvqquhycbjr/</url><thumb>https://img.gamemonetize.com/i16gs0nj7cyxux1jz21kajvqquhycbjr/512x384.jpg</thumb></item>
+<item><id>60664</id><title>Bird Sort Puzzles</title><description>Bird Sort Puzzles is a fun and challenging game where players sort colorful birds into matching nests. With various bird colors and nest combinations, players must think strategically to complete each level. You can add more branches in difficult levels. The game offers a relaxing yet stimulating experience, perfect for players of all ages.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/sbrgeezeghg0oj1tr0h5fh4ddmrem1xf/</url><thumb>https://img.gamemonetize.com/sbrgeezeghg0oj1tr0h5fh4ddmrem1xf/512x384.jpg</thumb></item>
+<item><id>59847</id><title>Brain Game Battery Color Sort Puzzle</title><description>Match batteries of the same color to power up the grid and illuminate the room. With vibrant visuals and engaging gameplay, Battery Color Sort 3D will keep you hooked for hours. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/3b3xkthbrw6p09xea5qrjr0zxkr9b0gc/</url><thumb>https://img.gamemonetize.com/3b3xkthbrw6p09xea5qrjr0zxkr9b0gc/512x384.jpg</thumb></item>
+<item><id>59696</id><title>Holiday Hex Sort</title><description>In Holiday Hex Sort, drag and drop hex tile stacks onto the board. Merge tiles to form stacks of 10 and collect them. As levels progress, more tile types appear. If there are 10 similar tiles on a stack, they will be collected. Clear all tiles by making stacks of 10 before time runs out !</description><category>Puzzle</category><url>https://html5.gamemonetize.com/twq47apmwo98gqxz06j4ayvycngyijdy/</url><thumb>https://img.gamemonetize.com/twq47apmwo98gqxz06j4ayvycngyijdy/512x384.jpg</thumb></item>
+<item><id>57848</id><title>Colorful Assort Game</title><description>Colorful Assort is a fun and vibrant puzzle game where you match and sort colorful balls. Test your strategy skills as you tackle various levels and challenges. Perfect for a quick and relaxing brain teaser!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/92rgvlnfyvms2w91puiip5hr27x4y3uj/</url><thumb>https://img.gamemonetize.com/92rgvlnfyvms2w91puiip5hr27x4y3uj/512x384.jpg</thumb></item>
+<item><id>54554</id><title>Water Color Sorting</title><description>In Water Color Sorting, players blend hues within bottles to achieve a single color per container. Exercise your strategic thinking as you mix colors, ensuring each bottle holds only one distinct hue. With escalating complexity, this game offers a captivating challenge. Can you master the art of color blending and achieve perfect sorting? Web Dev <a href='https://www.funcrazygames.com/'>https://www.funcrazygames.com/</a></description><category>Puzzle</category><url>https://html5.gamemonetize.com/0iz34byke0ki09wmofrpa7tcxo8nxvtk/</url><thumb>https://img.gamemonetize.com/0iz34byke0ki09wmofrpa7tcxo8nxvtk/512x384.jpg</thumb></item>
+<item><id>58627</id><title>Halloween Store Sort</title><description>In Halloween Store Sort, match spooky toys and Halloween decorations by dragging them between shelves. Create sets of three to clear the shelves and reveal hidden ones above or to the sides of the screen. With many levels and increasing difficulty, each level has a time limit, so think fast! Use the shuffle button if you get stuck. Complete all levels to win and become the ultimate Halloween sorting champion!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/10kelat16nt4bxaogtsn2ft0t70kg6jg/</url><thumb>https://img.gamemonetize.com/10kelat16nt4bxaogtsn2ft0t70kg6jg/512x384.jpg</thumb></item>
+<item><id>58570</id><title>Coin Sort Puzzle</title><description>Play now for free;fun and addictive grid gameplay. Sort and merge coins to clear the board. Test your skills and earn coins. Fun for all ages! Welcome to the exhilarating world of Coin Sort, where speed, precision, and strategy come together in a captivating arcade-style puzzle game. As a Coin Sorter in a match game, your mission is to efficiently organize an ever-growing flow of coins into their respective lines based on their denominations. Are you ready to put your decision-making skills and reflexes to the test? Embark on a thrilling sorting adventure and unlock new levels. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/imaqq34l0iw90484l470rs0cfu7pofze/</url><thumb>https://img.gamemonetize.com/imaqq34l0iw90484l470rs0cfu7pofze/512x384.jpg</thumb></item>
+<item><id>58568</id><title>Bus Jam Sort</title><description>The passengers are waiting for their bus, sort them out based on their color! Visually, Bus Jam Game is a visual treat, imagine colorful buses, a diverse passengers, and a lively backdrop setting the stage for your bustling triple match puzzle adventure. Smooth animations elevate the fun, making each move a delightful experience in puzzle games.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/wlb9vj2y6oazlm6q8vvostlu8w649f71/</url><thumb>https://img.gamemonetize.com/wlb9vj2y6oazlm6q8vvostlu8w649f71/512x384.jpg</thumb></item>
+<item><id>57657</id><title> Kitchen Sorting</title><description>Kitchen Sorting uses well known meachanics of ball and water sorting games. Sort cooking ingredients into glass jars right in your comfortable kitchen. When sorted, pour them into the pot a cook meals.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/qt9jxy4clkxrv1zharuv23dr2vl4ohhe/</url><thumb>https://img.gamemonetize.com/qt9jxy4clkxrv1zharuv23dr2vl4ohhe/512x384.jpg</thumb></item>
+<item><id>54478</id><title>Solitaire Card Sort Puzzle</title><description>Solitaire Card Sort Puzzle is a clever color matching and sorting game designed to test your organizational and puzzle solving skills. Your mission in this gentle gaming experience is to sort the cards on the board and place them in perfect color order. However, dont be fooled by the seemingly simple concept. As you progress through the levels, each level becomes progressively more demanding and requires careful planning and strategic thinking to conquer. With user-friendly gameplay and an impressive array of colors, Color Card Sort is a must-try for lovers of matching games, sorting challenges, or fun brain teasers that everyone can enjoy. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/pzn5c388ig1lls7xwgwekbdnhfutjnmu/</url><thumb>https://img.gamemonetize.com/pzn5c388ig1lls7xwgwekbdnhfutjnmu/512x384.jpg</thumb></item>
+<item><id>57577</id><title>Find Sort Match</title><description> Find Sort Match is a fun and creative puzzle that combines sort and match elements. Let you experience the joy of DIY! In the game, sort and match items of various shapes, colors, and types. And complete each level of the challenge.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/pyuyhhci3z0f9ajc8wg3vqymlsmnjemf/</url><thumb>https://img.gamemonetize.com/pyuyhhci3z0f9ajc8wg3vqymlsmnjemf/512x384.jpg</thumb></item>
+<item><id>54548</id><title>Water sort in bottle puzzle</title><description>In Water Sort Puzzle, players must strategically combine colors within each bottle to achieve a single color per bottle. Challenge your problem-solving skills as you carefully pour and mix the hues, ensuring each container holds only one color. With increasingly complex levels, this addictive game offers a refreshing twist on the classic puzzle genre. Can you master the art of water sorting and achieve colorful harmony? Web Dev <a href='https://www.crazygamesx.com/'>https://www.crazygamesx.com/</a></description><category>Puzzle</category><url>https://html5.gamemonetize.com/63xlvd1e18jo838t896esdrp278bqgpd/</url><thumb>https://img.gamemonetize.com/63xlvd1e18jo838t896esdrp278bqgpd/512x384.jpg</thumb></item>
+<item><id>55384</id><title>Supermarket Sort N Match</title><description>In Supermarket Sort n Match, rearrange items between shelves to match 3 identical items on one shelf, clearing it and allowing upper shelves to slide down. Clear entire stacks to shift adjacent shelves. Collect all items before time runs out as difficulty increases with each level. Enjoy the ultimate item-sorting and matching challenge! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/qwhdlojgkm7wrgf0iwfi95gy2qq8k9wd/</url><thumb>https://img.gamemonetize.com/qwhdlojgkm7wrgf0iwfi95gy2qq8k9wd/512x384.jpg</thumb></item>
+<item><id>55084</id><title>colorcandy sort puzzle</title><description>Welcome to our addictive and fun ball sort color puzzle game! If youre looking for a game that challenges your brain and keeps you entertained for hours, youve come to the right place. Youll never get bored. Our game is perfect for those who enjoy brain teasers, puzzles, and games that challenge their cognitive skills. Our game is a breeze. Simply drag and drop the same color balls to their corresponding bottle and witness the colorful balls Collection successful, creating a visually satisfying experience with every completed level.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/t87l93g5lxqtmshh6bm16nt03c1ooxxf/</url><thumb>https://img.gamemonetize.com/t87l93g5lxqtmshh6bm16nt03c1ooxxf/512x384.jpg</thumb></item>
+<item><id>55117</id><title>Mahjong Sort Puzzle</title><description>This is an addictive matching puzzle game. If you are a mahjong fan and love matching games, this game is for you. You need to sort out the mahjongs, sort out the mahjongs with the same colour into a grid and they will all be eliminated. While playing the game, you will also exercise your logical thinking and spatial sense. So, come and join the challenging world of gaming.</description><category>Sports</category><url>https://html5.gamemonetize.com/d1xc65i3wvzz2ynh6jrhp0va0sws25qy/</url><thumb>https://img.gamemonetize.com/d1xc65i3wvzz2ynh6jrhp0va0sws25qy/512x384.jpg</thumb></item>
+<item><id>54905</id><title>Slinky Sort Puzzle</title><description>Experience the fun of color therapy with this unique puzzle. Try the newest Color Sort game, perfect for relaxation, and enjoy the Slinky Sort Puzzle. Explore multiple levels in a game designed to relax you.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/zpapfwlwbmgi221j8la3q6hq1cd2swk7/</url><thumb>https://img.gamemonetize.com/zpapfwlwbmgi221j8la3q6hq1cd2swk7/512x384.jpg</thumb></item>
+<item><id>54776</id><title>Hoop Sort Fever</title><description>Ditch the ordinary water droplets, Hoop Sort Fever injects a splash of excitement into the color sorting genre! This addictive ring stacking game will keep you entertained for hours, challenging your brain with vibrant hoops and a fresh twist on a classic formula. How to Play: - Tap or drag a hoop to move it to another stack. - Simple rule: Only stack hoops on the same color or an empty pole. - Stuck on a tricky level? Use the undo, add pole, or skip level options to keep the fun rolling. - Sort all the hoops by color to complete the level - its as satisfying as it sounds! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/k0mjq1yvprdc1oqtvrljj8ay2lnwwwbu/</url><thumb>https://img.gamemonetize.com/k0mjq1yvprdc1oqtvrljj8ay2lnwwwbu/512x384.jpg</thumb></item>
+<item><id>54282</id><title>Drawer Sort</title><description>Do you like a cluttered space exactly where everything has its place? It is time to organize your life and become a tidying hero, conquering chaos one drawer at a time. Be sure to plan ahead for this epic puzzle or you may find yourself with a messier hand than when you started! Each brain training task will challenge you to place various items in the right places. Youll have to aim for perfect precision if you want to make sure the objects fit snugly and achieve the ultimate tidy victory. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/qbap8lt156xqvhzy1rtcve87p2v4ghlg/</url><thumb>https://img.gamemonetize.com/qbap8lt156xqvhzy1rtcve87p2v4ghlg/512x384.jpg</thumb></item>
+<item><id>53842</id><title>Stack Sorting</title><description>Welcome to Stack Sorting! Your task is to organize colorful cylinders by clicking on stacks. Move the topmost cylinder to an empty stack or one with a matching top cylinder. Navigate through Easy Mode with plenty of stacks and time, or challenge yourself in Hard Mode with fewer stacks. Complete all levels within the time limit to emerge victorious!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/p0hx2z5qos8uhqa1hyz2n4fm0li4gmf8/</url><thumb>https://img.gamemonetize.com/p0hx2z5qos8uhqa1hyz2n4fm0li4gmf8/512x384.jpg</thumb></item>
+<item><id>54553</id><title>Water Sorting Color in the bottle</title><description>In Water Sorting Color, players must skillfully blend colors within each bottle to achieve a single color per container. Test your logic and creativity as you mix and match hues, ensuring each bottle holds only one distinct color. With progressively challenging levels, this addictive game offers a refreshing take on color-based puzzles. Can you master the art of water sorting and create harmonious hues? Website Developer <a href='https://www.crazygamesx.com/'>https://www.crazygamesx.com/</a></description><category>Puzzle</category><url>https://html5.gamemonetize.com/twhlgpqsahk02o7napco77op8fh1pp7x/</url><thumb>https://img.gamemonetize.com/twhlgpqsahk02o7napco77op8fh1pp7x/512x384.jpg</thumb></item>
+<item><id>54108</id><title>Hexa Sort 3D</title><description>Hexa Sort 3D mixes puzzle challenges, strategic matching and a satisfying merging experience.Involving clever puzzle-solving and logical manoeuvres, this game is ideal for those seeking a mental workout. As the levels progress, players will find the game both addictive and calming, striking the perfect balance between challenge and relaxation. Put your skills to the test with tasks such as sorting, stacking and merging hexagonal tiles.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/0s96py77f1797gzl7ne6ooofphswsdqg/</url><thumb>https://img.gamemonetize.com/0s96py77f1797gzl7ne6ooofphswsdqg/512x384.jpg</thumb></item>
+<item><id>54219</id><title>Color Liquid Sorting</title><description>A new sorting game awaits you in Color Liquid Sorting. We mixed a multi-colored liquid in flasks, but so. So that it does not turn into a homogeneous mass of an incomprehensible color. Each layer is separate and you can pour it into a free-standing container. The task is to ensure that the flasks contain a solution of the same color. You should get rid of the layers by pouring them wherever you see fit. You will always have empty dishes in stock to avoid mistakes. At each level, the number of flasks and the set of colors will increase. You will have to make many moves before you get the desired result in Color Liquid Sorting.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/s7svzmc3ybardlsmq3dfiwcdu5q323qw/</url><thumb>https://img.gamemonetize.com/s7svzmc3ybardlsmq3dfiwcdu5q323qw/512x384.jpg</thumb></item>
+<item><id>53979</id><title>Nuts And Bolts Sort</title><description>Nuts And Bolts Sort - Puzzle Game Introduction Looking for a game that is both challenging and relaxing? Look no further than Nuts And Bolts Sort - the ultimate brain training challenge that doubles as a stress-relieving escape.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/issoc41k2fs78hgd6ve7shxa0barv19x/</url><thumb>https://img.gamemonetize.com/issoc41k2fs78hgd6ve7shxa0barv19x/512x384.jpg</thumb></item>
+<item><id>53566</id><title>Color Sort Puzzle</title><description>Spend your time wisely, relaxing and training your mind all at once! Put the water in the most strategic flask and enjoy when everything falls into place.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/xhh7ex13czhu6gjlbsxwc7ihma1ltmnj/</url><thumb>https://img.gamemonetize.com/xhh7ex13czhu6gjlbsxwc7ihma1ltmnj/512x384.jpg</thumb></item>
+<item><id>53625</id><title>Fill And Sort Puzzle</title><description>Fill  Sort Puzzle is a cozy puzzle game where players have to sort, stack, and pleasantlarrange household items while watching for a naughty cat who likes to make things messy! Many small details need to be paid attention to in the levels. For example, when organizing the shoe rack, don't forget to clean the dirty shoes before storing them. Do you need a hint? Watch the video for tips.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ghdttn8rgwvrzvmcj060h6f3bumpbbmt/</url><thumb>https://img.gamemonetize.com/ghdttn8rgwvrzvmcj060h6f3bumpbbmt/512x384.jpg</thumb></item>
+<item><id>52872</id><title>Hexa Sort 3D Puzzle</title><description>In this captivating game, players aim to build the tallest tower using intuitive drag-and-drop mechanics. Each tile strategically placed contributes to the towers height, challenging players to balance precision with speed. With every successful placement, the tower grows taller, creating a thrilling sense of achievement. The games engaging interface and dynamic gameplay ensure hours of entertainment as players compete to reach new heights and claim the title of the tallest tower constructor. Website Developer <a href='https://www.bestcrazygames.com'>https://www.bestcrazygames.com</a></description><category>Puzzle</category><url>https://html5.gamemonetize.com/s5jf0pn2q3gdixn6rcibk8f9tuc4oakl/</url><thumb>https://img.gamemonetize.com/s5jf0pn2q3gdixn6rcibk8f9tuc4oakl/512x384.jpg</thumb></item>
+<item><id>53147</id><title> CatSorter Puzzle</title><description>A total cat chaos! These fluffy troublemakers have spread over different seats and are waiting for someone clever enough to stack them by color. Use your focus and logical thinking to get the best results in this contemplative game. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/0fxxs3isdw44cja3is79f6mhql3ert6p/</url><thumb>https://img.gamemonetize.com/0fxxs3isdw44cja3is79f6mhql3ert6p/512x384.jpg</thumb></item>
+<item><id>52994</id><title>Food Card Sort</title><description>Food Card Sort is a unique and challenging 3D puzzle game that tests players logic and reasoning skills. With a variety of food cards, each card displaying a different type of food, players must categorize them by placing similar foods together on the corresponding plate to pass each level.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/27l92j6edep5kzwgdrq8c4kqccmhrbcy/</url><thumb>https://img.gamemonetize.com/27l92j6edep5kzwgdrq8c4kqccmhrbcy/512x384.jpg</thumb></item>
+<item><id>51443</id><title>Sort Games Challenge </title><description>Sort Games Challenge is a puzzle game. Here you can challenge yourself and choose from multiple modes, not limited to one. Your goal is to complete the mission within a limited time to pass the level. Dont underestimate this game, its still very difficult to pass. Come and challenge!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ph8lsrn6p87m6sj5984hzx1nlfu4xncu/</url><thumb>https://img.gamemonetize.com/ph8lsrn6p87m6sj5984hzx1nlfu4xncu/512x384.jpg</thumb></item>
+<item><id>51666</id><title>Color Sort Mania</title><description>Forget about the everyday life and indulge in a simple world where sorting is an art. Put the bubbles in the most strategic flask and enjoy when everything falls into place. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/ohhubm5wex338s0lqpn6a7yjytf9o0an/</url><thumb>https://img.gamemonetize.com/ohhubm5wex338s0lqpn6a7yjytf9o0an/512x384.jpg</thumb></item>
+<item><id>51073</id><title>Ball Sort Halloween</title><description>Immerse yourself in the festive spirit with Ball Sort Halloween! Engage in a mesmerizing puzzle game, where your task is to sort colorful balls into matching tubes. With spooky Halloween-themed designs, challenging levels, and addictive gameplay, this game will keep you entertained and bewitched for hours. Prepare for a thrilling brain-teasing experience!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/amutu5kn2xpc5njpr6q02zqprjtksdxh/</url><thumb>https://img.gamemonetize.com/amutu5kn2xpc5njpr6q02zqprjtksdxh/512x384.jpg</thumb></item>
+<item><id>51040</id><title>Christmas Gifts Sorting</title><description>Welcome to the newest puzzle sorting game called Christmas Gifts Sorting. Help the Santa Claus to sort the Christmas gifts by form and color. The game has 60 incredible levels. Show your sorting skills and enjoy this Christmas fun game!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/wa3rcnp9vqfd404dewoum4kc9iagaxvo/</url><thumb>https://img.gamemonetize.com/wa3rcnp9vqfd404dewoum4kc9iagaxvo/512x384.jpg</thumb></item>
+<item><id>50582</id><title>Sort Buckets</title><description>Play the newest puzzle sorting game. Sort the colored buckets and make the fewest moves as you can. The game has 60 exciting levels. Show your sorting skills and enjoy this incredibly fun game!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8fbvn4a1vvluww84v1te2cx41czippao/</url><thumb>https://img.gamemonetize.com/8fbvn4a1vvluww84v1te2cx41czippao/512x384.jpg</thumb></item>
+<item><id>50086</id><title>Water Sort Color Puzzle</title><description>Water Sort Color Puzzle game is a fun game of putting colors together. Categorize the colors in different bottles and try to collect them in the same bottles. Once you separate all the colors, you will be able to pass the level. You can change the tubes or backgrounds with the coins you earn.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/wq4u1338xvxubpmnhmtibsj53majo6md/</url><thumb>https://img.gamemonetize.com/wq4u1338xvxubpmnhmtibsj53majo6md/512x384.jpg</thumb></item>
+<item><id>50445</id><title>Goods Sort Master</title><description>Goods Sort Master is a fun sorting game. Have you ever fantasized about spending money in the supermarket? How much can you take away in a limited time? In this game you can sort snacks, drinks and fruits and have fun exploring triple matches in 3D cabinets to unlock more of your favorite products. The game is simple, just drag the same 3D products onto several shelves to match or triple match them. If you are a fan of matching games, why not give it a try?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/9wpd09u11cls94gosbgk71jhhen9emq9/</url><thumb>https://img.gamemonetize.com/9wpd09u11cls94gosbgk71jhhen9emq9/512x384.jpg</thumb></item>
+<item><id>49807</id><title>Spooky Sort It</title><description>Spooky Sort It! is a mind-sharpening brain puzzle that challenges you to sort a variety of haunting balls into the right tubes. As you tackle these spectral twists and turns, youll not only enhance your problem-solving skills but also find a delightful way to cope with stress and refresh your mind in the captivating world of spectral sorting.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/afgpyro6k3a7uc482sr23q1s3yocm1z3/</url><thumb>https://img.gamemonetize.com/afgpyro6k3a7uc482sr23q1s3yocm1z3/512x384.jpg</thumb></item>
+<item><id>49030</id><title>Ski Resort Hidden Snowflakes</title><description>Try to find 100 snowflakes in 20 pictures in this hidden object game.. The game time is not limited. Good luck!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/raky6ngumo99lrgjvke2rl0mrty26rdy/</url><thumb>https://img.gamemonetize.com/raky6ngumo99lrgjvke2rl0mrty26rdy/512x384.jpg</thumb></item>
+<item><id>46975</id><title>Ball Sort</title><description>Ball Sort Puzzle is a fun and addictive puzzle game! Try to sort the colored balls in the tubes until all balls with the same color stay in the same tube. A challenging yet relaxing game to exercise your brain!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/fa8gml4uwmfib0rjjxc8brom5qsnqc8h/</url><thumb>https://img.gamemonetize.com/fa8gml4uwmfib0rjjxc8brom5qsnqc8h/512x384.jpg</thumb></item>
+<item><id>47997</id><title>chain color sort</title><description>Its time to put your sorting and coordination skills to the test! In this game, youll be faced with a series of color chains that need to be sorted by color. To do this, youll need to use your physics skills to manipulate the chains. You can pull them, push them, and spin them to get them into the correct order. The game gets more challenging as you progress, with more chains and more colors to sort. But with a little practice, youll be able to master the game and get the highest score. So what are you waiting for? Start sorting the color chains today! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/cd5pq07la023sch85mlmy4jjtf24ge4i/</url><thumb>https://img.gamemonetize.com/cd5pq07la023sch85mlmy4jjtf24ge4i/512x384.jpg</thumb></item>
+<item><id>46009</id><title>Water Color Sort Game</title><description>Water Color Sort is a perfectly simple yet addictive, and challenging puzzle game! This is the best free water-sorting puzzle game for you to exercise your brain, kill your free time, and relax! If you want to train your combinatorial logic skills, then this water-sorting puzzle game is for you! This is the most relaxing yet most challenging puzzle game with no time limit. Come and play with us!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/eh2hjb3nkhok34w93ew3f2ou9l4qoz25/</url><thumb>https://img.gamemonetize.com/eh2hjb3nkhok34w93ew3f2ou9l4qoz25/512x384.jpg</thumb></item>
+<item><id>46433</id><title>Sort Emoji</title><description>The casual Emoji sorting puzzle game is fun and challenging with a big break in the gameplay of the puzzles. Sort Emoji into glass bottles so that each bottle has the same Emoji.You will easily win by arranging all the same Emoji into separate glass jars.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/pzygsefp8tmga976u73ks0dfpr3pryvx/</url><thumb>https://img.gamemonetize.com/pzygsefp8tmga976u73ks0dfpr3pryvx/512x384.jpg</thumb></item>
+<item><id>46191</id><title>Marbles Sorting</title><description>Marbles sorting is a great brain puzzle game, helps you to sharpen your mind. Try to sort the different marbles in the tubes until all similar marbles stay in the same tube. It helps in coping with stress and refreshes your mind.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/t77lxcu0wi0bv3c2canheqk1n3bn7307/</url><thumb>https://img.gamemonetize.com/t77lxcu0wi0bv3c2canheqk1n3bn7307/512x384.jpg</thumb></item>
+</channel></rss>`;
+
+    const grid = document.getElementById('gameGrid');
+    const searchInput = document.getElementById('searchInput');
+    const modal = document.getElementById('gameModal');
+    const frame = document.getElementById('gameFrame');
+    const fullScreenBtn = document.getElementById('fullScreenBtn');
+    const fsPath = document.getElementById('fsPath');
+    
+    let gameList = [];
+
+    function init() {
+        initAllGames();
+        setupEventListeners();
+    }
+
+    // Parse XML data to generate the game list
+    function initAllGames() {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(FEED_XML, "text/xml");
+        const items = xmlDoc.getElementsByTagName("item");
+
+        gameList = Array.from(items).map(item => ({
+            title: item.getElementsByTagName("title")[0]?.textContent,
+            desc: item.getElementsByTagName("description")[0]?.textContent,
+            category: item.getElementsByTagName("category")[0]?.textContent,
+            url: item.getElementsByTagName("url")[0]?.textContent,
+            thumb: item.getElementsByTagName("thumb")[0]?.textContent
+        }));
+
+        renderGames(gameList);
+    }
+
+    // Render cards into the DOM
+    function renderGames(data) {
+        grid.innerHTML = '';
+        data.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `Play ${game.title}`);
+            card.tabIndex = 0;
+
+            // Handle click event to open modal
+            card.onclick = () => {
+                frame.src = game.url;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; 
+            };
+            
+            // Support keyboard accessibility
+            card.onkeydown = (e) => {
+                if (e.key === 'Enter') card.onclick();
+            };
+
+            card.innerHTML = `
+                <div class="card-image-box">
+                    <img src="${game.thumb}" alt="${game.title}" class="card-image" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <button class="btn-play" tabindex="-1">PLAY NOW</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">${game.category}</span>
+                    <h3 class="card-title">${game.title}</h3>
+                    <p class="card-desc">${game.desc}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    function setupEventListeners() {
+        // Search filter logic
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = gameList.filter(g => 
+                g.title.toLowerCase().includes(query) || 
+                g.category.toLowerCase().includes(query)
+            );
+            renderGames(filtered);
+        });
+
+        // Fullscreen toggle event
+        fullScreenBtn.addEventListener('click', toggleFullscreen);
+
+        // Update UI when fullscreen state changes
+        document.addEventListener('fullscreenchange', updateFullscreenUI);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenUI);
+        
+        // Close modal when clicking outside the container
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) closeGame();
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'block') { closeGame(); }
+        });
+
+        updateFullscreenUI();
+    }
+
+    // Modal closing logic
+    window.closeGame = function() {
+        modal.style.display = 'none';
+        frame.src = '';
+        document.body.style.overflow = 'auto';
+        if (isFullscreen()) {
+            exitFullscreen();
+            setTimeout(updateFullscreenUI, 50);
+        }
+    }
+
+    // Fullscreen helper functions
+    function isFullscreen() {
+        return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+    }
+
+    function enterFullscreen() {
+        const container = document.querySelector('.modal-container');
+        if (container.requestFullscreen) { container.requestFullscreen(); } 
+        else if (container.webkitRequestFullscreen) { container.webkitRequestFullscreen(); } 
+        else if (container.mozRequestFullScreen) { container.mozRequestFullScreen(); } 
+        else if (container.msRequestFullscreen) { container.msRequestFullscreen(); }
+    }
+
+    function exitFullscreen() {
+        if (document.exitFullscreen) { document.exitFullscreen(); } 
+        else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); } 
+        else if (document.mozCancelFullScreen) { document.mozCancelFullScreen(); } 
+        else if (document.msExitFullscreen) { document.msExitFullscreen(); }
+    }
+
+    function toggleFullscreen() {
+        if (isFullscreen()) { exitFullscreen(); } else { enterFullscreen(); }
+    }
+
+    function updateFullscreenUI() {
+        const isFs = isFullscreen();
+        const enterPath = "M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3";
+        const exitPath = "M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3";
+        fsPath.setAttribute('d', isFs ? exitPath : enterPath);
+    }
+
+    // Initialize the script
+    init();
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAmeasLSfP2N6aDTaHv2g83HXA9fMPVZFE",
+    authDomain: "puzzlechallengehub.firebaseapp.com",
+    projectId: "puzzlechallengehub",
+    storageBucket: "puzzlechallengehub.firebasestorage.app",
+    messagingSenderId: "112608986588",
+    appId: "1:112608986588:web:acc32a06b94fd65f46bb19",
+    measurementId: "G-SX634LMH5N"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>

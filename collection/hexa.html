@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" href="https://puzzlechallengehub.com/favicon.ico">
+    <link rel="canonical" href="https://puzzlechallengehub.com/collection/hexa.html">
+    <title>Hexa Puzzles Collection - Play Free Online | PuzzleHub</title>
+    <meta name="description" content="Play the best free Hexa puzzle games. Master geometric challenges by fitting hexagonal blocks perfectly. No downloads required.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --bg-card: #161b22;
+            --accent-primary: #7b61ff;
+            --accent-hover: #917cff;
+            --text-light: #f0f6fc;
+            --text-dim: #8b949e;
+            --border-color: #30363d;
+            --glass: rgba(10, 11, 16, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        header {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--accent-primary);
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 15px rgba(123, 97, 255, 0.4);
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-light);
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: #0d1117;
+            border: 1px solid var(--border-color);
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2);
+        }
+
+        /* Collection Hero Section */
+        .collection-hero {
+            padding: 3rem 5% 2rem;
+            background: linear-gradient(180deg, rgba(123, 97, 255, 0.12) 0%, rgba(10, 11, 16, 0) 100%);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumbs a {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--accent-primary);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-icon-box {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-primary);
+            border-radius: 20px;
+            display: grid;
+            place-items: center;
+            font-size: 2.5rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(123, 97, 255, 0.4);
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .hero-text p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 0 5% 4rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            content-visibility: auto; 
+            contain-intrinsic-size: 0 350px; 
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+        }
+
+        .card-image-box {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background-color: #1a1f26;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+            display: block;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .btn-play {
+            background: var(--accent-primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            transform: translateY(20px);
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .card:hover .btn-play {
+            transform: translateY(0);
+        }
+
+        .card-body {
+            padding: 1.2rem;
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            color: #FDF67C;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-light);
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.6rem;
+            line-height: 1.3rem;
+        }
+
+        /* Modal System */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px;
+        }
+
+        .modal-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 85vh;
+            margin: 20px auto;
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(123, 97, 255, 0.3);
+        }
+
+        .modal-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 15px;
+            z-index: 2100;
+        }
+
+        .close-btn {
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: 1px solid #444;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .close-btn:hover, #fullScreenBtn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 5%;
+            text-align: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+        
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-dim);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 12px; padding: 12px 3%; }
+            .search-wrapper { width: 100%; }
+            .hero-content { flex-direction: column; text-align: center; gap: 15px; }
+            .hero-icon-box { width: 60px; height: 60px; font-size: 2rem; border-radius: 15px;}
+            .hero-text h1 { font-size: 1.8rem; }
+            
+            .game-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 0 3% 2rem;}
+            .card-body { padding: 0.8rem; }
+            .card-title { font-size: 0.9rem; margin-bottom: 4px; }
+            .card-desc { display: none; }
+            .btn-play { padding: 6px 16px; font-size: 0.8rem; }
+            
+            .modal { padding: 0; }
+            .modal-container { height: 100vh; margin: 0; border-radius: 0; }
+            .modal-controls { top: 15px; right: 15px; }
+            #fullScreenBtn, .close-btn { width: 38px; height: 38px; }
+        }
+    </style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "v7w38tv951");
+</script>
+</head>
+
+<body>
+
+<header>
+    <a href="/" class="brand">
+        <div class="logo-icon">P</div>
+        <span class="brand-name">PuzzleHub</span>
+    </a>
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search Hexa games...">
+    </div>
+</header>
+
+<main>
+    <div class="collection-hero">
+        <div class="breadcrumbs">
+            <a href="/">Home</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <a href="/collection.html">Collections</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <span>Hexa Puzzles</span>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-icon-box">
+                <i class="fas fa-cubes"></i>
+            </div>
+            <div class="hero-text">
+                <h1>Hexa Puzzles Collection</h1>
+                <p>Master geometric challenges by fitting hexagonal blocks perfectly to solve dynamic puzzles. Relaxing, brain-training, and incredibly satisfying.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameGrid" class="game-grid"></div>
+</main>
+
+<div id="gameModal" class="modal" role="dialog" aria-modal="true" aria-label="Game Player">
+    <div class="modal-container">
+        <div class="modal-controls">
+            <button id="fullScreenBtn" title="Toggle Fullscreen" style="background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 42px; height: 42px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; flex-shrink: 0;">
+                <svg id="fsIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                    <path id="fsPath" d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+            </button>
+            <button onclick="closeGame()" title="Close Game" class="close-btn">
+                ✕
+            </button>
+        </div>
+        <iframe id="gameFrame" src="" allow="autoplay; fullscreen; keyboard" title="Play Game Frame"></iframe>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-socials">
+        <a href="https://www.facebook.com/puzzlehubgames" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@PuzzleGamesGuideVideo" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2026 PuzzleHub Gaming Platform</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">
+        <a href="/privacy-policy.html" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a> | 
+        <a href="/terms-of-service.html" style="color: var(--text-dim); text-decoration: none;">Terms of Service</a> | 
+        <a href="/about-us.html" style="color: var(--text-dim); text-decoration: none;">About Us</a> | 
+        <a href="/contact-us.html" style="color: var(--text-dim); text-decoration: none;">Contact Us</a>
+    </p>
+</footer>
+
+<script>
+    // Feed data matching the All Games section mechanism
+    const FEED_XML = `
+<rss version="2.0">
+<channel>
+<item><id>75690</id><title>Hexa Color Stack Game</title><description>Hexa Color Stack ek super fun aur relaxing puzzle game hai jisme aapko colorful hexagon blocks ko stack aur match karna hota hai. Is game ka gameplay simple hai lekin bohot addictive hai, jahan aapko smart moves aur quick thinking ki zaroorat hoti hai. Har level me aapko different colors ko perfectly arrange karna hota hai. Jitna zyada aap correct stacking karenge utna high score milega. Ye game brain training ke liye best hai aur casual players ke liye perfect time pass game hai. Agar aapko color sorting games, stack puzzle challenges, aur relaxing brain games pasand hain to Hexa Color Stack aapke liye best choice hai.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/cbllo3n7ifhq50bvi7lz5cpj3lovnx22/</url><thumb>https://img.gamemonetize.com/cbllo3n7ifhq50bvi7lz5cpj3lovnx22/512x384.jpg</thumb></item>
+<item><id>75912</id><title>Hexa Tiles Puzzle Game</title><description>Dive into a smart, satisfying hexagon puzzle that's easy to learn and tricky to master! Drag and place hex-shaped pieces onto the board, fitting them perfectly without overlap. Clear full lines and clever hex patterns to rack up points. Every move matters, so think ahead and keep the board open. When no piece fits, it's game over. How long can you keep the hexes clicking?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ac6st88emp3rs0j2x8pskkpjykq3hle1/</url><thumb>https://img.gamemonetize.com/ac6st88emp3rs0j2x8pskkpjykq3hle1/512x384.jpg</thumb></item>
+<item><id>75171</id><title>Hexagon Block Puzzle Game</title><description>Hexagon Block: Puzzle Game is a brain storming puzzle game.Stretch your mind and train your brain with this addictive block puzzle game. Colorful and easy user interface of puzzle• Combine the blocks to make the pattern.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/vnfx9yvw41rrmyehhsyw4uo5ss9jh9c0/</url><thumb>https://img.gamemonetize.com/vnfx9yvw41rrmyehhsyw4uo5ss9jh9c0/512x384.jpg</thumb></item>
+<item><id>74077</id><title>Winter Hexa Stack</title><description>Winter Hexa Stack is a cozy and addictive winter-themed puzzle game where you clear the board by stacking three matching hex tiles. Tap a tile to place it in an empty spot or on top of a similar tile. When you match three identical tiles, they disappear and free up valuable space. Be careful if your holding slots fill up or the timer runs out, the level ends. Plan your moves, stay organized, and enjoy a relaxing winter atmosphere as you solve each puzzle. Perfect for puzzle fans who want a calm, satisfying challenge.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/hibeqes1lf3e0eb1hofflskm5cysjrok/</url><thumb>https://img.gamemonetize.com/hibeqes1lf3e0eb1hofflskm5cysjrok/512x384.jpg</thumb></item>
+<item><id>74018</id><title>Christmas Hexa Puzzle</title><description>Christmas Hexa Puzzle is a relaxing holiday-themed jigsaw game where you arrange vibrant hexagonal tiles to complete festive pictures. Choose between 14-piece and 22-piece puzzle modes, perfect for both quick plays and more challenging sessions. Drag and fit each hexa piece into its correct spot, watch the Christmas scene come to life, and enjoy a cozy, soothing puzzle experience for all ages.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/r5yewhqbovg8et5g93jg55kmpsopj75a/</url><thumb>https://img.gamemonetize.com/r5yewhqbovg8et5g93jg55kmpsopj75a/512x384.jpg</thumb></item>
+<item><id>72627</id><title>Hexa Merge 2048: Puzzle</title><description>Dive into Hexa Merge 2048, the exciting puzzle game that mixes numbers and fun! Merge colorful, smiling hexagon tiles on a magical adventure. Combine numbers like 2, 4, and 8 to create 2048 in this brain-teasing challenge. With its cute, kid-friendly design and simple tap-to-merge gameplay, its the perfect educational game for children. Enjoy vibrant graphics, relaxing music, and endless puzzle fun. Download the best free number game and start your merging journey today</description><category>Puzzle</category><url>https://html5.gamemonetize.com/5r7akvnmm0t25uang36jgu02fek7qqr5/</url><thumb>https://img.gamemonetize.com/5r7akvnmm0t25uang36jgu02fek7qqr5/512x384.jpg</thumb></item>
+<item><id>57032</id><title>HexaMatch</title><description>HexaMatch  The Ultimate Number Puzzle! Swipe and sort tiles into the empty slot to solve addictive hexa puzzles. With progressive difficulty, unique gameplay, and a fresh twist on classic number games, HexaMatch is perfect for all ages. Train your brain, relax your mind, and enjoy endless fun with this simple yet challenging merge hexa puzzle!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/dogv5wgrkwxsq71uh8zuhrt7d0xf3u9s/</url><thumb>https://img.gamemonetize.com/dogv5wgrkwxsq71uh8zuhrt7d0xf3u9s/512x384.jpg</thumb></item>
+<item><id>60618</id><title>HexaPuzzleNew</title><description>Drag the blocks and place them in the container above to assemble them. Its very fun and has multiple exquisite levels. Come and experience it now.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ywbb5779vnbfvxiz7oaj55ax0o2twj5y/</url><thumb>https://img.gamemonetize.com/ywbb5779vnbfvxiz7oaj55ax0o2twj5y/512x384.jpg</thumb></item>
+<item><id>67650</id><title>Hexa Puzzle Master</title><description>Hexa Puzzle Master is a fun and addictive web puzzle game where players fit hexagonal blocks into a grid. With simple drag-and-drop controls, players must think strategically to complete levels without gaps. Featuring multiple difficulty levels and a sleek design, the game offers a relaxing yet challenging experience for puzzle lovers of all ages!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/f1igeukaqff5gd4d0vv30hrqo7qndkg9/</url><thumb>https://img.gamemonetize.com/f1igeukaqff5gd4d0vv30hrqo7qndkg9/512x384.jpg</thumb></item>
+<item><id>61362</id><title>Hexa Stack Sort</title><description>Hexa Stack Sort is a fun and engaging puzzle game that will put your brain to the test! The goal is simple, but the challenge is exciting. You need to match and stack hexagonal blocks of the same color. You can move the blocks around. but be careful not to get stuck. Only blocks of the same color can be stacked together.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/2jcdujtzr4uxhlhufybghe1zev69icka/</url><thumb>https://img.gamemonetize.com/2jcdujtzr4uxhlhufybghe1zev69icka/512x384.jpg</thumb></item>
+<item><id>58059</id><title>Hexa Tile Master</title><description>Welcome to Hexa Tile Master! Drag stacks of hex tiles from the bottom of your screen to empty spots on the board. Watch as similar tiles merge into bigger stacks, and collect stacks of 10 or more matching tiles to clear them. Your goal is to clear all the hex tiles before time runs out. Each level gets more challenging, but dont worry;fun animations and exciting rewards will keep you engaged. Enjoy the strategic fun and see how far you can go!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/c0iute06224rvf22x1sccy86960odfci/</url><thumb>https://img.gamemonetize.com/c0iute06224rvf22x1sccy86960odfci/512x384.jpg</thumb></item>
+<item><id>56398</id><title>Hexa Tile Trio</title><description>Welcome to Hexa Tile Trio! Your goal is to clear the board by sorting hex tiles into groups of three. Tap a tile to move it to an empty or matching spot below. If no tiles fit, or you run out of space, the level fails. With a ticking clock and unique puzzles, can you master the hex tiles before time runs out?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/hcc3l4hlgfj61qi0os589jin5gcikq1g/</url><thumb>https://img.gamemonetize.com/hcc3l4hlgfj61qi0os589jin5gcikq1g/512x384.jpg</thumb></item>
+<item><id>55934</id><title>Innocent Hexa Puzzle</title><description>Innocent Hexa Puzzle is a captivating jigsaw game where pieces are uniquely shaped as hexagons. Challenge yourself to fit these hexa pieces perfectly and complete the beautiful puzzles.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/3mdvm3rlgsebr9bf9aawdz37kzy9f9vj/</url><thumb>https://img.gamemonetize.com/3mdvm3rlgsebr9bf9aawdz37kzy9f9vj/512x384.jpg</thumb></item>
+<item><id>55552</id><title>Piano Hexa Fall</title><description>Piano Hexa Fall challenges players to strategically drop hexagonal blocks onto a spinning cylinder to form complete rows and clear them. Inspired by classic block puzzle mechanics, this game adds a musical twist as each successful drop produces harmonic tones, syncing with background music. Navigate increasing speeds and difficulties to achieve high scores and unlock new melodies. With its blend of rhythmic gameplay and spatial reasoning, Piano Hexa Fall offers a refreshing take on both puzzle-solving and musical immersion.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/kheaf510tmbnp14v4slkkrl63otbniv4/</url><thumb>https://img.gamemonetize.com/kheaf510tmbnp14v4slkkrl63otbniv4/512x384.jpg</thumb></item>
+<item><id>54108</id><title>Hexa Sort 3D</title><description>Hexa Sort 3D mixes puzzle challenges, strategic matching and a satisfying merging experience.Involving clever puzzle-solving and logical manoeuvres, this game is ideal for those seeking a mental workout. As the levels progress, players will find the game both addictive and calming, striking the perfect balance between challenge and relaxation. Put your skills to the test with tasks such as sorting, stacking and merging hexagonal tiles.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/0s96py77f1797gzl7ne6ooofphswsdqg/</url><thumb>https://img.gamemonetize.com/0s96py77f1797gzl7ne6ooofphswsdqg/512x384.jpg</thumb></item>
+<item><id>53616</id><title>Merging Hexa</title><description>The Merge Hexa game is a hexagon-based puzzle challenge game where players are challenged to merge hexagonal tiles to reach the highest possible number. The objective is to strategically combine similar tiles to create larger numbers and ultimately achieve the elusive hexagon with the highest value. Merge Hexa offers a relaxing and addictive gameplay experience where players drag and drop hexa numbers to merge them, aiming to beat their high score. This game provides a stimulating and entertaining way to exercise the mind while enjoying a visually appealing and engaging puzzle-solving activity.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/btfqw0mgdtihx56s5jdta2jzvj2sqdpy/</url><thumb>https://img.gamemonetize.com/btfqw0mgdtihx56s5jdta2jzvj2sqdpy/512x384.jpg</thumb></item>
+<item><id>52872</id><title>Hexa Sort 3D Puzzle</title><description>In this captivating game, players aim to build the tallest tower using intuitive drag-and-drop mechanics. Each tile strategically placed contributes to the towers height, challenging players to balance precision with speed. With every successful placement, the tower grows taller, creating a thrilling sense of achievement. The games engaging interface and dynamic gameplay ensure hours of entertainment as players compete to reach new heights and claim the title of the tallest tower constructor. Website Developer <a href='https://www.bestcrazygames.com'>https://www.bestcrazygames.com</a></description><category>Puzzle</category><url>https://html5.gamemonetize.com/s5jf0pn2q3gdixn6rcibk8f9tuc4oakl/</url><thumb>https://img.gamemonetize.com/s5jf0pn2q3gdixn6rcibk8f9tuc4oakl/512x384.jpg</thumb></item>
+<item><id>47409</id><title>Hexa Merge 2048</title><description>- Game Hexa Merge 2048 is a fun and addictive puzzle game that combines elements of drop and merge games with the classic 2048 game. - The goal is to drop numbered tiles onto the board and merge them with adjacent tiles of the same value to create larger numbers. - The game ends when the board is full or when you reach the 2048 tile, whichever comes first. - You can choose from different modes, themes, and difficulties to customize your gaming experience. - Game Hexa Merge 2048 is a great way to train your brain, relax, and have fun at the same time.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/hpstq2pm2jq9jst29aynnpr2poomw59n/</url><thumb>https://img.gamemonetize.com/hpstq2pm2jq9jst29aynnpr2poomw59n/512x384.jpg</thumb></item>
+<item><id>46364</id><title>Hexable</title><description>In the Hexable game your goal is to fill a board resembling a hexagon with straight rows or columns using differently shaped objects. Filling a row or column will make space for other objects and will give you points. Try to play for the best possible score!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/jop3jtwuc3x36y3309okudcphler1efy/</url><thumb>https://img.gamemonetize.com/jop3jtwuc3x36y3309okudcphler1efy/512x384.jpg</thumb></item>
+<item><id>47547</id><title>Hexa 2048 Puzzle Block Merge</title><description>Hexa 2048 Puzzleis an addictive relaxing number block merge game. Come to play Hexa Puzzle, merge the Hexa blocks and give your brain a rest! Features: Beautifully easy and simple, no pressure and no time limit. Challenging to break your highest score. Easy to play. Classic merge game and block game for all ages! Multiple beautiful background pictures. Multiple materials of blocks. Such as: iron, crystal, wood; Come and play this game and become a master of Hexa Block Merge Game now!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/vrwtg1qhbkcyu7rt0eewx89dxmcdn6tv/</url><thumb>https://img.gamemonetize.com/vrwtg1qhbkcyu7rt0eewx89dxmcdn6tv/512x384.jpg</thumb></item>
+
+</channel></rss>`;
+
+    const grid = document.getElementById('gameGrid');
+    const searchInput = document.getElementById('searchInput');
+    const modal = document.getElementById('gameModal');
+    const frame = document.getElementById('gameFrame');
+    const fullScreenBtn = document.getElementById('fullScreenBtn');
+    const fsPath = document.getElementById('fsPath');
+    
+    let gameList = [];
+
+    function init() {
+        initAllGames();
+        setupEventListeners();
+    }
+
+    // Parse XML data to generate the game list
+    function initAllGames() {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(FEED_XML, "text/xml");
+        const items = xmlDoc.getElementsByTagName("item");
+
+        gameList = Array.from(items).map(item => ({
+            title: item.getElementsByTagName("title")[0]?.textContent,
+            desc: item.getElementsByTagName("description")[0]?.textContent,
+            category: item.getElementsByTagName("category")[0]?.textContent,
+            url: item.getElementsByTagName("url")[0]?.textContent,
+            thumb: item.getElementsByTagName("thumb")[0]?.textContent
+        }));
+
+        renderGames(gameList);
+    }
+
+    // Render cards into the DOM
+    function renderGames(data) {
+        grid.innerHTML = '';
+        data.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `Play ${game.title}`);
+            card.tabIndex = 0;
+
+            // Handle click event to open modal
+            card.onclick = () => {
+                frame.src = game.url;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; 
+            };
+            
+            // Support keyboard accessibility
+            card.onkeydown = (e) => {
+                if (e.key === 'Enter') card.onclick();
+            };
+
+            card.innerHTML = `
+                <div class="card-image-box">
+                    <img src="${game.thumb}" alt="${game.title}" class="card-image" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <button class="btn-play" tabindex="-1">PLAY NOW</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">${game.category}</span>
+                    <h3 class="card-title">${game.title}</h3>
+                    <p class="card-desc">${game.desc}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    function setupEventListeners() {
+        // Search filter logic
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = gameList.filter(g => 
+                g.title.toLowerCase().includes(query) || 
+                g.category.toLowerCase().includes(query)
+            );
+            renderGames(filtered);
+        });
+
+        // Fullscreen toggle event
+        fullScreenBtn.addEventListener('click', toggleFullscreen);
+
+        // Update UI when fullscreen state changes
+        document.addEventListener('fullscreenchange', updateFullscreenUI);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenUI);
+        
+        // Close modal when clicking outside the container
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) closeGame();
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'block') { closeGame(); }
+        });
+
+        updateFullscreenUI();
+    }
+
+    // Modal closing logic
+    window.closeGame = function() {
+        modal.style.display = 'none';
+        frame.src = '';
+        document.body.style.overflow = 'auto';
+        if (isFullscreen()) {
+            exitFullscreen();
+            setTimeout(updateFullscreenUI, 50);
+        }
+    }
+
+    // Fullscreen helper functions
+    function isFullscreen() {
+        return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+    }
+
+    function enterFullscreen() {
+        const container = document.querySelector('.modal-container');
+        if (container.requestFullscreen) { container.requestFullscreen(); } 
+        else if (container.webkitRequestFullscreen) { container.webkitRequestFullscreen(); } 
+        else if (container.mozRequestFullScreen) { container.mozRequestFullScreen(); } 
+        else if (container.msRequestFullscreen) { container.msRequestFullscreen(); }
+    }
+
+    function exitFullscreen() {
+        if (document.exitFullscreen) { document.exitFullscreen(); } 
+        else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); } 
+        else if (document.mozCancelFullScreen) { document.mozCancelFullScreen(); } 
+        else if (document.msExitFullscreen) { document.msExitFullscreen(); }
+    }
+
+    function toggleFullscreen() {
+        if (isFullscreen()) { exitFullscreen(); } else { enterFullscreen(); }
+    }
+
+    function updateFullscreenUI() {
+        const isFs = isFullscreen();
+        const enterPath = "M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3";
+        const exitPath = "M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3";
+        fsPath.setAttribute('d', isFs ? exitPath : enterPath);
+    }
+
+    // Initialize the script
+    init();
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAmeasLSfP2N6aDTaHv2g83HXA9fMPVZFE",
+    authDomain: "puzzlechallengehub.firebaseapp.com",
+    projectId: "puzzlechallengehub",
+    storageBucket: "puzzlechallengehub.firebasestorage.app",
+    messagingSenderId: "112608986588",
+    appId: "1:112608986588:web:acc32a06b94fd65f46bb19",
+    measurementId: "G-SX634LMH5N"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>

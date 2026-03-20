@@ -11,7 +11,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-03-16</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -23,6 +23,90 @@
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/collection</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+	
+    <url>
+        <loc>https://puzzlechallengehub.com/collection/hexa</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+	
+    <url>
+        <loc>https://puzzlechallengehub.com/collection/sort</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+	
+    <url>
+        <loc>https://puzzlechallengehub.com/collection/screw</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+	
+    <url>
+        <loc>https://puzzlechallengehub.com/collection/merge</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+	
+    <url>
+        <loc>https://puzzlechallengehub.com/collection/jam</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+	
+    <url>
+        <loc>https://puzzlechallengehub.com/collection/block</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+	
+    <url>
+        <loc>https://puzzlechallengehub.com/collection/mahjong</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+	
+    <url>
+        <loc>https://puzzlechallengehub.com/collection/match</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://puzzlechallengehub.com/collection/2048</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+	
+    <url>
+        <loc>https://puzzlechallengehub.com/collection/tetris</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+	
+    <url>
+        <loc>https://puzzlechallengehub.com/collection/solitaire</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/touch-candy-guide</loc>
         <lastmod>2026-03-20</lastmod>
@@ -752,13 +836,13 @@
         <loc>https://puzzlechallengehub.com/about-us</loc>
         <lastmod>2026-03-05</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.5</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/contact-us</loc>
         <lastmod>2026-03-05</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.5</priority>
     </url>
 </urlset>

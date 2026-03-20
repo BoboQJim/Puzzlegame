@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" href="https://puzzlechallengehub.com/favicon.ico">
+    <link rel="canonical" href="https://puzzlechallengehub.com/collection/merge.html">
+    <title>Merge Puzzles Collection - Play Free Online | PuzzleHub</title>
+    <meta name="description" content="Combine identical items to evolve them, multiply your score, and clear the massive board. Strategic matching at its best.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --bg-card: #161b22;
+            --accent-primary: #7b61ff;
+            --accent-hover: #917cff;
+            --text-light: #f0f6fc;
+            --text-dim: #8b949e;
+            --border-color: #30363d;
+            --glass: rgba(10, 11, 16, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        header {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--accent-primary);
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 15px rgba(123, 97, 255, 0.4);
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-light);
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: #0d1117;
+            border: 1px solid var(--border-color);
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2);
+        }
+
+        /* Collection Hero Section */
+        .collection-hero {
+            padding: 3rem 5% 2rem;
+            background: linear-gradient(180deg, rgba(123, 97, 255, 0.12) 0%, rgba(10, 11, 16, 0) 100%);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumbs a {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--accent-primary);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-icon-box {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-primary);
+            border-radius: 20px;
+            display: grid;
+            place-items: center;
+            font-size: 2.5rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(123, 97, 255, 0.4);
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .hero-text p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 0 5% 4rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            content-visibility: auto; 
+            contain-intrinsic-size: 0 350px; 
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+        }
+
+        .card-image-box {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background-color: #1a1f26;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+            display: block;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .btn-play {
+            background: var(--accent-primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            transform: translateY(20px);
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .card:hover .btn-play {
+            transform: translateY(0);
+        }
+
+        .card-body {
+            padding: 1.2rem;
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            color: #FDF67C;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-light);
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.6rem;
+            line-height: 1.3rem;
+        }
+
+        /* Modal System */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px;
+        }
+
+        .modal-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 85vh;
+            margin: 20px auto;
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(123, 97, 255, 0.3);
+        }
+
+        .modal-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 15px;
+            z-index: 2100;
+        }
+
+        .close-btn {
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: 1px solid #444;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .close-btn:hover, #fullScreenBtn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 5%;
+            text-align: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+        
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-dim);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 12px; padding: 12px 3%; }
+            .search-wrapper { width: 100%; }
+            .hero-content { flex-direction: column; text-align: center; gap: 15px; }
+            .hero-icon-box { width: 60px; height: 60px; font-size: 2rem; border-radius: 15px;}
+            .hero-text h1 { font-size: 1.8rem; }
+            
+            .game-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 0 3% 2rem;}
+            .card-body { padding: 0.8rem; }
+            .card-title { font-size: 0.9rem; margin-bottom: 4px; }
+            .card-desc { display: none; }
+            .btn-play { padding: 6px 16px; font-size: 0.8rem; }
+            
+            .modal { padding: 0; }
+            .modal-container { height: 100vh; margin: 0; border-radius: 0; }
+            .modal-controls { top: 15px; right: 15px; }
+            #fullScreenBtn, .close-btn { width: 38px; height: 38px; }
+        }
+    </style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "v7w38tv951");
+</script>
+</head>
+
+<body>
+
+<header>
+    <a href="/" class="brand">
+        <div class="logo-icon">P</div>
+        <span class="brand-name">PuzzleHub</span>
+    </a>
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search Merge games...">
+    </div>
+</header>
+
+<main>
+    <div class="collection-hero">
+        <div class="breadcrumbs">
+            <a href="/">Home</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <a href="/collection.html">Collections</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <span>Merge Puzzles</span>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-icon-box">
+                <i class="fas fa-object-group"></i>
+            </div>
+            <div class="hero-text">
+                <h1>Merge Games Collection</h1>
+                <p>Combine identical items to evolve them, multiply your score, and clear the massive board. Strategic matching at its best.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameGrid" class="game-grid"></div>
+</main>
+
+<div id="gameModal" class="modal" role="dialog" aria-modal="true" aria-label="Game Player">
+    <div class="modal-container">
+        <div class="modal-controls">
+            <button id="fullScreenBtn" title="Toggle Fullscreen" style="background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 42px; height: 42px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; flex-shrink: 0;">
+                <svg id="fsIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                    <path id="fsPath" d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+            </button>
+            <button onclick="closeGame()" title="Close Game" class="close-btn">
+                ✕
+            </button>
+        </div>
+        <iframe id="gameFrame" src="" allow="autoplay; fullscreen; keyboard" title="Play Game Frame"></iframe>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-socials">
+        <a href="https://www.facebook.com/puzzlehubgames" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@PuzzleGamesGuideVideo" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2026 PuzzleHub Gaming Platform</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">
+        <a href="/privacy-policy.html" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a> | 
+        <a href="/terms-of-service.html" style="color: var(--text-dim); text-decoration: none;">Terms of Service</a> | 
+        <a href="/about-us.html" style="color: var(--text-dim); text-decoration: none;">About Us</a> | 
+        <a href="/contact-us.html" style="color: var(--text-dim); text-decoration: none;">Contact Us</a>
+    </p>
+</footer>
+
+<script>
+    // Feed data matching the All Games section mechanism
+    const FEED_XML = `
+<rss version="2.0">
+<channel>
+<item><id>75672</id><title>Merge Animals Defence</title><description>Merge Animals Defence Step into the lab and unleash your inner mad scientist! Merge DNA of different animals to create a powerful animal army and defend your base from waves of enemies. Strategically combine unique traits-eagle wings to strike from above, tiger claws for close combat, and rabbit speed for quick attacks. Plan your defence, upgrade your mutants, and dominate every battle. A fast-paced strategy shooter with crazy science, colorful graphics, and endless genetic possibilities.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/4ydk4nbmlmvl9vj8tgqmmym9i9pu9hyq/</url><thumb>https://img.gamemonetize.com/4ydk4nbmlmvl9vj8tgqmmym9i9pu9hyq/512x384.jpg</thumb></item>
+<item><id>76112</id><title>Italian Brainrot Drag Merge Puzzle</title><description>A Revolutionary Jigsaw Experience. Each level, one image is randomly selected and split into 3×3, 4×4, 5×5, or 6×6 pieces, then completely shuffled. Your goal is simple: restore the picture by placing every piece in its correct position. But this is no ordinary jigsaw. When two neighboring pieces are placed correctly next to each other, they merge into a single movable cluster. Instead of slow, one-by-one placement, you can drag any piece or merged group onto another to instantly swap positions.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/clpvf0sr3ckhol0fn48758ilg2zu898z/</url><thumb>https://img.gamemonetize.com/clpvf0sr3ckhol0fn48758ilg2zu898z/512x384.jpg</thumb></item>
+<item><id>75389</id><title>Dinosaur Merge Quest</title><description>Can you think fast enough to merge dinosaurs and warriors to create the ultimate dino squad? Your mission is simple: combine your troops, form powerful fusions, and fight off waves of enemies! In Dinosaur Merge Quest, strategy is key. Merge dinosaurs, dragons, and mighty warriors in real-time to build unstoppable teams. Use quick thinking and clever tactics to dominate the battlefield in this epic dinosaur and monster battle simulator! React, merge, and fight your way to victory in the coolest dinosaur fusion game.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/u4zk80262v3hqvuvvwbu18y45m7t4a3t/</url><thumb>https://img.gamemonetize.com/u4zk80262v3hqvuvvwbu18y45m7t4a3t/512x384.jpg</thumb></item>
+<item><id>74580</id><title>Merge Bullet Army Game</title><description>Run and Stack the bullets shoot them all , new Bullet and Gun Experience with stack. Throughout each level, players encounter various hurdles and adversaries that stand in their path. Utilize your stocked bullets wisely to overcome these obstacles, shooting barrels, and collecting more ammunition to replenish your magazines. As the level progresses, the challenge intensifies, requiring quick reflexes and precise aim to succeed. Use your weapons and guns strategically, saving bullets for crucial moments and unleashing them with precision to defeat enemies and clear the path to victory.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/d5y2dcsgmttfsmt146e796g16nnpcdpu/</url><thumb>https://img.gamemonetize.com/d5y2dcsgmttfsmt146e796g16nnpcdpu/512x384.jpg</thumb></item>
+<item><id>72627</id><title>Hexa Merge 2048: Puzzle</title><description>Dive into Hexa Merge 2048, the exciting puzzle game that mixes numbers and fun! Merge colorful, smiling hexagon tiles on a magical adventure. Combine numbers like 2, 4, and 8 to create 2048 in this brain-teasing challenge. With its cute, kid-friendly design and simple tap-to-merge gameplay, its the perfect educational game for children. Enjoy vibrant graphics, relaxing music, and endless puzzle fun. Download the best free number game and start your merging journey today</description><category>Puzzle</category><url>https://html5.gamemonetize.com/5r7akvnmm0t25uang36jgu02fek7qqr5/</url><thumb>https://img.gamemonetize.com/5r7akvnmm0t25uang36jgu02fek7qqr5/512x384.jpg</thumb></item>
+<item><id>70920</id><title>Brainrot Garden. Merge Cats</title><description>Welcome to the strangest garden ever, where cats grow instead of vegetables. Your mission is to merge identical cats to create new, even weirder creatures! The further you go, the more chaotic your garden becomes, and the cats keep getting crazier. It's a true brainrot farm full of surprises and meme-worthy combinations.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/jhm2y4ivz33e388lrmoh5csgea2v53zp/</url><thumb>https://img.gamemonetize.com/jhm2y4ivz33e388lrmoh5csgea2v53zp/512x384.jpg</thumb></item>
+<item><id>70286</id><title>Secret Reef Merge</title><description>**Dive into Sea Merge Drop!** Merge adorable sea animals by dropping matching pairs. Watch them evolve into even cuter creatures! Tap to release animals strategically - create chains of merges for higher scores. Dont let the ocean fill up or its game over! Each merge earns points and unlocks new aquatic friends. Reach level targets to progress through the game. How many merges can you create? How high can you score? Can swim all the way through 10 levels? Simple one-tap gameplay with charming visuals. Perfect for quick play sessions or diving deep into merging madness! Ready to make a splash? </description><category>Puzzle</category><url>https://html5.gamemonetize.com/n8kdjme20jrkue7qiyos81enwg8ncnxa/</url><thumb>https://img.gamemonetize.com/n8kdjme20jrkue7qiyos81enwg8ncnxa/512x384.jpg</thumb></item>
+<item><id>70122</id><title>Cozy Kitchen Merge</title><description>Cozy Kitchen Merge is a cute cooking puzzle where you place dishes on the tray, watch the queue, and merge 3 or more of the same dish;sides or corners both count. Each merge makes the next recipe and bumps your score. Every 100 points gives you an Eat Token. Tap the fork button to munch one dish and make space when things get tight. Keep at least one empty spot; no room for the next dish means game over. Climb the recipe ladder (110), unlock sweet achievements, and chase your best score. Soft art, cozy sounds, quick runs;perfect for a relaxing break. And hey, please dont wreck the game menu. Things may fall. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/jcezh6c42tp32b6qy5oulakrv44jc5hi/</url><thumb>https://img.gamemonetize.com/jcezh6c42tp32b6qy5oulakrv44jc5hi/512x384.jpg</thumb></item>
+<item><id>70172</id><title>Fruit Merge 2048  Juicy Puzzle</title><description>Fruit Merge 2048 is a fun and addictive puzzle game that combines the classic 2048 gameplay with colorful, mouth-watering fruits! Simply swipe to merge identical fruits and watch them evolve into bigger, juicier ones. The more you merge, the closer you get to the ultimate fruit! Featuring bright graphics, smooth animations, and satisfying gameplay, this fruit puzzle is perfect for casual players and puzzle lovers of all ages. Whether you want to challenge your brain, pass the time, or just enjoy some juicy fun, Fruit Merge 2048 is your go-to choice.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/nrae5bijahbi5m5nydila7xqw875n4ut/</url><thumb>https://img.gamemonetize.com/nrae5bijahbi5m5nydila7xqw875n4ut/512x384.jpg</thumb></item>
+<item><id>69671</id><title>JellyMerge</title><description>Slide the screen to merge the jelly blocks of the same color. All of them are combined to complete the level. The game features multiple exquisite levels. Come and challenge your brain.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/jnhinht5g9s2znqarxteta7bwa723c2m/</url><thumb>https://img.gamemonetize.com/jnhinht5g9s2znqarxteta7bwa723c2m/512x384.jpg</thumb></item>
+<item><id>69723</id><title>Merge Animals game</title><description>Merge Animals is a very simple but addictive game where you have to touch 2 identical objects together to make them explode and go to the next level</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8n6gt5cajbz23op0fmac6n7qy686dgvm/</url><thumb>https://img.gamemonetize.com/8n6gt5cajbz23op0fmac6n7qy686dgvm/512x384.jpg</thumb></item>
+<item><id>69562</id><title>Fish Merge</title><description>Dive into the ultimate Fish Merge - Under Water! Experience the fun of merging colorful fish in addictive pattern. Enjoy relaxing underwater effects and soothing visuals as you combine similar items to unlock surprises and boost your score. Perfect for casual gamers of all ages, this game blends strategy, fun, and calming ocean vibes. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/3o02ka521te3s4pfsszkfdkdtp741reo/</url><thumb>https://img.gamemonetize.com/3o02ka521te3s4pfsszkfdkdtp741reo/512x384.jpg</thumb></item>
+<item><id>69077</id><title>Kitty Merge Tycoon</title><description>Step into a cozy world where merging fluffy kittens leads to pure joy. In Kitty Merge Tycoon, your goal is to combine identical kitties to unlock new, even cuter companions. Watch as your collection grows into a purring empire of whiskers and wonder. Tap to spawn more fluffballs, discover rare breeds, and rise through the ranks to become the ultimate feline tycoon. The charm never ends!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/9mojqu02upm0qrpmlio7ngcgy4nweqtn/</url><thumb>https://img.gamemonetize.com/9mojqu02upm0qrpmlio7ngcgy4nweqtn/512x384.jpg</thumb></item>
+<item><id>68620</id><title>Brainrot Merge</title><description>Get ready for a weirdly satisfying evolution puzzle! In Brainrot Merge, drop creatures like Tun-Tun-Tun Sahur, Chimpanzini-Bananini, and Spioniro-Golubiro. Watch them bounce, roll, and merge into even stranger beings! A mix of physics and pure absurdity ; perfect for when your brain needs a break.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/j00jvss4g2nby7optz97bp2xtj1wy6nu/</url><thumb>https://img.gamemonetize.com/j00jvss4g2nby7optz97bp2xtj1wy6nu/512x384.jpg</thumb></item>
+<item><id>66625</id><title>Block Merge City</title><description>Block Merge City is a relaxing isometric puzzle game where you place and combine buildings to evolve them into bigger structures. Strategically plan your moves, score high, and avoid running out of space!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ikv6tvl28r0jhq0r003pcv0lhh6ckpr1/</url><thumb>https://img.gamemonetize.com/ikv6tvl28r0jhq0r003pcv0lhh6ckpr1/512x384.jpg</thumb></item>
+<item><id>68168</id><title>Fruit Merge: Juicy Drop Game</title><description>Dive deep into the vibrant and enthralling world of fruit-matching with our exciting game, Fruit Merge: Juicy Drop Game! When the same fruits collide, they merge into a larger fruit. Your mission is to smartly pair the same types of fruits to make the biggest possible fruits without letting them overflow from the container. However, as the fruits grow in size, space becomes a premium - managing it effectively is your key challenge. Can you strategize and solve this fruity puzzle?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/rgz7sjhynwsheffgv4ijzz1nj2oa1nur/</url><thumb>https://img.gamemonetize.com/rgz7sjhynwsheffgv4ijzz1nj2oa1nur/512x384.jpg</thumb></item>
+<item><id>67577</id><title>Fruit Merge Juicy Drop Fun</title><description>Fruit Merge Drop Frenzy  Juicy Merge, Match  Compete! Embark on a fruity adventure with Fruit Drop Fun! Dive into a vibrant world of colorful fruits, satisfying merges, and endless fun in the most addictive fruit merge game around. From luscious watermelons to juicy pineapples, Fruit Merge combine matching fruits to unlock higher-level combos and blast your way through exciting fruit puzzles. Whether you're a casual gamer or a puzzle pro, Fruit Drop Frenzy offers a perfect mix of strategy, relaxation, and challenge in this Juicy Merge Game! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/6k4wwg3g81x92db1hb6zchtqmyco7cou/</url><thumb>https://img.gamemonetize.com/6k4wwg3g81x92db1hb6zchtqmyco7cou/512x384.jpg</thumb></item>
+<item><id>67353</id><title>Emergency Operator</title><description>In Emergency Operator, you take charge of urgent 911 calls. Understand the callers situation and decide whether to send the fire crew, police, medical team ; or if no help is needed at all. Make the right calls to save lives, avoid false alarms, and keep the city safe. Prove your skills with accurate decisions and get promoted to higher ranks. Every decision counts!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8lap59jr8i0kq84gm6tz0guf63c77d6i/</url><thumb>https://img.gamemonetize.com/8lap59jr8i0kq84gm6tz0guf63c77d6i/512x384.jpg</thumb></item>
+<item><id>60720</id><title>Merge the Planets: 2048!</title><description> This game is in the style of the classic 2048! Connect planets ! Connect as many as possible to get the biggest planet! Collect points and compete with friends or colleagues! Enjoy your game!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/l9tr03ur1991r249ihfoewm3c4p5xjzt/</url><thumb>https://img.gamemonetize.com/l9tr03ur1991r249ihfoewm3c4p5xjzt/512x384.jpg</thumb></item>
+<item><id>64468</id><title>Food Merge</title><description>Food Merge is a game where you combine different foods to create delicious dishes and serve them to hungry customers. Merge ingredients quickly and strategically to before the time runs out! Each level brings new challenges, faster orders, and more complex combos. Can you keep up and become the ultimate food master?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/aepqa0mn0utkyt9lq7y2jpwf4bgjtunz/</url><thumb>https://img.gamemonetize.com/aepqa0mn0utkyt9lq7y2jpwf4bgjtunz/512x384.jpg</thumb></item>
+<item><id>60651</id><title>Merge fruits: Fold the Watermelon!</title><description> This is a game where you have to connect fruits! Compete with friends and colleagues! In the game you have a game zone where fruits fall and connect if they are the same! Connect as many fruits as possible to get a watermelon, collect points! Be the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/1hzhibwvq991maooh5kocwkdj4oecp1y/</url><thumb>https://img.gamemonetize.com/1hzhibwvq991maooh5kocwkdj4oecp1y/512x384.jpg</thumb></item>
+<item><id>63424</id><title>Squid Game Merger</title><description>Squid Game Merger is a thrilling idle puzzle game where you combine Squid Game characters to create stronger units. Merge identical figures, unlock powerful contestants, and earn points. Can you merge your way to victory and dominate the survival challenge? </description><category>Puzzle</category><url>https://html5.gamemonetize.com/edaixam7nxogh335w18h1k78h6fe6spn/</url><thumb>https://img.gamemonetize.com/edaixam7nxogh335w18h1k78h6fe6spn/512x384.jpg</thumb></item>
+<item><id>60796</id><title>Merge fruits: 2048 New in 2D!</title><description> This is a game where you have to connect fruits! Compete with friends and colleagues! In the game you have a game zone where fruits fall and connect if they are the same! Connect as many fruits as possible to get a watermelon, collect points! Be the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/43d7snh2al6o822hutmpyb4ewxh6qvr8/</url><thumb>https://img.gamemonetize.com/43d7snh2al6o822hutmpyb4ewxh6qvr8/512x384.jpg</thumb></item>
+<item><id>60793</id><title>MergeMushrooms: 2048!</title><description> A game with a forest atmosphere! Compete with friends and colleagues! In the game you have a game zone where mushrooms fall and connect if they have the same color! Connect as many mushrooms as possible to get the biggest one, collect points! Become the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/x1j2ts56yiuqwa2u1fxr4rhtdg11pcns/</url><thumb>https://img.gamemonetize.com/x1j2ts56yiuqwa2u1fxr4rhtdg11pcns/512x384.jpg</thumb></item>
+<item><id>60792</id><title>MergeSweets: 2048!</title><description> A game in an unusual setting! Compete with friends and colleagues! In the game you have a game zone where sweets fall and are connected if they are the same! Connect as many sweets as possible, accumulate points! Become the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/q4wp67dbp7x38ru92myl50177hou5jsg/</url><thumb>https://img.gamemonetize.com/q4wp67dbp7x38ru92myl50177hou5jsg/512x384.jpg</thumb></item>
+<item><id>60787</id><title>Merge Fruits 3D!</title><description> This is a game where you have to connect fruits! Compete with friends and colleagues! In the game you have a game zone where fruits fall and connect if they are the same! Connect as many fruits as possible to get a watermelon, collect points! Be the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8kz657jy0ona0x75idlv0c3p70bn1fdo/</url><thumb>https://img.gamemonetize.com/8kz657jy0ona0x75idlv0c3p70bn1fdo/512x384.jpg</thumb></item>
+<item><id>62195</id><title>Fruit Merge Master</title><description>Fruit Merge Master  The Ultimate Juicy Puzzle Game! Get ready for a fun and addictive fruit-merging experience in Fruit Merge Master! Drop and combine matching fruits to create bigger ones, score high, and fill the glass container without overflowing. The larger the fruit, the more points you earn! How to Play: Tap and hold to aim where your fruit will drop. Match identical fruits to merge them into a bigger one. Keep merging and scoring, but don't let the fruits spill over! Game Features: Simple yet challenging gameplay! Beautiful and colorful fruit graphics. Compete for high scores and become the merge master! Easy</description><category>Puzzle</category><url>https://html5.gamemonetize.com/p7q9rbwih1vnikx7t0ddptcbr67u5by8/</url><thumb>https://img.gamemonetize.com/p7q9rbwih1vnikx7t0ddptcbr67u5by8/512x384.jpg</thumb></item>
+<item><id>60791</id><title>MergeButerfly: 2048!</title><description> A game in an unusual setting! Compete with friends and colleagues! In the game you have a game zone where butterflies fall and connect if they are the same! Connect as many butterflies as possible to get the most beautiful one, collect points! Become the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/203tuhevf5u5btzbqedkakp8ymw362ji/</url><thumb>https://img.gamemonetize.com/203tuhevf5u5btzbqedkakp8ymw362ji/512x384.jpg</thumb></item>
+<item><id>60794</id><title>Merge Animals 2048!</title><description>Your goal in this fun game is to connect identical animals and get new ones! Guide the animal straight to its double in the game arena and connect them into one cooler animal! Compete with your friends in the ranking and have fun! Can you find out which animal is the biggest?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/fqzbzcncgxe213j4vvraznmhe6sminie/</url><thumb>https://img.gamemonetize.com/fqzbzcncgxe213j4vvraznmhe6sminie/512x384.jpg</thumb></item>
+<item><id>60784</id><title>Merge Pumpkins: Halloween!</title><description> A game in an unusual setting! Compete with friends and colleagues! In the game you have a game zone where pumpkins fall and connect if they are the same! Connect as many pumpkins as possible to get the most beautiful one, collect points! Become the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/do5mlxhiiz6bxkce695rne3wsivglsj7/</url><thumb>https://img.gamemonetize.com/do5mlxhiiz6bxkce695rne3wsivglsj7/512x384.jpg</thumb></item>
+<item><id>62402</id><title>Emoji Merge Fun Moji</title><description>Welcome to Emoji Merge: Fun Moji! A fun and creative jigsaw puzzle that allows you to merge various funny emojis. Create super funny, super cute emoji combinations. Its not just a simple merger game and full of interesting challenges.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/2umgfzkmqucachz9b2eflmec98vj94ok/</url><thumb>https://img.gamemonetize.com/2umgfzkmqucachz9b2eflmec98vj94ok/512x384.jpg</thumb></item>
+<item><id>57432</id><title>Animerge</title><description>Animerge is a twist to the famous Watermelon Suika game. It is a fun and relaxing casual game where players merge cute adorable animals, starting from the tiniest mouse, all the way to the majestic elephant! Merging these animals, while listening to cozy Lo-Fi music and hand drawn art, creates the perfect atmosphere for unwinding. Strategize, and relax in this fun and laid-back adventure while choosing from a list of LoFi music to create your own cozy vibe while merging the cute little animals. P.S. - much more is on the way...!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8g5l1zycbzl4d95ho3kztawxu1cjrz0a/</url><thumb>https://img.gamemonetize.com/8g5l1zycbzl4d95ho3kztawxu1cjrz0a/512x384.jpg</thumb></item>
+<item><id>60747</id><title>Merge Flowers in 2D!</title><description> A game in an unusual setting! Compete with friends and colleagues! In the game you have a game zone, where flowers fall and connect if they are the same! Connect as many flowers as possible to get the most beautiful one, collect points! Become the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/bue012cz0ch1fx3nneimvl3rl4ihufv4/</url><thumb>https://img.gamemonetize.com/bue012cz0ch1fx3nneimvl3rl4ihufv4/512x384.jpg</thumb></item>
+<item><id>60827</id><title>Merge Pisces from the Ocean!</title><description> A game with an underwater atmosphere! Compete with friends and colleagues! In the game you have a game zone where fish fall and connect if they have the same color! Connect as many fish as possible to get the biggest one, collect points! Become the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/rodp4rzjra3mhe3pmzc0ggin1ngg7dzn/</url><thumb>https://img.gamemonetize.com/rodp4rzjra3mhe3pmzc0ggin1ngg7dzn/512x384.jpg</thumb></item>
+<item><id>60785</id><title>Merge the Balls 2048: Billiards!</title><description> This game is in the style of the classic 2048. Your task is to connect balls with the same color and numbers! Which fall on the playing field, until you manage to get the highest score! Balls are connected if they have the same color and the same numbers! The difficulty is that the balls will be attracted to each other and if they cross the white line, the game will start over! Become the first on the leaderboard! Show your record to your friends and colleagues to surprise them! Fight for first place on the leaderboard and prove that you are the winner!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/z3l5z7xhk5hy4vycxpyf9sw9uddweel0/</url><thumb>https://img.gamemonetize.com/z3l5z7xhk5hy4vycxpyf9sw9uddweel0/512x384.jpg</thumb></item>
+<item><id>60798</id><title>Merge Cats: 2048!</title><description> A game with a cute atmosphere! Compete with friends and colleagues! In the game you have a game zone where cat-balls fall and connect if they are the same! Connect as many cat-balls as possible to get the biggest one, collect points! Be the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/r1n70afhgkgia36vyw84mf7eew2fqqwa/</url><thumb>https://img.gamemonetize.com/r1n70afhgkgia36vyw84mf7eew2fqqwa/512x384.jpg</thumb></item>
+<item><id>60649</id><title>Merge the Coins: USSR!</title><description> A game in an unusual setting! Compete with friends and colleagues! In the game you have a game zone where coins fall and connect if they are the same! Connect as many coins as possible to get the biggest one, collect points! Become the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/agerlvhwrt94b6x801pps0ch3jku9t1t/</url><thumb>https://img.gamemonetize.com/agerlvhwrt94b6x801pps0ch3jku9t1t/512x384.jpg</thumb></item>
+<item><id>60735</id><title>Dize puzzles: 2048 Merge!</title><description> This game is harder than it seems! You have a playing field where you need to throw fruits and connect the same ones! Until you get the biggest and most beautiful one! Collect points! Compete with friends and colleagues for the title of the best! Enjoy your game !</description><category>Puzzle</category><url>https://html5.gamemonetize.com/f37nkhwixler59dscrsu7jo6qyu06jrv/</url><thumb>https://img.gamemonetize.com/f37nkhwixler59dscrsu7jo6qyu06jrv/512x384.jpg</thumb></item>
+<item><id>60939</id><title>Suika Bubble Merge</title><description>Suika Bubble Merge offers a delightful, brain-teasing experience with fun gameplay mechanics and a touch of nostalgia, perfect for puzzle enthusiasts! Keep merging bubbles till you get the biggest one and earn the highest score. Good Luck!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/hsc1yv85q9ouwit9cnatqclbekpxnzlo/</url><thumb>https://img.gamemonetize.com/hsc1yv85q9ouwit9cnatqclbekpxnzlo/512x384.jpg</thumb></item>
+<item><id>60729</id><title>Merge Cubes 2048 3D</title><description>A completely new approach to the classic game 2048! Now in 3D and with dynamic physics! The cubes with numbers dont just merge - they bounce and collide, adding an element of surprise to every game! Compete with friends or colleagues!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/t099dxkcqj5zszxkzxdihp4ipuddmpji/</url><thumb>https://img.gamemonetize.com/t099dxkcqj5zszxkzxdihp4ipuddmpji/512x384.jpg</thumb></item>
+<item><id>58451</id><title>Merge Cakes : Falling Sweets</title><description>Merge cakes and complete stage missions to achieve victory with Pig Baker across snowy fields, scorching deserts, and lush meadows! As you progress, the environment will challenge your cakes with unique effects;so stay alert! Strategically use items to overcome obstacles and keep the merging magic alive. Clear stages faster than anyone else and rack up high scores! Aim for the top spot and become a top player. You can check your rank anytime by clicking the Candle Button in the top-right corner.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/9os019rze2ns0csnbo5o5ssjn0og4ugn/</url><thumb>https://img.gamemonetize.com/9os019rze2ns0csnbo5o5ssjn0og4ugn/512x384.jpg</thumb></item>
+<item><id>53364</id><title>WinterWonder Symbol Merge</title><description>Dive into the enchanting world of WinterWonder Symbol Merge, a festive puzzle adventure where your fingertips guide the merry merging of Christmas magic. Swipe and match identical tiles to unlock the merry symbols hidden in the game. Playing is easy: Swipe to connect 2 or more identical symbols. But be careful that there are always possible matches, otherwise you lose! Experience the joy of merging Christmas elements, from snowflakes to merry baubles. Dive into the merry challenge and let the festive merging begin in WinterWonder Symbol Merge!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/cos8jycvrmpcaiobfswp3db2ixyskgql/</url><thumb>https://img.gamemonetize.com/cos8jycvrmpcaiobfswp3db2ixyskgql/512x384.jpg</thumb></item>
+<item><id>58811</id><title>Fruit Merge : Juice Jumble</title><description>Instructions: Drop fruits into the box and merge two of the same fruit to create a larger one! Click and drag to move the fruit to your desired spot, then release to let it fall into place and combine with any matching fruit below. Goal: Score as high as possible by merging fruits. When the box fills up, it's game over! Tips for Success: Keep Similar Fruits Together: Position larger fruits close to each other. For example, if a pear and cherry are adjacent, dropping another pear could trigger a chain reaction.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/q2fw7p70k4lir0gee4af5jssenoa2kts/</url><thumb>https://img.gamemonetize.com/q2fw7p70k4lir0gee4af5jssenoa2kts/512x384.jpg</thumb></item>
+<item><id>58566</id><title>MergeMaster</title><description>A casual mobile game centered around matching and elimination. The game features vibrant colors, coupled with a visual style rich in beach elements. With background music and sound effects reminiscent of leisurely walks along the beach, it creates a relaxed beach-strolling environment that immerses players in an auditory experience.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/q80sjppcgrmh9yq3x5orcmhrwf8ltqaa/</url><thumb>https://img.gamemonetize.com/q80sjppcgrmh9yq3x5orcmhrwf8ltqaa/512x384.jpg</thumb></item>
+<item><id>57968</id><title>Halloween Merge</title><description>Merge spooky items, unlock haunted treasures, and celebrate Halloween in this addictive puzzle game. Get ready for a spooky adventure with Halloween Merge: Haunted Puzzle! Dive into a mysterious world filled with Halloween-themed puzzles, spooky items, and eerie challenges that will test your merging skills. Combine haunted artifacts like pumpkins, potions, and ghostly decorations to unlock chilling treasures and transform your haunted mansion. Enjoy a unique merge game experience with Halloween vibes around every corner. Match and merge items to complete levels, reveal secrets, and win daily rewards! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/7hd69nd6fkv70epx1d4kwjkx2ymxd3yk/</url><thumb>https://img.gamemonetize.com/7hd69nd6fkv70epx1d4kwjkx2ymxd3yk/512x384.jpg</thumb></item>
+<item><id>58098</id><title>Bubble Merge 2048</title><description>Welcome to Bubble Merge 2048, where classic 2048 meets exciting bubble-blasting action! Shoot, merge, and blast through puzzles filled with colourful bubbles and challenges. Match numbers and colours, solve brain-teasing puzzles, and smash obstacles as you journey through this one-of-a-kind adventure. Features: - Unique Challenges: Every level introduces fresh puzzles, obstacles, and surprises. - Boosters  Power-Ups: Unlock dynamite, rockets, and more to clear tricky stages. - Win Rewards: Collect stars on each level to open Star Chests with rewards. - Realistic Physics: Watch the bubbles bounce and interact like real life!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/9vwyi3z5ew1y0fkt7sl3veu7z8gg9hfy/</url><thumb>https://img.gamemonetize.com/9vwyi3z5ew1y0fkt7sl3veu7z8gg9hfy/512x384.jpg</thumb></item>
+<item><id>56482</id><title>Blocks Merge</title><description>Remove all the blocks before the timer turns off. The same colored blocks explode when they come near to each other. You can drag the block to possible vacant locations.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/azw4229kwthheq313u8j1g42cjvm6c7x/</url><thumb>https://img.gamemonetize.com/azw4229kwthheq313u8j1g42cjvm6c7x/512x384.jpg</thumb></item>
+<item><id>57264</id><title>Merge Happy Planets!</title><description>Classic merge games are coming back with the Merge Happy Planets! Throw the planets and let them merge! Be careful for meteor showers and some mad planets! Use Big Bang Bombs, Rainbow Planets and Black Holes to achieve victory! Try your best. Can you be the number one!?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/zt9kw0rl1ev6onqgiumhrcx2taik9ag6/</url><thumb>https://img.gamemonetize.com/zt9kw0rl1ev6onqgiumhrcx2taik9ag6/512x384.jpg</thumb></item>
+<item><id>57279</id><title>Dream Pet Merge</title><description>Dream Pet Merge is a fun game where you drop different pets to merge them. Match the same pets to create new, higher-level pets. Keep merging to discover all pets and reach a high score. The game is endless, with many cute pets to collect and enjoy!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/pxaljcmses6wtkfy457uw0sh03d2jys5/</url><thumb>https://img.gamemonetize.com/pxaljcmses6wtkfy457uw0sh03d2jys5/512x384.jpg</thumb></item>
+<item><id>56727</id><title>Mythical Merge</title><description>Solve the puzzle and win the game, a shape based brain game There is a board where thread and pin are stuck, you have to create the shape shown above by that thread to win the level. Think and create carefully, this could be helpful for your brain also. Features of this game: High Quality graphics will leave only positive feedback Game size is minimal (but not compromised the graphics) and it is good for your device health Super simple controls make it easy to start playing Interesting levels will not let you get bored while playing the game.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/w2uowb2nj9w8jopctnz3hr6czve7thsy/</url><thumb>https://img.gamemonetize.com/w2uowb2nj9w8jopctnz3hr6czve7thsy/512x384.jpg</thumb></item>
+<item><id>56554</id><title>Hero Tower Wars Merge</title><description>Join the exciting world of Hero Tower Wars - Merge Puzzle! Here is filled with tower defense strategy and merging games.Being careful of strategy and quick thinking are important.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/3r9uu9ghweox6qe5w42x98kr2k66t707/</url><thumb>https://img.gamemonetize.com/3r9uu9ghweox6qe5w42x98kr2k66t707/512x384.jpg</thumb></item>
+<item><id>56779</id><title>2248 Block Merge</title><description>Upon beginning to play, you will undoubtedly become hooked on these 2048 puzzle games. They are crafted with stunning visuals and user-friendly gameplay, making them an excellent option for enthusiasts of number block puzzle games.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/kv6grc9qcre1o5mxgymq19scg46c8wvn/</url><thumb>https://img.gamemonetize.com/kv6grc9qcre1o5mxgymq19scg46c8wvn/512x384.jpg</thumb></item>
+<item><id>56219</id><title>Fruit Candy Merge</title><description>Welcome to Fruit Candy Merge, where juicy fruits and sweet candies come together in a delightful merging puzzle! Combine matching candies to create delicious fruit combos and watch them burst with flavor. With addictive gameplay and colorful challenges, can you merge your way to fruity success? </description><category>Puzzle</category><url>https://html5.gamemonetize.com/vroh2bbwwbt8q9r4js6dg2ps7gvvlhcj/</url><thumb>https://img.gamemonetize.com/vroh2bbwwbt8q9r4js6dg2ps7gvvlhcj/512x384.jpg</thumb></item>
+<item><id>54842</id><title>Merge Cooking Game</title><description>In this cook and merge simulator game, you will start with simple ingredients and recipes, such as bread, cheese and tomato. Merge them to create new dishes, such as pizza, sandwich and burger. Then merge those dishes to create even more tasty and exotic cuisines, such as sushi, pasta and curry. The more you merge, the more you unlock! With hundreds of different food combinations, ranging from street food staples to high-end delicacies, you can experiment with flavors and create your own unique recipes. As you progress through the game, youll unlock new restaurant themes and exciting challenges.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/3i6pble3gza5vq1z1w2bq473qya3m5y6/</url><thumb>https://img.gamemonetize.com/3i6pble3gza5vq1z1w2bq473qya3m5y6/512x384.jpg</thumb></item>
+<item><id>55902</id><title>Fruit Merge Catalogue</title><description>Dive into a fruit-matching journey where you can train your skills to merge all the fruits and get the big watermelon . Can you be the first one to get the giant watermelon? Lets find out in . Are you ready to take on the challenge and become the ultimate fruit merging master? Start your fruity adventure in Fruit merge now!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/rowsfkels23s8apc3n30bx3yvguo66wd/</url><thumb>https://img.gamemonetize.com/rowsfkels23s8apc3n30bx3yvguo66wd/512x384.jpg</thumb></item>
+<item><id>55711</id><title>Merge Card 2048</title><description>Challenge your logical thinking ability with the 2048 card merge game. Can you pass our challenge of merging to the number 128 million?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/z3toi22308992ndrx7huta2xpfzr3a6j/</url><thumb>https://img.gamemonetize.com/z3toi22308992ndrx7huta2xpfzr3a6j/512x384.jpg</thumb></item>
+<item><id>55779</id><title>Merge 2048 Cake</title><description>A unique number puzzle. It has a completely new and unusual merge mechanic  just try it and you will definitely love it ; match games addiction guaranteed! Just look at how smoothly and beautifully those number blocks combine with each other. Hypnotizing, isn't it? You will also appreciate the modern gameplay, simple and straightforward match game rules. Relax after a hard day and have some soft pleasure  no similar 2048 game experience required! . A new generation of merge games is already here! ;) Number puzzle: relax and win Soft shapes, bright colors, smooth animation has everything for a pleasant 1024 game! Great music will also help</description><category>Puzzle</category><url>https://html5.gamemonetize.com/mawi3nh6ebh72xnqh0tyoprnbsi3wcj9/</url><thumb>https://img.gamemonetize.com/mawi3nh6ebh72xnqh0tyoprnbsi3wcj9/512x384.jpg</thumb></item>
+<item><id>55188</id><title>Merge TikTok Gravity Knife</title><description>This is an addictive elimination merge puzzle game. If you like synthetic elimination games, then this game is for you. They can remove a portion of the weapons that didnt merge, but theres only one free shot. Be careful, you have to score as many points as possible within the time limit, otherwise, you will have to start another game. Now join the challenging world of the game. <a href='https://www.puzzlegame.com/'>https://www.puzzlegame.com/</a></description><category>Puzzle</category><url>https://html5.gamemonetize.com/yhul7nu531162htf58s70mx2lpcz7ho8/</url><thumb>https://img.gamemonetize.com/yhul7nu531162htf58s70mx2lpcz7ho8/512x384.jpg</thumb></item>
+<item><id>54622</id><title>Puppy Merge</title><description>Puppy Merge is a unique merge game where you must grab and combine identical puppies to create a new and bigger one. Puppies will fall automatically into the arena; what you must do is drag the puppies around and merge them into identical ones. Dont let the puppies fall outside the box, or the game will end. You can try to catch the puppy and bring it back to the arena if the puppy falls. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/hm39vas4paot7bsrhcafrn923ied28xp/</url><thumb>https://img.gamemonetize.com/hm39vas4paot7bsrhcafrn923ied28xp/512x384.jpg</thumb></item>
+<item><id>54412</id><title>Funny Fruits: Merge and Gather Watermelon</title><description>Collect the cheerful fruits! Merge them to help them evolve into something even tastier: when identical fruits touch, they transform into a new type, becoming even larger. Hurry to gather as many as you can to prevent the box from overflowing. Can you collect all the fruits and grow a huge watermelon? Compete with friends to see who can earn the highest score!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/3rfg72tiygiqo8d7iay9glrob6mx3h05/</url><thumb>https://img.gamemonetize.com/3rfg72tiygiqo8d7iay9glrob6mx3h05/512x384.jpg</thumb></item>
+<item><id>54180</id><title>Merge Crypto 2048 Puzzle</title><description>Welcome to the joyful world of Merge Crypto. This game is an interesting and classic casual game where you can relax and kill time at any moment. The rules of Merge Crypto are extremely simple and easy to grasp. You just need to continuously combine balls of the same cryptocurrency until you reach the final goal of creating a Bitcoin Ball, which gives an increased score booster. Moreover, its a great way to train your brain and fingers, and its entertainment for all ages.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/9g9sxglqcitkopmvlanq49zr674m9gxl/</url><thumb>https://img.gamemonetize.com/9g9sxglqcitkopmvlanq49zr674m9gxl/512x384.jpg</thumb></item>
+<item><id>54277</id><title>2048 Cube Shooting Merge</title><description>2048 Cube Shooting Merge is an addictive merge puzzle online game for those who like challenging brain teasers and logic puzzle merge games. This game is in 3D with crazy fun physics! The squares dont stay in place, they pop up. The gameplay is much simpler. If you like 2048 games and want to play a novel mode, join the game.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/eqjjura1fi5x8a2psrht8zgpvwvqqrym/</url><thumb>https://img.gamemonetize.com/eqjjura1fi5x8a2psrht8zgpvwvqqrym/512x384.jpg</thumb></item>
+<item><id>54462</id><title>Emoji Merge</title><description>Emoji Merge is an engaging and addictive puzzle game where players drop and combine identical emojis to create new ones. The objective is to strategically merge matching emojis, discover unique combinations, and achieve high scores.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/89mx1y96wldgwwyw0t56ff355db1sf93/</url><thumb>https://img.gamemonetize.com/89mx1y96wldgwwyw0t56ff355db1sf93/512x384.jpg</thumb></item>
+<item><id>54173</id><title>Dice Merge Challenges</title><description>Do you crave explosive puzzle action? Dive into Dice Merge Challenges, a game that blends strategic merging with thrilling destruction! Dice Merge Challenges offers intuitive gameplay thats easy to pick up. But as you progress, the challenges become more mind-bending! Combine dice with identical numbers to trigger an explosion. Each blast creates a new dice with a higher value. Strategically merge your dice to overpower obstacles and shatter every box! Are you ready to become the ultimate Dice Merge Champion? </description><category>Puzzle</category><url>https://html5.gamemonetize.com/bbsbuhx1b5or52ryo7qc6h5chu0fvbiz/</url><thumb>https://img.gamemonetize.com/bbsbuhx1b5or52ryo7qc6h5chu0fvbiz/512x384.jpg</thumb></item>
+<item><id>54222</id><title>Chain Cube 2048 3D Merge Game</title><description>Ready to challenge yourself? Chain Cubes 2048 is an addictive merging puzzle online game for those who like challenging brain teasers and logic puzzle merging games. Believe it or not, its much harder to put together 2048 cubes than it is to throw away the numbers. If you fail to merge the cube number blocks, they will bounce off each other! Keep playing and eventually complete 2248 number puzzles!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/jptdkpcppb6yxmfuvai88fs9l8fk3lrv/</url><thumb>https://img.gamemonetize.com/jptdkpcppb6yxmfuvai88fs9l8fk3lrv/512x384.jpg</thumb></item>
+<item><id>53893</id><title>Merge Sesame</title><description>This is a game anyone can easily learn and enjoy with the whole family! With addictive sound effects and feedback, complete consecutive combos to relieve stress! If you hit a high combo with an object, your score will soar! There are no penalties or time limits, which means you can enjoy the game at your own pace. If you are looking for wonderful combination effects that are pleasing to the eye, join this game and challenge for the best score.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/gf9xdl8e1v8tp0la4t6ey6pqyqdarzfi/</url><thumb>https://img.gamemonetize.com/gf9xdl8e1v8tp0la4t6ey6pqyqdarzfi/512x384.jpg</thumb></item>
+<item><id>53714</id><title>Jelly merge 3D</title><description>Jelly merge 3D is a colorful and addictive puzzle game! It is easy to learn, but difficult to master! Your task is to move the cubes, connecting them by color and bypassing obstacles, until there is only one cube of each color left on the field. The game gets harder with each level, more different colors and cubes appear. There are 70+ unique levels in the game!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ch793oo9heevwkz1tdqysuctvpq9u7ml/</url><thumb>https://img.gamemonetize.com/ch793oo9heevwkz1tdqysuctvpq9u7ml/512x384.jpg</thumb></item>
+<item><id>53558</id><title>2048 Drop Merge</title><description>2048 Drop Merge is a puzzle game that challenges players to strategically drop and merge numbered tiles to reach the elusive 2048 tile. As players progress, they must carefully plan their moves to create larger and larger tiles. With its simple yet addictive gameplay, 2048 Drop Merge is a must-play for fans of puzzle games looking for a fun and challenging experience. Have fun!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ngih3373kadjy5b5p12dg0ep66c2p487/</url><thumb>https://img.gamemonetize.com/ngih3373kadjy5b5p12dg0ep66c2p487/512x384.jpg</thumb></item>
+<item><id>53614</id><title>Merge Monster Attack</title><description>Merge Attack is an action game where you combine weapons to improve your arsenal and defend against enemy waves. Each enemy type has unique traits, requiring strategy and quick thinking to overcome as the game gets harder.</description><category>Shooting</category><url>https://html5.gamemonetize.com/06uxm0juwlj40ldhlxmirjnflh8don4t/</url><thumb>https://img.gamemonetize.com/06uxm0juwlj40ldhlxmirjnflh8don4t/512x384.jpg</thumb></item>
+<item><id>53580</id><title>Merge Shapes</title><description>Connect similar tiles to evolve it. Each shape can evolve from outline to cutout to colorful shape. Once evolved to colorful shape it will be collected. Keep an eye on the goal and collect all required things to complete the level.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/0rut1vdlbv6lkwndv3qn73u6lo5ijuxh/</url><thumb>https://img.gamemonetize.com/0rut1vdlbv6lkwndv3qn73u6lo5ijuxh/512x384.jpg</thumb></item>
+<item><id>53177</id><title>Merge World</title><description>Immerse yourself in a world you can mold to your desires. Merge different materials and construct bigger buildings to fill it out. The good fairies will help you build a paradise!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/467egnkx2rts5gy6aeywmiat28ijv141/</url><thumb>https://img.gamemonetize.com/467egnkx2rts5gy6aeywmiat28ijv141/512x384.jpg</thumb></item>
+<item><id>53040</id><title>Merge Dices By Numbers</title><description>Connect 3 or more dices with the same number and color. Merging creates a dice with a bigger number. Try to get the best score. Hyper-casual matching gameplay.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/1g1wmawm5p8zwoy4x8b1zjjf5blrjpkz/</url><thumb>https://img.gamemonetize.com/1g1wmawm5p8zwoy4x8b1zjjf5blrjpkz/512x384.jpg</thumb></item>
+<item><id>52135</id><title>Merge Food Puzzle</title><description>Merge Food Puzzle is a synthetic puzzle game. What is different from ordinary match-3 games is that successful matches will not disappear and will generate higher-level food. The game has two modes: Merge BBQ and Merge Fruit. Merge BBQ has a variety of barbecues waiting for you to unlock, including corn, cauliflower, fish, squid, and more. Have fun!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/myf4nibujq1m9wwmvd5izcw2u7twd4ml/</url><thumb>https://img.gamemonetize.com/myf4nibujq1m9wwmvd5izcw2u7twd4ml/512x384.jpg</thumb></item>
+<item><id>52483</id><title>Giant Sushi: Merge Master Game</title><description>Giant Sushi is a relaxing puzzle game where your goal is to merge sushi! Sounds easy, doesnt it? Take the challenge and become the new sushi master!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ntemfljyf8nv4g3fty6vf3rr74qh8a6c/</url><thumb>https://img.gamemonetize.com/ntemfljyf8nv4g3fty6vf3rr74qh8a6c/512x384.jpg</thumb></item>
+<item><id>51447</id><title>Fruit Merge Reloaded</title><description>Dive into the juicy and colorful world of Fruit Merge Reloaded, a captivating merging game that combines the addictive gameplay of 2048 with the sweetness of your favorite fruits! Your task is to merge identical fruits to create new and exotic varieties, aiming to reach the ultimate fruit fusion.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/5siv3js8ufpjhjd3xyom74oyomzrj7sv/</url><thumb>https://img.gamemonetize.com/5siv3js8ufpjhjd3xyom74oyomzrj7sv/512x384.jpg</thumb></item>
+<item><id>49315</id><title>Merge Candies</title><description>Train your brain by merging same candies and give candies to customer, with a time limit to make your brain think faster and look for the same candies to merge. If you lose all 5 stars, you will lose.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/uxkhiea6pr6cbr81689stbekjdbcfqay/</url><thumb>https://img.gamemonetize.com/uxkhiea6pr6cbr81689stbekjdbcfqay/512x384.jpg</thumb></item>
+<item><id>50683</id><title>Cube Arena 2048 Merge Numbers</title><description>Cubes 2048.io is an addictive online game that fuses Snake and 2048. Get a bigger number by collecting free cubes and eating other players with a smaller number than you. Your cubes with the same value that bump into one another will merge. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/83up5y2u78nvd5ngywugy6j4g3im4lda/</url><thumb>https://img.gamemonetize.com/83up5y2u78nvd5ngywugy6j4g3im4lda/512x384.jpg</thumb></item>
+<item><id>50874</id><title>Alien Merge 2048</title><description>Alien Merge 2048 is a modified version of the game 2048, but with the same objective. Join equal numbers until you reach the number 2048.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/5kqb7mhgcvsonoe7fk144jkcob8qamvj/</url><thumb>https://img.gamemonetize.com/5kqb7mhgcvsonoe7fk144jkcob8qamvj/512x384.jpg</thumb></item>
+<item><id>50012</id><title>Merge Monster: Rainbow Master</title><description>Merge Monster: Rainbow Master is a brand-new merge monster battle game. Where players can join epic battles, upgrade combat skills and earn the title of the worlds greatest merge master. Gather your rainbow troops now, are you ready to take to the battlefield and lead an army of monsters to victory?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/mucctij23i9ri0tczdjxuja7qhs1o9q2/</url><thumb>https://img.gamemonetize.com/mucctij23i9ri0tczdjxuja7qhs1o9q2/512x384.jpg</thumb></item>
+<item><id>48057</id><title>Merge Dice 3D</title><description>Dice Merge is a unique and addictive game. You are presented with a grid and different numbered dice. The goal is to strategically merge these dice to create higher-numbered dice. With limited space and dice options, every move counts and every decision can impact the outcome of the game. This aspect keeps players engaged and constantly thinking ahead. Dice Merge has beautiful and colorful visuals. So, if youre looking for a challenging game, give Dice Merge a try! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/4fnnwobzv3rci3c1ir45w4hfsta2zwdk/</url><thumb>https://img.gamemonetize.com/4fnnwobzv3rci3c1ir45w4hfsta2zwdk/512x384.jpg</thumb></item>
+<item><id>47708</id><title>Dice Merge</title><description>Dice Merge is an addictive and challenging puzzle game. Your strategic thinking skills will be tested. The objective is to merge dice with the same number to create higher-numbered dice. You start with a grid filled with random numbered dice, and your task is to strategically move and merge them to maximize their values. Come on and start merging those dice to master this fascinating game!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/667ol641rqyhbwr5tpa9peduhyywc4u0/</url><thumb>https://img.gamemonetize.com/667ol641rqyhbwr5tpa9peduhyywc4u0/512x384.jpg</thumb></item>
+<item><id>47409</id><title>Hexa Merge 2048</title><description>- Game Hexa Merge 2048 is a fun and addictive puzzle game that combines elements of drop and merge games with the classic 2048 game. - The goal is to drop numbered tiles onto the board and merge them with adjacent tiles of the same value to create larger numbers. - The game ends when the board is full or when you reach the 2048 tile, whichever comes first. - You can choose from different modes, themes, and difficulties to customize your gaming experience. - Game Hexa Merge 2048 is a great way to train your brain, relax, and have fun at the same time.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/hpstq2pm2jq9jst29aynnpr2poomw59n/</url><thumb>https://img.gamemonetize.com/hpstq2pm2jq9jst29aynnpr2poomw59n/512x384.jpg</thumb></item>
+<item><id>47547</id><title>Hexa 2048 Puzzle Block Merge</title><description>Hexa 2048 Puzzleis an addictive relaxing number block merge game. Come to play Hexa Puzzle, merge the Hexa blocks and give your brain a rest! Features: Beautifully easy and simple, no pressure and no time limit. Challenging to break your highest score. Easy to play. Classic merge game and block game for all ages! Multiple beautiful background pictures. Multiple materials of blocks. Such as: iron, crystal, wood; Come and play this game and become a master of Hexa Block Merge Game now!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/vrwtg1qhbkcyu7rt0eewx89dxmcdn6tv/</url><thumb>https://img.gamemonetize.com/vrwtg1qhbkcyu7rt0eewx89dxmcdn6tv/512x384.jpg</thumb></item>
+<item><id>45822</id><title>Merge Numbers 2048</title><description>Do you love 2048 puzzle games? Come and enjoy our game Merge Number 2048 with simple graphics and smooth gameplay. Swipe left and right to drop the balls and start merging balls with the same number. Can you get 2048?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/0qhoiiohxttj13iq1kg0u0ue0kt3hzi0/</url><thumb>https://img.gamemonetize.com/0qhoiiohxttj13iq1kg0u0ue0kt3hzi0/512x384.jpg</thumb></item>
+<item><id>46060</id><title>Egg Farm Merge Puzzle</title><description>If you add an egg to an egg, what do you get?The more you merged, the more money you get.How far can your farm grow?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/s6o33yorr8cjpumfmj3k39mi41nfkh0h/</url><thumb>https://img.gamemonetize.com/s6o33yorr8cjpumfmj3k39mi41nfkh0h/512x384.jpg</thumb></item>
+<item><id>46727</id><title>Merge Monster Army</title><description>Merge Monster Army is a composite game for boys. Arrange troops on the map to gain an advantage and gather the strongest army of the most dangerous monsters! You can improve your monsters by connecting two of the same and getting a new one that will be stronger and more powerful. Keep in mind, as soon as your squad comes out against the enemy, you can not do anything. Come and join the fight!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/k09cd56m0g0t4o4rnxu1guoawlatrlni/</url><thumb>https://img.gamemonetize.com/k09cd56m0g0t4o4rnxu1guoawlatrlni/512x384.jpg</thumb></item>
+<item><id>44972</id><title>Human Evolution Merge Master</title><description>Human Evolution Merge Master is not only a merger puzzle game but also a cool strategy game for everyone that merges all the superheroes, and forces and fights against enemies. Grow your warriors from simple soldiers and velociraptors to terrific enemies when you merge with them. The higher the level of the human, the stronger the attack and defense. This is the most important skill in this game, lets master it. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/x47wtxgibcae4e9124io9ts5cpphimcb/</url><thumb>https://img.gamemonetize.com/x47wtxgibcae4e9124io9ts5cpphimcb/512x384.jpg</thumb></item>
+<item><id>44092</id><title>Merge Master: Army Clash</title><description>The war is about to begin! Are you ready? Come and gather more companions to join you! Avoid obstacles, gather soldiers, form an army, and finally compete with the enemy! Assemble your team and pass the checkpoint in the most effective way! Come on!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/fjq69xyiefa24kjwnd2u7psv7e2wojou/</url><thumb>https://img.gamemonetize.com/fjq69xyiefa24kjwnd2u7psv7e2wojou/512x384.jpg</thumb></item>
+</channel></rss>`;
+
+    const grid = document.getElementById('gameGrid');
+    const searchInput = document.getElementById('searchInput');
+    const modal = document.getElementById('gameModal');
+    const frame = document.getElementById('gameFrame');
+    const fullScreenBtn = document.getElementById('fullScreenBtn');
+    const fsPath = document.getElementById('fsPath');
+    
+    let gameList = [];
+
+    function init() {
+        initAllGames();
+        setupEventListeners();
+    }
+
+    // Parse XML data to generate the game list
+    function initAllGames() {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(FEED_XML, "text/xml");
+        const items = xmlDoc.getElementsByTagName("item");
+
+        gameList = Array.from(items).map(item => ({
+            title: item.getElementsByTagName("title")[0]?.textContent,
+            desc: item.getElementsByTagName("description")[0]?.textContent,
+            category: item.getElementsByTagName("category")[0]?.textContent,
+            url: item.getElementsByTagName("url")[0]?.textContent,
+            thumb: item.getElementsByTagName("thumb")[0]?.textContent
+        }));
+
+        renderGames(gameList);
+    }
+
+    // Render cards into the DOM
+    function renderGames(data) {
+        grid.innerHTML = '';
+        data.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `Play ${game.title}`);
+            card.tabIndex = 0;
+
+            // Handle click event to open modal
+            card.onclick = () => {
+                frame.src = game.url;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; 
+            };
+            
+            // Support keyboard accessibility
+            card.onkeydown = (e) => {
+                if (e.key === 'Enter') card.onclick();
+            };
+
+            card.innerHTML = `
+                <div class="card-image-box">
+                    <img src="${game.thumb}" alt="${game.title}" class="card-image" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <button class="btn-play" tabindex="-1">PLAY NOW</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">${game.category}</span>
+                    <h3 class="card-title">${game.title}</h3>
+                    <p class="card-desc">${game.desc}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    function setupEventListeners() {
+        // Search filter logic
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = gameList.filter(g => 
+                g.title.toLowerCase().includes(query) || 
+                g.category.toLowerCase().includes(query)
+            );
+            renderGames(filtered);
+        });
+
+        // Fullscreen toggle event
+        fullScreenBtn.addEventListener('click', toggleFullscreen);
+
+        // Update UI when fullscreen state changes
+        document.addEventListener('fullscreenchange', updateFullscreenUI);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenUI);
+        
+        // Close modal when clicking outside the container
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) closeGame();
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'block') { closeGame(); }
+        });
+
+        updateFullscreenUI();
+    }
+
+    // Modal closing logic
+    window.closeGame = function() {
+        modal.style.display = 'none';
+        frame.src = '';
+        document.body.style.overflow = 'auto';
+        if (isFullscreen()) {
+            exitFullscreen();
+            setTimeout(updateFullscreenUI, 50);
+        }
+    }
+
+    // Fullscreen helper functions
+    function isFullscreen() {
+        return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+    }
+
+    function enterFullscreen() {
+        const container = document.querySelector('.modal-container');
+        if (container.requestFullscreen) { container.requestFullscreen(); } 
+        else if (container.webkitRequestFullscreen) { container.webkitRequestFullscreen(); } 
+        else if (container.mozRequestFullScreen) { container.mozRequestFullScreen(); } 
+        else if (container.msRequestFullscreen) { container.msRequestFullscreen(); }
+    }
+
+    function exitFullscreen() {
+        if (document.exitFullscreen) { document.exitFullscreen(); } 
+        else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); } 
+        else if (document.mozCancelFullScreen) { document.mozCancelFullScreen(); } 
+        else if (document.msExitFullscreen) { document.msExitFullscreen(); }
+    }
+
+    function toggleFullscreen() {
+        if (isFullscreen()) { exitFullscreen(); } else { enterFullscreen(); }
+    }
+
+    function updateFullscreenUI() {
+        const isFs = isFullscreen();
+        const enterPath = "M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3";
+        const exitPath = "M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3";
+        fsPath.setAttribute('d', isFs ? exitPath : enterPath);
+    }
+
+    // Initialize the script
+    init();
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAmeasLSfP2N6aDTaHv2g83HXA9fMPVZFE",
+    authDomain: "puzzlechallengehub.firebaseapp.com",
+    projectId: "puzzlechallengehub",
+    storageBucket: "puzzlechallengehub.firebasestorage.app",
+    messagingSenderId: "112608986588",
+    appId: "1:112608986588:web:acc32a06b94fd65f46bb19",
+    measurementId: "G-SX634LMH5N"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" href="https://puzzlechallengehub.com/favicon.ico">
+    <link rel="canonical" href="https://puzzlechallengehub.com/collection/2048.html">
+    <title>2048 Puzzles Collection - Play Free Online | PuzzleHub</title>
+    <meta name="description" content="Slide and merge numbered tiles in strategic math puzzles. Plan your moves to reach the ultimate 2048 tile and beyond.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --bg-card: #161b22;
+            --accent-primary: #7b61ff;
+            --accent-hover: #917cff;
+            --text-light: #f0f6fc;
+            --text-dim: #8b949e;
+            --border-color: #30363d;
+            --glass: rgba(10, 11, 16, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        header {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--accent-primary);
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 15px rgba(123, 97, 255, 0.4);
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-light);
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: #0d1117;
+            border: 1px solid var(--border-color);
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2);
+        }
+
+        /* Collection Hero Section */
+        .collection-hero {
+            padding: 3rem 5% 2rem;
+            background: linear-gradient(180deg, rgba(123, 97, 255, 0.12) 0%, rgba(10, 11, 16, 0) 100%);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumbs a {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--accent-primary);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-icon-box {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-primary);
+            border-radius: 20px;
+            display: grid;
+            place-items: center;
+            font-size: 2.5rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(123, 97, 255, 0.4);
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .hero-text p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 0 5% 4rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            content-visibility: auto; 
+            contain-intrinsic-size: 0 350px; 
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+        }
+
+        .card-image-box {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background-color: #1a1f26;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+            display: 2048;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .btn-play {
+            background: var(--accent-primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            transform: translateY(20px);
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .card:hover .btn-play {
+            transform: translateY(0);
+        }
+
+        .card-body {
+            padding: 1.2rem;
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            color: #FDF67C;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: 2048;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-light);
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.6rem;
+            line-height: 1.3rem;
+        }
+
+        /* Modal System */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px;
+        }
+
+        .modal-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 85vh;
+            margin: 20px auto;
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(123, 97, 255, 0.3);
+        }
+
+        .modal-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 15px;
+            z-index: 2100;
+        }
+
+        .close-btn {
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: 1px solid #444;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .close-btn:hover, #fullScreenBtn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 5%;
+            text-align: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+        
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-dim);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 12px; padding: 12px 3%; }
+            .search-wrapper { width: 100%; }
+            .hero-content { flex-direction: column; text-align: center; gap: 15px; }
+            .hero-icon-box { width: 60px; height: 60px; font-size: 2rem; border-radius: 15px;}
+            .hero-text h1 { font-size: 1.8rem; }
+            
+            .game-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 0 3% 2rem;}
+            .card-body { padding: 0.8rem; }
+            .card-title { font-size: 0.9rem; margin-bottom: 4px; }
+            .card-desc { display: none; }
+            .btn-play { padding: 6px 16px; font-size: 0.8rem; }
+            
+            .modal { padding: 0; }
+            .modal-container { height: 100vh; margin: 0; border-radius: 0; }
+            .modal-controls { top: 15px; right: 15px; }
+            #fullScreenBtn, .close-btn { width: 38px; height: 38px; }
+        }
+    </style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "v7w38tv951");
+</script>
+</head>
+
+<body>
+
+<header>
+    <a href="/" class="brand">
+        <div class="logo-icon">P</div>
+        <span class="brand-name">PuzzleHub</span>
+    </a>
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search 2048 games...">
+    </div>
+</header>
+
+<main>
+    <div class="collection-hero">
+        <div class="breadcrumbs">
+            <a href="/">Home</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <a href="/collection.html">Collections</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <span>2048 Puzzles</span>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-icon-box">
+                <i class="fas fa-th"></i>
+            </div>
+            <div class="hero-text">
+                <h1>2048 Strategy Collection</h1>
+                <p>Slide and merge numbered tiles in strategic math puzzles. Plan your moves to reach the ultimate 2048 tile and beyond.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameGrid" class="game-grid"></div>
+</main>
+
+<div id="gameModal" class="modal" role="dialog" aria-modal="true" aria-label="Game Player">
+    <div class="modal-container">
+        <div class="modal-controls">
+            <button id="fullScreenBtn" title="Toggle Fullscreen" style="background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 42px; height: 42px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; flex-shrink: 0;">
+                <svg id="fsIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: 2048;">
+                    <path id="fsPath" d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+            </button>
+            <button onclick="closeGame()" title="Close Game" class="close-btn">
+                ✕
+            </button>
+        </div>
+        <iframe id="gameFrame" src="" allow="autoplay; fullscreen; keyboard" title="Play Game Frame"></iframe>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-socials">
+        <a href="https://www.facebook.com/puzzlehubgames" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@PuzzleGamesGuideVideo" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2026 PuzzleHub Gaming Platform</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">
+        <a href="/privacy-policy.html" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a> | 
+        <a href="/terms-of-service.html" style="color: var(--text-dim); text-decoration: none;">Terms of Service</a> | 
+        <a href="/about-us.html" style="color: var(--text-dim); text-decoration: none;">About Us</a> | 
+        <a href="/contact-us.html" style="color: var(--text-dim); text-decoration: none;">Contact Us</a>
+    </p>
+</footer>
+
+<script>
+    // Feed data 2048ing the All Games section mechanism
+    const FEED_XML = `
+<rss version="2.0">
+<channel>
+<item><id>74492</id><title>2048 Premium</title><description>Experience the ultimate edition of the classic 2048 puzzle game! Join numbers to reach the 2048 tile and beyond. This premium version features sleek visuals, smooth animations, and multiple difficulty modes including standard 4x4, advanced 5x5, and expert 6x6 grids. Stuck? Use exclusive power-ups like Undo, Swap, and Delete to master the board. Perfect for quick brain training or long strategy sessions. Fully optimized for both desktop and mobile play</description><category>Puzzle</category><url>https://html5.gamemonetize.com/1sanabeylv9967e1giv104wewaw9p5br/</url><thumb>https://img.gamemonetize.com/1sanabeylv9967e1giv104wewaw9p5br/512x384.jpg</thumb></item>
+<item><id>75380</id><title>President 2048</title><description>President 2048 is a fun puzzle game featuring U.S. presidents. Merge tiles from Biden (#46) back to Washington (#1). A perfect blend of classic 2048 gameplay and American history. Can you reach the founding father?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/fvj6cqgeutu1o8t5lbjd7c4dkrtpuzag/</url><thumb>https://img.gamemonetize.com/fvj6cqgeutu1o8t5lbjd7c4dkrtpuzag/512x384.jpg</thumb></item>
+<item><id>75046</id><title>2048 neon game</title><description>Dive into the most addictive number puzzle experience with 2048 Clean. Slide the tiles to merge matching numbers: 2+2 becomes 4, 4+4 becomes 8, and so on. Your goal is to reach the legendary 2048 tile without running out of moves! Key Features: - Brain Training: Improve your logic and math skills. - Mobile Optimized: Smooth gameplay on all devices (Android, iOS, PC). - Fast Clean: Minimalist design for zero distractions. - High Score: Challenge your friends and beat your best score. Whether you are a fan of classic math puzzles or looking for a relaxing brain teaser, 2048 Clean is the perfect choice. Play now for free! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/u215wd09xavp4bb40yhdokmqgrmrr92w/</url><thumb>https://img.gamemonetize.com/u215wd09xavp4bb40yhdokmqgrmrr92w/512x384.jpg</thumb></item>
+<item><id>75044</id><title>Fly 2048</title><description>Fly 2048 is a unique and challenging fusion of two legendary arcade mechanics: the mathematical logic of 2048 and the intense, skill-based navigation of Flappy Bird. In this game, you dont just slide tiles on a grid; you control a flying tile that must navigate through narrow gaps between block barriers. Each successful pass through a gate increases your score and transforms your tile into the next power of two. As your score climbs, the games speed increases, demanding faster reflexes and tighter control. Watch your number grow from 2 to 2048 and beyond while trying to beat your personal best score. How far can you fly before hitting an </description><category>Puzzle</category><url>https://html5.gamemonetize.com/cvejhwrjd65k00r262dtlpyinbg2fd1c/</url><thumb>https://img.gamemonetize.com/cvejhwrjd65k00r262dtlpyinbg2fd1c/512x384.jpg</thumb></item>
+<item><id>75027</id><title>2048 Flappy</title><description>Get ready for the ultimate mashup of two legendary hits! Flappy 2048 combines the addictive, flapping mechanics of the bird genre with the brain-teasing math of the 2048 puzzle. In this game, you dont just fly through pipes, you fly through numbers! Tap to flap your tile and navigate through the gaps. To increase your value, you must pass through the walls with numbers that match your own. Watch your tile evolve from 2 to 4, 8, 16, and eventually all the way to 2048 and other! It's a test of both reflexes and quick thinking. One wrong move or a mistimed flap and it's game over. How far can you fly, and can you reach the ultimate 2048 tile</description><category>Puzzle</category><url>https://html5.gamemonetize.com/qet6afsr54te1zpfpg2jp0mv25v0zh0p/</url><thumb>https://img.gamemonetize.com/qet6afsr54te1zpfpg2jp0mv25v0zh0p/512x384.jpg</thumb></item>
+<item><id>74559</id><title>Galaxy 2048</title><description>Galaxy 2048 is a fun and addictive puzzle game inspired by the classic 2048 gameplay. Swipe the tiles to combine numbers and create higher values as you aim to reach the ultimate 2048 tile. With a clean galaxy-themed design and smooth controls, the game is easy to learn but challenging to master. Perfect for relaxing your mind while training your logic and concentration skills. Play anytime on desktop or mobile devices and enjoy endless number-merging fun!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/wqrjoibnw3f6kjr8gjcy6pdypydad9h8/</url><thumb>https://img.gamemonetize.com/wqrjoibnw3f6kjr8gjcy6pdypydad9h8/512x384.jpg</thumb></item>
+<item><id>73344</id><title>M2 BLOCKS 2048</title><description>M2 Blocks is an addictive and strategic puzzle game that challenges your logic, planning skills, and reflexes. Your goal is simple but engaging: merge matching numbered blocks to create higher values and score as many points as possible. Each move matters one wrong decision can quickly fill the board, so think ahead and play smart. With clean visuals, smooth controls, and fast gameplay, M2 Blocks is perfect for quick sessions or long puzzle-solving marathons. Whether you are a casual player or a puzzle expert, the game offers a satisfying challenge that keeps you coming back for more.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/kspqjp4u64fwgdnq0v025uri509teye1/</url><thumb>https://img.gamemonetize.com/kspqjp4u64fwgdnq0v025uri509teye1/512x384.jpg</thumb></item>
+<item><id>72627</id><title>Hexa Merge 2048: Puzzle</title><description>Dive into Hexa Merge 2048, the exciting puzzle game that mixes numbers and fun! Merge colorful, smiling hexagon tiles on a magical adventure. Combine numbers like 2, 4, and 8 to create 2048 in this brain-teasing challenge. With its cute, kid-friendly design and simple tap-to-merge gameplay, its the perfect educational game for children. Enjoy vibrant graphics, relaxing music, and endless puzzle fun. Download the best free number game and start your merging journey today</description><category>Puzzle</category><url>https://html5.gamemonetize.com/5r7akvnmm0t25uang36jgu02fek7qqr5/</url><thumb>https://img.gamemonetize.com/5r7akvnmm0t25uang36jgu02fek7qqr5/512x384.jpg</thumb></item>
+<item><id>61256</id><title>Foodies 2048</title><description>Enter the bright and tasty world of 2048 Foodies; a casual 2048-style puzzle with fruits and berries! Merge identical berries and fruits to create new, juicier, and more delicious sweets. Every merge brings you closer to rare and exotic treats. Simple, intuitive controls make this merge game perfect for everyone: just connect matching items and watch new fruits appear. Colorful, vibrant graphics, smooth animations, and a mouth-watering design create an addictive fruity merge experience.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/jcudjznlfifbu3le2mgo5215rpdd1713/</url><thumb>https://img.gamemonetize.com/jcudjznlfifbu3le2mgo5215rpdd1713/512x384.jpg</thumb></item>
+<item><id>70172</id><title>Fruit Merge 2048  Juicy Puzzle</title><description>Fruit Merge 2048 is a fun and addictive puzzle game that combines the classic 2048 gameplay with colorful, mouth-watering fruits! Simply swipe to merge identical fruits and watch them evolve into bigger, juicier ones. The more you merge, the closer you get to the ultimate fruit! Featuring bright graphics, smooth animations, and satisfying gameplay, this fruit puzzle is perfect for casual players and puzzle lovers of all ages. Whether you want to challenge your brain, pass the time, or just enjoy some juicy fun, Fruit Merge 2048 is your go-to choice.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/nrae5bijahbi5m5nydila7xqw875n4ut/</url><thumb>https://img.gamemonetize.com/nrae5bijahbi5m5nydila7xqw875n4ut/512x384.jpg</thumb></item>
+<item><id>69906</id><title>2048 Space Mission</title><description>2048 Space Mission is an amazing and addictive number puzzle game. Explore tons of challenging levels and try to complete them all! Each level has a different mission. Collect coins to unlock beautiful new game boards or use the hammer to eliminate discs. Have fun!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/zn8rb2r0aw0km0r3qqojz9pbfcgecx8w/</url><thumb>https://img.gamemonetize.com/zn8rb2r0aw0km0r3qqojz9pbfcgecx8w/512x384.jpg</thumb></item>
+<item><id>69113</id><title>AgeOf2048</title><description>Very fun composition game, sliding the screen of the same building will synthesize new buildings. When you reach a certain building level, new building styles will be unlocked. Come and play.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/kucts59lumpx0mu3j41fr4aj3junu0zc/</url><thumb>https://img.gamemonetize.com/kucts59lumpx0mu3j41fr4aj3junu0zc/512x384.jpg</thumb></item>
+<item><id>69202</id><title>Poker2048</title><description>Poker2048 blends the strategic depth of poker with the addictive gameplay of sliding-tile puzzles. On a 44 grid, you'll merge cards to form classic poker hands. Pair, Three of a Kind, Straight, Flush, Full House and beyond. Powerful hands award more points, so plan your moves carefully to maximize your score. Draw new cards from the deck when needed, but watch your opportunities: the game ends when no moves remain or the deck is empty. With simple controls, vibrant visuals, and endless replayability, Poker2048 is perfect for puzzle lovers and card sharks alike. Challenge yourself to beat your best score!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8642bhwj1tqak84ucz7gy8a6ehfcydyh/</url><thumb>https://img.gamemonetize.com/8642bhwj1tqak84ucz7gy8a6ehfcydyh/512x384.jpg</thumb></item>
+<item><id>60720</id><title>Merge the Planets: 2048!</title><description> This game is in the style of the classic 2048! Connect planets ! Connect as many as possible to get the biggest planet! Collect points and compete with friends or colleagues! Enjoy your game!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/l9tr03ur1991r249ihfoewm3c4p5xjzt/</url><thumb>https://img.gamemonetize.com/l9tr03ur1991r249ihfoewm3c4p5xjzt/512x384.jpg</thumb></item>
+<item><id>60796</id><title>Merge fruits: 2048 New in 2D!</title><description> This is a game where you have to connect fruits! Compete with friends and colleagues! In the game you have a game zone where fruits fall and connect if they are the same! Connect as many fruits as possible to get a watermelon, collect points! Be the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/43d7snh2al6o822hutmpyb4ewxh6qvr8/</url><thumb>https://img.gamemonetize.com/43d7snh2al6o822hutmpyb4ewxh6qvr8/512x384.jpg</thumb></item>
+<item><id>60793</id><title>MergeMushrooms: 2048!</title><description> A game with a forest atmosphere! Compete with friends and colleagues! In the game you have a game zone where mushrooms fall and connect if they have the same color! Connect as many mushrooms as possible to get the biggest one, collect points! Become the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/x1j2ts56yiuqwa2u1fxr4rhtdg11pcns/</url><thumb>https://img.gamemonetize.com/x1j2ts56yiuqwa2u1fxr4rhtdg11pcns/512x384.jpg</thumb></item>
+<item><id>60792</id><title>MergeSweets: 2048!</title><description> A game in an unusual setting! Compete with friends and colleagues! In the game you have a game zone where sweets fall and are connected if they are the same! Connect as many sweets as possible, accumulate points! Become the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/q4wp67dbp7x38ru92myl50177hou5jsg/</url><thumb>https://img.gamemonetize.com/q4wp67dbp7x38ru92myl50177hou5jsg/512x384.jpg</thumb></item>
+<item><id>61512</id><title>Additive Fun 2048</title><description> The gameplay is simple: you slide the numbered tiles in any of the eight directions, and when two tiles with the same number collide, they merge into one. Slide the Same Numbers offers a clean and minimalist design, with simple graphics and soothing sound effects. It is a game that will test your logical thinking and strategy skills, providing a challenging and engaging gameplay experience.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/a61yv7ccsw9cp0hkykud3hbfb48ti7x7/</url><thumb>https://img.gamemonetize.com/a61yv7ccsw9cp0hkykud3hbfb48ti7x7/512x384.jpg</thumb></item>
+<item><id>62378</id><title>Qolor 2048</title><description>Slide into the addictive chaos of 2048! Merge tiles, double up, and chase that elusive 2048 in a sleek 4x4 grid. Simple moves, big thrills</description><category>Puzzle</category><url>https://html5.gamemonetize.com/3e4hk4zpotozwuy9ehh5uy0xzeaabp3k/</url><thumb>https://img.gamemonetize.com/3e4hk4zpotozwuy9ehh5uy0xzeaabp3k/512x384.jpg</thumb></item>
+<item><id>60791</id><title>MergeButerfly: 2048!</title><description> A game in an unusual setting! Compete with friends and colleagues! In the game you have a game zone where butterflies fall and connect if they are the same! Connect as many butterflies as possible to get the most beautiful one, collect points! Become the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/203tuhevf5u5btzbqedkakp8ymw362ji/</url><thumb>https://img.gamemonetize.com/203tuhevf5u5btzbqedkakp8ymw362ji/512x384.jpg</thumb></item>
+<item><id>60794</id><title>Merge Animals 2048!</title><description>Your goal in this fun game is to connect identical animals and get new ones! Guide the animal straight to its double in the game arena and connect them into one cooler animal! Compete with your friends in the ranking and have fun! Can you find out which animal is the biggest?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/fqzbzcncgxe213j4vvraznmhe6sminie/</url><thumb>https://img.gamemonetize.com/fqzbzcncgxe213j4vvraznmhe6sminie/512x384.jpg</thumb></item>
+<item><id>60785</id><title>Merge the Balls 2048: Billiards!</title><description> This game is in the style of the classic 2048. Your task is to connect balls with the same color and numbers! Which fall on the playing field, until you manage to get the highest score! Balls are connected if they have the same color and the same numbers! The difficulty is that the balls will be attracted to each other and if they cross the white line, the game will start over! Become the first on the leaderboard! Show your record to your friends and colleagues to surprise them! Fight for first place on the leaderboard and prove that you are the winner!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/z3l5z7xhk5hy4vycxpyf9sw9uddweel0/</url><thumb>https://img.gamemonetize.com/z3l5z7xhk5hy4vycxpyf9sw9uddweel0/512x384.jpg</thumb></item>
+<item><id>60798</id><title>Merge Cats: 2048!</title><description> A game with a cute atmosphere! Compete with friends and colleagues! In the game you have a game zone where cat-balls fall and connect if they are the same! Connect as many cat-balls as possible to get the biggest one, collect points! Be the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/r1n70afhgkgia36vyw84mf7eew2fqqwa/</url><thumb>https://img.gamemonetize.com/r1n70afhgkgia36vyw84mf7eew2fqqwa/512x384.jpg</thumb></item>
+<item><id>60833</id><title>Bus Stop: 2048!</title><description>Game Features: 1. Unique gameplay allows passengers to board their cars and leave the station. 2. Collect cool cars, unlock and collect cool cars in each level of play. 3. There are many types of cars in the game store, waiting for players to purchase them.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/wg1xymgqs34lty6w8hj95sapoaierz1k/</url><thumb>https://img.gamemonetize.com/wg1xymgqs34lty6w8hj95sapoaierz1k/512x384.jpg</thumb></item>
+<item><id>61126</id><title>2048 Cubes</title><description>Endless 2048 game with a twist, blocks with physics. Blocks will colliide and bounce after collision. Drop and merge same numbers to reach higher numbers.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/vfkef0h65ixool4c1mldayie4t74nmud/</url><thumb>https://img.gamemonetize.com/vfkef0h65ixool4c1mldayie4t74nmud/512x384.jpg</thumb></item>
+<item><id>60735</id><title>Dize puzzles: 2048 Merge!</title><description> This game is harder than it seems! You have a playing field where you need to throw fruits and connect the same ones! Until you get the biggest and most beautiful one! Collect points! Compete with friends and colleagues for the title of the best! Enjoy your game !</description><category>Puzzle</category><url>https://html5.gamemonetize.com/f37nkhwixler59dscrsu7jo6qyu06jrv/</url><thumb>https://img.gamemonetize.com/f37nkhwixler59dscrsu7jo6qyu06jrv/512x384.jpg</thumb></item>
+<item><id>60732</id><title>New Years Balls 2048 in 3D</title><description> A game with a New Years atmosphere! Compete with friends and colleagues! In the game you have a game zone, where balls fall and connect if they have the same color! Connect as many balls as possible to get the biggest one, collect points! Become the first on the leaderboard! Play and relax!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/1ea9qy0eyb6qo8tt6v1aj5rub735vfbo/</url><thumb>https://img.gamemonetize.com/1ea9qy0eyb6qo8tt6v1aj5rub735vfbo/512x384.jpg</thumb></item>
+<item><id>60729</id><title>Merge Cubes 2048 3D</title><description>A completely new approach to the classic game 2048! Now in 3D and with dynamic physics! The cubes with numbers dont just merge - they bounce and collide, adding an element of surprise to every game! Compete with friends or colleagues!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/t099dxkcqj5zszxkzxdihp4ipuddmpji/</url><thumb>https://img.gamemonetize.com/t099dxkcqj5zszxkzxdihp4ipuddmpji/512x384.jpg</thumb></item>
+<item><id>60290</id><title>Fallen 2048</title><description>The player uses the mouse to move falling tiles left or right. Only same numbers can allign! The goal is to align tiles with the same number so they merge when they touch, creating higher numbers. The game ends if the screen fills up, so players must think quickly and strategically to keep merging tiles and reach higher scores.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/tkwr4h15ofgu53g5gcpbci69e7lvaq31/</url><thumb>https://img.gamemonetize.com/tkwr4h15ofgu53g5gcpbci69e7lvaq31/512x384.jpg</thumb></item>
+<item><id>59376</id><title>Block Puzzle 2048 Game</title><description>Block Puzzle 2048 Game is a puzzle game that combines 2048 and merged cubes. Combine the corresponding numbers and the number of squares as required. The higher the level, the greater the difficulty, which requires your brainstorming! Can you pass the level without props? Props are limited! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/pn2lkci8w2ty65o0ivrn9qguwjmj68mh/</url><thumb>https://img.gamemonetize.com/pn2lkci8w2ty65o0ivrn9qguwjmj68mh/512x384.jpg</thumb></item>
+<item><id>58098</id><title>Bubble Merge 2048</title><description>Welcome to Bubble Merge 2048, where classic 2048 meets exciting bubble-blasting action! Shoot, merge, and blast through puzzles filled with colourful bubbles and challenges. Match numbers and colours, solve brain-teasing puzzles, and smash obstacles as you journey through this one-of-a-kind adventure. Features: - Unique Challenges: Every level introduces fresh puzzles, obstacles, and surprises. - Boosters  Power-Ups: Unlock dynamite, rockets, and more to clear tricky stages. - Win Rewards: Collect stars on each level to open Star Chests with rewards. - Realistic Physics: Watch the bubbles bounce and interact like real life!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/9vwyi3z5ew1y0fkt7sl3veu7z8gg9hfy/</url><thumb>https://img.gamemonetize.com/9vwyi3z5ew1y0fkt7sl3veu7z8gg9hfy/512x384.jpg</thumb></item>
+<item><id>55711</id><title>Merge Card 2048</title><description>Challenge your logical thinking ability with the 2048 card merge game. Can you pass our challenge of merging to the number 128 million?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/z3toi22308992ndrx7huta2xpfzr3a6j/</url><thumb>https://img.gamemonetize.com/z3toi22308992ndrx7huta2xpfzr3a6j/512x384.jpg</thumb></item>
+<item><id>55779</id><title>Merge 2048 Cake</title><description>A unique number puzzle. It has a completely new and unusual merge mechanic  just try it and you will definitely love it ; match games addiction guaranteed! Just look at how smoothly and beautifully those number blocks combine with each other. Hypnotizing, isn't it? You will also appreciate the modern gameplay, simple and straightforward match game rules. Relax after a hard day and have some soft pleasure  no similar 2048 game experience required! . A new generation of merge games is already here! ;) Number puzzle: relax and win Soft shapes, bright colors, smooth animation has everything for a pleasant 1024 game! Great music will also help</description><category>Puzzle</category><url>https://html5.gamemonetize.com/mawi3nh6ebh72xnqh0tyoprnbsi3wcj9/</url><thumb>https://img.gamemonetize.com/mawi3nh6ebh72xnqh0tyoprnbsi3wcj9/512x384.jpg</thumb></item>
+<item><id>54739</id><title>Battle 2048</title><description>Swipe to move the tiles. When two tiles with the same number touch, they merge into one. Reach the 2048 tile and keep playing to unlock higher-value number tiles! Enjoy the best free 2048 original game online!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/l1yoe3zc3togq3fij9v7adu0t52nfd17/</url><thumb>https://img.gamemonetize.com/l1yoe3zc3togq3fij9v7adu0t52nfd17/512x384.jpg</thumb></item>
+<item><id>54180</id><title>Merge Crypto 2048 Puzzle</title><description>Welcome to the joyful world of Merge Crypto. This game is an interesting and classic casual game where you can relax and kill time at any moment. The rules of Merge Crypto are extremely simple and easy to grasp. You just need to continuously combine balls of the same cryptocurrency until you reach the final goal of creating a Bitcoin Ball, which gives an increased score booster. Moreover, its a great way to train your brain and fingers, and its entertainment for all ages.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/9g9sxglqcitkopmvlanq49zr674m9gxl/</url><thumb>https://img.gamemonetize.com/9g9sxglqcitkopmvlanq49zr674m9gxl/512x384.jpg</thumb></item>
+<item><id>54277</id><title>2048 Cube Shooting Merge</title><description>2048 Cube Shooting Merge is an addictive merge puzzle online game for those who like challenging brain teasers and logic puzzle merge games. This game is in 3D with crazy fun physics! The squares dont stay in place, they pop up. The gameplay is much simpler. If you like 2048 games and want to play a novel mode, join the game.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/eqjjura1fi5x8a2psrht8zgpvwvqqrym/</url><thumb>https://img.gamemonetize.com/eqjjura1fi5x8a2psrht8zgpvwvqqrym/512x384.jpg</thumb></item>
+<item><id>49885</id><title>Infinity Cubes 2048</title><description>Infinity Cubes 2048 with funny physics. Merge identical cubes and enjoy their funny physics. Get the biggest cube! Have a good game!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/9qt2zfxkn2zc9sije0o8mos5nj6vc8v8/</url><thumb>https://img.gamemonetize.com/9qt2zfxkn2zc9sije0o8mos5nj6vc8v8/512x384.jpg</thumb></item>
+<item><id>54222</id><title>Chain Cube 2048 3D Merge Game</title><description>Ready to challenge yourself? Chain Cubes 2048 is an addictive merging puzzle online game for those who like challenging brain teasers and logic puzzle merging games. Believe it or not, its much harder to put together 2048 cubes than it is to throw away the numbers. If you fail to merge the cube number blocks, they will bounce off each other! Keep playing and eventually complete 2248 number puzzles!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/jptdkpcppb6yxmfuvai88fs9l8fk3lrv/</url><thumb>https://img.gamemonetize.com/jptdkpcppb6yxmfuvai88fs9l8fk3lrv/512x384.jpg</thumb></item>
+<item><id>53558</id><title>2048 Drop Merge</title><description>2048 Drop Merge is a puzzle game that challenges players to strategically drop and merge numbered tiles to reach the elusive 2048 tile. As players progress, they must carefully plan their moves to create larger and larger tiles. With its simple yet addictive gameplay, 2048 Drop Merge is a must-play for fans of puzzle games looking for a fun and challenging experience. Have fun!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ngih3373kadjy5b5p12dg0ep66c2p487/</url><thumb>https://img.gamemonetize.com/ngih3373kadjy5b5p12dg0ep66c2p487/512x384.jpg</thumb></item>
+<item><id>53484</id><title>Physical Balls 2048</title><description>Welcome to the exciting world of Physical Balls 2048! In this game, your goal is to merge balls with the same numbers and get a bigger ball. This physics-based puzzle will keep you occupied for hours on end.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/s7zpyhhgknkfxjlm1icpief9qt7u2waf/</url><thumb>https://img.gamemonetize.com/s7zpyhhgknkfxjlm1icpief9qt7u2waf/512x384.jpg</thumb></item>
+<item><id>50683</id><title>Cube Arena 2048 Merge Numbers</title><description>Cubes 2048.io is an addictive online game that fuses Snake and 2048. Get a bigger number by collecting free cubes and eating other players with a smaller number than you. Your cubes with the same value that bump into one another will merge. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/83up5y2u78nvd5ngywugy6j4g3im4lda/</url><thumb>https://img.gamemonetize.com/83up5y2u78nvd5ngywugy6j4g3im4lda/512x384.jpg</thumb></item>
+<item><id>50874</id><title>Alien Merge 2048</title><description>Alien Merge 2048 is a modified version of the game 2048, but with the same objective. Join equal numbers until you reach the number 2048.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/5kqb7mhgcvsonoe7fk144jkcob8qamvj/</url><thumb>https://img.gamemonetize.com/5kqb7mhgcvsonoe7fk144jkcob8qamvj/512x384.jpg</thumb></item>
+<item><id>50204</id><title>2048 X2 Legends</title><description>The elusive 2048 block is almost within your reach. Combine and count up your blocks. Reach higher and higher scores, sharpening your mind in the process. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/dlewrko3e9s1074yicv4q5sydfoynash/</url><thumb>https://img.gamemonetize.com/dlewrko3e9s1074yicv4q5sydfoynash/512x384.jpg</thumb></item>
+<item><id>49320</id><title>2048 Cube Winner</title><description>Are you ready to challenge yourself? 2048 Cube Winner is an addictive merge puzzle game for those who like challenging brain teasers and logic puzzle merge games. Believe me, it is much harder to reach 2048 than drop the number. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/ga5gy7e3odyv5tutae8u4rlixo44bfk0/</url><thumb>https://img.gamemonetize.com/ga5gy7e3odyv5tutae8u4rlixo44bfk0/512x384.jpg</thumb></item>
+<item><id>49770</id><title>2048 Ballz</title><description>2048 Ballz - is an endless physics puzzle with 2048 mechanics! You have to combine balls of the same color to get new one! Set a record! Enjoy this beautiful and relaxing game!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/610tvuom37pe7skjjo70kao3qsli3yso/</url><thumb>https://img.gamemonetize.com/610tvuom37pe7skjjo70kao3qsli3yso/512x384.jpg</thumb></item>
+<item><id>49114</id><title>2048 Magical Number</title><description>2048 Magical Number Game is the most addictive and FREE stack number puzzle game! Play it to train your brain, and sharpen your mind at any time, anywhere! Get new blocks with higher numbers, eg. 32, 64, 128, 256, 512, 1024, 2048, and more, like what you play in the classic 2048 or x2 blocks game. Its simple to play, but very addictive. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/rm1clko0qv72vdvl0nrszmm0feu9rzze/</url><thumb>https://img.gamemonetize.com/rm1clko0qv72vdvl0nrszmm0feu9rzze/512x384.jpg</thumb></item>
+<item><id>47620</id><title>Farm 2048</title><description>Merge the dropped cards to end up with the number 2048 and free up space for the next cards! Farm 2048 is a fun math puzzle game that will challenge your ability to use even numbers. Get more points to go to the next level and unlock the ability to cancel the wrong move.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/z0kifnazesu2oe1jonuc6v5g13h0g4xv/</url><thumb>https://img.gamemonetize.com/z0kifnazesu2oe1jonuc6v5g13h0g4xv/512x384.jpg</thumb></item>
+<item><id>47409</id><title>Hexa Merge 2048</title><description>- Game Hexa Merge 2048 is a fun and addictive puzzle game that combines elements of drop and merge games with the classic 2048 game. - The goal is to drop numbered tiles onto the board and merge them with adjacent tiles of the same value to create larger numbers. - The game ends when the board is full or when you reach the 2048 tile, whichever comes first. - You can choose from different modes, themes, and difficulties to customize your gaming experience. - Game Hexa Merge 2048 is a great way to train your brain, relax, and have fun at the same time.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/hpstq2pm2jq9jst29aynnpr2poomw59n/</url><thumb>https://img.gamemonetize.com/hpstq2pm2jq9jst29aynnpr2poomw59n/512x384.jpg</thumb></item>
+<item><id>47547</id><title>Hexa 2048 Puzzle Block Merge</title><description>Hexa 2048 Puzzleis an addictive relaxing number block merge game. Come to play Hexa Puzzle, merge the Hexa blocks and give your brain a rest! Features: Beautifully easy and simple, no pressure and no time limit. Challenging to break your highest score. Easy to play. Classic merge game and block game for all ages! Multiple beautiful background pictures. Multiple materials of blocks. Such as: iron, crystal, wood; Come and play this game and become a master of Hexa Block Merge Game now!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/vrwtg1qhbkcyu7rt0eewx89dxmcdn6tv/</url><thumb>https://img.gamemonetize.com/vrwtg1qhbkcyu7rt0eewx89dxmcdn6tv/512x384.jpg</thumb></item>
+<item><id>45822</id><title>Merge Numbers 2048</title><description>Do you love 2048 puzzle games? Come and enjoy our game Merge Number 2048 with simple graphics and smooth gameplay. Swipe left and right to drop the balls and start merging balls with the same number. Can you get 2048?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/0qhoiiohxttj13iq1kg0u0ue0kt3hzi0/</url><thumb>https://img.gamemonetize.com/0qhoiiohxttj13iq1kg0u0ue0kt3hzi0/512x384.jpg</thumb></item>
+</channel></rss>`;
+
+    const grid = document.getElementById('gameGrid');
+    const searchInput = document.getElementById('searchInput');
+    const modal = document.getElementById('gameModal');
+    const frame = document.getElementById('gameFrame');
+    const fullScreenBtn = document.getElementById('fullScreenBtn');
+    const fsPath = document.getElementById('fsPath');
+    
+    let gameList = [];
+
+    function init() {
+        initAllGames();
+        setupEventListeners();
+    }
+
+    // Parse XML data to generate the game list
+    function initAllGames() {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(FEED_XML, "text/xml");
+        const items = xmlDoc.getElementsByTagName("item");
+
+        gameList = Array.from(items).map(item => ({
+            title: item.getElementsByTagName("title")[0]?.textContent,
+            desc: item.getElementsByTagName("description")[0]?.textContent,
+            category: item.getElementsByTagName("category")[0]?.textContent,
+            url: item.getElementsByTagName("url")[0]?.textContent,
+            thumb: item.getElementsByTagName("thumb")[0]?.textContent
+        }));
+
+        renderGames(gameList);
+    }
+
+    // Render cards into the DOM
+    function renderGames(data) {
+        grid.innerHTML = '';
+        data.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `Play ${game.title}`);
+            card.tabIndex = 0;
+
+            // Handle click event to open modal
+            card.onclick = () => {
+                frame.src = game.url;
+                modal.style.display = '2048';
+                document.body.style.overflow = 'hidden'; 
+            };
+            
+            // Support keyboard accessibility
+            card.onkeydown = (e) => {
+                if (e.key === 'Enter') card.onclick();
+            };
+
+            card.innerHTML = `
+                <div class="card-image-box">
+                    <img src="${game.thumb}" alt="${game.title}" class="card-image" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <button class="btn-play" tabindex="-1">PLAY NOW</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">${game.category}</span>
+                    <h3 class="card-title">${game.title}</h3>
+                    <p class="card-desc">${game.desc}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    function setupEventListeners() {
+        // Search filter logic
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = gameList.filter(g => 
+                g.title.toLowerCase().includes(query) || 
+                g.category.toLowerCase().includes(query)
+            );
+            renderGames(filtered);
+        });
+
+        // Fullscreen toggle event
+        fullScreenBtn.addEventListener('click', toggleFullscreen);
+
+        // Update UI when fullscreen state changes
+        document.addEventListener('fullscreenchange', updateFullscreenUI);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenUI);
+        
+        // Close modal when clicking outside the container
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) closeGame();
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === '2048') { closeGame(); }
+        });
+
+        updateFullscreenUI();
+    }
+
+    // Modal closing logic
+    window.closeGame = function() {
+        modal.style.display = 'none';
+        frame.src = '';
+        document.body.style.overflow = 'auto';
+        if (isFullscreen()) {
+            exitFullscreen();
+            setTimeout(updateFullscreenUI, 50);
+        }
+    }
+
+    // Fullscreen helper functions
+    function isFullscreen() {
+        return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+    }
+
+    function enterFullscreen() {
+        const container = document.querySelector('.modal-container');
+        if (container.requestFullscreen) { container.requestFullscreen(); } 
+        else if (container.webkitRequestFullscreen) { container.webkitRequestFullscreen(); } 
+        else if (container.mozRequestFullScreen) { container.mozRequestFullScreen(); } 
+        else if (container.msRequestFullscreen) { container.msRequestFullscreen(); }
+    }
+
+    function exitFullscreen() {
+        if (document.exitFullscreen) { document.exitFullscreen(); } 
+        else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); } 
+        else if (document.mozCancelFullScreen) { document.mozCancelFullScreen(); } 
+        else if (document.msExitFullscreen) { document.msExitFullscreen(); }
+    }
+
+    function toggleFullscreen() {
+        if (isFullscreen()) { exitFullscreen(); } else { enterFullscreen(); }
+    }
+
+    function updateFullscreenUI() {
+        const isFs = isFullscreen();
+        const enterPath = "M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3";
+        const exitPath = "M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3";
+        fsPath.setAttribute('d', isFs ? exitPath : enterPath);
+    }
+
+    // Initialize the script
+    init();
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAmeasLSfP2N6aDTaHv2g83HXA9fMPVZFE",
+    authDomain: "puzzlechallengehub.firebaseapp.com",
+    projectId: "puzzlechallengehub",
+    storageBucket: "puzzlechallengehub.firebasestorage.app",
+    messagingSenderId: "112608986588",
+    appId: "1:112608986588:web:acc32a06b94fd65f46bb19",
+    measurementId: "G-SX634LMH5N"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>

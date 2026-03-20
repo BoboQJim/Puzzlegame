@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" href="https://puzzlechallengehub.com/favicon.ico">
+    <link rel="canonical" href="https://puzzlechallengehub.com/collection/match.html">
+    <title>Match Puzzles Collection - Play Free Online | PuzzleHub</title>
+    <meta name="description" content="Addictive Match-3 wonders. Swap gems, candies, and jewels to trigger massive combos and blast through levels.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --bg-card: #161b22;
+            --accent-primary: #7b61ff;
+            --accent-hover: #917cff;
+            --text-light: #f0f6fc;
+            --text-dim: #8b949e;
+            --border-color: #30363d;
+            --glass: rgba(10, 11, 16, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        header {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--accent-primary);
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 15px rgba(123, 97, 255, 0.4);
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-light);
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: #0d1117;
+            border: 1px solid var(--border-color);
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2);
+        }
+
+        /* Collection Hero Section */
+        .collection-hero {
+            padding: 3rem 5% 2rem;
+            background: linear-gradient(180deg, rgba(123, 97, 255, 0.12) 0%, rgba(10, 11, 16, 0) 100%);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumbs a {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--accent-primary);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-icon-box {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-primary);
+            border-radius: 20px;
+            display: grid;
+            place-items: center;
+            font-size: 2.5rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(123, 97, 255, 0.4);
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .hero-text p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 0 5% 4rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            content-visibility: auto; 
+            contain-intrinsic-size: 0 350px; 
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+        }
+
+        .card-image-box {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background-color: #1a1f26;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+            display: Match;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .btn-play {
+            background: var(--accent-primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            transform: translateY(20px);
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .card:hover .btn-play {
+            transform: translateY(0);
+        }
+
+        .card-body {
+            padding: 1.2rem;
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            color: #FDF67C;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: Match;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-light);
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.6rem;
+            line-height: 1.3rem;
+        }
+
+        /* Modal System */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px;
+        }
+
+        .modal-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 85vh;
+            margin: 20px auto;
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(123, 97, 255, 0.3);
+        }
+
+        .modal-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 15px;
+            z-index: 2100;
+        }
+
+        .close-btn {
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: 1px solid #444;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .close-btn:hover, #fullScreenBtn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 5%;
+            text-align: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+        
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-dim);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 12px; padding: 12px 3%; }
+            .search-wrapper { width: 100%; }
+            .hero-content { flex-direction: column; text-align: center; gap: 15px; }
+            .hero-icon-box { width: 60px; height: 60px; font-size: 2rem; border-radius: 15px;}
+            .hero-text h1 { font-size: 1.8rem; }
+            
+            .game-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 0 3% 2rem;}
+            .card-body { padding: 0.8rem; }
+            .card-title { font-size: 0.9rem; margin-bottom: 4px; }
+            .card-desc { display: none; }
+            .btn-play { padding: 6px 16px; font-size: 0.8rem; }
+            
+            .modal { padding: 0; }
+            .modal-container { height: 100vh; margin: 0; border-radius: 0; }
+            .modal-controls { top: 15px; right: 15px; }
+            #fullScreenBtn, .close-btn { width: 38px; height: 38px; }
+        }
+    </style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "v7w38tv951");
+</script>
+</head>
+
+<body>
+
+<header>
+    <a href="/" class="brand">
+        <div class="logo-icon">P</div>
+        <span class="brand-name">PuzzleHub</span>
+    </a>
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search Match games...">
+    </div>
+</header>
+
+<main>
+    <div class="collection-hero">
+        <div class="breadcrumbs">
+            <a href="/">Home</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <a href="/collection.html">Collections</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <span>Match Puzzles</span>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-icon-box">
+                <i class="fas fa-puzzle-piece"></i>
+            </div>
+            <div class="hero-text">
+                <h1>Match-3 Wonders Collection</h1>
+                <p>Addictive Match-3 wonders. Swap gems, candies, and jewels to trigger massive combos and blast through levels.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameGrid" class="game-grid"></div>
+</main>
+
+<div id="gameModal" class="modal" role="dialog" aria-modal="true" aria-label="Game Player">
+    <div class="modal-container">
+        <div class="modal-controls">
+            <button id="fullScreenBtn" title="Toggle Fullscreen" style="background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 42px; height: 42px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; flex-shrink: 0;">
+                <svg id="fsIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: Match;">
+                    <path id="fsPath" d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+            </button>
+            <button onclick="closeGame()" title="Close Game" class="close-btn">
+                ✕
+            </button>
+        </div>
+        <iframe id="gameFrame" src="" allow="autoplay; fullscreen; keyboard" title="Play Game Frame"></iframe>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-socials">
+        <a href="https://www.facebook.com/puzzlehubgames" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@PuzzleGamesGuideVideo" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2026 PuzzleHub Gaming Platform</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">
+        <a href="/privacy-policy.html" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a> | 
+        <a href="/terms-of-service.html" style="color: var(--text-dim); text-decoration: none;">Terms of Service</a> | 
+        <a href="/about-us.html" style="color: var(--text-dim); text-decoration: none;">About Us</a> | 
+        <a href="/contact-us.html" style="color: var(--text-dim); text-decoration: none;">Contact Us</a>
+    </p>
+</footer>
+
+<script>
+    // Feed data matching the All Games section mechanism
+    const FEED_XML = `
+<rss version="2.0">
+<channel>
+<item><id>76782</id><title>Blocks Match 3</title><description>Blocks Match 3 is a thrilling match-3 puzzle! Swap colorful red, green, and blue blocks to form lines of 3+ and clear the board. Race the 5-minute timer to hit your score goal (like 100 points), collect stars, and conquer levels. Blast obstacles with bomb boosters, special clears, and shuffles. Addictive fun for quick sessions!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/fpem3gkt3ogntohzsuwlnkynxy48gybp/</url><thumb>https://img.gamemonetize.com/fpem3gkt3ogntohzsuwlnkynxy48gybp/512x384.jpg</thumb></item>
+<item><id>75065</id><title>Drag n Drop: Word Match</title><description>Word Match - Objects Edition is a lightweight, mobile-responsive HTML5 puzzle game designed specifically for children to learn and play. The game uses an intuitive drag-and-drop mechanic where players match English words to their corresponding emojis.</description><category>Puzzle</category><url>https://html5.gamemonetize.co/qj7yeiz9goiesn7f3pyikb737ashul2b/</url><thumb>https://img.gamemonetize.com/qj7yeiz9goiesn7f3pyikb737ashul2b/512x384.jpg</thumb></item>
+<item><id>75387</id><title>Tile Match Puzzle Game</title><description>Are you looking for a new match-3 game? Do you want to find relaxation and joy in it? Prepare to embark on the enchanting world of Tile Explorer, the relaxing match puzzle game that transforms the act of tile matching into an art form. With each level, Tile Explorer invites you to immerse yourself in a puzzle-solving fun, where each tile holds the potential for both challenge and triumph!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/weqtcvcjfb2dv283oqftbxvhmybd9rye/</url><thumb>https://img.gamemonetize.com/weqtcvcjfb2dv283oqftbxvhmybd9rye/512x384.jpg</thumb></item>
+<item><id>76876</id><title>Tic Tac Toe Match Three</title><description>Play the classic game of Tic Tac Toe (XO) in a whole new way with Tic Tac Toe - Match Three. Enjoy this timeless strategy game with fresh puzzles, fun challenges, beautiful graphics, and endless entertainment for all ages. Get ready and start the fun!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/0k029rphqm76farvzqkqqzhaqm1dilqj/</url><thumb>https://img.gamemonetize.com/0k029rphqm76farvzqkqqzhaqm1dilqj/512x384.jpg</thumb></item>
+<item><id>76305</id><title>Makeup Match Memory Beauty</title><description>Match cute makeup items and test your memory in this colorful girly game! Flip the cards, find the pairs, and complete all levels to become a beauty memory master.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/222vba1l0kgpydjb3kf5xrebwnzx3kx4/</url><thumb>https://img.gamemonetize.com/222vba1l0kgpydjb3kf5xrebwnzx3kx4/512x384.jpg</thumb></item>
+<item><id>76314</id><title>KittyMatch</title><description>Welcome to the fluffiest cleanup mission ever! Tap the stacked items to pick them up and drop them into your slots. When three identical items gather together-poof!-they merge into a satisfying match and disappear (as if your kitty just approved it). Keep matching smartly to clear the pile, and once all items are gone, you've completed the level! But hey-this isn't just tidying up. Keep your eyes sharp: there are hidden Easter eggs tucked between the stacks, and plenty of adorable cat skins waiting to be unlocked. Match, clear, and collect-because every great kitty deserves a cute new look! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/qd2lv6xtkugdlyqjsoxwazaht1swrn0z/</url><thumb>https://img.gamemonetize.com/qd2lv6xtkugdlyqjsoxwazaht1swrn0z/512x384.jpg</thumb></item>
+<item><id>75476</id><title>Match Dot Puzzle Game</title><description>Match Dot Puzzle Game is a fun, relaxing, and brain-training puzzle game designed for players of all ages. In this game, your goal is to match colorful dots by connecting them in the correct way. Each level presents a new challenge that tests your logic, focus, and problem-solving skills. This dot puzzle game is easy to play but becomes more challenging as you progress. With smooth controls and clean visuals, players can enjoy a calm yet engaging puzzle experience. The simple design makes it perfect for casual players, while the increasing difficulty keeps puzzle lovers entertained for hours.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/2ta8rq06vnzkcc37xlq6t8gk9o8og40f/</url><thumb>https://img.gamemonetize.com/2ta8rq06vnzkcc37xlq6t8gk9o8og40f/512x384.jpg</thumb></item>
+<item><id>75576</id><title>Tile 2 Match</title><description>Discover a bright, addictive puzzle adventure where you match identical fruit tiles to clear each board and earn satisfying points. Every level introduces fresh patterns, fast? paced decisions, and a thrilling timer that keeps gameplay exciting and challenging. With smooth, eye? catching visuals and relaxed controls, this casual matching game delivers stress? free fun for anyone craving a smart, simple, and rewarding brain teaser. Perfect for fans of match?3 puzzles, casual gamers, and anyone looking for a quick, satisfying play session on mobile or tablet. Play more game on crazycubix.com </description><category>Puzzle</category><url>https://html5.gamemonetize.com/35iyifc2eb14gwgp7new225pvl44amym/</url><thumb>https://img.gamemonetize.com/35iyifc2eb14gwgp7new225pvl44amym/512x384.jpg</thumb></item>
+<item><id>75981</id><title>MindMatch</title><description>MindMatch is an immersive and stylish memory-matching game designed to challenge your brain and sharpen your focus. Set against a beautiful, glassmorphism-inspired interface, players must uncover pairs of hidden emojis across various board sizes ranging from a beginner-friendly 4x4 to a challenging 8x8 grid.Customize your experience with multiple vibrant themes like Ocean, Midnight, and Candy, and choose from diverse emoji categories including Animals, Food, Nature, and Vehicles. With three difficulty levels that control card visibility and a built-in scoring system that rewards speed and precision</description><category>Puzzle</category><url>https://html5.gamemonetize.com/igi0ieohonhbopdsg2kwmyz661ffkh84/</url><thumb>https://img.gamemonetize.com/igi0ieohonhbopdsg2kwmyz661ffkh84/512x384.jpg</thumb></item>
+<item><id>75471</id><title>Find n Match</title><description>Find Match is an addictive pyramid puzzle game that tests your observation skills and quick thinking! Dive into beautifully stacked layers of colorful items - fruits, flowers, animals, foods, and more. Only surface items can be clicked, so plan your moves wisely. Collect three matching items to clear them from your basket. Race against the clock through 6 unique themed levels: Meadow, Garden, Farm, Ocean, Market, and Festival. Each level unlocks after completing the previous one. Can you conquer all pyramids?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/20isw2akjl2dyo0x7i9jlhqdtjyx6met/</url><thumb>https://img.gamemonetize.com/20isw2akjl2dyo0x7i9jlhqdtjyx6met/512x384.jpg</thumb></item>
+<item><id>72834</id><title>Tile Connect Pair Match Puzzle</title><description>Match connect tiles of same color be the master of pair matching puzzle game. In this you have to find and match the same objects. There are different objects.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/t0o4lkpj4iehz9nu4r7bhx41y4mjq1d8/</url><thumb>https://img.gamemonetize.com/t0o4lkpj4iehz9nu4r7bhx41y4mjq1d8/512x384.jpg</thumb></item>
+<item><id>75079</id><title>Drag n Drop Games Color Match</title><description>Welcome to Color Match!, the ultimate interactive learning experience for children! This game is designed to help young learners identify and distinguish colors in a fun, engaging way. The goal is simple: Look at the black-and-white objects in the targets and find the matching colored card from the source box. Drag the red card to the apple, the blue card to the whale, and watch the objects come to life with color! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/yqivnpieqw33nru9a3274iaqp11d1q0r/</url><thumb>https://img.gamemonetize.com/yqivnpieqw33nru9a3274iaqp11d1q0r/512x384.jpg</thumb></item>
+<item><id>75342</id><title>Minecraft Card Matching Puzzle</title><description>Minecraft Card Matching Puzzle is a fun and relaxing card matching game that tests your memory and attention. Tap on cards to reveal them and match two identical cards to make them disappear. If the cards do not match, they flip back over. Each level contains 16 cards. Once all cards are matched, a new set of 16 cards drops from the top and the challenge continues. The level number indicates how many card sets must be completed. When all sets are successfully matched, the level is completed. With simple controls and Minecraft-style visuals, the game offers an enjoyable experience for players of all ages.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/0k3sevkud3u577u39a45bjll6ts7zwuo/</url><thumb>https://img.gamemonetize.com/0k3sevkud3u577u39a45bjll6ts7zwuo/512x384.jpg</thumb></item>
+<item><id>75100</id><title>Jewel Match Puzzle</title><description>Explore a World of Jewels and Adventure Step into a sparkling journey through deserts, glaciers, and beyond. Jewel Match puzzle offers classic match-3 gameplay with colorful visuals, smooth controls, and hundreds of unique levels. Swap jewels, trigger powerful combos, and collect sparkling treasures as you unlock new stages. Whether you have a minute or an hour, this game offers the perfect puzzle break. Match jewel cubes, solve puzzles, train your brain, and beat boredom! Tap matching colors to enjoy thousands of fun and challenging matching-color puzzles!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8qgyaqb59yxy6s5qvf6abbn5rhmgboew/</url><thumb>https://img.gamemonetize.com/8qgyaqb59yxy6s5qvf6abbn5rhmgboew/512x384.jpg</thumb></item>
+<item><id>74606</id><title>Fruit Goals Match</title><description>Fruit Goals Match is a fun and strategic fruit-matching puzzle game where you collect specific fruits to complete each mission within a limited number of moves. Every level introduces new goals that reward smart planning and careful decisions. New missions unlock continuously, keeping the gameplay engaging and endless. Optional reward ads let you earn extra moves and see how far you can progress.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/5txbd96gtcx2qig7ianog91ktnfaduqf/</url><thumb>https://img.gamemonetize.com/5txbd96gtcx2qig7ianog91ktnfaduqf/512x384.jpg</thumb></item>
+<item><id>74480</id><title>Match Pairs Memory Card</title><description>Match Pair: Memory Card Game takes the classic concentration game to the next level. Embark on an epic journey across 19 unique worlds from the depths of the Ocean to the far reaches of Space. Adventure Mode: Conquer 100+ levels with unique objectives and 3-star rankings. Boss Battles: duel against an AI opponent that fights back! Power-Ups: Use Flash Vision, Time Freeze, and Guardian Shields to save your streak. Collection System: Unlock dozens of premium card skins and complete your Sticker Book. Daily Rewards: Log in every day to earn gems and boosters.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/t1qzb3es71gl68xvqq6iwm9vltl0uctg/</url><thumb>https://img.gamemonetize.com/t1qzb3es71gl68xvqq6iwm9vltl0uctg/512x384.jpg</thumb></item>
+<item><id>74554</id><title>Block Jam Match Game</title><description>Embark on a thrilling adventure that combines strategic block matching, a heart-pounding bus mini-game, an explosive Bomb Bridge Competition, and a brand-new challenge: the Baloon Rise Challenge! Elevate your gaming experience with strategic moves and test your skills in a puzzle-packed journey.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/4otjsjz31jgy4a3yr2p0bv98wiygri1u/</url><thumb>https://img.gamemonetize.com/4otjsjz31jgy4a3yr2p0bv98wiygri1u/512x384.jpg</thumb></item>
+<item><id>74572</id><title>Goods Triple Match 3D</title><description>Begin a super satisfying match 3 puzzle challenge. Goods Triple Match 3D is a colorful and addictive casual logic game where all items appear in beautiful and realistic 3D. Your table is filled with tons of cute 3D drinks.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/xhywxdf6g4miazad5puvp5dknu1s0nxs/</url><thumb>https://img.gamemonetize.com/xhywxdf6g4miazad5puvp5dknu1s0nxs/512x384.jpg</thumb></item>
+<item><id>74487</id><title>Birds Sort Color Match Puzzle</title><description>Welcome to the gentle world of Bird Sort Color, where the gentle embrace of nature meets the joy of relaxation! Say goodbye to ordinary puzzles and get ready for an exciting experience with lively avian characters and delightful asmr melodies. Bird Sort Color is the perfect blend of fun and relaxation. Birds need to be with their flocks to fly around the world. Bird migration season is coming. Sort bird flocks, let them fly. For all those who love the Bird Sort puzzle game, big news is here with Bird Sort color match new sorting rule, more challenging, more fun. There are many super-hard levels that youve never found in the first Bird Sort.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/i7b34e3h3odt7n6qawle56nlyypm0h2r/</url><thumb>https://img.gamemonetize.com/i7b34e3h3odt7n6qawle56nlyypm0h2r/512x384.jpg</thumb></item>
+<item><id>74420</id><title>Word Match 3D</title><description>Play Word Match 3D online for free! This is an addictive word puzzle game that tests your vocabulary and observation skills. In this 3D brain teaser, your goal is to find specific 3D letters hidden in a messy pile to complete the target word. You must be fast to clear the level before the time runs out! Features: Word Matching: Search and collect letters to spell words. Shuffle Booster: Stuck? Use the Shuffle button to mix up the pile and reveal hidden letters. Brain Training: Improve your focus and spelling speed in a fun 3D world.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/m27uyguq2k1men8en9f2hckdoytglv9g/</url><thumb>https://img.gamemonetize.com/m27uyguq2k1men8en9f2hckdoytglv9g/512x384.jpg</thumb></item>
+<item><id>73361</id><title>Farm House Crash Match Game</title><description>Welcome to Farm House Crash Match! The most addictive puzzle adventure on the farm! Swap and match cute fruits and veggies to complete fun levels. Solve challenging puzzles, unlock boosters, and help friendly animals rebuild their dream farm. Enjoy vibrant graphics and brain-teasing fun for all ages. Download now!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/2mlw18zjwhj5gk57wjhmz7bgwpe5h7db/</url><thumb>https://img.gamemonetize.com/2mlw18zjwhj5gk57wjhmz7bgwpe5h7db/512x384.jpg</thumb></item>
+<item><id>72746</id><title>Prism Match 3D</title><description>Prism Match 3D: A Multi-Dimensional Puzzle Adventure Enter a dazzling 3D world of colorful prism cubes and test your mind like never before. Prism Match 3D blends Mahjong-style strategy with the excitement of modern match-3 gameplay. Immersive 3D Graphics  Rotate, zoom, and explore beautifully crafted levels full of hidden tiles. Addictive  Relaxing  Easy to learn, hard to master. Balance logic, timing, and focus to win. Endless Challenges  Progress through creative stages that keep the fun fresh and engaging. Think  Unwind  Relax your mind while sharpening memory, observation, and problem-solving skills.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/t98bbzmv3a9g4fwg2lph0374wdhuvoln/</url><thumb>https://img.gamemonetize.com/t98bbzmv3a9g4fwg2lph0374wdhuvoln/512x384.jpg</thumb></item>
+<item><id>73392</id><title>Jewelry Match Puzzle Game</title><description>Dive into the enchanting world of Jewelry Match Puzzle Game, beloved by millions of players worldwide! This captivating match-3 puzzle game is perfect for puzzle enthusiasts of all ages, offering thousands of unique levels filled with challenges and obstacle</description><category>Puzzle</category><url>https://html5.gamemonetize.com/spacg9g3ocw5proj2m7p2bxe8fmet3dy/</url><thumb>https://img.gamemonetize.com/spacg9g3ocw5proj2m7p2bxe8fmet3dy/512x384.jpg</thumb></item>
+<item><id>73433</id><title>Spider Match</title><description>Unleash your inner hero and become the legend you were destined to be. Prepare for an epic adventure in a Spiderman world where only the strongest heroes thrive. Collect powerful superheroes, build your legendary team, and venture across vast fantasy worlds in a hero crafted for those who seek glory. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/sjghavwkh9bpg0i06sgsnve9uxomk6x2/</url><thumb>https://img.gamemonetize.com/sjghavwkh9bpg0i06sgsnve9uxomk6x2/512x384.jpg</thumb></item>
+<item><id>73183</id><title>Dress Up Match 3</title><description>Dress Up Match 3 is the ultimate fashion puzzle game where you match tiles to get outfits! This cute match 3 game for girls and women combines style and match gameplay - solve puzzles to unlock gorgeous clothes, accessories, and makeup. Build your dream wardrobe by completing challenging match 3 levels. The more you play this match 3 dress up game, the more trendy outfits you collect! Dress up your model with hundreds of fashionable items. Best fashion games free to play with no limits! Every puzzle solved adds new pieces to your outfit collection. Perfect style match 3 game for fashion lovers who enjoy puzzle challenges.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/17om6g8azok4uvmfa8824ax5lu3ha9ri/</url><thumb>https://img.gamemonetize.com/17om6g8azok4uvmfa8824ax5lu3ha9ri/512x384.jpg</thumb></item>
+<item><id>72263</id><title>Candy Match Puzzle Challenge</title><description>Candy Match Puzzle is an exciting and free-to-play online match-4 style game designed to bring endless fun and challenge to players of all ages! Your goal is simple but addictive ; match as many colorful candies as possible to achieve the highest score. Connect four or more identical candies to clear them from the board and watch as sweet combos and chain reactions fill your screen with rewarding points.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/nu3fgrns30jdzq2wysqff6te13emsdlu/</url><thumb>https://img.gamemonetize.com/nu3fgrns30jdzq2wysqff6te13emsdlu/512x384.jpg</thumb></item>
+<item><id>72100</id><title>Halloween Match Trio</title><description>Halloween Match Trio is a classic match-3 puzzle game with fun challenges. Swap items to make a line of three or more matching items, horizontally or vertically. Keep matching to unlock all tiles and reach the final stage. Use power-ups like bombs, arrows, magnets, and more to clear levels faster. Complete all 75 levels to win the game!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/m1jq6f0w2zxpje2avccod87k5yof5ef0/</url><thumb>https://img.gamemonetize.com/m1jq6f0w2zxpje2avccod87k5yof5ef0/512x384.jpg</thumb></item>
+<item><id>72004</id><title>Bootiful Princess Match</title><description>Welcome to an exciting puzzle-game, created in a Halloween atmosphere. There are three princesses in the game and each one is ready for her own eerily beautiful transformation. The player will have to look for paired cards to discover new elements of the girls future image. Each successful match brings you closer to creating a unique costume, makeup or hairstyle. Only the most attentive players will be able to make their princesses truly scary-beautiful!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/h8m0o4t56kwp34jbp6m3wek0ek0e4spx/</url><thumb>https://img.gamemonetize.com/h8m0o4t56kwp34jbp6m3wek0ek0e4spx/512x384.jpg</thumb></item>
+<item><id>71896</id><title>Metal Match</title><description>Get ready to spark your brain and test your chemistry smarts in Metal Match ; the electrifying match-3 puzzle game built around the elements of the periodic table! In this shining challenge, each tile displays the atomic name of a metal ; like Na, Mg, Al, Cu, Ge. Your mission: match three or more identical metal tiles to clear them from the board and earn points. Chain bigger combos to unleash explosive reactions and climb the leaderboard! As levels progress, the metals mix faster, and the board fills with tricky obstacles ; but with sharp eyes and clever strategy, you can keep your reactions going strong. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/h7h95fnsc7xsr6nqzmt4455lh1kyzm8k/</url><thumb>https://img.gamemonetize.com/h7h95fnsc7xsr6nqzmt4455lh1kyzm8k/512x384.jpg</thumb></item>
+<item><id>71534</id><title>Royal Match Tile Family</title><description>Play an addictive brain challenge in Royal Match Tile Family. This is not just another match puzzle game. It's a thrilling mix of logic, strategy, and quick thinking. Your goal is simple yet exciting: match tiles of the same design to clear the board. Unlock levels and rescue the royal family from tricky traps. Eliminate blocks, balls, and other objects in a limited number of moves. You can also use power-ups to quickly clear blocks or temporarily freeze obstacles. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/mnjub0iklzsmug2xuiq75v5qp8pem646/</url><thumb>https://img.gamemonetize.com/mnjub0iklzsmug2xuiq75v5qp8pem646/512x384.jpg</thumb></item>
+<item><id>71062</id><title>CANDY MATCH 3 KIT 2025</title><description>Candy Match 3 is a fun and addictive puzzle game that challenges your mind while satisfying your sweet tooth! Match three or more colorful candies in a row to clear the board and unlock exciting power-ups. With each level, the puzzles get trickier, keeping you entertained for hours of gameplay. Features: Bright and vibrant candy-themed graphics Easy to play, hard to master mechanics Special boosters and combos for extra fun Hundreds of challenging levels Relaxing gameplay perfect for all ages Get ready to swap, match, and crush your way through a world full of sugary puzzles. Play Candy Match 3 now and see how far you can go!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/b4fj2duqnsxijnxvr8r4k4evkxm74zhv/</url><thumb>https://img.gamemonetize.com/b4fj2duqnsxijnxvr8r4k4evkxm74zhv/512x384.jpg</thumb></item>
+<item><id>70505</id><title>Ocean Blast Match 3</title><description>Ocean King Match Puzzle is design based on ocean creatures to gives you the taste of ocean. For Match 3 puzzle game lovers to experience the ocean life in Game play. Match 3 items to start the fun and explore the ocean. Blast through multiple items Become the King of Ocean by matching and solving ocean puzzle. Show your matching and solving skills to unlock the depths of the ocean. Thousands of Brain storming puzzle to boost your brain cells. Ocean King Match Puzzle Gives you the chance to explore the hidden treasures of the ocean. Rule the ocean and show your skills to the world. Make your path to the end of bottom.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/nmftnzx6e4frgw01p965k2aadoiajyto/</url><thumb>https://img.gamemonetize.com/nmftnzx6e4frgw01p965k2aadoiajyto/512x384.jpg</thumb></item>
+<item><id>70658</id><title>Chromatch</title><description>Chromatch  Test Your Reflexes, Match Your Colors! Get ready for Chromatch, the fast-paced color-matching challenge that keeps you on your toes! A spinning wheel divided into four vibrant color sections awaits your precision. Your task is simple: throw the arrow of a given color and hit the matching section. But be careful;land on the wrong color, and you'll lose one of your three lives. As the wheel speeds up, your reflexes, timing, and focus will be put to the ultimate test. Easy to pick up but hard to master, Chromatch delivers endless fun in short bursts, making it perfect for casual play or high-score chasers. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/ll1v3omcwn8r7zyd9joxny6ym3mrj8rr/</url><thumb>https://img.gamemonetize.com/ll1v3omcwn8r7zyd9joxny6ym3mrj8rr/512x384.jpg</thumb></item>
+<item><id>70773</id><title>Rapid Match</title><description>Tap, match, and clear the row! In this fast-paced puzzle game where timing and precision matter, you shoot blocks from the bottom to hit the matching ones above. Match them right and boom ; the whole row is gone! But watch out ; your block changes on its own! </description><category>Shooting</category><url>https://html5.gamemonetize.com/eq9kggnt86xu08stss3m9lt0bnupwn0w/</url><thumb>https://img.gamemonetize.com/eq9kggnt86xu08stss3m9lt0bnupwn0w/512x384.jpg</thumb></item>
+<item><id>57032</id><title>HexaMatch</title><description>HexaMatch  The Ultimate Number Puzzle! Swipe and sort tiles into the empty slot to solve addictive hexa puzzles. With progressive difficulty, unique gameplay, and a fresh twist on classic number games, HexaMatch is perfect for all ages. Train your brain, relax your mind, and enjoy endless fun with this simple yet challenging merge hexa puzzle!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/dogv5wgrkwxsq71uh8zuhrt7d0xf3u9s/</url><thumb>https://img.gamemonetize.com/dogv5wgrkwxsq71uh8zuhrt7d0xf3u9s/512x384.jpg</thumb></item>
+<item><id>69786</id><title>Match Factory</title><description>Welcome to Match Factory - the most relaxing and non-stop casual triple puzzle game. Step into a vibrant factory full of colorful items, and play the role of a master matcher. Match three identical items to clear them from the board, pack them up, and keep the factory running smoothly! Every level is uniquely designed with tricky layouts and challenges. Use power-ups that help you overcome difficult puzzles!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/o6hdnqn9ys9h7n5c4ne2si58xvefz5e4/</url><thumb>https://img.gamemonetize.com/o6hdnqn9ys9h7n5c4ne2si58xvefz5e4/512x384.jpg</thumb></item>
+<item><id>69678</id><title>Gun Match Screw</title><description>Gun Match Screw is a unique level-based puzzle game that combines screw puzzles with exciting gun-themed mechanics. In this game, each level presents you with a board shaped like different guns or gun parts, and your goal is to unlock all the boards by matching colored screws, which are represented as bullets. Gameplay: Each board contains a set of colored screws (bullets) that need to be matched to unlock the panels. The game features two modes where you fill 6-slot bullet magazines. By matching screws of the same color, youll fill the magazine and exchange it for a new empty one. You also have 5 extra bullet slots to store unmatched bu</description><category>Puzzle</category><url>https://html5.gamemonetize.com/w0uhn2ohy7yjt4qm1jqhwrnyhpq4uydx/</url><thumb>https://img.gamemonetize.com/w0uhn2ohy7yjt4qm1jqhwrnyhpq4uydx/512x384.jpg</thumb></item>
+<item><id>69499</id><title>Safari Match</title><description>Play Safari Match, a fun and addictive match-3 puzzle game set in the heart of the wild safari! Match colorful animal blocks, solve exciting puzzles, and unlock powerful boosters to win. Easy to play yet challenging to master, with hundreds of fun levels and stunning graphics. Perfect for kids and adults who love brain games, block puzzles, and animal-themed adventures. Play anywhere;mobile, tablet, or desktop;and become the ultimate match-3 champion!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/047gqvec2g1nektwuly9xns02mefpknw/</url><thumb>https://img.gamemonetize.com/047gqvec2g1nektwuly9xns02mefpknw/512x384.jpg</thumb></item>
+<item><id>68880</id><title>Match Fighter</title><description>Match Fighter is a vibrant match-3 fighting game where classic martial arts meet puzzle action! Play as a skilled warrior and take on a series of powerful opponents. Match tiles to strike and unleash special moves in intense one-on-one duels. Every combo you make fuels your fighting spirit. Outsmart your enemies, climb the ranks, and prove yourself as the ultimate martial arts champion! Can you match your way to victory?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/9msfg45e79xq4jmoconwm2a2ra7xe2de/</url><thumb>https://img.gamemonetize.com/9msfg45e79xq4jmoconwm2a2ra7xe2de/512x384.jpg</thumb></item>
+<item><id>64795</id><title>Match Memory Online</title><description>Looking for an online version of classic Card Matching games? Play a refreshed version of this beloved game here! Win to earn coins and use coins for powerups. Powerups will help you for online matching duels, where you must go against an opponent to match as many cards as possible in one board. As you progress online youll get trophies to advance to new and better leagues, awarding more coins and harder opponents. If youre more of a casual player, you can still play a regular level mode, where you have to find pairs of cards in a bigger and bigger board with a set of lives to do it.You lose a life not finding a pair. Are you ready?Play now</description><category>Puzzle</category><url>https://html5.gamemonetize.com/rkh98drqdmpwuk47ee30jh2wq1a2gzwy/</url><thumb>https://img.gamemonetize.com/rkh98drqdmpwuk47ee30jh2wq1a2gzwy/512x384.jpg</thumb></item>
+<item><id>67299</id><title>SokoMatch</title><description>SokoMatch 3D is a strategic puzzle game that combines block-pushing mechanics with match-3 gameplay. Push colorful animal blocks around the board to create groups of three or more matching animals, which will then disappear. Your goal is to clear all blocks from each level using the fewest moves possible. Navigate through increasingly challenging levels featuring special mechanics like ice blocks that freeze animals in place, and one-way arrow tiles that restrict your movement direction. Plan your moves carefully - some puzzles require strategic thinking to avoid getting stuck with unmatchable blocks.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/r4in7whqj17v1j0om49i6os2p2dng6z7/</url><thumb>https://img.gamemonetize.com/r4in7whqj17v1j0om49i6os2p2dng6z7/512x384.jpg</thumb></item>
+<item><id>67105</id><title>Dream Mania Happy Match</title><description>Ready to begin a fantastic match-3 puzzle adventure? Dream Mania - Happy Match is a fun puzzle game that you wont be able to stop playing. Its easy to play, yet the challenging level design. Its a casual game you dont want to miss! Match 3 or more identical items to clear the board and hit your level goals.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/510g06dcndhuy8sj6whcvlobcfwintlq/</url><thumb>https://img.gamemonetize.com/510g06dcndhuy8sj6whcvlobcfwintlq/512x384.jpg</thumb></item>
+<item><id>65199</id><title>Candy Match Puzzle</title><description>Dive into a delightful puzzle experience with Candy Puzzle Match, where matching candies is all about tapping! Simply tap on groups of two or more adjacent candies of the same color to clear them from the board. The more candies you clear at once, the higher your score! Watch the board shift and cascade with every move as you complete deliciously fun objectives. With colorful visuals and satisfying chain reactions, this game is perfect for fans of casual and relaxing puzzle games.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/0hyxlldj40odd2yomcfxd8xyhekuf5t9/</url><thumb>https://img.gamemonetize.com/0hyxlldj40odd2yomcfxd8xyhekuf5t9/512x384.jpg</thumb></item>
+<item><id>64899</id><title>Mystic Flower Match</title><description>Mystic Flower Match is a magical match-3 puzzle game where nature and enchantment bloom together! Dive into a vibrant world of mystical gardens filled with glowing flowers, ancient runes, and charming creatures. Match three or more blossoms to clear levels, unlock powerful boosts, and uncover hidden secrets in each stage. With relaxing music, beautifully crafted visuals, and hundreds of brain-teasing levels, this game offers a soothing yet engaging escape. Whether youre chasing high scores or simply unwinding, Mystic Flower Match is your perfect floral fantasy. Step into the garden of wonders and let the magic of matching begin!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ta3ock6gg2ot8q30a07sqacemf2ic080/</url><thumb>https://img.gamemonetize.com/ta3ock6gg2ot8q30a07sqacemf2ic080/512x384.jpg</thumb></item>
+<item><id>63943</id><title>Memory Match Lite</title><description>Memory Match Lite is flip cards to find matching pairs and test your memory game! Find all matching pairs Remember card positions Complete the game in fewer moves</description><category>Puzzle</category><url>https://html5.gamemonetize.com/l58epco33v35tmjwchwyx72qtqb9egur/</url><thumb>https://img.gamemonetize.com/l58epco33v35tmjwchwyx72qtqb9egur/512x384.jpg</thumb></item>
+<item><id>63002</id><title>3 match puzzle battle</title><description>Match three puzzles to attack enemies and advance through the stages. There are four types of puzzles: recovery, attack, defense, and coins, so think about your strategy depending on your stamina and enemy strength to eliminate the puzzles. If a chain occurs, you can cause great damage to the enemy. Once you get coins, upgrade your player level and advance through the stages.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8bmjfwrnoaiv6a4pq3m4t0vba4e47ixi/</url><thumb>https://img.gamemonetize.com/8bmjfwrnoaiv6a4pq3m4t0vba4e47ixi/512x384.jpg</thumb></item>
+<item><id>58690</id><title>Mart Puzzle Flower Match</title><description>Enter the colorful world of Mart Puzzle - Flower Match where beautiful flowers. Use your brain to match according to the kinds of flowers and follow the customers order. Collect 3 identical flowers to create beautiful bouquets and the customer will leave. Each levels puzzle design is unique and challenging.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/uo5kv6toqt9ls8bzejwsrc961xu4mkzx/</url><thumb>https://img.gamemonetize.com/uo5kv6toqt9ls8bzejwsrc961xu4mkzx/512x384.jpg</thumb></item>
+<item><id>61113</id><title>Shelf Shift Match</title><description>Test your strategy and speed in Shelf Shift Match! Shift items on the shelves to create perfect matches of three, clearing the way to reveal hidden shadowed items. But beware;unwise moves can block your shelves, leaving no space to shift and leading to game over! If youre stuck, use the shuffle button to mix things up and find new matches. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/n29843hgpzedtrepyl0501yco2q9bu3c/</url><thumb>https://img.gamemonetize.com/n29843hgpzedtrepyl0501yco2q9bu3c/512x384.jpg</thumb></item>
+<item><id>61312</id><title>Goose Match 3D</title><description>Ready for a delicious and cute animal puzzle challenge? In Goose Match 3D, you'll dive into a world full of adorable animals and tasty food, where you'll play through exciting Match 3 puzzles!In this fun and relaxing 3D puzzle game, you'll need to match three identical items, and they'll disappear.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ebwm4j8gnrf3ybi2r6n600d0jgyx7sk7/</url><thumb>https://img.gamemonetize.com/ebwm4j8gnrf3ybi2r6n600d0jgyx7sk7/512x384.jpg</thumb></item>
+<item><id>54578</id><title>Magic World: New era Match3 PRG</title><description>Go on a campaign and make great victories! Explore the depths of an ancient dungeon and challenge powerful titans and heroes guarding their lair with countless treasures! Fight against other players for fame and fortune! Summon the strongest heroes, train and upgrade them to assemble the powerful team! Unleash the skills of the heroes and use the strengths and weaknesses of the elementals to win! All this will require you to have a careful eye and a strategic mind!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/98sobkv6ju367ncngzkh15vf9vvew0kv/</url><thumb>https://img.gamemonetize.com/98sobkv6ju367ncngzkh15vf9vvew0kv/512x384.jpg</thumb></item>
+<item><id>61158</id><title>Tiles Matching</title><description>Free online game Tiles Matching - play in the browser without downloading. It is suitable for the development of logic for both adults and children - an ideal timekiller. Tiles Matching is a puzzle game combining the game mechanics of Mahjong and Three in a Row (Match-3). A logical educational game for children and adults. With each level, the difficulty increases - not everyone can complete the game the first time. Challenge your intelligence.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/azu5kouc1jic7948kwj47i5helb1nfkt/</url><thumb>https://img.gamemonetize.com/azu5kouc1jic7948kwj47i5helb1nfkt/512x384.jpg</thumb></item>
+<item><id>60480</id><title>Bus Match: Color Parking Jam</title><description>Touch or click on vans to move buses in proper way. Match passengers of the same color. Think twice to solve puzzles and clear parking jams in tight spaces. Use options to get through tricky levels when you're stuck.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/xe0a3z54djfnz5qo7zg1fkf76jm9gut1/</url><thumb>https://img.gamemonetize.com/xe0a3z54djfnz5qo7zg1fkf76jm9gut1/512x384.jpg</thumb></item>
+<item><id>60380</id><title>Color Match Puzzle</title><description>A color-matching puzzle game where you pick tiles and match three of the same color to clear them from the board. The game features challenging layouts and requires strategic thinking to progress.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/zg9mb3pcwirump5xiynbtf28abo9rg0g/</url><thumb>https://img.gamemonetize.com/zg9mb3pcwirump5xiynbtf28abo9rg0g/512x384.jpg</thumb></item>
+<item><id>59998</id><title>Toca Life Memory Card Match</title><description>Challenge your memory and have fun with the colorful world of Toca Life! Toca Life Memory Card Match is the perfect game for players of all ages who love a fun and brain-boosting challenge. Flip the cards, match the pairs, and discover exciting Toca Life characters, scenes, and objects along the way! Match all the cards and unlock special rewards as you progress. Whether youre a fan of Toca Life or just looking for a delightful memory game, Toca Life Memory Card Match will keep you entertained for hours! Let the memory challenge begin!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/rpdmt8m5xr0cbb6m6bpzqvpr1t8g91x2/</url><thumb>https://img.gamemonetize.com/rpdmt8m5xr0cbb6m6bpzqvpr1t8g91x2/512x384.jpg</thumb></item>
+<item><id>60281</id><title>Super Mario Memory Card Match</title><description>Super Mario Memory Card Match is a delightful card-matching game that takes you on a colorful adventure filled with fun and challenges! Step into the world of Mario, a brave and cheerful hero, as you test your memory and reflexes to pair matching cards before time runs out. With vibrant graphics, upbeat music, and increasing difficulty levels, this game offers entertainment for all ages. Flip cards to uncover images of iconic items, characters, and scenes inspired by classic platformer games Super Mario</description><category>Puzzle</category><url>https://html5.gamemonetize.com/yyrof22q5fmv3l1pmj9fgego7yzt9yv4/</url><thumb>https://img.gamemonetize.com/yyrof22q5fmv3l1pmj9fgego7yzt9yv4/512x384.jpg</thumb></item>
+<item><id>60158</id><title>Squid Game Memory Card Match</title><description>Step into the thrilling world of Squid Game Memory Card Match! Test your memory and focus as you uncover pairs of iconic Squid Game symbols and characters. Can you keep your cool under pressure and match all the cards before time runs out? Challenge yourself or compete with friends to see who can master the ultimate memory test. With Squid Game Memory Card Match, every flip brings you closer to victory or defeat  can you handle the pressure?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/syj5dynrsaf2hz9xpd502cq2kphof47r/</url><thumb>https://img.gamemonetize.com/syj5dynrsaf2hz9xpd502cq2kphof47r/512x384.jpg</thumb></item>
+<item><id>60019</id><title>Sprunki Memory Card Match</title><description>Put your memory to the ultimate test with Sprunki Memory Card Match! Dive into a world of fun and challenge as you flip cards to reveal and match delightful Sprunki characters, scenes, and surprises. Perfect for kids and adults alike, this game combines entertainment with brain-boosting fun! Challenge yourself or compete with friends to see who has the sharpest memory. With Sprunki Memory Card Match, every flip is a step closer to unlocking fun surprises and reaching the top! Start matching now and let the Sprunki adventure begin!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ymgg28zbc635e5dgw11yv7huzy6p7t6p/</url><thumb>https://img.gamemonetize.com/ymgg28zbc635e5dgw11yv7huzy6p7t6p/512x384.jpg</thumb></item>
+<item><id>59454</id><title>Christmas Gift Match</title><description>Celebrate the joy of the holiday season with Christmas Gift Match, a delightful gift-matching puzzle game! Dive into the enchanting world of Christmas as you match beautifully wrapped gifts, candy canes, and festive ornaments to spread cheer and unlock exciting surprises. Match three or more identical gifts to score points and clear the board. Explore a variety of fun and challenging levels, all inspired by the magic of Christmas. Immerse yourself in stunning holiday visuals with cheerful music to match the mood. Enjoy seamless gameplay on mobile and desktop platforms. Spread the holiday spirit as you conquer each level in the Christmas Gift </description><category>Puzzle</category><url>https://html5.gamemonetize.com/6hjszik1u2u42mo6pg1yqxfabgsf9ob6/</url><thumb>https://img.gamemonetize.com/6hjszik1u2u42mo6pg1yqxfabgsf9ob6/512x384.jpg</thumb></item>
+<item><id>56628</id><title>Poler Match</title><description>Poler Match is an electrifying puzzle game that challenges players to connect circuits and light up bulbs using limited moves. Set in a futuristic neon world, players must strategically connect energy sources to light up all the bulbs on each level. With increasingly complex puzzles, Poler Match offers hours of brain-teasing fun, testing your logic and problem-solving skills.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/qbt2cmlqn6ia2t1dss5tm6kuzpfq7ovi/</url><thumb>https://img.gamemonetize.com/qbt2cmlqn6ia2t1dss5tm6kuzpfq7ovi/512x384.jpg</thumb></item>
+<item><id>55095</id><title>Triple Tile Match Fever Game</title><description>In Triple Tile Match Fever Game, your goal is simple yet captivating: match three or more tiles to clear them from the board. The engaging tile-matching puzzle game that will immerse you in a world of triple tile challenges and brain-teasing fun.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/su9js9cbxsemfqtnx7c4gm2v33g88amk/</url><thumb>https://img.gamemonetize.com/su9js9cbxsemfqtnx7c4gm2v33g88amk/512x384.jpg</thumb></item>
+<item><id>55367</id><title>Xiblba Match</title><description>Xiblba Match Seasons 1 is one of the new Match 3 games from the creators of the SIDM GAMES STUDIO, Xiblba Match Seasons. The most beautiful Xiblba Match. The second sequel features a BIG content update with new levels and a relaxing soundtrack to enjoy!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/6x5iq6cnf029jhte5e88eflxeepclnd7/</url><thumb>https://img.gamemonetize.com/6x5iq6cnf029jhte5e88eflxeepclnd7/512x384.jpg</thumb></item>
+<item><id>58634</id><title>Marine Match Up</title><description>Explore the fun and underwater tile matching game. Match the same tile and execute them. Not be lazy as the countdown will be finished if you can't match them quickly. Don't forget to collect the time stamp as this will add some time addition to the countdown. If you like genres such as tile matching, puzzle solving or just want to have a good time then this game is for you Features of this game: High Quality graphics will leave only positive feedback Game size is minimal (but not compromised the graphics) Super simple controls make it easy to start playing Interesting levels will not let you get bored</description><category>Puzzle</category><url>https://html5.gamemonetize.com/c0yfpiu9kpq8xebj1xftafb179n01sep/</url><thumb>https://img.gamemonetize.com/c0yfpiu9kpq8xebj1xftafb179n01sep/512x384.jpg</thumb></item>
+<item><id>58650</id><title>Xmas Memory Match</title><description>Get into the holiday spirit with this simple yet exciting memory card matching game, perfect for anyone looking to give their brain a boost! Designed with joy in mind, our Christmas-themed pairs game offers Easy and Medium modes, making it fun for all ages. Flip the cards, find the matching Christmas images - maybe a snowman, reindeer, or even Santa himself! Its a delightful way to celebrate the season while sharpening your memory. Gather with friends or family, and enjoy the magic of Christmas in every match. Happy holidays and happy matching!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/hm8cers6azm5r8txkwezpakvprcf7aaj/</url><thumb>https://img.gamemonetize.com/hm8cers6azm5r8txkwezpakvprcf7aaj/512x384.jpg</thumb></item>
+<item><id>58630</id><title>Match The Figures</title><description>In Match the Figures, players race against the clock to fit various shapes and figures into their correct spots. Each level presents a set of unique figures and outlines, challenging players to drag and match each piece before time runs out. As the levels progress, the shapes get more intricate, and the timer shortens, making for a fast-paced and engaging puzzle experience. With intuitive controls, bright graphics, and increasingly complex levels, Match the Figures keeps players on their toes, sharpening spatial awareness and reflexes. Can you beat the clock and match them all?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/gi0ey9uo7b54a7pqsbf7irz9sctveqqi/</url><thumb>https://img.gamemonetize.com/gi0ey9uo7b54a7pqsbf7irz9sctveqqi/512x384.jpg</thumb></item>
+<item><id>58140</id><title>Match 3D Puzzle Mania</title><description>Enter the world of match-3 game brought to life in 3D. Solve captivating puzzles and collect coins to acquire power-ups. Complete daily tasks to earn fantastic bonuses and experience endless fun with every move you make!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/dknfzlo018fucv5igyifvwuiprwrhtxy/</url><thumb>https://img.gamemonetize.com/dknfzlo018fucv5igyifvwuiprwrhtxy/512x384.jpg</thumb></item>
+<item><id>57973</id><title>Juicy Match</title><description>Welcome to Juicy Match! Dive into a vibrant world of fruits and fun in this exciting match-3 puzzle adventure. Swap and match delicious fruits to score big and unlock powerful combos! With each level, the challenges increase, pushing your puzzle-solving skills to the limit. Collect stars, achieve the highest scores, and progress through a series of juicy levels. Can you become the ultimate match-3 master?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/buhjq6n3d368324rbdfdviun0hu1hyz1/</url><thumb>https://img.gamemonetize.com/buhjq6n3d368324rbdfdviun0hu1hyz1/512x384.jpg</thumb></item>
+<item><id>58011</id><title>Halloween Match Story</title><description>Embark on a spooky journey with Halloween Match Story, a captivating match-3 puzzle game set in a haunted world filled with eerie delights. As you progress, youll match icons such as skulls, eyeballs, and candy to complete challenging levels. Each successful match leads to unlocking more Halloween surprises and facing exciting new challenges. Be quick, as the clock is ticking! Use helpful power-ups like hammers and bombs to master each level. Immerse yourself in this Halloween adventure brimming with spooky fun and brain-teasing puzzles.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ztlszg3khe9tmj5ytadql3p1v2hhy4yp/</url><thumb>https://img.gamemonetize.com/ztlszg3khe9tmj5ytadql3p1v2hhy4yp/512x384.jpg</thumb></item>
+<item><id>58004</id><title>Wizardry Match 3</title><description>Step into the shoes of the witch Gueraula in this enchanting match-3 adventure! Armed with her vast knowledge of potions, Gueraula must defend the magic portals from an onslaught of dark creatures threatening this world. Match potions to unleash magical attacks and banish the forces of darkness! As you journey through wizardry labs, eerie forests, mystical caves, and haunted ruins, youll encounter challenging creatures and face sinister bosses. Can you help her protect this world and defeat the creeping shadows?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/g4sxjl2rya8owrmx9t6jytbfxh186zm0/</url><thumb>https://img.gamemonetize.com/g4sxjl2rya8owrmx9t6jytbfxh186zm0/512x384.jpg</thumb></item>
+<item><id>57577</id><title>Find Sort Match</title><description> Find Sort Match is a fun and creative puzzle that combines sort and match elements. Let you experience the joy of DIY! In the game, sort and match items of various shapes, colors, and types. And complete each level of the challenge.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/pyuyhhci3z0f9ajc8wg3vqymlsmnjemf/</url><thumb>https://img.gamemonetize.com/pyuyhhci3z0f9ajc8wg3vqymlsmnjemf/512x384.jpg</thumb></item>
+<item><id>57029</id><title>Matching Donuts</title><description>Matching Donuts is a fun and fast-paced puzzle game where you connect colorful donuts to score big! Swipe and match the same donuts in a row before time runs out, challenging your reflexes and strategy. Unlock special power-ups and crazy combos for extra points and higher scores. With vibrant graphics and addictive gameplay, dive into this sugary challenge, master each level, and see how many delicious donuts you can match! Get ready for a sweet adventure that will test your speed, precision, and donut-matching skills!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/sjfo1y664ezimxc3cwcyvcjy7onwnakn/</url><thumb>https://img.gamemonetize.com/sjfo1y664ezimxc3cwcyvcjy7onwnakn/512x384.jpg</thumb></item>
+<item><id>56632</id><title>Magical Match</title><description>Match the magical item block tiles and help the witch to get a new magical spell. There were many magical item blocks available, the player had to match them by simple swiping. Don't forget to get help from the special power tools available in this game. If you like genres such as puzzle games, tile matching games or just want to have a good time then this game is for you. Features of this game: High Quality graphics. Game size is minimal. Super simple controls. Interesting quests. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/23mitfuj0ehf9kgntvsdzc03b8ru8e1n/</url><thumb>https://img.gamemonetize.com/23mitfuj0ehf9kgntvsdzc03b8ru8e1n/512x384.jpg</thumb></item>
+<item><id>56796</id><title>Flip Match</title><description>Flip the cards and match them quickly, super satisfying game Flip  Match is a satisfying and relaxing game. You have to simply tap on cards to reveal them then quickly tap on another to match the same card, and this way level can be finished. Be careful! Revealed cards do not remain the same for a long time, so speed up your card revealing. If you like genres such as Card Matching Games, Tap and Match games, or just want to have a good time then this game is for you. Features of this game: High Quality graphics. Game size is minimal. Super simple controls. Interesting quests. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/8wzmhtt7acvxy33sjsxj1c81djz6h4k6/</url><thumb>https://img.gamemonetize.com/8wzmhtt7acvxy33sjsxj1c81djz6h4k6/512x384.jpg</thumb></item>
+<item><id>56142</id><title>Jelly Matches</title><description>Welcome to the ultimate color-matching challenge! In this engaging puzzle game, your goal is to break a specified number of colored pieces on the board. The game features special pieces with unique properties, including x2 (which doubles the number of broken pieces), -1 (which removes one piece from your total), and shield pieces that offer protection.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/45k2hkp92lx338zqlj5m2xr3puexfduw/</url><thumb>https://img.gamemonetize.com/45k2hkp92lx338zqlj5m2xr3puexfduw/512x384.jpg</thumb></item>
+<item><id>56407</id><title>Puzzle Blocks Asmr Match</title><description>Puzzle Blocks ASMR Match is a block puzzle game that combines classics with innovation. It is different from the block jigsaw games and brick puzzle games you usually play. . </description><category>Puzzle</category><url>https://html5.gamemonetize.com/uk6p0tgxznsdatdj2fdxqnxsyvje3k9i/</url><thumb>https://img.gamemonetize.com/uk6p0tgxznsdatdj2fdxqnxsyvje3k9i/512x384.jpg</thumb></item>
+<item><id>55384</id><title>Supermarket Sort N Match</title><description>In Supermarket Sort n Match, rearrange items between shelves to match 3 identical items on one shelf, clearing it and allowing upper shelves to slide down. Clear entire stacks to shift adjacent shelves. Collect all items before time runs out as difficulty increases with each level. Enjoy the ultimate item-sorting and matching challenge! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/qwhdlojgkm7wrgf0iwfi95gy2qq8k9wd/</url><thumb>https://img.gamemonetize.com/qwhdlojgkm7wrgf0iwfi95gy2qq8k9wd/512x384.jpg</thumb></item>
+<item><id>56353</id><title>GemMine Match 3</title><description>Dive into the depths of mines filled with dazzling gems in GemMine Match 3, the ultimate casual match-3 puzzle adventure! Swap and match colourful gems to help the Miner accumulate richness and get to the top of the leaderboards. Journey through various levels, each set in a unique underground environment, from glittering caverns to ancient, forgotten mines. Each level has its own unique movement patterns that will challenge your mental reflexes as you compete against other players on the leaderboards.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/lqo3z4lzhug8b0xcyn83ojbtzyvrv5c0/</url><thumb>https://img.gamemonetize.com/lqo3z4lzhug8b0xcyn83ojbtzyvrv5c0/512x384.jpg</thumb></item>
+<item><id>55963</id><title>Solitaire Match Puzzle</title><description>Hot pot, barbecue, custard tarts, pasta whatever you love is here. Solitaire Match Puzzle is a food-themed puzzle game. The game contains food and desserts from all over the world, every time the game starts there will be a lot of food cards, and these cards overlap each other.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/eich7vpcet72i1u1gzsoxs9u88fir3na/</url><thumb>https://img.gamemonetize.com/eich7vpcet72i1u1gzsoxs9u88fir3na/512x384.jpg</thumb></item>
+<item><id>55680</id><title>Monsterr Match</title><description>Collect the maximum score by exploding the tiles.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/m9bozq3pg2vywfq8mlgupk8sf9ceosl7/</url><thumb>https://img.gamemonetize.com/m9bozq3pg2vywfq8mlgupk8sf9ceosl7/512x384.jpg</thumb></item>
+<item><id>54626</id><title>Sea Match</title><description>See Match is a challenging match-3 puzzle game. Connect 3 or more of the same fishes horizontally or diagonally. The more fishes you match, the higher your score! Keep an eye on the time. You will fail to pass the level if you do not gather sufficient grids in time. The faster you complete the task, the more stars you earn! If you find yourself stuck, you can always use the special bonuses to help you. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/7icvt2xcgygntw1uqygfqlckez8sw4xl/</url><thumb>https://img.gamemonetize.com/7icvt2xcgygntw1uqygfqlckez8sw4xl/512x384.jpg</thumb></item>
+<item><id>53369</id><title>Monster Match Mania</title><description>Embark on a monstrous adventure in Monster Match Mania! Match 3 monsters of the same color to eliminate them and progress through challenging levels!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ecfzzuzdam1pkz8id43kziiaswlm0fjw/</url><thumb>https://img.gamemonetize.com/ecfzzuzdam1pkz8id43kziiaswlm0fjw/512x384.jpg</thumb></item>
+<item><id>55079</id><title>Water World Match</title><description>Water World Match offers a challenging and relaxing puzzle game experience for players of all skill levels. Solve puzzles, match tiles, and master the classic game of matching. In the game the player has to choose category fish to match and complete the quest in dazzling combinations in fun gameplay to complete the challenge. The best match game, solve puzzles cautiously, train your brain. Fascinating game scenes, eye-catching art style, spectacular elimination effects. Features of this game: -High Quality graphics -Game size is minimal. -Super simple controls make it easy to start playing -Interesting quests.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/s3rrmzcpsoiy7hyeykb0veh2b7avq2yk/</url><thumb>https://img.gamemonetize.com/s3rrmzcpsoiy7hyeykb0veh2b7avq2yk/512x384.jpg</thumb></item>
+<item><id>54276</id><title>Hex Triple Match</title><description>Hex Triple Match brings together puzzle challenges, strategic matching and merging experiences. This game consists of clever puzzle-solving and logical manoeuvres, making it ideal for those seeking a brain workout. You need to consider how to place them to eliminate them faster. Each colour represents an item, giving you a great gaming experience. Beautiful graphics bring you visual enjoyment. Come and join the merging game world.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/k2duv6wydbt7u0jgcdsadsrnixa8zbch/</url><thumb>https://img.gamemonetize.com/k2duv6wydbt7u0jgcdsadsrnixa8zbch/512x384.jpg</thumb></item>
+<item><id>54334</id><title>Tile Farm Story: Matching Game</title><description>Are you tired of your dull daily routine? Discover the magical world of the remote corners of the Earth where life is in harmony with nature. Help the heroines in the game build parks and nature reserves in the most exotic countries and populate them with the greatest variety of animals. But first, they will have to solve the mystery of the inheritance that the Stone sisters were left by their mysterious Grandpa. Farm Story is an exciting adventure game that will give your brain cells a challenge you'll unable to tear yourself away from! This tile collecting game is a fresh take on the standard rules of Mahjong which will test your skill</description><category>Puzzle</category><url>https://html5.gamemonetize.com/anregpt2zsbb2kprn71x109fopzzl0s3/</url><thumb>https://img.gamemonetize.com/anregpt2zsbb2kprn71x109fopzzl0s3/512x384.jpg</thumb></item>
+<item><id>54443</id><title>Math Forest Match</title><description>Embark on an exciting mathematical journey deep into the heart of the enchanted forest! In Math Forest Match, explore the lush greenery while sharpening your arithmetic skills. Connect magical objects by solving math equations in this fun and educational adventure. With charming woodland creatures as your guides, immerse yourself in a world of numbers and nature. Are you ready to unlock the secrets of the forest through the power of math?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/wf0pb7lezxfo8z57yb9t7ba0je8j1r3n/</url><thumb>https://img.gamemonetize.com/wf0pb7lezxfo8z57yb9t7ba0je8j1r3n/512x384.jpg</thumb></item>
+<item><id>53355</id><title>Mystic Blocks Match</title><description>Embark on a mesmerizing journey in Mystic Blocks Match! Test your skills in this unique 2D physics-based puzzle game, where balance is key. Strategically remove colorful blocks while ensuring the structure remains stable. With intuitive gameplay and challenging puzzles, Mystic Blocks Match offers an immersive experience for puzzle enthusiasts of all ages. Are you ready to master the art of equilibrium?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/y805z7i3uyczczgex13gka94t8igggik/</url><thumb>https://img.gamemonetize.com/y805z7i3uyczczgex13gka94t8igggik/512x384.jpg</thumb></item>
+<item><id>53287</id><title>Crazy Cookies Match n Mix</title><description>We love Cookies! And this game is full of them, how great! Play your way through each yummy level by matching 3 or more of the same style of lovely cookies which will delight you with colorful effects. Match cookies by three or more to make them disappear and always watch the clock that is ticking fast and faster</description><category>Puzzle</category><url>https://html5.gamemonetize.com/9ihu8f067ecc5plq2sfldc0k6fjf6h4z/</url><thumb>https://img.gamemonetize.com/9ihu8f067ecc5plq2sfldc0k6fjf6h4z/512x384.jpg</thumb></item>
+<item><id>51170</id><title>Pet Connect Match</title><description>Pet Connect Match is an interesting matching game, in this game, you need to connect the same pets to eliminate all of them. There are many different modes you can choose, you can pass levels, challenge time mode or just play without any limit. Have a good time!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/x8x6yxamjfzf899ij1g5d5z3whb3ht5j/</url><thumb>https://img.gamemonetize.com/x8x6yxamjfzf899ij1g5d5z3whb3ht5j/512x384.jpg</thumb></item>
+<item><id>53109</id><title>Bubble Shooter: classic match 3</title><description>Shoot the bubbles to create a combination of three or more bubbles of the same color. The more bubbles in a combination, the more points you earn. If the combination does not come together when firing, then you get a strike. After several strikes, a new row of bubbles appears. The game will end if the bubbles reach the bottom of the screen.</description><category>Shooting</category><url>https://html5.gamemonetize.com/4imkqhrztw8meqi836243v4lrnm4wpcv/</url><thumb>https://img.gamemonetize.com/4imkqhrztw8meqi836243v4lrnm4wpcv/512x384.jpg</thumb></item>
+<item><id>52745</id><title>Sweet Match</title><description>Welcome to Sweet Match Puzzle Game! Swipe to match 3 or more identical candies to eliminate them and keep matching till you finish your mission to unlocked the next level. Explore 25 Challenging level and try to complete them all! Good Luck!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/mrnfepi9o508sb3gm7csl6k83y63dy5d/</url><thumb>https://img.gamemonetize.com/mrnfepi9o508sb3gm7csl6k83y63dy5d/512x384.jpg</thumb></item>
+<item><id>52442</id><title>Falling Candy Match</title><description>Falling Candy Match is a fast-paced puzzle game where players must match colorful candies as they descend from the top of the screen. With intuitive swipe controls, strategically align candies to create matches and earn points. Watch out for special candies with unique abilities that can help clear the board and boost your score. With vibrant graphics and addictive gameplay, Falling Candy Match offers endless fun for players of all ages. Website Developer <a href='https://www.coolcrazygames.com/'>https://www.coolcrazygames.com/</a></description><category>Puzzle</category><url>https://html5.gamemonetize.com/x9lqodnrpiq3g1tn3kgfjcet02n8miod/</url><thumb>https://img.gamemonetize.com/x9lqodnrpiq3g1tn3kgfjcet02n8miod/512x384.jpg</thumb></item>
+<item><id>52476</id><title>Santa Match Game</title><description>Thank you for providing the information about the game Challenging Track. This game sounds like a fun and engaging activity, suitable for players of all ages. In this game, you have to match the pictures to the correct words. Its really simple and intuitive; just use your mouse and click on a picture after drag n drop the picture over the correct Word! If you do right you see a message of well done if you are wrong you see an error message! You have 2 Game Modes: Easy: You can play freely without stress because you can go back and forth in the game when you want! Its really suitable for kids. Normal: In this mode you have 3 lives and</description><category>Puzzle</category><url>https://html5.gamemonetize.com/rezl6udfdnrqo90lgfllblloszkr3p3n/</url><thumb>https://img.gamemonetize.com/rezl6udfdnrqo90lgfllblloszkr3p3n/512x384.jpg</thumb></item>
+<item><id>52136</id><title>Valentins Match 3</title><description>Valentins Match 3 and enjoy this addictive hearts matching different colours game as you collect items and complete different missions.Your goal is to clear the hearts by finding and matching all hearts before the time runs out!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/2el9jog3vq6rxalr0xfnqgzbdbtv7x1s/</url><thumb>https://img.gamemonetize.com/2el9jog3vq6rxalr0xfnqgzbdbtv7x1s/512x384.jpg</thumb></item>
+<item><id>51819</id><title>Memory Match Magic</title><description>Dive into the enchanting world of Memory Match Magic, a delightful casual game that challenges your memory and takes you on a magical journey of matching pairs! Immerse yourself in a whimsical realm filled with colorful cards, charming animations.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/3jsbafa3dgg8dko5qpwzgbgr5v7go2fz/</url><thumb>https://img.gamemonetize.com/3jsbafa3dgg8dko5qpwzgbgr5v7go2fz/512x384.jpg</thumb></item>
+<item><id>52069</id><title>Cake Match3</title><description>Cake Match3 is a free classic block game. It's a challenging block puzzle and popular game with endless fun and time-killer, just join jewel and blast them.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/1jvzgx5vrykixrcm36wd4g3xuit8w023/</url><thumb>https://img.gamemonetize.com/1jvzgx5vrykixrcm36wd4g3xuit8w023/512x384.jpg</thumb></item>
+<item><id>52209</id><title>Romantic Match Tactics</title><description>Romantic Match Tactics invites you into a charming world where love meets strategy. Immerse yourself in an enchanting puzzle adventure as you strategically clear the grid, saving moves, and mastering the key to success  a delicate balance between item movement and unlocking the locked items. Progress through 48 levels, each unveiling new challenges as you align romantic trios to triumph.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/a76maw0ow9vho1vsbwco5icp9xa9ige6/</url><thumb>https://img.gamemonetize.com/a76maw0ow9vho1vsbwco5icp9xa9ige6/512x384.jpg</thumb></item>
+<item><id>52150</id><title>Duo Match</title><description>Prepare yourself for a fresh and original matching pair game challenge! Your task is to match pairs of extra cute characters on the ground and pop them all! Each cleared level introduces new pairs to match. This cute matching game is designed to be so easy that anyone can play and enjoy it. Are you ready to dive into the world of adorable characters and test your matching skills? Website Developer <a href='https://www.giugames.com/'>https://www.giugames.com/</a></description><category>Puzzle</category><url>https://html5.gamemonetize.com/4uorlwgluzhsnsed1nb6i65dyqhmvubq/</url><thumb>https://img.gamemonetize.com/4uorlwgluzhsnsed1nb6i65dyqhmvubq/512x384.jpg</thumb></item>
+<item><id>51980</id><title>Match the Blocks</title><description>Match the Blocks - strategically align the blocks in the upper layer to match perfectly with the patterns in the lower layer in an isometric perspective. Finish all 75 levels ranging from 33 to 55, you'll need logical reasoning and visual skills to conquer each level</description><category>Puzzle</category><url>https://html5.gamemonetize.com/bomztb2l4p8yywuzske2c6t8ujjaf2jc/</url><thumb>https://img.gamemonetize.com/bomztb2l4p8yywuzske2c6t8ujjaf2jc/512x384.jpg</thumb></item>
+<item><id>50535</id><title>Mahjong Match Club</title><description>Choose two matching mahjongs and remove them. Following removal, a moveable green space will emerge. Mahjong pieces should be moved until there are no more obstacles in either the horizontal or vertical directions. It faces another mahjong that is the same. Release your grip, and they will naturally vanish. Youll advance to the next level and receive points. The game puts strategy and vision to the test. Are you able to finish the challenge?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8wlb1qscl61s3my6mw855eakvdfmlaka/</url><thumb>https://img.gamemonetize.com/8wlb1qscl61s3my6mw855eakvdfmlaka/512x384.jpg</thumb></item>
+<item><id>46616</id><title>Little Pandas Match 3</title><description>This is a puzzle-matching game called Little Panda Match 3. In this game, players are given tasks to complete within a certain number of moves. By successfully completing these tasks, players can progress to the next level and earn points and gifts that can be used later in the game. The game has 40 levels, and each next level is harder than the previous one. The player needs to match at least 3 same objects to earn points. If you don't have any moves left, you can use some of the available Gifts to finish the level. In the game, players can earn points and gifts that can be used later. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/fiv9vcdaweimf34cvzfwsj2l0poc7jyo/</url><thumb>https://img.gamemonetize.com/fiv9vcdaweimf34cvzfwsj2l0poc7jyo/512x384.jpg</thumb></item>
+<item><id>50571</id><title>Farm Match Saga</title><description>if you love match3 puzzle games then you will fall in love with Farm Match Saga! Play against time and swipe to match 3 or more identical fruits to earn extra time. Chellenge your friends and lets see who will get the best score. Are you ready to crush some delicious fruits?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/43x2s9jopa47nffxsj2r1lsf2w2jcghb/</url><thumb>https://img.gamemonetize.com/43x2s9jopa47nffxsj2r1lsf2w2jcghb/512x384.jpg</thumb></item>
+<item><id>50589</id><title>Matching Mini Games Box</title><description>Matching Mini Games Box is an ultra-casual triple puzzle game. If youre tired of playing the classic three elimination puzzle game and want something else more colorful and exciting, this game will be your new game. Find three identical items and eliminate them. Relax your mind, reduce your daily stress and improve your observation skills. Come and enjoy!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/6cleowj5htr21ko031gvv4ljz59ir2bp/</url><thumb>https://img.gamemonetize.com/6cleowj5htr21ko031gvv4ljz59ir2bp/512x384.jpg</thumb></item>
+<item><id>50463</id><title>Monter Match 3 Journey</title><description>Monter Match 3 Journey is a puzzle match 3 game. It will test your logical thinking and strategy to break through all of the hardest levels</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8ul84mgemmhy2euo86edr9dsuwl418i5/</url><thumb>https://img.gamemonetize.com/8ul84mgemmhy2euo86edr9dsuwl418i5/512x384.jpg</thumb></item>
+<item><id>50008</id><title>Tiled Match Three 3D</title><description>Match Tile Paradise 3D is a match 3 puzzle game where you need to collect 3 identical objects to clear them. The higher level you achieve, the harder it get. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/gu1cf61onywibx00b24mrpv70d3vzw3u/</url><thumb>https://img.gamemonetize.com/gu1cf61onywibx00b24mrpv70d3vzw3u/512x384.jpg</thumb></item>
+<item><id>50065</id><title>Cookie Match</title><description>Cookie Match is a sliding puzzle game where you must match each cookie to its corresponding cutter. If you move the cookies off the edge of the board or into knives, they'll be destroyed. Use the tubs of butter as barriers to keep the cookies in one piece.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/rvgj4wbimpenxgkx3pw7bl9hrmmxnvyh/</url><thumb>https://img.gamemonetize.com/rvgj4wbimpenxgkx3pw7bl9hrmmxnvyh/512x384.jpg</thumb></item>
+<item><id>50032</id><title>Pipe Match</title><description>Pipe Match is a rotating card game where the goal is to connect all pipes to the end. Click on a pipe to rotate it clockwise. Pipes that are faded out are not connected and pipes with a dark gray background can't be moved. To undo a previous move, click the rotating arrow button. To restart the whole puzzle, click the arrow in the circle.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/pyke54t83mxkyomgt8bi4pz51rgkymi3/</url><thumb>https://img.gamemonetize.com/pyke54t83mxkyomgt8bi4pz51rgkymi3/512x384.jpg</thumb></item>
+<item><id>49998</id><title>Fruit Match</title><description>Fruits Match is a match-three game where you collect three matching tiles to clear them. Collect and clear three or more fruit tiles to solve the stage. You may use one additional deck, shuffle, or undo chance per stage. These powerups allow you to add an additional deck slot, shuffle the cards or undo your previous action. Get started today and show the world your mastery of fruit-matching!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/vos6pgamgcwxmmgnnb0ri7te4gscn20q/</url><thumb>https://img.gamemonetize.com/vos6pgamgcwxmmgnnb0ri7te4gscn20q/512x384.jpg</thumb></item>
+<item><id>49806</id><title>Onet 3D Match Tiles Puzzle</title><description>Welcome to the World of Onet 3D - Match Tiles Puzzle! Step into the captivating world of Onet 3D, a casual matching tiles mobile game that will engage and entertain you for hours. In this delightful game, your main objective is to match two identical pairs by linking and connecting them within three lines. Get ready to immerse yourself in a world of colorful tiles, exciting puzzles, and addictive gameplay. Website Developer <a href='https://www.gamesmunch.com'>https://www.gamesmunch.com</a></description><category>Puzzle</category><url>https://html5.gamemonetize.com/lprly9sfhwfc5t6g78ullo4qu78j4tcf/</url><thumb>https://img.gamemonetize.com/lprly9sfhwfc5t6g78ullo4qu78j4tcf/512x384.jpg</thumb></item>
+<item><id>39962</id><title>Card Memory Match</title><description>Card Memory Match</description><category>Puzzle</category><url>https://html5.gamemonetize.com/2mgeccmvxbmgw5nkk2mvrvsry7ennecj/</url><thumb>https://img.gamemonetize.com/2mgeccmvxbmgw5nkk2mvrvsry7ennecj/512x384.jpg</thumb></item>
+<item><id>47867</id><title>Barbie Match Master</title><description>Play as your favorite Barbie characters in this exciting match-3 puzzle game, Barbie Match Master! Remove tiles from play by making sets of three or more of the same kind. Youll get access to more playable characters and levels as you make your way through the game. Moreover, you may compete with your friends to see who can achieve the highest score. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/1xrjdtyrktyk0kn1441nu93wpw01liyc/</url><thumb>https://img.gamemonetize.com/1xrjdtyrktyk0kn1441nu93wpw01liyc/512x384.jpg</thumb></item>
+<item><id>47905</id><title>Match Mystery</title><description>Match Mystery is a match-3 puzzle game. It has an endless level of a twist challenging game. It has stunning graphics, fantastic gameplay and an impressive storyline. Match Mystery is a hours of fun and brain-teasing game for all ages! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/wwknobxes8q9p6ar5078a197u3xny270/</url><thumb>https://img.gamemonetize.com/wwknobxes8q9p6ar5078a197u3xny270/512x384.jpg</thumb></item>
+<item><id>49018</id><title>Grimace Matching</title><description>Grimace Matching is a fast-paced color-matching game where you must pair Grimaces based on their hues. Swipe to connect matching Grimaces . With vibrant visuals and quick thinking required, its a fun and addictive challenge for players of all ages!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/5tg5veqg430p06bpuhm5awkis3g0f6ue/</url><thumb>https://img.gamemonetize.com/5tg5veqg430p06bpuhm5awkis3g0f6ue/512x384.jpg</thumb></item>
+<item><id>49372</id><title>Marble Match Classic</title><description>Jungle Marble is a marble shoot game with the theme of Egyptian mythology. Jungle Marble Pop Blast is a marble shoot game with the theme of Egyptian mythology. It is easy to play, but truly addictive.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/mby806x1qs8s9ed3qrm42p0z6kmp3eyv/</url><thumb>https://img.gamemonetize.com/mby806x1qs8s9ed3qrm42p0z6kmp3eyv/512x384.jpg</thumb></item>
+<item><id>48281</id><title>Jelly Match 4</title><description>Pick block sets from left panel and drop them on the board to make a horizontal or vertical row of 4 similar blocks you can rotate the block set by clicking on them. If any of three available sets of blocks cannot accommodate in board, the game will be over. Website Developer <a href='https://www.lofgames.com/'>https://www.lofgames.com/</a></description><category>Puzzle</category><url>https://html5.gamemonetize.com/r72f7o2oq5dhsfipuhov8oxaeijvm3ke/</url><thumb>https://img.gamemonetize.com/r72f7o2oq5dhsfipuhov8oxaeijvm3ke/512x384.jpg</thumb></item>
+<item><id>29436</id><title>Gramice Shake Match Up</title><description>Welcome to this amazing Grimace Shake Cards memory game! Look carefully and remember cards! Tap to flip two identical cards to eliminate them! Keep playing till you clear all the board. explore tons of amazing and challenging levels. Have fun!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/as9afpoldl6tuaw0wmtyp8iqvue8tcz2/</url><thumb>https://img.gamemonetize.com/as9afpoldl6tuaw0wmtyp8iqvue8tcz2/512x384.jpg</thumb></item>
+<item><id>48419</id><title>Skibidi Toilet Match Up 2</title><description>Welcome to this amazing Skibidi Toilet Cards memory game! Look carefully and remember cards! Tap to flip two identical cards to eliminate them! Keep playing till you clear all the board. explore tons of amazing and challenging levels. Have fun!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/2k8gxec90xjwkd2o2d9mpchaxu57kutr/</url><thumb>https://img.gamemonetize.com/2k8gxec90xjwkd2o2d9mpchaxu57kutr/512x384.jpg</thumb></item>
+<item><id>47883</id><title>Animals Halves Match</title><description>Animals Halves Match is a board puzzle game where the player needs to match a halve to a symmetrical one. First, look carefully at the pattern and symmetry and ensure for actual match. Wrong selection will lead to a loss of one life out of three.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/bc0waj7ee2gtxczn6ugk19phg0b1axhr/</url><thumb>https://img.gamemonetize.com/bc0waj7ee2gtxczn6ugk19phg0b1axhr/512x384.jpg</thumb></item>
+<item><id>48048</id><title>Skibidi Match Master</title><description>Play trending characters skibidi in this exciting match-3 puzzle game, Skibidi Match Master! Remove tiles from play by making sets of three or more of the same kind. Youll get access to more playable characters and levels as you make your way through the game. Moreover, you may compete with your friends to see who can achieve the highest score.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/6bffntwhfofs11z4lp6l1q4ogsrqu4l8/</url><thumb>https://img.gamemonetize.com/6bffntwhfofs11z4lp6l1q4ogsrqu4l8/512x384.jpg</thumb></item>
+<item><id>45956</id><title>Skibidi Toilet Match Up </title><description>time to test your memory in the Skibidi Toilet Match UP game! Join the Skibidi Toilet and see how many card pairs you can match. However, this task might be tougher than it sounds if your attention is not on point!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/32c6t6bal7vuoo8l30kdw0nsxuwnlmdf/</url><thumb>https://img.gamemonetize.com/32c6t6bal7vuoo8l30kdw0nsxuwnlmdf/512x384.jpg</thumb></item>
+<item><id>47843</id><title>Jewel Match Deluxe</title><description>Journey through a whimsical world of jewels with this match 3 puzzle game. Match colorful gems to level up with classic gameplay challenges. -Create longer match combinations to earn extra points! -Unlock special jewels! -Beat your highest score!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/znvnwuolwor8izt2tvt21s4v1jtep9id/</url><thumb>https://img.gamemonetize.com/znvnwuolwor8izt2tvt21s4v1jtep9id/512x384.jpg</thumb></item>
+<item><id>47342</id><title>Bony Match3</title><description>Bony Match3 is an exciting and addictive match 3 puzzle game that will tantalize your taste buds! In this captivating game, your objective is to crush three mouthwatering candies to successfully accomplish the goals set before you.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/64yo1z0gbta6aczp2gefyawjs7p1u2p8/</url><thumb>https://img.gamemonetize.com/64yo1z0gbta6aczp2gefyawjs7p1u2p8/512x384.jpg</thumb></item>
+<item><id>39985</id><title>Garden match saga</title><description>Garden Match Saga is a match 3 puzzle game where you have to match multiple types of fruits to progress. What you have to do is to position at least 3 or more similar fruits on the same line to clear them and succeed in reaching the objectives set for each level. You have 3 objectives per level. The game has 400 very interesting levels. Good luck with the game.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/2w2pbkz7y4t6jl2ipww90jw2c6b0c4w6/</url><thumb>https://img.gamemonetize.com/2w2pbkz7y4t6jl2ipww90jw2c6b0c4w6/512x384.jpg</thumb></item>
+<item><id>45669</id><title>Candy Match 3.1</title><description>Candy Match 3 Kit game is a highly addictive puzzle game that offers hours of fun. The objective of the game is to match three or more of the same candy pieces together to score points. The game is easy to pick up and play and offers a great challenge for all ages.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8b2uq2h5br1enrqm6ulci6q1xobdjayg/</url><thumb>https://img.gamemonetize.com/8b2uq2h5br1enrqm6ulci6q1xobdjayg/512x384.jpg</thumb></item>
+<item><id>46759</id><title>Math Matchsticks</title><description>Math Matchsticks is a reasoning puzzle game with simple rules that are fun and challenging for players of all ages. Players need to change numbers or symbols by moving matchsticks according to a given mathematical problem to make the equation work. The game has a total of 100 levels, as the level increases, the difficulty gradually increases, requiring more thinking and patience of the player. This reasoning and calculation game can exercise the players intellectual and mathematical skills.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/elk707v2q4td13mx6yesu5o2z3ffr4ec/</url><thumb>https://img.gamemonetize.com/elk707v2q4td13mx6yesu5o2z3ffr4ec/512x384.jpg</thumb></item>
+<item><id>46754</id><title>Tile Match Master</title><description>Introducing Triple Tile, the ultimate triple match puzzle game! Immerse yourself in fun  challenging tile matching puzzle gameplay as you match tiles to progress through the brainteaser levels. Solve the 3 tiles puzzle levels  become the ultimate tile master. With easy-to-learn mechanics  addictive gameplay, Triple Tile is the perfect game for triple match puzzle enthusiasts. Taking the classic matching Mahjong puzzle game  adding the stunning graphics of the 21st Century's 3D tiles, Triple Tile is the best classic matching games for adults. Match tiles  climb levels to reach the top!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/p2wjmb53afw7t1vy37i24spwtji2gwvx/</url><thumb>https://img.gamemonetize.com/p2wjmb53afw7t1vy37i24spwtji2gwvx/512x384.jpg</thumb></item>
+<item><id>39935</id><title>World Cup Flag Match</title><description>The World CupFlag Match is an online game that tests your knowledge of flags from around the world. Match three flags in a row to score points and advance to the next level.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/hadhguntedzzz3n4bml41cal4r0e7m69/</url><thumb>https://img.gamemonetize.com/hadhguntedzzz3n4bml41cal4r0e7m69/512x384.jpg</thumb></item>
+<item><id>45854</id><title>Fruit Matcher</title><description>Swap fruits to make a group of 3 or more identical fruits adjacent horizontally or vertically. Keep matching till you unlock and clear all the tiles. Use power-ups to speed up the process. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/qr73dh0t6t9b9gut37jhc6wa40wb0ptq/</url><thumb>https://img.gamemonetize.com/qr73dh0t6t9b9gut37jhc6wa40wb0ptq/512x384.jpg</thumb></item>
+<item><id>44543</id><title>Match Away 3D Cube</title><description>Do you have what it takes to solve all the merging levels? Connect all your brain cells and put your skills to the test! Match Away all the blocks in this exciting puzzle. Match Away is a fun and addictive 3D puzzle game, but its more than just that - its a brain teaser that will take you to the next level! Match the blocks to make them fly away and clear the screen. But the blocks will only fly in one direction, so you've got to approach this brain teaser carefully! Slide your finger around the screen to rotate the shape and attack the blocks from every angle! As you progress, the blocks form bigger and bigger shapes, and the blocks themselves change the form, so you'll need to get your thinking hat on to solve the puzzles in this 3D puzzle game. And thats not it! In this fun and colorful game, you challenge your logic, critical thinking, and precision. What are you waiting for? Challenge your brain with this tricky game right now! WITH Match Away YOU CAN PLAY the full 3D puzzle game experience offline and on the go. SWIPE to rotate the shape and choose your next move. MATCH the blocks to clear the level. REACH the top! WHY PLAY Match Away Cube? RELIEVE your stress. TEASE your brain with satisfying taps. PRACTICE your critical thinking! LEARN the tricks to ensure Match Away Cube glory! ENJOY cool skins and themes to customize your journey!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/gne0wo40kd77qpatrcomt3ub96lrdhth/</url><thumb>https://img.gamemonetize.com/gne0wo40kd77qpatrcomt3ub96lrdhth/512x384.jpg</thumb></item>
+</channel></rss>`;
+
+    const grid = document.getElementById('gameGrid');
+    const searchInput = document.getElementById('searchInput');
+    const modal = document.getElementById('gameModal');
+    const frame = document.getElementById('gameFrame');
+    const fullScreenBtn = document.getElementById('fullScreenBtn');
+    const fsPath = document.getElementById('fsPath');
+    
+    let gameList = [];
+
+    function init() {
+        initAllGames();
+        setupEventListeners();
+    }
+
+    // Parse XML data to generate the game list
+    function initAllGames() {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(FEED_XML, "text/xml");
+        const items = xmlDoc.getElementsByTagName("item");
+
+        gameList = Array.from(items).map(item => ({
+            title: item.getElementsByTagName("title")[0]?.textContent,
+            desc: item.getElementsByTagName("description")[0]?.textContent,
+            category: item.getElementsByTagName("category")[0]?.textContent,
+            url: item.getElementsByTagName("url")[0]?.textContent,
+            thumb: item.getElementsByTagName("thumb")[0]?.textContent
+        }));
+
+        renderGames(gameList);
+    }
+
+    // Render cards into the DOM
+    function renderGames(data) {
+        grid.innerHTML = '';
+        data.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `Play ${game.title}`);
+            card.tabIndex = 0;
+
+            // Handle click event to open modal
+            card.onclick = () => {
+                frame.src = game.url;
+                modal.style.display = 'Match';
+                document.body.style.overflow = 'hidden'; 
+            };
+            
+            // Support keyboard accessibility
+            card.onkeydown = (e) => {
+                if (e.key === 'Enter') card.onclick();
+            };
+
+            card.innerHTML = `
+                <div class="card-image-box">
+                    <img src="${game.thumb}" alt="${game.title}" class="card-image" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <button class="btn-play" tabindex="-1">PLAY NOW</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">${game.category}</span>
+                    <h3 class="card-title">${game.title}</h3>
+                    <p class="card-desc">${game.desc}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    function setupEventListeners() {
+        // Search filter logic
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = gameList.filter(g => 
+                g.title.toLowerCase().includes(query) || 
+                g.category.toLowerCase().includes(query)
+            );
+            renderGames(filtered);
+        });
+
+        // Fullscreen toggle event
+        fullScreenBtn.addEventListener('click', toggleFullscreen);
+
+        // Update UI when fullscreen state changes
+        document.addEventListener('fullscreenchange', updateFullscreenUI);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenUI);
+        
+        // Close modal when clicking outside the container
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) closeGame();
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'Match') { closeGame(); }
+        });
+
+        updateFullscreenUI();
+    }
+
+    // Modal closing logic
+    window.closeGame = function() {
+        modal.style.display = 'none';
+        frame.src = '';
+        document.body.style.overflow = 'auto';
+        if (isFullscreen()) {
+            exitFullscreen();
+            setTimeout(updateFullscreenUI, 50);
+        }
+    }
+
+    // Fullscreen helper functions
+    function isFullscreen() {
+        return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+    }
+
+    function enterFullscreen() {
+        const container = document.querySelector('.modal-container');
+        if (container.requestFullscreen) { container.requestFullscreen(); } 
+        else if (container.webkitRequestFullscreen) { container.webkitRequestFullscreen(); } 
+        else if (container.mozRequestFullScreen) { container.mozRequestFullScreen(); } 
+        else if (container.msRequestFullscreen) { container.msRequestFullscreen(); }
+    }
+
+    function exitFullscreen() {
+        if (document.exitFullscreen) { document.exitFullscreen(); } 
+        else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); } 
+        else if (document.mozCancelFullScreen) { document.mozCancelFullScreen(); } 
+        else if (document.msExitFullscreen) { document.msExitFullscreen(); }
+    }
+
+    function toggleFullscreen() {
+        if (isFullscreen()) { exitFullscreen(); } else { enterFullscreen(); }
+    }
+
+    function updateFullscreenUI() {
+        const isFs = isFullscreen();
+        const enterPath = "M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3";
+        const exitPath = "M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3";
+        fsPath.setAttribute('d', isFs ? exitPath : enterPath);
+    }
+
+    // Initialize the script
+    init();
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAmeasLSfP2N6aDTaHv2g83HXA9fMPVZFE",
+    authDomain: "puzzlechallengehub.firebaseapp.com",
+    projectId: "puzzlechallengehub",
+    storageBucket: "puzzlechallengehub.firebasestorage.app",
+    messagingSenderId: "112608986588",
+    appId: "1:112608986588:web:acc32a06b94fd65f46bb19",
+    measurementId: "G-SX634LMH5N"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" href="https://puzzlechallengehub.com/favicon.ico">
+    <link rel="canonical" href="https://puzzlechallengehub.com/collection/block.html">
+    <title>Block Puzzles Collection - Play Free Online | PuzzleHub</title>
+    <meta name="description" content="Classic and modern block puzzles. Drag, drop, and fit shapes to keep the board clean and beat your high score.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --bg-card: #161b22;
+            --accent-primary: #7b61ff;
+            --accent-hover: #917cff;
+            --text-light: #f0f6fc;
+            --text-dim: #8b949e;
+            --border-color: #30363d;
+            --glass: rgba(10, 11, 16, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        header {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--accent-primary);
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 15px rgba(123, 97, 255, 0.4);
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-light);
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: #0d1117;
+            border: 1px solid var(--border-color);
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2);
+        }
+
+        /* Collection Hero Section */
+        .collection-hero {
+            padding: 3rem 5% 2rem;
+            background: linear-gradient(180deg, rgba(123, 97, 255, 0.12) 0%, rgba(10, 11, 16, 0) 100%);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumbs a {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--accent-primary);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-icon-box {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-primary);
+            border-radius: 20px;
+            display: grid;
+            place-items: center;
+            font-size: 2.5rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(123, 97, 255, 0.4);
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .hero-text p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 0 5% 4rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            content-visibility: auto; 
+            contain-intrinsic-size: 0 350px; 
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+        }
+
+        .card-image-box {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background-color: #1a1f26;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+            display: block;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .btn-play {
+            background: var(--accent-primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            transform: translateY(20px);
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .card:hover .btn-play {
+            transform: translateY(0);
+        }
+
+        .card-body {
+            padding: 1.2rem;
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            color: #FDF67C;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-light);
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.6rem;
+            line-height: 1.3rem;
+        }
+
+        /* Modal System */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px;
+        }
+
+        .modal-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 85vh;
+            margin: 20px auto;
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(123, 97, 255, 0.3);
+        }
+
+        .modal-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 15px;
+            z-index: 2100;
+        }
+
+        .close-btn {
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: 1px solid #444;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .close-btn:hover, #fullScreenBtn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 5%;
+            text-align: center;
+            color: var(--text-dim);
+            margin-top: 2rem;
+        }
+        
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-dim);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 12px; padding: 12px 3%; }
+            .search-wrapper { width: 100%; }
+            .hero-content { flex-direction: column; text-align: center; gap: 15px; }
+            .hero-icon-box { width: 60px; height: 60px; font-size: 2rem; border-radius: 15px;}
+            .hero-text h1 { font-size: 1.8rem; }
+            
+            .game-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 0 3% 2rem;}
+            .card-body { padding: 0.8rem; }
+            .card-title { font-size: 0.9rem; margin-bottom: 4px; }
+            .card-desc { display: none; }
+            .btn-play { padding: 6px 16px; font-size: 0.8rem; }
+            
+            .modal { padding: 0; }
+            .modal-container { height: 100vh; margin: 0; border-radius: 0; }
+            .modal-controls { top: 15px; right: 15px; }
+            #fullScreenBtn, .close-btn { width: 38px; height: 38px; }
+        }
+    </style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "v7w38tv951");
+</script>
+</head>
+
+<body>
+
+<header>
+    <a href="/" class="brand">
+        <div class="logo-icon">P</div>
+        <span class="brand-name">PuzzleHub</span>
+    </a>
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search Block games...">
+    </div>
+</header>
+
+<main>
+    <div class="collection-hero">
+        <div class="breadcrumbs">
+            <a href="/">Home</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <a href="/collection.html">Collections</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> 
+            <span>Block Puzzles</span>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-icon-box">
+                <i class="fas fa-shapes"></i>
+            </div>
+            <div class="hero-text">
+                <h1>Block Games Collection</h1>
+                <p>Classic and modern block puzzles. Drag, drop, and fit shapes to keep the board clean and beat your high score.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameGrid" class="game-grid"></div>
+</main>
+
+<div id="gameModal" class="modal" role="dialog" aria-modal="true" aria-label="Game Player">
+    <div class="modal-container">
+        <div class="modal-controls">
+            <button id="fullScreenBtn" title="Toggle Fullscreen" style="background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 42px; height: 42px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; flex-shrink: 0;">
+                <svg id="fsIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                    <path id="fsPath" d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+            </button>
+            <button onclick="closeGame()" title="Close Game" class="close-btn">
+                ✕
+            </button>
+        </div>
+        <iframe id="gameFrame" src="" allow="autoplay; fullscreen; keyboard" title="Play Game Frame"></iframe>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-socials">
+        <a href="https://www.facebook.com/puzzlehubgames" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@PuzzleGamesGuideVideo" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2026 PuzzleHub Gaming Platform</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">
+        <a href="/privacy-policy.html" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a> | 
+        <a href="/terms-of-service.html" style="color: var(--text-dim); text-decoration: none;">Terms of Service</a> | 
+        <a href="/about-us.html" style="color: var(--text-dim); text-decoration: none;">About Us</a> | 
+        <a href="/contact-us.html" style="color: var(--text-dim); text-decoration: none;">Contact Us</a>
+    </p>
+</footer>
+
+<script>
+    // Feed data matching the All Games section mechanism
+    const FEED_XML = `
+<rss version="2.0">
+<channel>
+<item><id>77041</id><title>Block Blast Puzzle</title><description>Block Blast Puzzle is a fun and addictive puzzle game where you drag and drop colorful blocks onto a grid. Clear rows and columns by filling them completely to earn points. Plan your moves carefully - if theres no space left for the remaining blocks, the game is over!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/fx0o3r69oqzzat8ha5lvjmkdxjlmztxy/</url><thumb>https://img.gamemonetize.com/fx0o3r69oqzzat8ha5lvjmkdxjlmztxy/512x384.jpg</thumb></item>
+<item><id>76788</id><title>The Block Escape</title><description>Block Escape is a relaxing yet challenging 3D puzzle game where your goal is to clear all the colorful blocks from the screen. Each block has an arrow pointing in a specific direction. When you tap a block, it will fly off in that direction-but only if its path is clear! Features: Satisfying and relaxing 3D puzzle mechanics Colorful, high-contrast visual design Endless brain-teasing levels Smooth camera rotation to explore every angle</description><category>Puzzle</category><url>https://html5.gamemonetize.co/qtba3xs4tqydx8kgmnbgl7pdzgkal9t3/</url><thumb>https://img.gamemonetize.com/qtba3xs4tqydx8kgmnbgl7pdzgkal9t3/512x384.jpg</thumb></item>
+<item><id>76782</id><title>Blocks Match 3</title><description>Blocks Match 3 is a thrilling match-3 puzzle! Swap colorful red, green, and blue blocks to form lines of 3+ and clear the board. Race the 5-minute timer to hit your score goal (like 100 points), collect stars, and conquer levels. Blast obstacles with bomb boosters, special clears, and shuffles. Addictive fun for quick sessions!</description><category>Puzzle</category><url>https://html5.gamemonetize.co/fpem3gkt3ogntohzsuwlnkynxy48gybp/</url><thumb>https://img.gamemonetize.com/fpem3gkt3ogntohzsuwlnkynxy48gybp/512x384.jpg</thumb></item>
+<item><id>75473</id><title>PinBall Block Shooter</title><description>You know the rules! Use your flippers to launch the ball and smash as many blocks as possible in PinBall Block Shooter. Your goal is to keep the ball in play and rack up points while aiming for high scores. With a simple, classic design, intuitive two-button controls, and straightforward gameplay, this game is easy to pick up but hard to master. Perfect as a fun time killer, test your reflexes, stay in the game as long as possible, and enjoy the nostalgia of classic pinball action anytime!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/85637cazntg4sawr5hb10rd70b7skmer/</url><thumb>https://img.gamemonetize.com/85637cazntg4sawr5hb10rd70b7skmer/512x384.jpg</thumb></item>
+<item><id>75999</id><title>Block Master: Polygonal Puzzle</title><description>A game about collecting blocks. But not the usual ones. Instead of the familiar squares, you get a bunch of polygons that you have to fit across the entire playing field to win. This fascinating online puzzle game will not let you get bored, complete all the levels in the game, divided into categories from the easiest to the most difficult to think about! Compete with other players on the leaderboard as you complete the levels!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/26hi7kw8year9zgch1e3mu5uz50rbbxc/</url><thumb>https://img.gamemonetize.com/26hi7kw8year9zgch1e3mu5uz50rbbxc/512x384.jpg</thumb></item>
+<item><id>75062</id><title>Block 21</title><description>Tap/click on a group of three or more blocks with the same color. Get block 21. Have fun!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/7y7eipr5axagurxl3zy7urjidst7c413/</url><thumb>https://img.gamemonetize.com/7y7eipr5axagurxl3zy7urjidst7c413/512x384.jpg</thumb></item>
+<item><id>75024</id><title>Crush the blocks</title><description>Crush the blocks is a puzzle game with slider movement as its core, integrating classic mechanisms and innovative gameplay, combining fun and intellectual training value.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/7eozs07k1zpfvt945rsochrsixh74nu0/</url><thumb>https://img.gamemonetize.com/7eozs07k1zpfvt945rsochrsixh74nu0/512x384.jpg</thumb></item>
+<item><id>75349</id><title>Ultimate Block Puzzle</title><description>An interesting and exciting puzzle awaits you in the new online game Ultimate Block Puzzle. Today you will create various objects. In front of you on the screen you will see a playing field in the upper part of which an object of a certain shape will be drawn. Below it, blocks of different shapes will appear on the panel in turn. You can use the mouse to move them up and place them inside the object. By making moves in this way, your task is to completely fill the internal field of the object. As soon as you do this, you will be given points in the Ultimate Block Puzzle game.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/q557xpxkn86b20teewhu3qekroxopdh2/</url><thumb>https://img.gamemonetize.com/q557xpxkn86b20teewhu3qekroxopdh2/512x384.jpg</thumb></item>
+<item><id>75171</id><title>Hexagon Block Puzzle Game</title><description>Hexagon Block: Puzzle Game is a brain storming puzzle game.Stretch your mind and train your brain with this addictive block puzzle game. Colorful and easy user interface of puzzle• Combine the blocks to make the pattern.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/vnfx9yvw41rrmyehhsyw4uo5ss9jh9c0/</url><thumb>https://img.gamemonetize.com/vnfx9yvw41rrmyehhsyw4uo5ss9jh9c0/512x384.jpg</thumb></item>
+<item><id>74813</id><title>Block Magic Puzzle Game</title><description>Puzzle Game is a most addictive puzzle games collection, With beautiful graphics and interesting levels. Puzzle Game brings many classic fun puzzle games togetherlike Block Puzzle, Bubble Shooter and Onet Puzzle. These puzzle games are classic and funand they are easy to learn. From now on, as a puzzle game lover, you dont have to search a lot of games, you can play these classic games here.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/3nin4ln4pjt0ae72rcoxq07kekbedyn7/</url><thumb>https://img.gamemonetize.com/3nin4ln4pjt0ae72rcoxq07kekbedyn7/512x384.jpg</thumb></item>
+<item><id>74554</id><title>Block Jam Match Game</title><description>Embark on a thrilling adventure that combines strategic block matching, a heart-pounding bus mini-game, an explosive Bomb Bridge Competition, and a brand-new challenge: the Baloon Rise Challenge! Elevate your gaming experience with strategic moves and test your skills in a puzzle-packed journey.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/4otjsjz31jgy4a3yr2p0bv98wiygri1u/</url><thumb>https://img.gamemonetize.com/4otjsjz31jgy4a3yr2p0bv98wiygri1u/512x384.jpg</thumb></item>
+<item><id>74483</id><title>Wood Block Brain Puzzle</title><description>Wood Block Brain Puzzle Looking for a fun and addictive puzzle game that will keep you entertained for hours on end? Look no further than Wood Block Brain Games, the ultimate wood block game for you! With its simple and intuitive gameplay, Wood Block is perfect for puzzle lovers of all ages and skill levels. Simply drag and drop the wooden blocks to fill up the board and complete each level. With increasing levels of difficulty, youll never run out of challenges to tackle! Join millions of players who love Block Puzzle Wood Blast, the addictive puzzle game that sharpens your mind and relieves stress. Play anytime.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/9o7pp1cj2kgu8onu66xjp545xpywi2ze/</url><thumb>https://img.gamemonetize.com/9o7pp1cj2kgu8onu66xjp545xpywi2ze/512x384.jpg</thumb></item>
+<item><id>73344</id><title>M2 BLOCKS 2048</title><description>M2 Blocks is an addictive and strategic puzzle game that challenges your logic, planning skills, and reflexes. Your goal is simple but engaging: merge matching numbered blocks to create higher values and score as many points as possible. Each move matters one wrong decision can quickly fill the board, so think ahead and play smart. With clean visuals, smooth controls, and fast gameplay, M2 Blocks is perfect for quick sessions or long puzzle-solving marathons. Whether you are a casual player or a puzzle expert, the game offers a satisfying challenge that keeps you coming back for more.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/kspqjp4u64fwgdnq0v025uri509teye1/</url><thumb>https://img.gamemonetize.com/kspqjp4u64fwgdnq0v025uri509teye1/512x384.jpg</thumb></item>
+<item><id>73425</id><title>QBlock Puzzle</title><description>QBlock Puzzle - Addictive block game for fans of puzzles, jigsaw, and classic wooden block. Play QBlock Puzzle 10 minutes a day keep your mind sharp! Drag  drop the block to create full horizontal or vertical lines of block. Keep the board clean and beat your high score in QBlock Puzzle! It would easily help lower your stress, anxiety, and aid you to focus on anything else. QBlock Puzzle features: - 4 FREE beautiful themes: Wood, Cartoon, Day  Night. - Easy and simple, no pressure and no time limit. - Block rotation is available.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/t9xqzh1133o06x3soxt2kmek6mgmt778/</url><thumb>https://img.gamemonetize.com/t9xqzh1133o06x3soxt2kmek6mgmt778/512x384.jpg</thumb></item>
+<item><id>73641</id><title>Fruit Block Tetra Puzzle</title><description>Fruit Block Tetra Puzzle is a fast and fun block puzzle game where you place fruit-shaped blocks to clear lines and collect target fruits before time runs out. Complete each fruit goal to level up and unlock new challenges. Easy to play, satisfying to master, and perfect for quick, brain-boosting fun! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/j6megw9uguvx0ar4mom5cl0137zjo5d9/</url><thumb>https://img.gamemonetize.com/j6megw9uguvx0ar4mom5cl0137zjo5d9/512x384.jpg</thumb></item>
+<item><id>73376</id><title>Block puzzle legend</title><description>Challenge your brain in Block Puzzle Legend. Enjoy the ultimate classic puzzle game. Slide, match, and blast blocks to clear the board and reach new high scores. This casual game is perfect for quick fun or long strategy sessions. It combines satisfying block-clearing action with a colorful, relaxing interface.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/n383lwm9rj72iqfto0xgve8yp69v0svq/</url><thumb>https://img.gamemonetize.com/n383lwm9rj72iqfto0xgve8yp69v0svq/512x384.jpg</thumb></item>
+<item><id>73375</id><title>Cut The Rope Unblocked</title><description>Begin a brain-teasing adventure with Cut The Rope Unblocked. This addictive puzzle game is packed with clever logic puzzles and clear levels. It will challenge your mind and reflexes. By cutting the rope and applying physics techniques, you perfectly guide balls of different colors into their corresponding colored water.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ako88227j1m9mbizistu27ad51e97klr/</url><thumb>https://img.gamemonetize.com/ako88227j1m9mbizistu27ad51e97klr/512x384.jpg</thumb></item>
+<item><id>71356</id><title>Image Block Puzzle</title><description>Image Box is an engaging and challenging puzzle game designed to test your spatial awareness and problem-solving skills. The game divides a complete image into a grid, which can be 2x2, 3x3, 4x4, or 5x5 blocks. Each block can be clicked to rotate it 90 degrees counterclockwise. The players goal is to rotate the blocks in such a way that the original image is reconstructed. Image Box is perfect for puzzle enthusiasts looking for a fun and mentally stimulating game. Whether you prefer a solo challenge or competitive play, this game offers something for everyone.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ajg4fahtaw667pg8mwpp26j719v0f4tl/</url><thumb>https://img.gamemonetize.com/ajg4fahtaw667pg8mwpp26j719v0f4tl/512x384.jpg</thumb></item>
+<item><id>71583</id><title>Soda Block Jam</title><description>Soda Block Jam is a refreshing twist on classic puzzle games. Navigate through vibrant levels by swiping soda crates in continuous motions, collecting soda bottles, and delivering them to their designated exits.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/sx9e751be41mwvzz7w9ynub5ejuhxm6d/</url><thumb>https://img.gamemonetize.com/sx9e751be41mwvzz7w9ynub5ejuhxm6d/512x384.jpg</thumb></item>
+<item><id>71012</id><title>Koko Loco Block Blast</title><description>Think fast, blast smart ; can you beat your best score? Blast blocks, fit shapes, outsmart the grid. Get ready for some block-busting fun with a brainy twist! This fast-paced puzzle game combines colourful block blasting with the challenge of fitting each new set of 3 shapes onto the board. Every move matters ; clear space, chain combos, and keep the grid from filling up! With smooth controls and quick rounds, it's perfect for casual play, but players who love to plan ahead and outsmart the board will find endless ways to challenge their brains. Easy to pick up, hard to put down ; can you climb the high score ladder?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/f5g89vmko0f0aezofpkzhhjm0b9arl5f/</url><thumb>https://img.gamemonetize.com/f5g89vmko0f0aezofpkzhhjm0b9arl5f/512x384.jpg</thumb></item>
+<item><id>71188</id><title>Glow Blocks</title><description>Glow Blocks is a vibrant neon puzzle game inspired by the timeless classic Tetris. Stack glowing blocks in a futuristic grid, clear full lines, and climb through endless levels as the speed increases. With its colorful neon visuals, cyberpunk atmosphere, and smooth gameplay, Glow Blocks is both nostalgic and fresh. Challenge yourself to beat your high score, enjoy the glowing effects, and test your reflexes in this addictive endless puzzle experience!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/6ijb9ae9x9a7c6iodq6pfokdkp4p8hm1/</url><thumb>https://img.gamemonetize.com/6ijb9ae9x9a7c6iodq6pfokdkp4p8hm1/512x384.jpg</thumb></item>
+<item><id>70338</id><title>Bear Block Puzzle</title><description>Fun Bear Block Puzzle is a classic and engaging block puzzle game that challenges your logic and sharpens your mind. Designed for players of all ages, this game offers a perfect blend of relaxation and brain training, making it an excellent choice for puzzle lovers. With simple drag-and-drop mechanics, your goal is to place blocks on the grid and clear lines to earn points. Whether you are looking for a stress-relieving game, a logic challenge, or just a fun way to pass time, Fun Bear Block Puzzle is the perfect companion. How to Play Drag and drop blocks onto the 8x8 grid. Fill rows or columns completely to clear them and score points.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/apn0y579tb1ytuvaxmbf6dm80xa7mfy8/</url><thumb>https://img.gamemonetize.com/apn0y579tb1ytuvaxmbf6dm80xa7mfy8/512x384.jpg</thumb></item>
+<item><id>67349</id><title>ColorBlockJam</title><description>Move the colored blocks out of the exits of the same color. The game has multiple levels, and various items will randomly appear in each level to enhance the fun of the gameplay. Give it a try.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/xrbjwx8xz6tpwmjusn5v8yl2p3rxom0g/</url><thumb>https://img.gamemonetize.com/xrbjwx8xz6tpwmjusn5v8yl2p3rxom0g/512x384.jpg</thumb></item>
+<item><id>66625</id><title>Block Merge City</title><description>Block Merge City is a relaxing isometric puzzle game where you place and combine buildings to evolve them into bigger structures. Strategically plan your moves, score high, and avoid running out of space!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ikv6tvl28r0jhq0r003pcv0lhh6ckpr1/</url><thumb>https://img.gamemonetize.com/ikv6tvl28r0jhq0r003pcv0lhh6ckpr1/512x384.jpg</thumb></item>
+<item><id>68207</id><title>Unblocked Forest Fireboy And Watergirl</title><description>Want a mind-bending and action forest adventure in Unblocked Forest Fireboy And Watergirl? Play alone or with friends and join adventures! This classic multiplayer puzzle game brings the iconic Fireboy and Watergirl duo back into a mysterious Forest temple. Silent cooperation is the only way to get through! Each collects gems and gold coins of the corresponding color. Push the boxes, press the switches, and cooperate with each other to pass the level successfully.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/1xvemgqh10s5oag3rrvukaeny2fd7ekk/</url><thumb>https://img.gamemonetize.com/1xvemgqh10s5oag3rrvukaeny2fd7ekk/512x384.jpg</thumb></item>
+<item><id>67829</id><title>Blockfall Blitz: Master the Falling Blocks!</title><description>Blockfall Blitz is a fast-paced, addictive puzzle game inspired by classic falling block titles. Strategically place descending tetrominoes to complete and clear horizontal lines. Race against the clock as the blocks fall faster with every line you clear. Plan ahead using the Next Piece preview and outsmart the grid by utilizing the new Hold Piece feature! How many lines can you clear and how high can you score before the blocks reach the top?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/sxgf1m7n1nviv8ts5np5a8rq7mxfosmt/</url><thumb>https://img.gamemonetize.com/sxgf1m7n1nviv8ts5np5a8rq7mxfosmt/512x384.jpg</thumb></item>
+<item><id>61571</id><title>Gummy Blocks Puzzle</title><description>Gummy Blocks Puzzle is a block puzzle game where you drop pieces to form and eliminate complete lines on the screen, both vertically and horizontally. Just drag and position the blocks on the board to create lines. Its simple to play and immensely enjoyable! Embrace the challenge of arranging the pieces and observe the lines vanish as you advance. Ideal for a quick session to hone your puzzle abilities or for longer gaming periods.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/thwax7r1ze82e6diewhloytqmw0astkj/</url><thumb>https://img.gamemonetize.com/thwax7r1ze82e6diewhloytqmw0astkj/512x384.jpg</thumb></item>
+<item><id>66422</id><title>BlockPuzzleMagic</title><description>Assemble and eliminate the blocks. Various shaped blocks will randomly appear at the bottom. Drag the blocks into the upper box. They will be eliminated when a row or column is filled. Come and give it a try.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/z6gxwxdgunqmjmhva7j5kszeya71ls9u/</url><thumb>https://img.gamemonetize.com/z6gxwxdgunqmjmhva7j5kszeya71ls9u/512x384.jpg</thumb></item>
+<item><id>66423</id><title>Sprunki Block Challenge</title><description>Sprunki Block Challenge is a super fun and free to play online game that kids will absolutely love! Join the adorable Sprunki on a block breaking adventure full of surprises. Your mission is simple but exciting: click on the right blocks to help Sprunki fall safely to the ground. But watch out: tricky obstacles and floating platforms make each level a clever puzzle to solve.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/r4ch1by6xybm8vwzdvr8k6p9oesqngml/</url><thumb>https://img.gamemonetize.com/r4ch1by6xybm8vwzdvr8k6p9oesqngml/512x384.jpg</thumb></item>
+<item><id>64060</id><title>WoodPuz: Block Puzzle Games</title><description>Discover WoodPuz: Block Puzzle Games  the ultimate brain-teasing escape! Are you a dedicated fan of block puzzles, always chasing that satisfying moment when every piece fits perfectly? Imagine a serene companion that's there to entertain you whenever you need a break. WoodPuz is a free, immersive, and addictive puzzle experience designed to keep your mind sharp and your spirit refreshed. With its innovative blend of classic block arrangements and engaging puzzle challenges, every level offers a burst of creativity and relaxation. Dive into a vibrant world where every block paves the way to endless fun and mental rejuvenation, and let your p</description><category>Puzzle</category><url>https://html5.gamemonetize.com/h3pkis8y8y3h242jfdi02umu2l7r4mq2/</url><thumb>https://img.gamemonetize.com/h3pkis8y8y3h242jfdi02umu2l7r4mq2/512x384.jpg</thumb></item>
+<item><id>63930</id><title>Block Craze</title><description>Get ready for a thrilling puzzle adventure with Craze Block! Step into a world of vibrant colors and brain-teasing fun with Craze Block;a game that blends strategy, creativity, and endless excitement! Test your puzzle-solving skills as you arrange dazzling blocks to form perfect lines before the board fills up. Think fast, act smart! Every move counts, and only the sharpest minds will master the challenge. With its smooth mechanics and intuitive controls, Craze Block is designed for everyone;whether youre a casual player or a puzzle pro. More than just a game;it's a brain workout! While having fun, youll enhance your focus, sharpen y</description><category>Puzzle</category><url>https://html5.gamemonetize.com/0jhhen2q8nmc0n1bxwzw9ey7cilmm9nu/</url><thumb>https://img.gamemonetize.com/0jhhen2q8nmc0n1bxwzw9ey7cilmm9nu/512x384.jpg</thumb></item>
+<item><id>61608</id><title>Block Mover Unlock Your Brain</title><description>Relax Your Mind Between Rush Hours whether youre a kid or an adult. Engage Your Intellect and Unlock Your Brain with Wooden Board Puzzles Unblock Me gives you an immersion in a world where logic, flow, and simplicity come together.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/lzqyfr7oj6mx7fa2f3n8pi736y9i9q2j/</url><thumb>https://img.gamemonetize.com/lzqyfr7oj6mx7fa2f3n8pi736y9i9q2j/512x384.jpg</thumb></item>
+<item><id>62404</id><title>Block Mania Puzzle</title><description>Want a brain-bending puzzle challenge? In Block Mania Puzzle Path, you'll face a series of thought-provoking puzzle challenges! In each level, you'll need to figure out how to move. Move the animal block to stamp the white block. Carefully plan your moves to solve the puzzle.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/c4kpt1ea8i3zc4bq3j4a5bdudj8tfx7u/</url><thumb>https://img.gamemonetize.com/c4kpt1ea8i3zc4bq3j4a5bdudj8tfx7u/512x384.jpg</thumb></item>
+<item><id>54097</id><title>Wood Block Puzzle 2</title><description>Wood Block Puzzle 2 is a captivating puzzle game that tasks players with arranging wooden blocks to fill complete rows and columns on a grid. With simple drag-and-drop mechanics, players strategically place blocks to create solid lines and clear the board. The game features various modes, including Classic and Challenge, each offering unique gameplay experiences. With its minimalist design and relaxing gameplay, Wood Block Puzzle 2 provides hours of entertainment for puzzle enthusiasts of all skill levels. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/4xmc35aiv3ipc2aflg3zxp22ggdvpr38/</url><thumb>https://img.gamemonetize.com/4xmc35aiv3ipc2aflg3zxp22ggdvpr38/512x384.jpg</thumb></item>
+<item><id>62040</id><title>Easter Block Puzzle</title><description>Easter Block Puzzle is a fun, relaxing block-matching game with a festive Easter theme! Arrange colorful pastel blocks shaped like Easter eggs to clear rows and score points. With simple yet addictive gameplay, enjoy a delightful springtime challenge filled with bunnies, flowers, and cheerful decorations. Can you reach the highest score and complete all the levels? Play now and celebrate Easter with this joyful puzzle adventure! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/wed4z0as7555az0zhfzt1quty0td3fus/</url><thumb>https://img.gamemonetize.com/wed4z0as7555az0zhfzt1quty0td3fus/512x384.jpg</thumb></item>
+<item><id>61438</id><title>Blocks: Fill and Clear</title><description>Enter the world of strategic puzzles with our exciting game! Fill the board with random blocks, collect lines and clear the space to score as many points as possible. Inspired by the classic Tetris, the game offers unique modes: Classic: test yourself in endless mode. Timed: manage to score maximum points in a limited time. With bombs: defuse the bomb blocks before they explode. With unique shapes: try to make lines of non-standard shapes. Mixed: a challenge for the most experienced players!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/pwfe36n3ccf8xsbpulh2sc0c82eser4m/</url><thumb>https://img.gamemonetize.com/pwfe36n3ccf8xsbpulh2sc0c82eser4m/512x384.jpg</thumb></item>
+<item><id>59376</id><title>Block Puzzle 2048 Game</title><description>Block Puzzle 2048 Game is a puzzle game that combines 2048 and merged cubes. Combine the corresponding numbers and the number of squares as required. The higher the level, the greater the difficulty, which requires your brainstorming! Can you pass the level without props? Props are limited! </description><category>Puzzle</category><url>https://html5.gamemonetize.com/pn2lkci8w2ty65o0ivrn9qguwjmj68mh/</url><thumb>https://img.gamemonetize.com/pn2lkci8w2ty65o0ivrn9qguwjmj68mh/512x384.jpg</thumb></item>
+<item><id>55949</id><title>Choco Blocks</title><description>Enter the delightful world of Choco Blocks, a tantalizing puzzle adventure where strategy meets sweetness! In this engaging game, your task is to pick and drop sets of blocks to complete rows. But there's a sweet twist: special chocolate blocks are hidden within the rows, waiting to be collected. Your mission is to strategically arrange the blocks and collect all the specific choco blocks from the board before time runs out.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/e1vhwqi5y1aah95qnjlkfbbhrehlfr3v/</url><thumb>https://img.gamemonetize.com/e1vhwqi5y1aah95qnjlkfbbhrehlfr3v/512x384.jpg</thumb></item>
+<item><id>58538</id><title>Color Block Puzzle</title><description>Challenge your mind with our puzzle game! In Color Block Puzzle, players face a series of exciting challenges, where they must paint squares according to the patterns presented. With increasingly complex levels, your puzzle-solving skills will be put to the test. Get ready to dive into a world of challenges and colors!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/nbcvemo84x6gzvb6h1zbnwbr9dq1fjmj/</url><thumb>https://img.gamemonetize.com/nbcvemo84x6gzvb6h1zbnwbr9dq1fjmj/512x384.jpg</thumb></item>
+<item><id>56769</id><title>Blocks: Move HIT PRO</title><description>Calling all blockheads and those who are called brainy! In Blocks - Move  HIT -PRO youre a hero on a mission, but the path is ever-changing. Navigate a maze of immovable stone blocks that bounce you off course with every bump. Will you hit a 45-degree angle and zip diagonally, or take a full 90-degree turn? Master the rebounds, solve the shifting puzzle, and guide your block to its destined end!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/qxlzvjrlxn6clye52zlgntdyjb3ho7w2/</url><thumb>https://img.gamemonetize.com/qxlzvjrlxn6clye52zlgntdyjb3ho7w2/512x384.jpg</thumb></item>
+<item><id>57840</id><title>Block Number Puzzle</title><description>Block Number Slide is a fun and engaging online puzzle game where players slide numbered blocks on a grid to arrange them in a specific order. The goal is to move the blocks strategically, using the space to shift adjacent blocks, to align the numbers in the correct sequence or pattern. The game tests your logic, planning, and spatial awareness as you try to complete each level with the fewest possible moves. The difficulty increases as the grids get larger, and the numbers become more challenging to organize.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/qabskgidienvrps2zvsvl4qs4bhsugzv/</url><thumb>https://img.gamemonetize.com/qabskgidienvrps2zvsvl4qs4bhsugzv/512x384.jpg</thumb></item>
+<item><id>56482</id><title>Blocks Merge</title><description>Remove all the blocks before the timer turns off. The same colored blocks explode when they come near to each other. You can drag the block to possible vacant locations.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/azw4229kwthheq313u8j1g42cjvm6c7x/</url><thumb>https://img.gamemonetize.com/azw4229kwthheq313u8j1g42cjvm6c7x/512x384.jpg</thumb></item>
+<item><id>57573</id><title>Unblock Ball Slide Puzzle 2</title><description>Welcome to Unblock Ball: Slide Puzzle, a classic sliding puzzle game that lets you use your mind.You can feel a sense of accomplishment! Sliding the board to create the channel for the ball to roll smoothly to the end. You should use your logical mind to cleverly move blocks, avoid obstacles, and solve every puzzle!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/oecwutlajti4fdybzaalob072h1jlkvg/</url><thumb>https://img.gamemonetize.com/oecwutlajti4fdybzaalob072h1jlkvg/512x384.jpg</thumb></item>
+<item><id>57343</id><title>Woodoku Block Puzzle</title><description>Welcome to experience the Woodoku Block Puzzle! This is a super fun casual puzzle game, especially for relaxing in your free time. The gameplay is very simple and very challenging! There are four modes you can choose from.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/5ehehmkiwpq3l563xsfwxvqtlk7alhvp/</url><thumb>https://img.gamemonetize.com/5ehehmkiwpq3l563xsfwxvqtlk7alhvp/512x384.jpg</thumb></item>
+<item><id>54801</id><title>Color Blocks Collapse 24</title><description>This is another free puzzle game developed by Myhiddengame. In this game, you will be given a large playing field that contains many blocks of different colors, and your goal is to clear the playing field by removing all the blocks. Collapse blocks by clicking groups of blocks of the same color. The larger the group you collapse, the higher the score you will get. But if you collapse only 1 block, you will lose 100 points. Click on the colored globe to collapse all the blocks of the same color. Click on the bomb to collapse a group of 3x3 blocks. Click on the shurikens to collapse the vertical and horizontal row of blocks. Your progress will </description><category>Puzzle</category><url>https://html5.gamemonetize.com/blzpt7ulfvnz6envxa7o51wgoio6akmu/</url><thumb>https://img.gamemonetize.com/blzpt7ulfvnz6envxa7o51wgoio6akmu/512x384.jpg</thumb></item>
+<item><id>57345</id><title>Buddy Blocks Survival</title><description>Buddy Blocks Survival is an engaging online game suitable for both kids and adults. The game combines fun, strategy, and quick thinking, making it an entertaining challenge for all ages. Here's a breakdown of the game: Objective: The primary goal is to get Buddy safely to the floor by eliminating the blocks beneath him. However, it's not as easy as it sounds, as there are various obstacles to avoid.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/be8pyvxsqm5e3x42sioft7pa9iw0sk36/</url><thumb>https://img.gamemonetize.com/be8pyvxsqm5e3x42sioft7pa9iw0sk36/512x384.jpg</thumb></item>
+<item><id>54598</id><title>BlockPuzzle</title><description>Wood Block Puzzle - Classic Block Puzzle Game is a classic block puzzle game with a wooden style. Its a great game as a time killer and also helps train your brain</description><category>Puzzle</category><url>https://html5.gamemonetize.com/qbwcbool3yx9c902ofu7yf1b45l84jjn/</url><thumb>https://img.gamemonetize.com/qbwcbool3yx9c902ofu7yf1b45l84jjn/512x384.jpg</thumb></item>
+<item><id>56779</id><title>2248 Block Merge</title><description>Upon beginning to play, you will undoubtedly become hooked on these 2048 puzzle games. They are crafted with stunning visuals and user-friendly gameplay, making them an excellent option for enthusiasts of number block puzzle games.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/kv6grc9qcre1o5mxgymq19scg46c8wvn/</url><thumb>https://img.gamemonetize.com/kv6grc9qcre1o5mxgymq19scg46c8wvn/512x384.jpg</thumb></item>
+<item><id>56045</id><title>BlocksClassic</title><description>Blocks Classic is match two block breaking game where you have to clear all the blocks on the board. The game have three game modes - classic, power - where more blocks are falling from the top and zen mode with endless blocks breaking.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/8k4gor3uc0y2jsmc114le5nlxo0mqym6/</url><thumb>https://img.gamemonetize.com/8k4gor3uc0y2jsmc114le5nlxo0mqym6/512x384.jpg</thumb></item>
+<item><id>56752</id><title>Block Numbers Puzzle</title><description>Welcome to Block Numbers Puzzle Game! Challenge your mind with the classic Number Puzzle! Slide numbered blocks to solve puzzles and improve your logic  problem-solving skills. Enjoy multiple difficulty levels!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/0iy02zmxt616jw6qk6jxz4m12bjngkt7/</url><thumb>https://img.gamemonetize.com/0iy02zmxt616jw6qk6jxz4m12bjngkt7/512x384.jpg</thumb></item>
+<item><id>56557</id><title>Jelly Block Puzzle</title><description>Dive into the fun with our vibrant jelly merging game! Explore a world filled with countless levels, merge jellies, use power-ups, and stay entertained. Challenge your brain and see how far you can go in this delightful, jelly-colored adventure!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/k7upgf6z69thpz5uq3yg74uedrw7r24y/</url><thumb>https://img.gamemonetize.com/k7upgf6z69thpz5uq3yg74uedrw7r24y/512x384.jpg</thumb></item>
+<item><id>56407</id><title>Puzzle Blocks Asmr Match</title><description>Puzzle Blocks ASMR Match is a block puzzle game that combines classics with innovation. It is different from the block jigsaw games and brick puzzle games you usually play. . </description><category>Puzzle</category><url>https://html5.gamemonetize.com/uk6p0tgxznsdatdj2fdxqnxsyvje3k9i/</url><thumb>https://img.gamemonetize.com/uk6p0tgxznsdatdj2fdxqnxsyvje3k9i/512x384.jpg</thumb></item>
+<item><id>54702</id><title>Block Mania</title><description>Block Mania is an addictive block puzzle game combines block building, puzzle solving and enjoyable gameplay. This great block puzzle game offers an exciting and entertaining experience for players of all ages. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/l0ffyelw7fn53oxwjf27zftkr5mr3a87/</url><thumb>https://img.gamemonetize.com/l0ffyelw7fn53oxwjf27zftkr5mr3a87/512x384.jpg</thumb></item>
+<item><id>55784</id><title>Block Rush</title><description>Welcome to Block Rush, a vibrant and addictive match-three puzzle game that will keep you entertained for hours. Match and blast your way through a variety of levels filled with colorful animal-themed blocks. With each match, you score points and clear the board, but be quick and strategic to reach the highest scores! Features: Engaging Levels: Enjoy numerous levels, each uniquely designed to challenge your matching and strategic skills. As you progress, the levels become more complex and exciting. Colorful Graphics: Immerse yourself in the vibrant and playful graphics that bring the animal-themed blocks to life.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/frya9suggnkd2lz9ointa8skqah5nd8k/</url><thumb>https://img.gamemonetize.com/frya9suggnkd2lz9ointa8skqah5nd8k/512x384.jpg</thumb></item>
+<item><id>53361</id><title>BlockFit Puzzler</title><description>Step into a world of challenging puzzles and intriguing perspectives with BlockFit Puzzler! Strategically align the blocks in the upper layer to match perfectly with the patterns in the lower layer from an isometric perspective. With levels ranging from 33 to 55 grids, youll need keen logical reasoning and sharp visual skills to conquer each stage. As you progress, the difficulty will increase, testing your puzzle-solving abilities and pushing you to think outside the box. Embark on this block-aligning journey and solve captivating puzzles while overcoming various challenges in your pursuit of perfection! Each level offers a unique and e</description><category>Puzzle</category><url>https://html5.gamemonetize.com/jmf13smtag004vciz6kgz8mctvvvuhct/</url><thumb>https://img.gamemonetize.com/jmf13smtag004vciz6kgz8mctvvvuhct/512x384.jpg</thumb></item>
+<item><id>54194</id><title>Runic Block Collapse</title><description>Welcome to Runic Block Collapse! Tap any block to clear connected blocks in a chain reaction. Removing one block costs 250 points. Removing 2 or more blocks earns points, with larger groups earning more per block. Reach the target score to advance. If you fail, start over. Enjoy endless fun!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/fuilbykpsyucv0srtmi9al3kwnuryf7c/</url><thumb>https://img.gamemonetize.com/fuilbykpsyucv0srtmi9al3kwnuryf7c/512x384.jpg</thumb></item>
+<item><id>54469</id><title>Block Puzzle Cats</title><description>Train your brain and solve puzzles with cute cats! Drag and drop the cats onto the puzzle board and try to put them all together! Unique puzzle shapes and ever-changing challenges will train your brain to think in a whole new way. Can you fit all the cats in? Collect cute new cats as you beat each puzzle challenge.Now come and join the fun and challenging game world.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/gxffow9l5g1dql4o7ge3x90qms1cfs49/</url><thumb>https://img.gamemonetize.com/gxffow9l5g1dql4o7ge3x90qms1cfs49/512x384.jpg</thumb></item>
+<item><id>54937</id><title>Giddy Blocks</title><description>It's Giddy Blocks, the hottest game on the charts at the moment! Dive into a world of colorful chaos and endless fun with Giddy Blocks. Tap to match the crazy blocks as many as you can! This game is not just about speed; it's a test of your memory and skills. Memory Test: Giddy Blocks offers a new mix of speed, memory, and skills! Want to know how sharp your memory skills are? Use the memory test in this game to find out! Track your progress and see how you improve over time. It's the perfect way to challenge yourself and keep your mind sharp.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/behazx45v5i3sv88yrf8sgyr6u1binpa/</url><thumb>https://img.gamemonetize.com/behazx45v5i3sv88yrf8sgyr6u1binpa/512x384.jpg</thumb></item>
+<item><id>54908</id><title>Sky Block Bounce</title><description>Welcome to Sky Block Bounce, the ultimate test of agility and strategy in a sky-high adventure! Your mission is simple yet exhilarating: jump on the blocks and navigate your way to the teleporter. But beware, each block behaves differently;some will vanish after just one jump, while others can withstand two or more. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/vshe9ehmzvjc96j9bns63n519mideiyi/</url><thumb>https://img.gamemonetize.com/vshe9ehmzvjc96j9bns63n519mideiyi/512x384.jpg</thumb></item>
+<item><id>51647</id><title>Color Rings Block Puzzle</title><description>Icon image Color Rings Block Puzzle About this game Color Rings Block Puzzle is a fun and addictive mobile game that challenges your problem-solving skills and reflexes. The game is simple to play but difficult to master, making it perfect for both casual and hardcore gamers.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/4gahgihw9ejlfdrdz092ia3ag7xq9qz1/</url><thumb>https://img.gamemonetize.com/4gahgihw9ejlfdrdz092ia3ag7xq9qz1/512x384.jpg</thumb></item>
+<item><id>54344</id><title>Fold The Block</title><description>Arrange your blocks skillfully to occupy every space and conquer each challenge. Experience the thrill of figuring out the right strategies and progressively mastering each level! Website Developer <a href='https://www.game-plays.com/'>https://www.game-plays.com/</a></description><category>Puzzle</category><url>https://html5.gamemonetize.com/75smuzml5mj45lmv7nvhf37yxcw3aq2h/</url><thumb>https://img.gamemonetize.com/75smuzml5mj45lmv7nvhf37yxcw3aq2h/512x384.jpg</thumb></item>
+<item><id>54301</id><title>Blockade Escapade</title><description>Blockade Escapade is an adrenaline-fueled adventure where players navigate through a labyrinth of obstacles, challenges, and enemies to break free from a relentless blockade. In this fast-paced game, strategic thinking and quick reflexes are paramount as you dodge incoming threats, outmaneuver adversaries, and race against the clock to reach safety. With vibrant visuals, dynamic level designs, and intense gameplay, Blockade Escapade offers an electrifying gaming experience that will keep players on the edge of their seats from start to finish. Website Developer <a href='https://www.coolcrazygames.com/'>https://www.coolcrazygames.com/</a></description><category>Puzzle</category><url>https://html5.gamemonetize.com/iwar94t2z1eccr14qroo65ekzbnu5qad/</url><thumb>https://img.gamemonetize.com/iwar94t2z1eccr14qroo65ekzbnu5qad/512x384.jpg</thumb></item>
+<item><id>53355</id><title>Mystic Blocks Match</title><description>Embark on a mesmerizing journey in Mystic Blocks Match! Test your skills in this unique 2D physics-based puzzle game, where balance is key. Strategically remove colorful blocks while ensuring the structure remains stable. With intuitive gameplay and challenging puzzles, Mystic Blocks Match offers an immersive experience for puzzle enthusiasts of all ages. Are you ready to master the art of equilibrium?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/y805z7i3uyczczgex13gka94t8igggik/</url><thumb>https://img.gamemonetize.com/y805z7i3uyczczgex13gka94t8igggik/512x384.jpg</thumb></item>
+<item><id>52879</id><title>Food Blocks Puzzle</title><description>Food Blocks Puzzle or also called 1010 is a simple HTML5 puzzle game. Drag Food blocks into grid board until board grid vertical or horizontal line are full filled, then blocks that get filled will be removed, and make sure there is a possible moves for available blocks. Try to get the highest score!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/fvhjy2kdwfhomms4iwurjhw1jzi8bdes/</url><thumb>https://img.gamemonetize.com/fvhjy2kdwfhomms4iwurjhw1jzi8bdes/512x384.jpg</thumb></item>
+<item><id>52267</id><title>TetraBlocks Mosaic</title><description>Welcome to TetraBlocks Mosaic! You have a grid object to fill. Find Tetris-style blocks around and place them cleverly to fill the grid. Arrange all the blocks within the time limit to create a nice object. Enjoy solving 30 puzzles and make 30 exciting items!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/x2250nnhiz4r78jk60bbgpqkpz68471q/</url><thumb>https://img.gamemonetize.com/x2250nnhiz4r78jk60bbgpqkpz68471q/512x384.jpg</thumb></item>
+<item><id>51979</id><title>Slide Blocks</title><description>Slide Block Puzzle is casual puzzle game Drag the shape to slide and drop them in perfect position to clear the line. Get cool effects when fill line with shape. Clear line by line to collect points.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/m6uvi0fa35uy7apw0o7rm0o2ck5xv22j/</url><thumb>https://img.gamemonetize.com/m6uvi0fa35uy7apw0o7rm0o2ck5xv22j/512x384.jpg</thumb></item>
+<item><id>51980</id><title>Match the Blocks</title><description>Match the Blocks - strategically align the blocks in the upper layer to match perfectly with the patterns in the lower layer in an isometric perspective. Finish all 75 levels ranging from 33 to 55, you'll need logical reasoning and visual skills to conquer each level</description><category>Puzzle</category><url>https://html5.gamemonetize.com/bomztb2l4p8yywuzske2c6t8ujjaf2jc/</url><thumb>https://img.gamemonetize.com/bomztb2l4p8yywuzske2c6t8ujjaf2jc/512x384.jpg</thumb></item>
+<item><id>50897</id><title>Christmas Block Challenge</title><description>Christmas Block Challenge: Strategically place festive blocks on a 10x10 grid, completing rows or columns of 10 to collect all Xmas Collectibles within them. The objective is to gather all the collectibles on the board. Can you become the ultimate holiday block strategist and unwrap all the festive surprises?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/sgx650qk7j0vs8jxcw6wu9ucgyy7b8dh/</url><thumb>https://img.gamemonetize.com/sgx650qk7j0vs8jxcw6wu9ucgyy7b8dh/512x384.jpg</thumb></item>
+<item><id>49991</id><title>Blocks 8</title><description>Simple but fun and challenging block puzzle tetris arcade game! Fill a row or column with the pieces you have available to score! The logic is similar with tetris, but you can move the blocks freely by dragging and drooping the pieces.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/fd59gp2141j48dwbmte07pee03jcv0s6/</url><thumb>https://img.gamemonetize.com/fd59gp2141j48dwbmte07pee03jcv0s6/512x384.jpg</thumb></item>
+<item><id>49182</id><title>Infinite Blocks</title><description>Join the battle against the advancing block army in Infinite Blocks. Defend your base by strategically eliminating rows of blocks with precision shots. Can you withstand the relentless assault and achieve the highest score? Challenge your skills and test your endurance in this action-packed adventure!</description><category>Shooting</category><url>https://html5.gamemonetize.com/yicypspzteeu2d06qfbr8o62nc9zsbu3/</url><thumb>https://img.gamemonetize.com/yicypspzteeu2d06qfbr8o62nc9zsbu3/512x384.jpg</thumb></item>
+<item><id>48414</id><title>2020 Plus Block Puzzle</title><description>2020 Plus is the latest version of this classic block puzzle game. Your task is to place groups of three randomly formed blocks strategically on the board so that they fill complete rows or columns. Once you have placed all three blocks three new blocks will appear. As soon as a row or column is completely filled, the blocks placed in it get cleared. Each completed row or column will also give you points.Play 2020 Plus now for free and experience the most addictive version of this endless puzzle game ever! 2020 Plus: The Classic Block Puzzle Game, Reimagined </description><category>Puzzle</category><url>https://html5.gamemonetize.com/0ixomyd8ge090yhhsqyrmjmcegg784dw/</url><thumb>https://img.gamemonetize.com/0ixomyd8ge090yhhsqyrmjmcegg784dw/512x384.jpg</thumb></item>
+<item><id>46251</id><title>Miner Block</title><description>To beat this challenging puzzle game, you have to move the wagon full of gold out of a mine filled with obstacles. Remove the wagons to clear your path. Can you master every level within the turn limit? Website Developer <a href='https://playonline.top/'>https://playonline.top/</a></description><category>Puzzle</category><url>https://html5.gamemonetize.com/urourxm71637ljpppj112k5nsjkow1nr/</url><thumb>https://img.gamemonetize.com/urourxm71637ljpppj112k5nsjkow1nr/512x384.jpg</thumb></item>
+<item><id>48289</id><title>WoodenBlockBlastMaster</title><description>Wooden Block Blast Adventure Master is a fun block elimination puzzle game! It is ideal for you when you want to kill time and challenge your brain. In Wooden Block Blast Adventure Master, you need to clear as many colored blocks as possible to get a high score. Mastering the skill of filling rows or columns will make the puzzle game easier. Multiple game modes to challenge your limit! If you are a puzzle game lover, dont miss it!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/vqkwga3e8p3n1h7bb66nj0ol29cp1ppc/</url><thumb>https://img.gamemonetize.com/vqkwga3e8p3n1h7bb66nj0ol29cp1ppc/512x384.jpg</thumb></item>
+<item><id>48007</id><title>Slidey Block</title><description>Slidey Block is an addictive and easy game to play. Take a break at any time with this puzzle game! We give you SLIDEY, the ultimate Puzzle game with unique gameplay and endless fun! The Slidey puzzle is simple: slide blocks left or right to create and clear full lines. Slidey is free to play and easy to learn. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/a8jptv9fyioz2hsjf81wl01fl3d4148y/</url><thumb>https://img.gamemonetize.com/a8jptv9fyioz2hsjf81wl01fl3d4148y/512x384.jpg</thumb></item>
+<item><id>47964</id><title>Doge Blocks</title><description>Doge Blocks is an addictive online puzzle game. The game design is unique, with a cute dog image as the theme, which adds fun and intimacy to the game. You need to drag the puppy with the mouse to fill the map. The gameplay in Doge Blocks is simple yet challenging. You must think carefully and plan Doge moves ahead to pass the game level. As the game levels increase, the challenges will become more complex. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/uvo901lqxd34xm03ijg389in3dzvlm0i/</url><thumb>https://img.gamemonetize.com/uvo901lqxd34xm03ijg389in3dzvlm0i/512x384.jpg</thumb></item>
+<item><id>46714</id><title>Unblock Skibidi</title><description>Unblock Skibidi : is an amazing tile puzzle with a modern challenging twist. Move the sliding tiles to unblock a path for the skibidi toilet to roll to the exit way. Are you ready to unblock the all paths for your skibidi ?</description><category>Puzzle</category><url>https://html5.gamemonetize.com/05a520npswune17rmsiz10jjvqs2dore/</url><thumb>https://img.gamemonetize.com/05a520npswune17rmsiz10jjvqs2dore/512x384.jpg</thumb></item>
+<item><id>47547</id><title>Hexa 2048 Puzzle Block Merge</title><description>Hexa 2048 Puzzleis an addictive relaxing number block merge game. Come to play Hexa Puzzle, merge the Hexa blocks and give your brain a rest! Features: Beautifully easy and simple, no pressure and no time limit. Challenging to break your highest score. Easy to play. Classic merge game and block game for all ages! Multiple beautiful background pictures. Multiple materials of blocks. Such as: iron, crystal, wood; Come and play this game and become a master of Hexa Block Merge Game now!</description><category>Puzzle</category><url>https://html5.gamemonetize.com/vrwtg1qhbkcyu7rt0eewx89dxmcdn6tv/</url><thumb>https://img.gamemonetize.com/vrwtg1qhbkcyu7rt0eewx89dxmcdn6tv/512x384.jpg</thumb></item>
+<item><id>46841</id><title>Snake Blocks</title><description>Snake Blocks is a 2D puzzle game where you control a snake of blocks. The goal of the game is to reach the end of each level by maneuvering your snake around obstacles and collecting power-ups. The game features a variety of levels, each with its own unique challenges. Some levels require you to navigate tight spaces, while others require you to use power-ups to solve puzzles.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/ax26jm6ash6fleayxh1bgf7h058qvpos/</url><thumb>https://img.gamemonetize.com/ax26jm6ash6fleayxh1bgf7h058qvpos/512x384.jpg</thumb></item>
+<item><id>46760</id><title>Tap Blocks Away</title><description>Tap Blocks Away is a casual puzzle game that boasts simple gameplay and high replay value, making it the perfect choice for unwinding and killing time. Here are a few points to help introduce this game to all game lovers out there.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/jrkz5k7hyuxzwq41axr1inic85pnrjix/</url><thumb>https://img.gamemonetize.com/jrkz5k7hyuxzwq41axr1inic85pnrjix/512x384.jpg</thumb></item>
+<item><id>46757</id><title>Jungle Block</title><description>Jungle Block is a classic puzzle casual game where players can drag blocks into the game interface and fill the vertical or horizontal lines to make the gems disappear and score points. This game is not only suitable for children to exercise their brains and improve their thinking skills, but also the best choice for adults to relax their minds and bodies.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/vm5zf4u4b81p04cd2wfkv0d0caizjwi1/</url><thumb>https://img.gamemonetize.com/vm5zf4u4b81p04cd2wfkv0d0caizjwi1/512x384.jpg</thumb></item>
+<item><id>46188</id><title>Fishing Blocks</title><description>Fishing Blocks is an addictive block removal puzzle game where you will have a remover block. You can move the remover block by tapping or clicking on the screen. If the remover block matches its identical fish block, the whole row will be deleted. Dont let the blocks touch the upper bounds otherwise the game will be over. Keep deleting rows as they are moving upward fastly. You can use Slow Down power-up which slows the speed of blocks. </description><category>Puzzle</category><url>https://html5.gamemonetize.com/8b24hqb1i5cw0oq4g2732ky6q9akuznx/</url><thumb>https://img.gamemonetize.com/8b24hqb1i5cw0oq4g2732ky6q9akuznx/512x384.jpg</thumb></item>
+<item><id>46187</id><title>Tiny Blocks</title><description>Collect the same color blocks by touching or clicking on them. Bigger groups will award you exciting power-ups which enhance the level-progress and add fun to the game. 200 points will deduct from your score as a penalty if you collapse a single block.</description><category>Puzzle</category><url>https://html5.gamemonetize.com/30wlubjcj519fxbxb6abni59eoeuhtbu/</url><thumb>https://img.gamemonetize.com/30wlubjcj519fxbxb6abni59eoeuhtbu/512x384.jpg</thumb></item>
+</channel></rss>`;
+
+    const grid = document.getElementById('gameGrid');
+    const searchInput = document.getElementById('searchInput');
+    const modal = document.getElementById('gameModal');
+    const frame = document.getElementById('gameFrame');
+    const fullScreenBtn = document.getElementById('fullScreenBtn');
+    const fsPath = document.getElementById('fsPath');
+    
+    let gameList = [];
+
+    function init() {
+        initAllGames();
+        setupEventListeners();
+    }
+
+    // Parse XML data to generate the game list
+    function initAllGames() {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(FEED_XML, "text/xml");
+        const items = xmlDoc.getElementsByTagName("item");
+
+        gameList = Array.from(items).map(item => ({
+            title: item.getElementsByTagName("title")[0]?.textContent,
+            desc: item.getElementsByTagName("description")[0]?.textContent,
+            category: item.getElementsByTagName("category")[0]?.textContent,
+            url: item.getElementsByTagName("url")[0]?.textContent,
+            thumb: item.getElementsByTagName("thumb")[0]?.textContent
+        }));
+
+        renderGames(gameList);
+    }
+
+    // Render cards into the DOM
+    function renderGames(data) {
+        grid.innerHTML = '';
+        data.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `Play ${game.title}`);
+            card.tabIndex = 0;
+
+            // Handle click event to open modal
+            card.onclick = () => {
+                frame.src = game.url;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; 
+            };
+            
+            // Support keyboard accessibility
+            card.onkeydown = (e) => {
+                if (e.key === 'Enter') card.onclick();
+            };
+
+            card.innerHTML = `
+                <div class="card-image-box">
+                    <img src="${game.thumb}" alt="${game.title}" class="card-image" loading="lazy" decoding="async">
+                    <div class="card-overlay">
+                        <button class="btn-play" tabindex="-1">PLAY NOW</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">${game.category}</span>
+                    <h3 class="card-title">${game.title}</h3>
+                    <p class="card-desc">${game.desc}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    function setupEventListeners() {
+        // Search filter logic
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = gameList.filter(g => 
+                g.title.toLowerCase().includes(query) || 
+                g.category.toLowerCase().includes(query)
+            );
+            renderGames(filtered);
+        });
+
+        // Fullscreen toggle event
+        fullScreenBtn.addEventListener('click', toggleFullscreen);
+
+        // Update UI when fullscreen state changes
+        document.addEventListener('fullscreenchange', updateFullscreenUI);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenUI);
+        
+        // Close modal when clicking outside the container
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) closeGame();
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'block') { closeGame(); }
+        });
+
+        updateFullscreenUI();
+    }
+
+    // Modal closing logic
+    window.closeGame = function() {
+        modal.style.display = 'none';
+        frame.src = '';
+        document.body.style.overflow = 'auto';
+        if (isFullscreen()) {
+            exitFullscreen();
+            setTimeout(updateFullscreenUI, 50);
+        }
+    }
+
+    // Fullscreen helper functions
+    function isFullscreen() {
+        return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+    }
+
+    function enterFullscreen() {
+        const container = document.querySelector('.modal-container');
+        if (container.requestFullscreen) { container.requestFullscreen(); } 
+        else if (container.webkitRequestFullscreen) { container.webkitRequestFullscreen(); } 
+        else if (container.mozRequestFullScreen) { container.mozRequestFullScreen(); } 
+        else if (container.msRequestFullscreen) { container.msRequestFullscreen(); }
+    }
+
+    function exitFullscreen() {
+        if (document.exitFullscreen) { document.exitFullscreen(); } 
+        else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); } 
+        else if (document.mozCancelFullScreen) { document.mozCancelFullScreen(); } 
+        else if (document.msExitFullscreen) { document.msExitFullscreen(); }
+    }
+
+    function toggleFullscreen() {
+        if (isFullscreen()) { exitFullscreen(); } else { enterFullscreen(); }
+    }
+
+    function updateFullscreenUI() {
+        const isFs = isFullscreen();
+        const enterPath = "M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3";
+        const exitPath = "M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3";
+        fsPath.setAttribute('d', isFs ? exitPath : enterPath);
+    }
+
+    // Initialize the script
+    init();
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAmeasLSfP2N6aDTaHv2g83HXA9fMPVZFE",
+    authDomain: "puzzlechallengehub.firebaseapp.com",
+    projectId: "puzzlechallengehub",
+    storageBucket: "puzzlechallengehub.firebasestorage.app",
+    messagingSenderId: "112608986588",
+    appId: "1:112608986588:web:acc32a06b94fd65f46bb19",
+    measurementId: "G-SX634LMH5N"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>
