@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-03-18</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,11 +18,30 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-03-18</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/touch-candy-guide</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Touch-Candy-ScreenShot-01.jpg</image:loc>
+            <image:title>Basic drag and drop color matching gameplay in Touch Candy</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Touch-Candy-ScreenShot-GIF-01.gif</image:loc>
+            <image:title>Using the Color Shuffle power-up to change a block's colors in Touch Candy</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Touch-Candy-ScreenShot-GIF-02.gif</image:loc>
+            <image:title>Using the Broom power-up to completely clear a block from the board</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/hexa-color-stack-game-guide</loc>
         <lastmod>2026-03-18</lastmod>
