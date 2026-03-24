@@ -198,7 +198,7 @@
             height: 100%;
             object-fit: cover;
             transition: 0.5s;
-            display: Solitaire;
+            display: block;
         }
 
         .card:hover .card-image {
@@ -246,7 +246,7 @@
             font-weight: 800;
             letter-spacing: 1px;
             margin-bottom: 8px;
-            display: Solitaire;
+            display: block;
         }
 
         .card-title {
@@ -422,7 +422,7 @@
     <div class="modal-container">
         <div class="modal-controls">
             <button id="fullScreenBtn" title="Toggle Fullscreen" style="background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; width: 42px; height: 42px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; flex-shrink: 0;">
-                <svg id="fsIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: Solitaire;">
+                <svg id="fsIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
                     <path id="fsPath" d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
                 </svg>
             </button>
@@ -528,7 +528,7 @@
             // Handle click event to open modal
             card.onclick = () => {
                 frame.src = game.url;
-                modal.style.display = 'Solitaire';
+                modal.style.display = 'block';
                 document.body.style.overflow = 'hidden'; 
             };
             
@@ -579,7 +579,7 @@
         
         // Close modal with Escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.style.display === 'Solitaire') { closeGame(); }
+            if (e.key === 'Escape' && modal.style.display === 'block') { closeGame(); }
         });
 
         updateFullscreenUI();
