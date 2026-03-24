@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-03-24</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-03-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -106,6 +106,29 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/people-drop-away-game-guide</loc>
+        <lastmod>2026-03-24</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/People-Drop-Away-Game-ScreenShot-01.jpg</image:loc>
+            <image:title>Dragging a colored black hole to drop matching colored people in People Drop Away Game</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/People-Drop-Away-Game-ScreenShot-02.jpg</image:loc>
+            <image:title>Using the Time Stop power-up to freeze the clock in People Drop Away Game</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/People-Drop-Away-Game-ScreenShot-03.jpg</image:loc>
+            <image:title>Using the Specific Person Drop power-up to instantly clear a rogue target</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/People-Drop-Away-Game-ScreenShot-04.jpg</image:loc>
+            <image:title>Activating the Magnet Vacuum power-up to suck all matching people into the hole</image:title>
+        </image:image>
+    </url>	
 	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/touch-candy-guide</loc>
