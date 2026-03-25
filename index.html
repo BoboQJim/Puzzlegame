@@ -615,6 +615,164 @@
                 display: none; 
             } 
         }
+		
+	/* --- Header Layout Base --- */
+	header {
+		background: var(--glass);
+		backdrop-filter: blur(15px);
+		-webkit-backdrop-filter: blur(15px);
+		border-bottom: 1px solid var(--border-color);
+		padding: 0.8rem 5%;
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+		display: flex;
+		flex-direction: column; /* Force two-row layout on mobile */
+	}
+
+	.header-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+
+	/* Desktop Nav Styles */
+	.main-nav {
+		display: flex;
+		gap: 25px;
+	}
+
+	.nav-link {
+		color: var(--text-dim);
+		text-decoration: none;
+		font-weight: 600;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		transition: all 0.3s ease;
+		padding: 5px 0;
+	}
+
+	.nav-link:hover, .nav-link.active {
+		color: var(--text-light);
+	}
+
+	.nav-icon {
+		color: var(--accent-primary);
+		font-size: 1rem;
+	}
+
+	/* Search Row Styles */
+	.search-row {
+		width: 100%;
+		margin-top: 12px;
+	}
+
+	.search-wrapper {
+		position: relative;
+		width: 100%;
+	}
+
+	.search-hint-icon {
+		position: absolute;
+		left: 15px;
+		top: 50%;
+		transform: translateY(-50%);
+		color: var(--text-dim);
+		font-size: 0.9rem;
+	}
+
+	.search-input {
+		width: 100%;
+		background: rgba(13, 17, 23, 0.8);
+		border: 1px solid var(--border-color);
+		padding: 0.7rem 1rem 0.7rem 2.5rem;
+		border-radius: 50px;
+		color: white;
+		outline: none;
+		transition: 0.3s;
+	}
+
+	.search-input:focus {
+		border-color: var(--accent-primary);
+		background: #0d1117;
+	}
+
+	.mobile-menu-btn {
+		display: none; /* Hidden on desktop */
+		background: transparent;
+		border: none;
+		color: var(--text-light);
+		font-size: 1.5rem;
+		cursor: pointer;
+	}
+
+	/* --- Mobile Specific Optimization (Max-width: 768px) --- */
+	@media (max-width: 768px) {
+		.mobile-menu-btn {
+			display: block;
+		}
+
+		/* Mobile Menu Dropdown (Glassmorphism) */
+		.main-nav {
+			position: absolute;
+			top: 100%; /* Below header */
+			left: 0;
+			width: 100%;
+			background: rgba(16, 20, 26, 0.98);
+			backdrop-filter: blur(25px);
+			-webkit-backdrop-filter: blur(25px);
+			border-bottom: 1px solid var(--border-color);
+			flex-direction: column;
+			gap: 0;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+		}
+
+		.main-nav.show {
+			max-height: 400px;
+		}
+
+		.nav-link {
+			width: 100%;
+			padding: 1.2rem 10%;
+			font-size: 1.1rem;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+		}
+
+		.nav-link.active {
+			background: rgba(123, 97, 255, 0.1);
+			border-left: 4px solid var(--accent-primary);
+			padding-left: calc(10% - 4px);
+		}
+
+		/* Subtle hover effect for mobile */
+		.nav-link:active {
+			background: rgba(255, 255, 255, 0.05);
+		}
+	}
+
+	/* --- Desktop Layout Adjustment (Min-width: 769px) --- */
+	@media (min-width: 769px) {
+		header {
+			flex-direction: row; /* Single line on desktop */
+			justify-content: space-between;
+			padding: 1rem 5%;
+		}
+
+		.header-top {
+			width: auto;
+			gap: 40px;
+		}
+
+		.search-row {
+			width: 300px; /* Fixed width search on desktop */
+			margin-top: 0;
+		}
+	}
     </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -630,13 +788,31 @@
 <amp-auto-ads type="adsense"
         data-ad-client="ca-pub-5612434384082476">
 </amp-auto-ads>
+
 <header>
-    <a href="https://puzzlechallengehub.com/" class="brand">
-        <div class="logo-icon">P</div>
-        <span class="brand-name">PuzzleHub</span>
-    </a>
-    <div class="search-wrapper">
-        <input type="text" id="searchInput" class="search-input" placeholder="Search your games...">
+    <div class="header-top">
+        <a href="/" class="brand">
+            <div class="logo-icon">P</div>
+            <span class="brand-name">PuzzleHub</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav class="main-nav" id="mainNav">
+            <a href="/" class="nav-link active"><i class="fas fa-home nav-icon"></i> Home</a>
+            <a href="/recommendation.html" class="nav-link"><i class="fas fa-star nav-icon"></i> Recommended</a>
+            <a href="/collection.html" class="nav-link"><i class="fas fa-layer-group nav-icon"></i> Collections</a>
+            <a href="/all-games.html" class="nav-link"><i class="fas fa-gamepad nav-icon"></i> All Games</a>
+        </nav>
+    </div>
+
+    <div class="search-row">
+        <div class="search-wrapper">
+            <i class="fas fa-search search-hint-icon"></i>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search your games...">
+        </div>
     </div>
 </header>
 
@@ -1051,6 +1227,35 @@
     });
 
     init();
+	
+	document.addEventListener('DOMContentLoaded', () => {
+		const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+		const mainNav = document.getElementById('mainNav');
+		const menuIcon = mobileMenuBtn ? mobileMenuBtn.querySelector('i') : null;
+
+		if (mobileMenuBtn && mainNav) {
+			// Toggle Menu logic
+			mobileMenuBtn.addEventListener('click', (e) => {
+				e.stopPropagation();
+				const isOpened = mainNav.classList.toggle('show');
+				
+				// Icon transformation (Bars to X)
+				if (isOpened) {
+					menuIcon.classList.replace('fa-bars', 'fa-times');
+				} else {
+					menuIcon.classList.replace('fa-times', 'fa-bars');
+				}
+			});
+
+			// Close menu when clicking anywhere else
+			document.addEventListener('click', (e) => {
+				if (mainNav.classList.contains('show') && !mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+					mainNav.classList.remove('show');
+					menuIcon.classList.replace('fa-times', 'fa-bars');
+				}
+			});
+		}
+	});
 </script>
 <script type="module">
   // Import the functions you need from the SDKs you need
