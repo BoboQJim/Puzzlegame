@@ -4,21 +4,21 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-03-24</lastmod>
+        <lastmod>2026-03-27</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-03-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-03-24</lastmod>
+        <lastmod>2026-03-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,29 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/dreamy-blast-puzzle-guide</loc>
+        <lastmod>2026-03-27</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Dreamy-Blast-Puzzle-ScreenShot-01.jpg</image:loc>
+            <image:title>Dreamy Blast Puzzle level showing a quota to collect specific colored blocks</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Dreamy-Blast-Puzzle-ScreenShot-02.jpg</image:loc>
+            <image:title>Filling the 100 percent progress bar by making huge combo blasts</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Dreamy-Blast-Puzzle-ScreenShot-03.jpg</image:loc>
+            <image:title>Strategic blasting to drop the dolls to the bottom of the puzzle board</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Dreamy-Blast-Puzzle-ScreenShot-04.jpg</image:loc>
+            <image:title>Using powerful boosters like the bomb and switch in Dreamy Blast Puzzle</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/people-drop-away-game-guide</loc>
         <lastmod>2026-03-24</lastmod>
