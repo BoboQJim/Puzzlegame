@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-03-27</lastmod>
+        <lastmod>2026-03-30</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-03-27</lastmod>
+        <lastmod>2026-03-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -108,10 +108,33 @@
     </url>
 
     <url>
+        <loc>https://puzzlechallengehub.com/recommendation/build-a-tower-guide</loc>
+        <lastmod>2026-03-30</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Build-A-Tower-512x384.jpg</image:loc>
+            <image:title>Build a tower</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Build-A-Tower-ScreenShot-01.jpg</image:loc>
+            <image:title>Basic gameplay rules and the slicing mechanic in Build a Tower</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Build-A-Tower-ScreenShot-02.jpg</image:loc>
+            <image:title>High-level stacking challenge with a tiny block moving at high speed</image:title>
+        </image:image>
+    </url>	
+	
+    <url>
         <loc>https://puzzlechallengehub.com/recommendation/dreamy-blast-puzzle-guide</loc>
         <lastmod>2026-03-27</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Dreamy-Blast-Puzzle-512x384</image:loc>
+            <image:title>Dreamy Blast Puzzle</image:title>
+        </image:image>
         <image:image>
             <image:loc>https://puzzlechallengehub.com/image/Dreamy-Blast-Puzzle-ScreenShot-01.jpg</image:loc>
             <image:title>Dreamy Blast Puzzle level showing a quota to collect specific colored blocks</image:title>
@@ -136,6 +159,10 @@
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
         <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/People-Drop-Away-Game-512x384</image:loc>
+            <image:title>People Drop Away Game</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://puzzlechallengehub.com/image/People-Drop-Away-Game-ScreenShot-01.jpg</image:loc>
             <image:title>Dragging a colored black hole to drop matching colored people in People Drop Away Game</image:title>
         </image:image>
@@ -159,6 +186,10 @@
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
         <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Touch-Candy-512x384</image:loc>
+            <image:title>Touch Candy</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://puzzlechallengehub.com/image/Touch-Candy-ScreenShot-01.jpg</image:loc>
             <image:title>Basic drag and drop color matching gameplay in Touch Candy</image:title>
         </image:image>
@@ -177,6 +208,10 @@
         <lastmod>2026-03-18</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Hexa-Color-Stack-Game-512x384</image:loc>
+            <image:title>Hexa Color Stack Game</image:title>
+        </image:image>
         <image:image>
             <image:loc>https://puzzlechallengehub.com/image/Hexa-Color-Stack-Game-ScreenShot-01.jpg</image:loc>
             <image:title>Basic mechanics and placing hexagonal blocks onto the board in Hexa Color Stack Game</image:title>
@@ -201,6 +236,10 @@
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
         <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Screw-Out-3D-512x384</image:loc>
+            <image:title>Screw Out 3D</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://puzzlechallengehub.com/image/Screw-Out-3D-ScreenShot-01.jpg</image:loc>
             <image:title>Screw Out 3D Chair Level Walkthrough</image:title>
         </image:image>
@@ -219,6 +258,10 @@
         <lastmod>2026-03-13</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Hero-Pipe-512x384</image:loc>
+            <image:title>Hero Pipe</image:title>
+        </image:image>
         <image:image>
             <image:loc>https://puzzlechallengehub.com/image/Hero-Pipe-ScreenShot-01.jpg</image:loc>
             <image:title>Basic pipe connection mechanics showing the routing of liquids in Hero Pipe</image:title>
@@ -242,6 +285,10 @@
         <lastmod>2026-03-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Candy-Shuffle-512x384</image:loc>
+            <image:title>Candy Shuffle</image:title>
+        </image:image>
         <image:image>
             <image:loc>https://puzzlechallengehub.com/image/Candy-Shuffle-ScreenShot-GIF-01.gif</image:loc>
             <image:title>Basic swiping mechanics and matching candies in Candy Shuffle</image:title>
@@ -270,6 +317,10 @@
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
         <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Gun-Match-Screw-512x384</image:loc>
+            <image:title>Gun Match Screw</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://puzzlechallengehub.com/image/Gun-Match-Screw-ScreenShot-GIF-01.gif</image:loc>
             <image:title>Animated GIF showing the basic gameplay of clicking colored bullets to load them into matching revolvers</image:title>
         </image:image>
@@ -292,6 +343,10 @@
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Princess-Rescue-Fruit-Connect-512x384</image:loc>
+            <image:title>Princess Rescue Fruit Connect</image:title>
+        </image:image>
         <image:image>
             <image:loc>https://puzzlechallengehub.com/image/Princess-Rescue-Fruit-Connect-ScreenShot-01.jpg</image:loc>
             <image:title>The user interface of Princess Rescue Fruit Connect showing the trapped princess, the rock pile, and the bulldozer</image:title>
@@ -320,6 +375,10 @@
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
         <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Additive-Fun-2048-512x384</image:loc>
+            <image:title>Additive Fun 2048</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://puzzlechallengehub.com/image/Additive-Fun-2048-ScreenShot-GIF-01.gif</image:loc>
             <image:title>Animated GIF showing the freestyle picking and dropping mechanics in Additive Fun 2048</image:title>
         </image:image>
@@ -338,6 +397,10 @@
         <lastmod>2026-03-05</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Save-My-Girl-512x384</image:loc>
+            <image:title>Save My Girl</image:title>
+        </image:image>
         <image:image>
             <image:loc>https://puzzlechallengehub.com/image/Save-My-Girl-ScreenShot-GIF-01.gif</image:loc>
             <image:title>A successful choice in Save My Girl, helping the character bypass an obstacle</image:title>
@@ -358,6 +421,10 @@
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
         <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cute-Slices-Ball-512x384</image:loc>
+            <image:title>Cute Slices Ball</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://puzzlechallengehub.com/image/Cute-Slices-Ball-ScreenShot-01.jpg</image:loc>
             <image:title>Cute Slices Ball gameplay layout with 6 plates and center slices</image:title>
         </image:image>
@@ -373,6 +440,10 @@
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
         <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Hero-Rescue-512x384</image:loc>
+            <image:title>Hero Rescue</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://puzzlechallengehub.com/image/Hero-Rescue-ScreenShot-01.jpg</image:loc>
             <image:title>Hero Rescue level layout showcasing lava, water, and pin mechanics</image:title>
         </image:image>
@@ -383,6 +454,10 @@
         <lastmod>2026-03-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Food-Game-Grill-Sort-512x384</image:loc>
+            <image:title>Food Game Grill Sort</image:title>
+        </image:image>
         <image:image>
             <image:loc>https://puzzlechallengehub.com/image/Food-Game-Grill-Sort-ScreenShot-01.jpg</image:loc>
             <image:title>Food Game Grill Sort basic rules and matching customer orders</image:title>
@@ -402,6 +477,10 @@
         <lastmod>2026-02-28</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Emilys-Hotel-Solitaire-512x384</image:loc>
+            <image:title>Emilys Hotel Solitaire</image:title>
+        </image:image>
         <image:image>
             <image:loc>https://puzzlechallengehub.com/image/Emilys-Hotel-Solitaire-ScreenShot-01.jpg</image:loc>
             <image:title>Core gameplay of Emily's Hotel Solitaire showing higher and lower card matching</image:title>
@@ -429,6 +508,10 @@
         <lastmod>2026-02-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Pin-Away-Puzzle-Tap-It-Out-512x384.jpg</image:loc>
+            <image:title>Pin Away Puzzle Tap It Out</image:title>
+        </image:image>
         <image:image>
             <image:loc>https://puzzlechallengehub.com/image/Pin-Away-Puzzle-Tap-It-Out-ScreenShot-01.jpg</image:loc>
             <image:title>Tapping the white ball to extract the pin in Pin Away Puzzle</image:title>
