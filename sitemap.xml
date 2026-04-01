@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-03-30</lastmod>
+        <lastmod>2026-04-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-03-30</lastmod>
+        <lastmod>2026-04-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,33 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/goods-triple-match-3d-guide</loc>
+        <lastmod>2026-04-01</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Goods-Triple-Match-3D-512x384.jpg</image:loc>
+            <image:title>Goods Triple Match 3D</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Goods-Triple-Match-3D-ScreenShot-01.jpg</image:loc>
+            <image:title>Basic drag and drop sorting mechanics in Goods Triple Match 3D</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Goods-Triple-Match-3D-ScreenShot-02.jpg</image:loc>
+            <image:title>Using the Hint power-up to find matching items easily</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Goods-Triple-Match-3D-ScreenShot-03.jpg</image:loc>
+            <image:title>Activating the Magic Wand to automatically sort and clear items</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Goods-Triple-Match-3D-ScreenShot-04.jpg</image:loc>
+            <image:title>Using the Shuffle power-up to completely refresh the shelf layout</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/build-a-tower-guide</loc>
         <lastmod>2026-03-30</lastmod>
