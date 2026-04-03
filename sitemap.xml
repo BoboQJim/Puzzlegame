@@ -4,21 +4,21 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-04-01</lastmod>
+        <lastmod>2026-04-03</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-03-27</lastmod>
+        <lastmod>2026-04-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-04-01</lastmod>
+        <lastmod>2026-04-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,37 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/bus-jam-guide</loc>
+        <lastmod>2026-04-03</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Bus-Jam-512x384.jpg</image:loc>
+            <image:title>Bus Jam</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Bus-Jam-ScreenShot-01.jpg</image:loc>
+            <image:title>Basic gameplay rules and passenger queue mechanics in Bus Jam</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Bus-Jam-ScreenShot-02.jpg</image:loc>
+            <image:title>Using the Sort power-up to reorganize the passenger queue</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Bus-Jam-ScreenShot-03.jpg</image:loc>
+            <image:title>Activating the Shuffle power-up to rearrange buses in the parking lot</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Bus-Jam-ScreenShot-04.jpg</image:loc>
+            <image:title>Using the VIP power-up to teleport a trapped bus</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Bus-Jam-ScreenShot-05.jpg</image:loc>
+            <image:title>Daily Login rewards in Bus Jam</image:title>
+        </image:image>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/goods-triple-match-3d-guide</loc>
         <lastmod>2026-04-01</lastmod>
