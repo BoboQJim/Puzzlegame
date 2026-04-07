@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-04-03</lastmod>
+        <lastmod>2026-04-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-04-03</lastmod>
+        <lastmod>2026-04-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,37 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/block-pop-guide</loc>
+        <lastmod>2026-04-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Block-Pop-512x384.jpg</image:loc>
+            <image:title>Block Pop</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Block-Pop-ScreenShot-01.jpg</image:loc>
+            <image:title>How to play Block Pop showing the block rotation and placement rules</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Block-Pop-ScreenShot-02.jpg</image:loc>
+            <image:title>Core gameplay of Block Pop showing color clustering and line clearing</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Block-Pop-ScreenShot-03.jpg</image:loc>
+            <image:title>Using the Hammer power-up to destroy a single blocking square</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Block-Pop-ScreenShot-04.jpg</image:loc>
+            <image:title>Detonating the Bomb power-up to clear a massive 3x3 area</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Block-Popm-ScreenShot-05.jpg</image:loc>
+            <image:title>Using the Refresh power-up to swap out unplayable queue blocks</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/bus-jam-guide</loc>
         <lastmod>2026-04-03</lastmod>
