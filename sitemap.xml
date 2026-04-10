@@ -4,21 +4,21 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-04-07</lastmod>
+        <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-04-03</lastmod>
+        <lastmod>2026-04-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-04-07</lastmod>
+        <lastmod>2026-04-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,37 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/screw-sort-puzzle-pin-jam-3d-guide</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Screw-Sort-Puzzle-Pin-Jam-3D-512x384.jpg</image:loc>
+            <image:title>Screw Sort Puzzle Pin Jam 3D</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Screw-Sort-Puzzle-Pin-Jam-3D-ScreenShot-01.jpg</image:loc>
+            <image:title>Basic gameplay mechanics showing the 3D model and target screw boxes</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Screw-Sort-Puzzle-Pin-Jam-3D-ScreenShot-02.jpg</image:loc>
+            <image:title>Using the Extra Hole power-up to expand the temporary holding tray</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Screw-Sort-Puzzle-Pin-Jam-3D-ScreenShot-03.jpg</image:loc>
+            <image:title>Opening an extra target screw box to clear surface obstacles</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Screw-Sort-Puzzle-Pin-Jam-3D-ScreenShot-04.jpg</image:loc>
+            <image:title>Activating the Clear Temporary Area power-up to reset a gridlocked tray</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Screw-Sort-Puzzle-Pin-Jam-3D-ScreenShot-05.jpg</image:loc>
+            <image:title>The hidden Remove Screw physics drop mode in action</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/block-pop-guide</loc>
         <lastmod>2026-04-07</lastmod>
