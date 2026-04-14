@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-04-10</lastmod>
+        <lastmod>2026-04-13</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-04-10</lastmod>
+        <lastmod>2026-04-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,37 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/crazy-goods-sort-3d-guide</loc>
+        <lastmod>2026-04-13</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Crazy-Goods-Sort-3D-512x384.jpg</image:loc>
+            <image:title>Crazy Goods Sort 3D</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Crazy-Goods-Sort-3D-ScreenShot-01.jpg</image:loc>
+            <image:title>Basic gameplay mechanics showing the conveyor belt and packing boxes</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Crazy-Goods-Sort-3D-ScreenShot-02.jpg</image:loc>
+            <image:title>Using the Refresh power-up to shuffle the packing boxes</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Crazy-Goods-Sort-3D-ScreenShot-03.jpg</image:loc>
+            <image:title>Activating the Order power-up to automatically pack beverage cans</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Crazy-Goods-Sort-3D-ScreenShot-04.jpg</image:loc>
+            <image:title>Using the Remove power-up to extract a deeply buried box</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Crazy-Goods-Sort-3D-ScreenShot-05.jpg</image:loc>
+            <image:title>The highly rewarding house building and furniture decoration feature</image:title>
+        </image:image>
+    </url>		
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/screw-sort-puzzle-pin-jam-3d-guide</loc>
         <lastmod>2026-04-10</lastmod>
