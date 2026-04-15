@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-04-13</lastmod>
+        <lastmod>2026-04-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-04-13</lastmod>
+        <lastmod>2026-04-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,37 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/the-superhero-league-guide</loc>
+        <lastmod>2026-04-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Crazy-Goods-Sort-3D-512x384.jpg</image:loc>
+            <image:title>Crazy Goods Sort 3D</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/The-Superhero-League-ScreenShot-01.jpg</image:loc>
+            <image:title>Basic telekinesis and throwing mechanics in The Superhero League</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/The-Superhero-League-ScreenShot-02.jpg</image:loc>
+            <image:title>Carefully manipulating heavy objects to defeat villains while protecting hostages</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/The-Superhero-League-ScreenShot-03.jpg</image:loc>
+            <image:title>The Fortune Wheel event offering random hero unlocks and coin multipliers</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/The-Superhero-League-ScreenShot-04.jpg</image:loc>
+            <image:title>Daily sign-in rewards featuring gold coins and hero unlocks</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/The-Superhero-League-ScreenShot-05.jpg</image:loc>
+            <image:title>The hero selection interface where players spend gold to unlock new characters</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/crazy-goods-sort-3d-guide</loc>
         <lastmod>2026-04-13</lastmod>
