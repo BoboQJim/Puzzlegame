@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-20</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,33 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/mahjong-match-club-strategy-guide</loc>
+        <lastmod>2026-04-20</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Match-Club-512x384.jpg</image:loc>
+            <image:title>Mahjong Match Club</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Match-Club-ScreenShot-01.jpg</image:loc>
+            <image:title>Basic rules of sliding and line-of-sight in Mahjong Match Club</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Match-Club-ScreenShot-02.jpg</image:loc>
+            <image:title>Executing a multi-tile slide to merge Mahjong tiles in a dense board</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Match-Club-ScreenShot-03.jpg</image:loc>
+            <image:title>Activating the Hint power-up to reveal hidden match opportunities</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Match-Club-ScreenShot-04.jpg</image:loc>
+            <image:title>Using the Refresh power-up to completely shuffle a deadlocked board</image:title>
+        </image:image>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/screw-master-strategy-guide</loc>
         <lastmod>2026-04-17</lastmod>
