@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-04-20</lastmod>
+        <lastmod>2026-04-22</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-04-20</lastmod>
+        <lastmod>2026-04-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,33 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/merge-world-strategy-guide</loc>
+        <lastmod>2026-04-22</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Merge-World-512x384.jpg</image:loc>
+            <image:title>Merge World</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Merge-World-ScreenShot-01.jpg</image:loc>
+            <image:title>Basic merging mechanics and the rule of adjacency in Merge World</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Merge-World-ScreenShot-02.jpg</image:loc>
+            <image:title>Managing grid space and organizing merged items on the map</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Merge-World-ScreenShot-03.jpg</image:loc>
+            <image:title>Using the in-game shop to purchase materials and speed up merging</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Merge-World-ScreenShot-04.jpg</image:loc>
+            <image:title>Placing advanced buildings and managing a large-scale city layout</image:title>
+        </image:image>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/mahjong-match-club-strategy-guide</loc>
         <lastmod>2026-04-20</lastmod>
