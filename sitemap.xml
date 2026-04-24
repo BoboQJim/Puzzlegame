@@ -4,109 +4,132 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-04-22</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-04-17</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-04-22</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/collection</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/hexa</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/sort</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/screw</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/merge</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/jam</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/block</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/mahjong</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/match</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/collection/2048</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/tetris</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/solitaire</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/tangle-rope-3d-untie-master-strategy-guide</loc>
+        <lastmod>2026-04-24</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Tangle-Rope-3D-Untie-Master-512x384.jpg</image:loc>
+            <image:title>Tangle Rope 3D Untie Master</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Tangle-Rope-3D-Untie-Master-ScreenShot-01.jpg</image:loc>
+            <image:title>Basic mechanics showing how to tap and move rope ends to free them</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Tangle-Rope-3D-Untie-Master-ScreenShot-02.jpg</image:loc>
+            <image:title>A complex knot structure requiring reverse engineering to untangle</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Tangle-Rope-3D-Untie-Master-ScreenShot-03.jpg</image:loc>
+            <image:title>The satisfying visual feedback of an untangled rope retracting and disappearing</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/merge-world-strategy-guide</loc>
         <lastmod>2026-04-22</lastmod>
