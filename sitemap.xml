@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-04-24</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-04-24</lastmod>
+        <lastmod>2026-04-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,33 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/seat-jam-3d-strategy-guide</loc>
+        <lastmod>2026-04-27</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Seat-Jam-3D-512x384.jpg</image:loc>
+            <image:title>Seat Jam 3D</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Seat-Jam-3D-ScreenShot-01.jpg</image:loc>
+            <image:title>Basic tutorial and core seating mechanics in Seat Jam 3D</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Seat-Jam-3D-ScreenShot-02.jpg</image:loc>
+            <image:title>The daily login calendar rewarding players with gold coins</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Seat-Jam-3D-ScreenShot-03.jpg</image:loc>
+            <image:title>The in-game shop where players can purchase movement effects</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Seat-Jam-3D-ScreenShot-04.jpg</image:loc>
+            <image:title>A complex level showing blocked aisles and crowded passengers</image:title>
+        </image:image>
+    </url>		
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/tangle-rope-3d-untie-master-strategy-guide</loc>
         <lastmod>2026-04-24</lastmod>
