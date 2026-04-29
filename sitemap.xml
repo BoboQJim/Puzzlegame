@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-04-27</lastmod>
+        <lastmod>2026-04-29</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-04-27</lastmod>
+        <lastmod>2026-04-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,37 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/hex-triple-match-strategy-guide</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Hex-Triple-Match-512x384.jpg</image:loc>
+            <image:title>Hex Triple Match</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Hex-Triple-Match-ScreenShot-01.jpg</image:loc>
+            <image:title>Hex Triple Match basic hexagon stacking and matching rules explained</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Hex-Triple-Match-ScreenShot-02.jpg</image:loc>
+            <image:title>Using the Hammer power-up to smash an obstructive block stack</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Hex-Triple-Match-ScreenShot-03.jpg</image:loc>
+            <image:title>Activating the Move Hand to shift blocks and trigger a massive elimination</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Hex-Triple-Match-ScreenShot-04.jpg</image:loc>
+            <image:title>Using the Refresh tool to reroll the bottom block sets and escape gridlock</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Hex-Triple-Match-ScreenShot-05.jpg</image:loc>
+            <image:title>Diving into the epic Challenge Mode with massive, complex board shapes</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/seat-jam-3d-strategy-guide</loc>
         <lastmod>2026-04-27</lastmod>
