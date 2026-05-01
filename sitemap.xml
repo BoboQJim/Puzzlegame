@@ -4,21 +4,21 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-04-29</lastmod>
+        <lastmod>2026-05-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-04-24</lastmod>
+        <lastmod>2026-05-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-04-29</lastmod>
+        <lastmod>2026-05-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,29 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/screw-pin-jam-puzzle-strategy-guide</loc>
+        <lastmod>2026-05-01</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Screw-Pin-Jam-Puzzle-512x384.jpg</image:loc>
+            <image:title>Screw Pin Jam Puzzle</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Screw-Pin-Jam-Puzzle-ScreenShot-01.jpg</image:loc>
+            <image:title>Basic gameplay of Screw Pin Jam Puzzle showing the match-3 extraction mechanic</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Screw-Pin-Jam-Puzzle-ScreenShot-02.jpg</image:loc>
+            <image:title>Activating the extra hole power-up to increase penalty box capacity and avoid a game over</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Screw-Pin-Jam-Puzzle-ScreenShot-03.jpg</image:loc>
+            <image:title>Using the auto-extract tool to bypass physical barriers and grab the required screw</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/hex-triple-match-strategy-guide</loc>
         <lastmod>2026-04-29</lastmod>
