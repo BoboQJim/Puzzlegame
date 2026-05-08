@@ -177,6 +177,7 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "v7w38tv951");
 </script>
+
 </head>
 <body>
     <header>
@@ -296,10 +297,15 @@
 
     <div class="game-modal-overlay" id="gameModalOverlay">
         <div class="game-modal" id="gameModal">
-            <div style="position: absolute; top: 15px; right: 15px; display: flex; gap: 12px; z-index: 2001;">
-                <button class="modal-control-btn" id="closeGameModal"><i class="fas fa-times"></i></button>
+            <div class="modal-controls">
+                <button class="modal-control-btn" id="closeGameModal" title="Close Game">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button class="modal-control-btn" id="fullscreenGameBtn" title="Toggle Fullscreen">
+                    <i class="fas fa-expand"></i>
+                </button>
             </div>
-            <iframe class="game-iframe" id="gameIframe" src="about:blank" data-src="https://html5.gamemonetize.co/pietcd6shsx6vdxpkg3x3ypsoo9ft12o/" allowfullscreen></iframe>
+            <iframe class="game-iframe" id="gameIframe" src="about:blank" data-src="https://html5.gamemonetize.co/pietcd6shsx6vdxpkg3x3ypsoo9ft12o/" allowfullscreen loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
     </div>
 

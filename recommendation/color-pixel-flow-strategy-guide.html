@@ -289,10 +289,15 @@
 
     <div class="game-modal-overlay" id="gameModalOverlay">
         <div class="game-modal" id="gameModal">
-            <button class="modal-control-btn" id="closeGameModal" title="Close Game">
-                <i class="fas fa-times"></i>
-            </button>
-            <iframe class="game-iframe" id="gameIframe" src="about:blank" data-src="https://html5.gamemonetize.co/awnouc0jesu3jx493fp7zrmyoxs3o69w/" allowfullscreen loading="lazy" referrerpolicy="origin-when-cross-origin"></iframe>
+            <div class="modal-controls">
+                <button class="modal-control-btn" id="closeGameModal" title="Close Game">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button class="modal-control-btn" id="fullscreenGameBtn" title="Toggle Fullscreen">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+            <iframe class="game-iframe" id="gameIframe" src="about:blank" data-src="https://html5.gamemonetize.co/awnouc0jesu3jx493fp7zrmyoxs3o69w/" allowfullscreen loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
     </div>
 

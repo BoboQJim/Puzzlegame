@@ -297,13 +297,18 @@
 
     <div class="game-modal-overlay" id="gameModalOverlay">
         <div class="game-modal" id="gameModal">
-            <button class="modal-control-btn" id="closeGameModal" title="Close Game">
-                <i class="fas fa-times"></i>
-            </button>
+            <div class="modal-controls">
+                <button class="modal-control-btn" id="closeGameModal" title="Exit Game">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button class="modal-control-btn" id="fullscreenGameBtn" title="Fullscreen Mode">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
             <iframe class="game-iframe" id="gameIframe" src="about:blank" data-src="https://html5.gamemonetize.co/abcd3b9hjuolfjqliv646ckgph1c961c/" allowfullscreen loading="lazy" referrerpolicy="origin-when-cross-origin"></iframe>
         </div>
     </div>
-
+	
 	<footer>
         <div class="footer-socials" style="margin-bottom: 20px; display: flex; justify-content: center; gap: 20px;">
             <a href="https://www.facebook.com/puzzlehubgames" target="_blank" title="Facebook" style="color: var(--text-dim); font-size: 1.5rem; transition: 0.3s;">
