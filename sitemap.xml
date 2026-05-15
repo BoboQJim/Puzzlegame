@@ -4,21 +4,21 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-05-11</lastmod>
+        <lastmod>2026-05-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-05-08</lastmod>
+        <lastmod>2026-05-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-05-11</lastmod>
+        <lastmod>2026-05-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,47 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/chill-paths-strategy-guide</loc>
+        <lastmod>2026-05-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Master-Challenge-512x384.jpg</image:loc>
+            <image:title>Mahjong Master Challenge</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Master-Challenge-ScreenShot-01.jpg</image:loc>
+            <image:title>Mahjong Master Challenge Level Mode shape selection screen</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Master-Challenge-ScreenShot-02.jpg</image:loc>
+            <image:title>Pong Rule: Matching three identical Mahjong tiles to clear them</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Master-Challenge-ScreenShot-03.jpg</image:loc>
+            <image:title>Chow Rule: Matching consecutive numbers in the same suit</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Master-Challenge-ScreenShot-04.jpg</image:loc>
+            <image:title>Kong Rule: Collecting four of a kind for a massive clear</image:title>
+        </image:image>        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Master-Challenge-ScreenShot-05.jpg</image:loc>
+            <image:title>Refresh Power-up: Shuffling the board for better combinations</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Master-Challenge-ScreenShot-06.jpg</image:loc>
+            <image:title>Remove Power-up: Moving problematic tiles to a temporary stash</image:title>
+        </image:image>        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Master-Challenge-ScreenShot-07.jpg</image:loc>
+            <image:title>Wild Tile Power-up: Auto-completing a sequence or triplet</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mahjong-Master-Challenge-ScreenShot-08.jpg</image:loc>
+            <image:title>Split Axe Power-up: Breaking attached tiles into separate pieces</image:title>
+        </image:image>
+    </url>		
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/chill-paths-strategy-guide</loc>
         <lastmod>2026-05-11</lastmod>
