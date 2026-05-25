@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-05-22</lastmod>
+        <lastmod>2026-05-25</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-05-22</lastmod>
+        <lastmod>2026-05-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,37 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/block-master-strategy-guide</loc>
+        <lastmod>2026-05-25</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Block-Master-512x384.jpg</image:loc>
+            <image:title>Block Master</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Block-Master-ScreenShot-1.jpg</image:loc>
+            <image:title>Block Master: Polygonal Puzzle difficulty tier selection screen</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Block-Master-ScreenShot-2.jpg</image:loc>
+            <image:title>Game start screen showing different shaped puzzle pieces in the placement area</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Block-Master-ScreenShot-3.jpg</image:loc>
+            <image:title>Placing various shapes and colors onto the flat surface to complete the puzzle</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Block-Master-ScreenShot-4.jpg</image:loc>
+            <image:title>Activating the Hint item to display correct shape placements on the board</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Block-Master-ScreenShot-5.jpg</image:loc>
+            <image:title>A highly difficult level with 10 to 14 pieces requiring advanced spatial logic</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/muscle-race-game-strategy-guide</loc>
         <lastmod>2026-05-22</lastmod>
