@@ -4,109 +4,140 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-05-25</lastmod>
+        <lastmod>2026-05-29</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-05-22</lastmod>
+        <lastmod>2026-05-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-05-25</lastmod>
+        <lastmod>2026-05-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/collection</loc>
-        <lastmod>2026-04-24</lastmod>
+        <lastmod>2026-05-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/hexa</loc>
-        <lastmod>2026-04-24</lastmod>
+        <lastmod>2026-05-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/sort</loc>
-        <lastmod>2026-04-24</lastmod>
+        <lastmod>2026-05-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/screw</loc>
-        <lastmod>2026-04-24</lastmod>
+        <lastmod>2026-05-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/merge</loc>
-        <lastmod>2026-04-24</lastmod>
+        <lastmod>2026-05-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/jam</loc>
-        <lastmod>2026-04-24</lastmod>
+        <lastmod>2026-05-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/block</loc>
-        <lastmod>2026-04-24</lastmod>
+        <lastmod>2026-05-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/mahjong</loc>
-        <lastmod>2026-04-24</lastmod>
+        <lastmod>2026-05-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/match</loc>
-        <lastmod>2026-04-24</lastmod>
+        <lastmod>2026-05-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/collection/2048</loc>
-        <lastmod>2026-04-24</lastmod>
+        <lastmod>2026-05-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/tetris</loc>
-        <lastmod>2026-04-24</lastmod>
+        <lastmod>2026-05-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/solitaire</loc>
-        <lastmod>2026-04-24</lastmod>
+        <lastmod>2026-05-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/luggage-collect-game-strategy-guide</loc>
+        <lastmod>2026-05-29</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Luggage-Collect-Game-512x384.jpg</image:loc>
+            <image:title>Luggage Collect Game</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Luggage-Collect-Game-ScreenShot-1.jpg</image:loc>
+            <image:title>Player matching three suitcases to the corresponding passenger color at the airport</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Luggage-Collect-Game-ScreenShot-2.jpg</image:loc>
+            <image:title>Using the Hint power-up to highlight the correct suitcases on the conveyor belt</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Luggage-Collect-Game-ScreenShot-3.jpg</image:loc>
+            <image:title>Activating the Undo power-up to reverse a critical mis-tap</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Luggage-Collect-Game-ScreenShot-4.jpg</image:loc>
+            <image:title>Using the Delay item to slow down the fast-moving luggage conveyor belt</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Luggage-Collect-Game-ScreenShot-5.jpg</image:loc>
+            <image:title>Deploying the Refresh power-up to change the required colors of the passenger queue</image:title>
+        </image:image>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/block-master-strategy-guide</loc>
         <lastmod>2026-05-25</lastmod>
@@ -136,7 +167,7 @@
             <image:loc>https://puzzlechallengehub.com/image/Block-Master-ScreenShot-5.jpg</image:loc>
             <image:title>A highly difficult level with 10 to 14 pieces requiring advanced spatial logic</image:title>
         </image:image>
-    </url>	
+    </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/muscle-race-game-strategy-guide</loc>
