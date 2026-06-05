@@ -4,21 +4,21 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-06-01</lastmod>
+        <lastmod>2026-06-05</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-05-29</lastmod>
+        <lastmod>2026-06-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-06-01</lastmod>
+        <lastmod>2026-06-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,49 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/cube-minion-rush-strategy-guide</loc>
+        <lastmod>2026-06-05</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cube-Minion-Rush-512x384.jpg</image:loc>
+            <image:title>Cube Minion Rush</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cube-Minion-Rush-ScreenShot-1.jpg</image:loc>
+            <image:title>Basic gameplay of Cube Minion Rush showing the squad running down the track</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cube-Minion-Rush-ScreenShot-2.jpg</image:loc>
+            <image:title>Crashing into numbered blocks and losing team members in Cube Minion Rush</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cube-Minion-Rush-ScreenShot-3.jpg</image:loc>
+            <image:title>Using a springboard to safely jump over numbered blocks and save minions</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cube-Minion-Rush-ScreenShot-4.jpg</image:loc>
+            <image:title>Flying through the air to collect valuable diamonds and keys</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cube-Minion-Rush-ScreenShot-5.jpg</image:loc>
+            <image:title>Team members being eliminated by brutal spinning spiked clubs and hammers</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cube-Minion-Rush-ScreenShot-6.jpg</image:loc>
+            <image:title>Expertly dodging dynamic hazards and obstacles on the track</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cube-Minion-Rush-ScreenShot-7.jpg</image:loc>
+            <image:title>Collecting multiplier balloons at the end of the track to boost the final score</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cube-Minion-Rush-ScreenShot-8.jpg</image:loc>
+            <image:title>The final squad jumping to the finish line for ultimate score calculation</image:title>
+        </image:image>
+    </url>
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/super-poker-strategy-guide</loc>
         <lastmod>2026-06-01</lastmod>
