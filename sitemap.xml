@@ -4,21 +4,21 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-06-08</lastmod>
+        <lastmod>2026-06-12</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-06-08</lastmod>
+        <lastmod>2026-06-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,37 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/goods-triple-sort-strategy-guide</loc>
+        <lastmod>2026-06-12</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Goods-Triple-Sort-512x384.jpg</image:loc>
+            <image:title>Goods Triple Sort</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Goods-Triple-Sort-ScreenShot-1.jpg</image:loc>
+            <image:title>Goods Triple Sort basic operation guide and shelf layout</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Goods-Triple-Sort-ScreenShot-2.jpg</image:loc>
+            <image:title>Grouping 3 identical items in a single grid to trigger an elimination</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Goods-Triple-Sort-ScreenShot-3.jpg</image:loc>
+            <image:title>Activating the Hint tool to automatically match three identical goods</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Goods-Triple-Sort-ScreenShot-4.jpg</image:loc>
+            <image:title>Using the Refresh power-up to completely randomize the item positions on the shelves</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Goods-Triple-Sort-ScreenShot-5.jpg</image:loc>
+            <image:title>Deploying the Time Freeze power-up to stop the clock during a critical sorting phase</image:title>
+        </image:image>
+    </url>		
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/brick-challenge-strategy-guide</loc>
         <lastmod>2026-06-08</lastmod>
