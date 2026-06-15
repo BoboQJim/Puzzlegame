@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-06-12</lastmod>
+        <lastmod>2026-06-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-06-12</lastmod>
+        <lastmod>2026-06-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,37 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/craft-number-strategy-guide</loc>
+        <lastmod>2026-06-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Craft-Number-512x384.jpg</image:loc>
+            <image:title>Craft Number</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Craft-Number-Sort-ScreenShot-1.jpg</image:loc>
+            <image:title>Player selecting the target number (5, 10, 15, or 20) in Craft Number</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Craft-Number-Sort-ScreenShot-2.jpg</image:loc>
+            <image:title>Selecting the board size between 4x4 and 4x5 grids</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Craft-Number-Sort-ScreenShot-3.jpg</image:loc>
+            <image:title>Game operation instructions showing how to shoot numbers into columns</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Craft-Number-Sort-ScreenShot-4.jpg</image:loc>
+            <image:title>Numbers perfectly matching the target and preparing to be eliminated</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Craft-Number-Sort-ScreenShot-5.jpg</image:loc>
+            <image:title>Numbers that exceed the target stacking up and causing gridlock</image:title>
+        </image:image>
+    </url>		
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/goods-triple-sort-strategy-guide</loc>
         <lastmod>2026-06-12</lastmod>
