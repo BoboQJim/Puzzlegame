@@ -4,21 +4,21 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-06-15</lastmod>
+        <lastmod>2026-06-18</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-06-12</lastmod>
+        <lastmod>2026-06-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-06-15</lastmod>
+        <lastmod>2026-06-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,33 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/water-flow-happy-glass-strategy-guide</loc>
+        <lastmod>2026-06-18</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Water-Flow-Happy-Glass-512x384.jpg</image:loc>
+            <image:title>Water Flow Happy Glass</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Water-Flow-Happy-Glass-ScreenShot-1.jpg</image:loc>
+            <image:title>Gameplay overview showing complex obstacle placement including ice and bounce blocks</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Water-Flow-Happy-Glass-ScreenShot-2.jpg</image:loc>
+            <image:title>Standard Wood Block obstacles redirecting the flow of water</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Water-Flow-Happy-Glass-ScreenShot-3.jpg</image:loc>
+            <image:title>Player analyzing the gap and drawing precise lines at the start of the level</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Water-Flow-Happy-Glass-ScreenShot-4.jpg</image:loc>
+            <image:title>Water flowing perfectly along structurally anchored lines directly into the cup</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/craft-number-strategy-guide</loc>
         <lastmod>2026-06-15</lastmod>
