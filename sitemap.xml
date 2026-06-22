@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-22</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,29 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/mackup-runner-game-strategy-guide</loc>
+        <lastmod>2026-06-22</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mackup-Runner-Game-512x384.jpg</image:loc>
+            <image:title>Mackup Runner Game</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mackup-Runner-Game-ScreenShot-1.jpg</image:loc>
+            <image:title>Basic gameplay overview of Mackup Runner Game showing the colorful track and initial avatar</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mackup-Runner-Game-ScreenShot-2.jpg</image:loc>
+            <image:title>Standard Wood Block obstacles redirecting the flow of water</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Mackup-Runner-Game-ScreenShot-3.jpg</image:loc>
+            <image:title>Avatar reaching maximum beauty and makeup completion right before the finish line calculation</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/water-flow-happy-glass-strategy-guide</loc>
         <lastmod>2026-06-18</lastmod>
