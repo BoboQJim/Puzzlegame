@@ -4,109 +4,160 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-06-22</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-06-22</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/collection</loc>
-        <lastmod>2026-05-29</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/hexa</loc>
-        <lastmod>2026-05-29</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/sort</loc>
-        <lastmod>2026-05-29</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/screw</loc>
-        <lastmod>2026-05-29</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/merge</loc>
-        <lastmod>2026-05-29</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/jam</loc>
-        <lastmod>2026-05-29</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/block</loc>
-        <lastmod>2026-05-29</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/mahjong</loc>
-        <lastmod>2026-05-29</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/match</loc>
-        <lastmod>2026-05-29</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/collection/2048</loc>
-        <lastmod>2026-05-29</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/tetris</loc>
-        <lastmod>2026-05-29</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 	
     <url>
         <loc>https://puzzlechallengehub.com/collection/solitaire</loc>
-        <lastmod>2026-05-29</lastmod>
+        <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/cake-slice-match-strategy-guide</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cake-Slice-Match-512x384.jpg</image:loc>
+            <image:title>Cake Slice Match</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cake-Slice-Match-ScreenShot-1.jpg</image:loc>
+            <image:title>Cake Slice Match operation guide showing basic drag and drop mechanics onto the grid</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cake-Slice-Match-ScreenShot-2.jpg</image:loc>
+            <image:title>Automatic matching and jumping of adjacent cake slices of the same color</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cake-Slice-Match-ScreenShot-3.jpg</image:loc>
+            <image:title>Complex matching scenario involving multi-colored cake slices requiring careful spatial planning</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cake-Slice-Match-ScreenShot-4.jpg</image:loc>
+            <image:title>Using the Hammer power-up to smash a plate and clear space on the board</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cake-Slice-Match-ScreenShot-5.jpg</image:loc>
+            <image:title>Activating the Fill Up item to instantly complete a partially built cake</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cake-Slice-Match-ScreenShot-6.jpg</image:loc>
+            <image:title>Using the Refresh tool to cycle the incoming cake plates at the bottom of the screen</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cake-Slice-Match-ScreenShot-7.jpg</image:loc>
+            <image:title>The Bakery encyclopedia tracking all the unique cakes you have successfully built</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cake-Slice-Match-ScreenShot-8.jpg</image:loc>
+            <image:title>Completing Daily Quests for coin rewards</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cake-Slice-Match-ScreenShot-9.jpg</image:loc>
+            <image:title>7-Day Daily Gifts login screen</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Cake-Slice-Match-ScreenShot-10.jpg</image:loc>
+            <image:title>Lucky Spin wheel for bonus power-ups</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/mackup-runner-game-strategy-guide</loc>
         <lastmod>2026-06-22</lastmod>
