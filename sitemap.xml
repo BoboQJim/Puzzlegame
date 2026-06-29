@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-06-26</lastmod>
+        <lastmod>2026-06-29</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-06-26</lastmod>
+        <lastmod>2026-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,33 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/number-mahjong-match-strategy-guide</loc>
+        <lastmod>2026-06-29</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Number-Mahjong-Match-512x384.jpg</image:loc>
+            <image:title>Number Mahjong Match</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Number-Mahjong-Match-ScreenShot-1.jpg</image:loc>
+            <image:title>Comprehensive breakdown of Number Mahjong Match configuration, interface design, and selection slot mechanics</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Number-Mahjong-Match-ScreenShot-2.jpg</image:loc>
+            <image:title>Activating the Hint system to isolate a valid 3-tile arithmetic combination on a cluttered grid</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Number-Mahjong-Match-ScreenShot-3.jpg</image:loc>
+            <image:title>Executing an Auto Match utility to clear a complex layer of stacked tiles instantly</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Number-Mahjong-Match-ScreenShot-4.jpg</image:loc>
+            <image:title>Utilizing the Undo button to recover from an accidental tile selection mismatch</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/cake-slice-match-strategy-guide</loc>
         <lastmod>2026-06-26</lastmod>
