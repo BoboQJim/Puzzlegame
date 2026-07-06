@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,29 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/untangle-snake-frenzy-strategy-guide</loc>
+        <lastmod>2026-07-06</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Untangle-Snake-Frenzy-512x384.jpg</image:loc>
+            <image:title>Untangle Snake Frenzy</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Untangle-Snake-Frenzy-ScreenShot-1.jpg</image:loc>
+            <image:title>Untangle Snake Frenzy gameplay introduction showing snake head orientations and paths</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Untangle-Snake-Frenzy-ScreenShot-2.jpg</image:loc>
+            <image:title>Hint tool demonstration highlighting available moves in Untangle Snake Frenzy</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Untangle-Snake-Frenzy-ScreenShot-3.jpg</image:loc>
+            <image:title>Collision warning showing what happens when choosing a blocked path in Snake Frenzy</image:title>
+        </image:image>
+    </url>		
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/sand-route-puzzle-strategy-guide</loc>
         <lastmod>2026-07-03</lastmod>
