@@ -4,21 +4,21 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-07-06</lastmod>
+        <lastmod>2026-07-10</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-07-06</lastmod>
+        <lastmod>2026-07-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,33 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/tangled-climber-escape-strategy-guide</loc>
+        <lastmod>2026-07-10</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Tangled-Climber-Escape-512x384.jpg</image:loc>
+            <image:title>Tangled Climber Escape</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Tangled-Climber-Escape-ScreenShot-1.jpg</image:loc>
+            <image:title>Tangled Climber Escape gameplay showing complex rope intersections and overlapping mountaineer safety lines on rock anchors</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Tangled-Climber-Escape-ScreenShot-2.jpg</image:loc>
+            <image:title>A perfectly untangled layout in Tangled Climber Escape showcasing clear safety paths and zero rope tension</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Tangled-Climber-Escape-ScreenShot-3.jpg</image:loc>
+            <image:title>Demonstration of the Scissors tool in Tangled Climber Escape cutting through a high-tension central intersection line</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Tangled-Climber-Escape-ScreenShot-4.jpg</image:loc>
+            <image:title>Activating the Freeze power-up in Tangled Climber Escape to temporarily stop the countdown timer during a complex puzzle</image:title>
+        </image:image>
+    </url>		
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/untangle-snake-frenzy-strategy-guide</loc>
         <lastmod>2026-07-06</lastmod>
@@ -984,7 +1011,7 @@
     </url>	
 	
     <url>
-        <loc>https://puzzlechallengehub.com/recommendation/block-pop-guide</loc>
+        <loc>https://puzzlechallengehub.com/recommendation/block-pop-strategy-guide </loc>
         <lastmod>2026-04-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
