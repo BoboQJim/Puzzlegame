@@ -4,21 +4,21 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-07-13</lastmod>
+        <lastmod>2026-07-17</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-07-10</lastmod>
+        <lastmod>2026-07-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-07-13</lastmod>
+        <lastmod>2026-07-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,29 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/color-loom-puzzle-strategy-guide</loc>
+        <lastmod>2026-07-17</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Loom-Puzzle-512x384.jpg</image:loc>
+            <image:title>Color Loom Puzzle</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Loom-Puzzle-ScreenShot-1.jpg</image:loc>
+            <image:title>Color Loom Puzzle core gameplay showing colorful yarn crossing multiple columns</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Loom-Puzzle-ScreenShot-2.jpg</image:loc>
+            <image:title>Color Loom Puzzle board showing organized looms cleanly sorted by color groups</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Loom-Puzzle-ScreenShot-3.jpg</image:loc>
+            <image:title>Color Loom Puzzle spinning wheel event screen showing gold coin rewards</image:title>
+        </image:image>
+    </url>		
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/black-hole-fill-3d-strategy-guide</loc>
         <lastmod>2026-07-13</lastmod>
