@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://puzzlechallengehub.com/favicon.ico">
+    <link rel="canonical" href="https://puzzlechallengehub.com/recommendation/hex-triple-match-strategy-guide">
+
+    <title>Hex Triple Match Strategy Guide: Master the Ultimate Art of Hexagon Stacking | PuzzleHub</title>
+    <meta name="description" content="Stuck on a tricky board in Hex Triple Match? Read our massive 1000+ word expert strategy guide. Learn how to bypass locked cells through precise hexagon stacking, and master the use of power-ups in Challenge Mode.">
+    <meta name="keywords" content="Hex Triple Match, hexagon puzzle game, block stacking puzzle, casual puzzle guide, match-3 advanced tips, spatial logic training, free online puzzle game, high score challenge mode">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --bg-card: #161b22;
+            --accent-primary: #7b61ff;
+            --accent-secondary: #917cff;
+            --accent-gradient: linear-gradient(135deg, #7b61ff 0%, #5a3dff 100%);
+            --accent-gradient-hover: linear-gradient(135deg, #917cff 0%, #7b61ff 100%);
+            --text-light: #f0f6fc;
+            --text-dim: #8b949e;
+            --border-color: #30363d;
+            --glass: rgba(10, 11, 16, 0.85);
+            --modal-overlay: rgba(0, 0, 0, 0.7);
+            --btn-shadow: 0 4px 15px rgba(123, 97, 255, 0.3);
+            --btn-shadow-hover: 0 6px 20px rgba(123, 97, 255, 0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
+
+        header { background: var(--glass); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); padding: 1rem 5%; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-icon { width: 35px; height: 35px; background: var(--accent-primary); border-radius: 8px; display: grid; place-items: center; font-weight: bold; color: white; box-shadow: 0 0 15px rgba(123, 97, 255, 0.4); }
+        .brand-name { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text-light); }
+        .back-link { color: var(--accent-primary); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .back-link:hover { color: var(--accent-secondary); }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem 5%; }
+        .guide-header { margin-bottom: 2rem; }
+        .guide-meta { display: flex; align-items: center; gap: 1rem; color: var(--text-dim); font-size: 0.9rem; margin: 1rem 0 2rem; }
+        .publish-date, .game-category { display: flex; align-items: center; gap: 6px; }
+
+        .guide-content { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+        .guide-content h2 { font-size: 1.5rem; margin: 1.5rem 0 1rem; color: var(--accent-primary); }
+        .guide-content p { margin-bottom: 1rem; line-height: 1.8; }
+
+        .article-img { display: block; margin: 20px auto; max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+        
+        .video-container { 
+            position: relative; 
+            width: 100%; 
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            margin: 1.5rem 0; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            border: 1px solid var(--border-color); 
+            background: #000;
+            cursor: pointer;
+        }
+        .video-container iframe, 
+        .video-container .video-placeholder { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover;
+        }
+        .video-container .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 68px;
+            height: 48px;
+            background-color: rgba(33, 33, 33, 0.8);
+            border-radius: 12px;
+            z-index: 5;
+            display: grid;
+            place-items: center;
+            transition: all 0.3s ease;
+        }
+        .video-container:hover .play-button {
+            background-color: #f00;
+        }
+        .video-container .play-button::before {
+            content: '';
+            border-style: solid;
+            border-width: 10px 0 10px 16px;
+            border-color: transparent transparent transparent #fff;
+        }
+
+        .tips-list { margin: 1rem 0 1.5rem 1.5rem; }
+        .tips-list li { margin-bottom: 0.8rem; }
+
+        .game-link-section { background: linear-gradient(135deg, rgba(123, 97, 255, 0.1) 0%, rgba(123, 97, 255, 0.05) 100%); border: 1px solid rgba(123, 97, 255, 0.2); border-radius: 16px; padding: 2rem; margin-bottom: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
+        .game-link-title { font-size: 1.3rem; font-weight: 700; }
+        .game-card { display: flex; gap: 1.5rem; align-items: center; }
+        .game-thumbnail { width: 200px; height: 150px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+        .game-info { flex-grow: 1; }
+        .game-title { font-weight: 700; margin-bottom: 0.3rem; }
+        .game-desc { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem; }
+
+        .play-btn { background: var(--accent-gradient); color: white; padding: 12px 32px; border-radius: 50px; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; display: inline-flex; align-items: center; gap: 10px; box-shadow: var(--btn-shadow); text-decoration: none; font-size: 1rem; }
+        .play-btn:hover { background: var(--accent-gradient-hover); box-shadow: var(--btn-shadow-hover); transform: translateY(-2px); }
+
+        .game-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); backdrop-filter: blur(4px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 2rem 5%; }
+        .game-modal { width: 100%; max-width: 800px; background: var(--bg-card); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); position: relative; height: 90vh; max-height: 600px; }
+        .modal-controls { position: absolute; top: 15px; right: 15px; display: flex; gap: 10px; z-index: 2001; }
+        .modal-control-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-dark); color: var(--text-light); border: 1px solid var(--border-color); display: grid; place-items: center; cursor: pointer; transition: 0.3s; }
+        .modal-control-btn:hover { background: var(--accent-primary); border-color: var(--accent-primary); }
+        .game-iframe { width: 100%; height: 100%; border: none; display: block; background: #000; }
+
+        footer { border-top: 1px solid var(--border-color); padding: 3rem 5%; text-align: center; color: var(--text-dim); margin-top: 4rem; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .game-card { flex-direction: column; text-align: center; }
+            .game-thumbnail { width: 100%; max-width: 200px; }
+            .play-btn { width: 100%; justify-content: center; }
+        }
+		
+        .similar-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .section-title { font-size: 1.2rem; margin-bottom: 1.2rem; color: var(--text-light); display: flex; align-items: center; gap: 8px; }
+        
+        .similar-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 12px; 
+        }
+
+        .similar-card {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+        .similar-card:hover { transform: translateY(-3px); }
+
+        .similar-img-wrapper {
+            width: 100%;
+            aspect-ratio: 4/3; 
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        .similar-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+        .similar-name {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-align: left;
+
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 600px) {
+            .similar-grid { gap: 8px; }
+            .similar-name { font-size: 0.75rem; }
+        }
+
+        footer { text-align: center; padding: 3rem 0; color: var(--text-dim); font-size: 0.9rem; }
+    </style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "v7w38tv951");
+</script>
+
+</head>
+<body>
+    <header>
+        <a href="/" class="brand">
+            <div class="logo-icon">P</div>
+            <span class="brand-name">PuzzleHub</span>
+        </a>
+        <a href="/recommendation" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
+    </header>
+
+    <main class="container">
+        <div class="guide-header">
+            <h1>Hex Triple Match Strategy Guide: Master the Ultimate Art of Hexagon Stacking</h1>
+            <div class="guide-meta">
+                <span class="publish-date"><i class="fas fa-calendar"></i> Published:29 April 2026</span>
+                <span class="game-category"><i class="fas fa-cubes"></i> Category: Logic Strategy / Block Matching</span>
+            </div>
+        </div>
+
+        <article class="guide-content">
+            <p>In an era where traditional grid-based match-3 puzzle games have dominated the casual gaming landscape for years, players are constantly searching for the next evolution in brain-teasing entertainment. Enter <strong>Hex Triple Match</strong>, a brilliant and highly innovative title that shatters the limitations of two-dimensional puzzles. By introducing a unique "spatial hexagon stacking" mechanic, this game requires you to think not only horizontally across the board, but also vertically, managing complex layers of colorful geometric blocks. It is a genuine mental workout dressed up in a vibrant, relaxing aesthetic.</p>
+
+            <p>If you find yourself breezing through the introductory levels only to hit a massive difficulty spike—where your board becomes choked with mismatched, fragmented stacks resulting in an agonizing "Game Over"—then you urgently need to rethink your foundational strategy. In this massive, 1000+ word expert breakdown, we are going to completely deconstruct the core mechanics of Hex Triple Match. From mastering the ironclad "Rule of 10" to navigating the treacherous "Locked Cells," and surviving the grueling marathons of Challenge Mode, this guide will equip you with the knowledge to clear boards like a seasoned professional.</p>
+
+            <h2>Phase 1: Core Mechanics and the Secret of Vertical Stacking</h2>
+            <p>Unlike classic tile-matching games, Hex Triple Match revolves around physical layering and spatial awareness. At the bottom of your screen, the game will randomly generate three distinct sets of hexagonal blocks, varying in color and height. Your primary objective is to click, drag, and strategically drop these block sets onto the larger honeycomb grid above. To clear the level, you must accumulate a specific target score before running out of valid moves or grid space.</p>
+
+            <img src="https://puzzlechallengehub.com/image/Hex-Triple-Match-ScreenShot-01.jpg" alt="Hex Triple Match basic hexagon stacking and matching rules explained" class="article-img">
+
+            <p><strong>The Rule of 10 (The Match Condition):</strong> The magic happens when you place a set of blocks on the board. If the newly placed blocks are adjacent to an existing stack that shares the exactly same <strong>top-layer color</strong>, they will automatically magnetically attract and stack onto each other. However, they will only burst and clear when the stack reaches exactly 10 blocks of the same color. If you only manage to gather 9 red blocks, they will simply sit there, towering ominously and eating up precious board real estate. It is the arrival of that crucial 10th block that triggers the satisfying pop, instantly freeing up the grid cell and rewarding you with a massive point injection.</p>
+
+            <div class="highlight-box">
+                <strong>Advanced Tactic: The "Pyramid Effect" (Mixed Color Stacking)</strong><br>
+                This single concept is the great divide between amateur players and grandmasters. The game generously allows you to stack completely different colors within the same grid cell (as long as you are placing a new stack onto a vacant spot first). Beginners are terrified of mixing colors, meticulously trying to keep everything separate, which rapidly leads to a gridlocked board. Elite players, however, intentionally build "Mixed Pyramids." They know that once the top 10 red blocks finally clear, the 8 blue blocks buried underneath will instantly be exposed. If those blue blocks are adjacent to another blue stack, it triggers an explosive, spectacular <strong>Chain Reaction</strong>. Learning to hide your future moves in vertical space is the ultimate key to victory.
+            </div>
+
+            <h2>Phase 2: Breaking the Deadlock – Locked Cells and Pre-placed Obstacles</h2>
+            <p>As you delve deeper into the game's campaign, the developers introduce suffocating environmental hazards to test your spatial reasoning. The most notorious of these are the <strong>Locked Cells</strong>. You will encounter grid positions wrapped in heavy iron chains, rendering them completely unusable; you cannot drop any new block sets directly onto them.</p>
+
+            <p>To shatter these chains and reclaim the territory, you must successfully complete a set number of full 10-block eliminations in the grid spaces immediately adjacent to the locked cell. Furthermore, advanced levels often begin with the board already littered with pre-placed, chaotic, and messy stacks of mixed colors. In these high-pressure scenarios, you must adopt a "centripetal" strategy: prioritize dropping your newly generated bottom blocks near these locked and pre-filled areas. Even if it temporarily seems inefficient, your absolute primary goal must be to chew through those starting obstacles and break the chains to open up your board's breathing room.</p>
+
+            <h2>Gameplay Walkthrough: A Symphony of Spatial Movement</h2>
+            <p>While theoretical strategies are essential, witnessing the mechanics in motion is the fastest way to truly grasp the flow of Hex Triple Match. Watch the extensive gameplay demonstration below. Pay close attention to how the player handles congested late-game boards, their precise deployment of power-ups, and how they intentionally set up cascading chain reactions.</p>
+
+            <div class="video-container" id="video-wrapper" data-vid="O2bh1O50Cr0">
+                <img src="https://img.youtube.com/vi/O2bh1O50Cr0/maxresdefault.jpg" alt="Hex Triple Match Gameplay Walkthrough showing chain reactions and power-ups" class="video-placeholder">
+                <div class="play-button"></div>
+            </div>
+
+            <h2>Phase 3: Extreme Rescue Operations – Mastering the Three God-Tier Items</h2>
+            <p>No matter how flawlessly you plan your moves, the underlying RNG (Random Number Generation) of the block spawns guarantees that you will eventually face a mathematically impossible gridlock. To prevent pure frustration, the game arms you with three incredibly potent life-saving items. Because these tools cost valuable resources, squandering them early on is a guaranteed death sentence for later levels.</p>
+
+            <h3>1. The Tactical Hammer</h3>
+            <p>This is your most direct, brute-force method for board manipulation. By activating the Hammer tool, you can select any single stack of blocks on the board and smash it into oblivion, instantly wiping it clean and leaving a beautifully empty grid cell in its wake.</p>
+
+            <img src="https://puzzlechallengehub.com/image/Hex-Triple-Match-ScreenShot-02.jpg" alt="Using the Hammer power-up to smash an obstructive block stack" class="article-img">
+
+            <p><strong>When to strike:</strong> Never waste the hammer on a stack of 8 or 9 blocks that are just waiting for one more piece to naturally clear. The optimal target for the hammer is the "orphan stack"—a tiny, 1 or 2-block stack sitting right in the center of the board, boasting a color that is completely useless and actively blocking adjacent connections.</p>
+
+            <h3>2. The Move Hand (Spatial Shift)</h3>
+            <p>The Move Hand allows you to temporarily bend the laws of physics. It grants you the ability to pick up an entire, already-placed stack of blocks from the board and freely relocate it to any empty grid cell.</p>
+
+            <img src="https://puzzlechallengehub.com/image/Hex-Triple-Match-ScreenShot-03.jpg" alt="Activating the Move Hand to shift blocks and trigger a massive elimination" class="article-img">
+
+            <p><strong>The clutch play:</strong> This item has the highest skill ceiling in the entire game. Imagine you have a stack of 9 yellow blocks on the far left, and another stack of 9 yellow blocks on the far right, separated by a mountain of junk. By using the Move Hand to lift one yellow stack and drop it right next to the other, you not only instantly trigger a 10-block elimination, but you also completely free up the grid space you just vacated. It is a brilliant two-for-one maneuver.</p>
+
+            <h3>3. The Destiny Refresh</h3>
+            <p>When your board is teetering on the edge of disaster, and the game maliciously spawns three bottom block sets in colors you absolutely do not need, do not force them onto the board. Hit the Refresh button. It will instantly vaporize those three useless options and generate a fresh trio of blocks.</p>
+
+            <img src="https://puzzlechallengehub.com/image/Hex-Triple-Match-ScreenShot-04.jpg" alt="Using the Refresh tool to reroll the bottom block sets and escape gridlock" class="article-img">
+
+            <h2>Phase 4: The Ultimate Trial – Conquering Challenge Mode</h2>
+            <p>When the standard campaign levels no longer test your limits, it is time to step into the arena designed for the hardcore elite: <strong>Challenge Mode</strong>.</p>
+
+            <img src="https://puzzlechallengehub.com/image/Hex-Triple-Match-ScreenShot-05.jpg" alt="Diving into the epic Challenge Mode with massive, complex board shapes" class="article-img">
+
+            <p>In this brutal endgame mode, the grid size expands exponentially, often taking the shape of complex patterns like massive snowflakes or intricate stars. The target scores are astronomical, meaning a single session can demand dozens of minutes of sustained, flawless focus. This is a marathon of endurance and spatial memory. In Challenge Mode, patience is your greatest weapon. You must ruthlessly prioritize keeping the central arteries of the board clear, constantly pushing the "junk" mixed stacks to the outer perimeter.</p> 
+            
+            <p>Furthermore, never underestimate the power of the <strong>Daily Check-in</strong> event. Consistently logging in is the most reliable, free-to-play method of stockpiling the Hammers, Move Hands, and Refreshes you will desperately need to survive the later stages of Challenge Mode.</p>
+
+            <h2>Final Thoughts: Architect of the Hexagon Universe</h2>
+            <p>Hex Triple Match is not just a casual tapping game; it is a rigorous exercise in vertical spatial visualization and multi-step logic. The sheer dopamine rush of successfully executing a 10-block merge that triggers a cascade of hidden layers is unmatched in the genre. By mastering the Pyramid Effect, strategically deploying the Move Hand to create artificial linkages, and braving the depths of Challenge Mode, you will evolve from a novice stacker into a true geometric architect. Take a deep breath, survey your board, and let the chain reactions begin!</p>
+        </article>
+
+        <div class="game-link-section">
+            <h3 class="game-link-title">Ready to Push the Limits of Spatial Stacking?</h3>
+            <div class="game-card">
+                <img src="https://puzzlechallengehub.com/image/Hex-Triple-Match-512x384.jpg" alt="Hex Triple Match Game Icon" class="game-thumbnail">
+                <div class="game-info">
+                    <h3 class="game-title">Hex Triple Match</h3>
+                    <p class="game-desc">Experience a revolutionary leap in puzzle gaming! Break free from flat boards and use vertical stacking to trigger massive chain reactions. Bypass locked cells, deploy god-tier power-ups, and conquer the epic Challenge Mode. Play instantly for free!</p>
+                    <button class="play-btn" id="openGameModal">
+                        <i class="fas fa-play"></i> Play Free Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    <section class="similar-section">
+        <h3 class="section-title"><i class="fas fa-th-large"></i> Similar Puzzles</h3>
+        <div class="similar-grid">
+            <a href="https://puzzlechallengehub.com/recommendation/hexa-sort-3d-guide" class="similar-card">
+                <div class="similar-img-wrapper">
+                    <img src="https://img.gamemonetize.com/0s96py77f1797gzl7ne6ooofphswsdqg/512x384.jpg" alt="Hexa Sort 3D">
+                </div>
+                <span class="similar-name">Hexa Sort 3D Strategy Guide: Master Color Stacking & Town Building</span>
+            </a>
+
+            <a href="https://puzzlechallengehub.com/recommendation/flip-lines-game-strategy-guide" class="similar-card">
+                <div class="similar-img-wrapper">
+                    <img src="https://puzzlechallengehub.com/image/FlipLines-Game-512x384.jpg" alt="FlipLines Game">
+                </div>
+                <span class="similar-name">FlipLines Game Strategy Guide: Master Paddle Physics & Trajectory Prediction</span>
+            </a>
+
+            <a href="https://puzzlechallengehub.com/recommendation/hexa-2048-puzzle-block-merge-guide" class="similar-card">
+                <div class="similar-img-wrapper">
+                    <img src="https://img.gamemonetize.com/vrwtg1qhbkcyu7rt0eewx89dxmcdn6tv/512x384.jpg" alt="Hexa 2048 Puzzle Block Merge">
+                </div>
+                <span class="similar-name">Hexa 2048 Puzzle Block Merge Guide: Strategy to Reach 4096 & Beyond</span>
+            </a>
+        </div>
+    </section>
+
+    </main>
+
+    <div class="game-modal-overlay" id="gameModalOverlay">
+        <div class="game-modal" id="gameModal">
+            <div class="modal-controls">
+                <button class="modal-control-btn" id="closeGameModal" title="Exit Game">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button class="modal-control-btn" id="fullscreenGameBtn" title="Fullscreen Mode">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+            <iframe class="game-iframe" id="gameIframe" src="about:blank" data-src="https://html5.gamemonetize.com/k2duv6wydbt7u0jgcdsadsrnixa8zbch/" allowfullscreen loading="lazy" referrerpolicy="origin-when-cross-origin"></iframe>
+        </div>
+    </div>
+
+	<footer>
+        <div class="footer-socials" style="margin-bottom: 20px; display: flex; justify-content: center; gap: 20px;">
+            <a href="https://www.facebook.com/puzzlehubgames" target="_blank" title="Facebook" style="color: var(--text-dim); font-size: 1.5rem; transition: 0.3s;">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.youtube.com/@PuzzleGamesGuideVideo" target="_blank" title="YouTube" style="color: var(--text-dim); font-size: 1.5rem; transition: 0.3s;">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+
+        <p>&copy; 2026 PuzzleHub Gaming Platform</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">
+            <a href="/privacy-policy.html" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a> | 
+            <a href="/terms-of-service.html" style="color: var(--text-dim); text-decoration: none;">Terms of Service</a>
+			| 
+            <a href="/about-us.html" style="color: var(--text-dim); text-decoration: none;">About Us</a> | 
+            <a href="/contact-us.html" style="color: var(--text-dim); text-decoration: none;">Contact Us</a>
+        </p>
+    </footer>
+
+    <script>
+        const videoWrapper = document.getElementById('video-wrapper');
+        if (videoWrapper) {
+            videoWrapper.addEventListener('click', function() {
+                const vid = this.getAttribute('data-vid');
+                this.innerHTML = `<iframe width="100%" height="100%" 
+                    src="https://www.youtube.com/embed/${vid}?autoplay=1&rel=0" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+            });
+        }
+
+        const openGameModalBtn = document.getElementById('openGameModal');
+        const gameModalOverlay = document.getElementById('gameModalOverlay');
+        const closeGameModalBtn = document.getElementById('closeGameModal');
+        const fullscreenGameBtn = document.getElementById('fullscreenGameBtn');
+        const gameModal = document.getElementById('gameModal');
+        const gameIframe = document.getElementById('gameIframe');
+
+        openGameModalBtn.addEventListener('click', () => {
+            gameModalOverlay.style.display = 'flex';
+            const targetUrl = gameIframe.getAttribute('data-src');
+            if (gameIframe.src !== targetUrl) {
+                gameIframe.src = targetUrl;
+            }
+        });
+
+        const closeGameModal = () => {
+            gameModalOverlay.style.display = 'none';
+            gameIframe.src = 'about:blank';
+            if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+        };
+
+        closeGameModalBtn.addEventListener('click', closeGameModal);
+        gameModalOverlay.addEventListener('click', (e) => { if (e.target === gameModalOverlay) closeGameModal(); });
+
+        fullscreenGameBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                gameModal.requestFullscreen().catch(err => console.error(err));
+            } else {
+                document.exitFullscreen().catch(err => console.error(err));
+            }
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+            fullscreenGameBtn.innerHTML = document.fullscreenElement ? '<i class="fas fa-compress"></i>' : '<i class="fas fa-expand"></i>';
+        });
+    </script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAmeasLSfP2N6aDTaHv2g83HXA9fMPVZFE",
+    authDomain: "puzzlechallengehub.firebaseapp.com",
+    projectId: "puzzlechallengehub",
+    storageBucket: "puzzlechallengehub.firebasestorage.app",
+    messagingSenderId: "112608986588",
+    appId: "1:112608986588:web:acc32a06b94fd65f46bb19",
+    measurementId: "G-SX634LMH5N"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>
