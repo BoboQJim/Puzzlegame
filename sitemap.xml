@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <lastmod>2026-07-20</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-07-17</lastmod>
+        <lastmod>2026-07-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -108,6 +108,25 @@
     </url>
 
     <url>
+        <loc>https://puzzlechallengehub.com/recommendation/flip-lines-game-strategy-guide</loc>
+        <lastmod>2026-07-20</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/FlipLines-Game-512x384.jpg</image:loc>
+            <image:title>FlipLines Game</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/FlipLines-Game-ScreenShot-1.jpg</image:loc>
+            <image:title>FlipLines Game initial level layout showcasing basic vectors and starting paddle orientations</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/FlipLines-Game-ScreenShot-2.jpg</image:loc>
+            <image:title>A complex late-game board showing multiple intersecting paths and successfully flipped target paddles</image:title>
+        </image:image>
+    </url>
+	
+    <url>
         <loc>https://puzzlechallengehub.com/recommendation/color-loom-puzzle-strategy-guide</loc>
         <lastmod>2026-07-17</lastmod>
         <changefreq>daily</changefreq>
@@ -128,7 +147,7 @@
             <image:loc>https://puzzlechallengehub.com/image/Color-Loom-Puzzle-ScreenShot-3.jpg</image:loc>
             <image:title>Color Loom Puzzle spinning wheel event screen showing gold coin rewards</image:title>
         </image:image>
-    </url>		
+    </url>	
 	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/black-hole-fill-3d-strategy-guide</loc>
