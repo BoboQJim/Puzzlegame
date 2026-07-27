@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-07-24</lastmod>
+        <lastmod>2026-07-27</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-07-24</lastmod>
+        <lastmod>2026-07-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,33 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/candy-cutter-saga-kids-strategy-guide</loc>
+        <lastmod>2026-07-27</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Candy-Cutter-Saga-Kids-512x384.jpg</image:loc>
+            <image:title>Candy Cutter Saga Kids</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Candy-Cutter-Saga-Kids-ScreenShot-1.jpg</image:loc>
+            <image:title>Candy Cutter Saga Kids level selection map showing 10 kid-friendly puzzle stages</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Candy-Cutter-Saga-Kids-ScreenShot-2.jpg</image:loc>
+            <image:title>Candy Cutter Saga Kids game controls showing intuitive drag-to-cut rope mechanics and rules</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Candy-Cutter-Saga-Kids-ScreenShot-3.jpg</image:loc>
+            <image:title>Candy Cutter Saga Kids in-game action using floating bubbles and gathering golden coins</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Candy-Cutter-Saga-Kids-ScreenShot-4.jpg</image:loc>
+            <image:title>A more challenging level layout in Candy Cutter Saga Kids with multiple ropes and obstacle pathways</image:title>
+        </image:image>
+    </url>		
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/tower-blocks-deluxe-3d-strategy-guide</loc>
         <lastmod>2026-07-24</lastmod>
