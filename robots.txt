@@ -5,6 +5,7 @@ Crawl-delay: 1
 Allow: /
 Allow: /all-games
 Allow: /recommendation
+Allow: /recommendation/
 Allow: /collection
 Allow: /collection/
 
