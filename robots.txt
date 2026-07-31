@@ -1,23 +1,53 @@
+# ===================================================
+# Robots.txt for Puzzle Challenge Hub
+# Domain: https://puzzlechallengehub.com/
+# Optimized for Google Search & AI Search Traffic
+# ===================================================
+
+# 1. Universal Rules for Search Engines
 User-agent: *
 
-# Allow Core Pages & Categories
+# Allow Core Public Content & Assets
 Allow: /
-Allow: /all-games
 Allow: /recommendation
-Allow: /recommendation/
-Allow: /collection
 Allow: /collection/
+Allow: /all-games
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /images/
 
-# Disallow Private & System Paths
+# Block Private, System & API Endpoints
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
 Disallow: *.json
-Disallow: /*?s=
-Disallow: /*?search=
-Disallow: /search/
-Disallow: /*?q=
-Disallow: /*?sort=
 
-# Sitemap Directory
+# Block Low-Value Dynamic Parameters & Internal Searches (Preserve Crawl Budget)
+Disallow: /search/
+Disallow: /*?s=*
+Disallow: /*?q=*
+Disallow: /*?search=*
+Disallow: /*?sort=*
+Disallow: /*?filter=*
+Disallow: /*?ref=*
+Disallow: /*?page=*
+
+# 2. AI Search & Retrieval Bots (Enable for GEO & Referral Traffic)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# 3. XML Sitemap Directory
 Sitemap: https://puzzlechallengehub.com/sitemap.xml
