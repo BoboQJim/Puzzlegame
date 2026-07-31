@@ -4,21 +4,21 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-07-27</lastmod>
+        <lastmod>2026-07-31</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-07-24</lastmod>
+        <lastmod>2026-07-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-07-27</lastmod>
+        <lastmod>2026-07-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,49 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/color-screw-rescue-puzzle-strategy-guide</loc>
+        <lastmod>2026-07-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Screw-Rescue-Puzzle-512x384.jpg</image:loc>
+            <image:title>Color Screw Rescue Puzzle</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Screw-Rescue-Puzzle-ScreenShot-1.jpg</image:loc>
+            <image:title>Color Screw Rescue Puzzle operational guide showing screw removal and holding bar matching mechanics</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Screw-Rescue-Puzzle-ScreenShot-2.jpg</image:loc>
+            <image:title>Color Screw Rescue Puzzle Unlock power-up destroying wooden crates to expand storage capacity</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Screw-Rescue-Puzzle-ScreenShot-3.jpg</image:loc>
+            <image:title>Color Screw Rescue Puzzle Shuffle booster rearranging remaining screws across the board</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Screw-Rescue-Puzzle-ScreenShot-4.jpg</image:loc>
+            <image:title>Color Screw Rescue Puzzle Remove booster clearing two blocking screws from the bottom pit</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Screw-Rescue-Puzzle-ScreenShot-5.jpg</image:loc>
+            <image:title>Color Screw Rescue Puzzle daily login calendar offering free hearts stamina and free boosters</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Screw-Rescue-Puzzle-ScreenShot-6.jpg</image:loc>
+            <image:title>Color Screw Rescue Puzzle home renovation mode spending earned stars to renovate room furniture</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Screw-Rescue-Puzzle-ScreenShot-7.jpg</image:loc>
+            <image:title>Color Screw Rescue Puzzle Story Mode map displaying chapter progression and upcoming houses</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Color-Screw-Rescue-Puzzle-ScreenShot-8.jpg</image:loc>
+            <image:title>Color Screw Rescue Puzzle Win Streak chest rewards screen celebrating consecutive puzzle victories</image:title>
+        </image:image>
+    </url>		
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/candy-cutter-saga-kids-strategy-guide</loc>
         <lastmod>2026-07-27</lastmod>
