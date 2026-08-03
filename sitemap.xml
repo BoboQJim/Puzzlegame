@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-07-31</lastmod>
+        <lastmod>2026-08-03</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-07-31</lastmod>
+        <lastmod>2026-08-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,41 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/sparrow-elimination-strategy-guide</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Sparrow-Elimination-512x384.jpg</image:loc>
+            <image:title>SparrowElimination</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Sparrow-Elimination-ScreenShot-1.jpg</image:loc>
+            <image:title>SparrowElimination operational rules showing line-of-sight tile matching and sliding mechanism</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Sparrow-Elimination-ScreenShot-2.jpg</image:loc>
+            <image:title>SparrowElimination Refresh booster updating and shuffling current board tile positions</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Sparrow-Elimination-ScreenShot-3.jpg</image:loc>
+            <image:title>SparrowElimination Remove booster automatically clearing a matching tile pair from the grid</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Sparrow-Elimination-ScreenShot-4.jpg</image:loc>
+            <image:title>SparrowElimination Tips booster highlighting valid tile sliding moves on the board</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Sparrow-Elimination-ScreenShot-5.jpg</image:loc>
+            <image:title>SparrowElimination Make 10 mode combining same color numbered tiles to sum ten</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Sparrow-Elimination-ScreenShot-6.jpg</image:loc>
+            <image:title>SparrowElimination Level mode featuring intricate grid layouts and tile sliding challenges</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/color-screw-rescue-puzzle-strategy-guide</loc>
         <lastmod>2026-07-31</lastmod>
