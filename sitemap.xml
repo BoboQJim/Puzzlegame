@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-08-07</lastmod>
+        <lastmod>2026-08-10</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -18,7 +18,7 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-08-07</lastmod>
+        <lastmod>2026-08-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,33 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/plane-escape-puzzle-strategy-guide</loc>
+        <lastmod>2026-08-10</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Plane-Escape-Puzzle-512x384.jpg</image:loc>
+            <image:title>Plane Escape Puzzle</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Plane-Escape-Puzzle-ScreenShot-1.jpg</image:loc>
+            <image:title>Plane Escape Puzzle game grid layout demonstrating directional arrow planes and operational mechanics</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Plane-Escape-Puzzle-ScreenShot-2.jpg</image:loc>
+            <image:title>Plane Escape Puzzle plane length analysis and dynamic movement escape trajectory demonstration</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Plane-Escape-Puzzle-ScreenShot-3.jpg</image:loc>
+            <image:title>Plane Escape Puzzle Route Marking tool displaying flight trajectory lines across the board</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Plane-Escape-Puzzle-ScreenShot-4.jpg</image:loc>
+            <image:title>Plane Escape Puzzle Auto-Highlight Hint tool marking a safe removable arrow plane</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/candy-match-move-strategy-guide</loc>
         <lastmod>2026-08-07</lastmod>
