@@ -4,21 +4,21 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-08-17</lastmod>
+        <lastmod>2026-08-21</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-08-14</lastmod>
+        <lastmod>2026-08-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-08-17</lastmod>
+        <lastmod>2026-08-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,25 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/tap-out-block-escape-strategy-guide</loc>
+        <lastmod>2026-08-21</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Tap-Out-Block-Escape-512x384.jpg</image:loc>
+            <image:title>Tap Out Block Escape</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Tap-Out-Block-Escape-ScreenShot-1.jpg</image:loc>
+            <image:title>Tap Out: Block Escape gameplay rules overview and 3D camera control mechanics</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Tap-Out-Block-Escape-ScreenShot-2.jpg</image:loc>
+            <image:title>Tap Out: Block Escape 3D arrow block elimination challenge and complex structure inspection</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/color-ring-sorting-match-strategy-guide</loc>
         <lastmod>2026-08-17</lastmod>
