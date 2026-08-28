@@ -4,21 +4,21 @@
 
     <url>
         <loc>https://puzzlechallengehub.com/</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-08-28</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/all-games</loc>
-        <lastmod>2026-08-21</lastmod>
+        <lastmod>2026-08-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://puzzlechallengehub.com/recommendation</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-08-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -107,6 +107,25 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://puzzlechallengehub.com/recommendation/snake-out-puzzle-game-strategy-guide</loc>
+        <lastmod>2026-08-28</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Snake-Out-Puzzle-Game-512x384.jpg</image:loc>
+            <image:title>Snake Out Puzzle Game</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Snake-Out-Puzzle-Game-ScreenShot-1.jpg</image:loc>
+            <image:title>Snake Out Puzzle Game fundamental controls and basic unblocking operations screenshot</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://puzzlechallengehub.com/image/Snake-Out-Puzzle-Game-ScreenShot-2.jpg</image:loc>
+            <image:title>Snake Out Puzzle Game high level challenge featuring tangled multi-colored snakes screenshot</image:title>
+        </image:image>
+    </url>	
+	
     <url>
         <loc>https://puzzlechallengehub.com/recommendation/throw-best-strategy-guide</loc>
         <lastmod>2026-08-24</lastmod>
