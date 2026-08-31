@@ -4,11 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://puzzlechallengehub.com/favicon.ico">
-    <link rel="canonical" href="https://puzzlechallengehub.com/recommendation/block-pop-strategy-guide">
+    <link rel="canonical" href="https://puzzlechallengehub.com/recommendation/color-mosaic-strategy-guide">
 
-    <title>Block Pop Strategy Guide: Master the Ultimate Tetris & Match-3 Hybrid | PuzzleHub</title>
-    <meta name="description" content="Stuck in Block Pop? Read our massive 1000+ word expert guide. Learn how to combine Tetris block-building with Match-3 color combos, manage your coins, and survive the Endless mode.">
-    <meta name="keywords" content="Block Pop game, Tetris match 3 puzzle, block puzzle strategy, color matching game, Block Pop walkthrough, puzzle survival guide, free online brain teaser, casual arcade puzzle, high score tips">
+    <!-- Primary Meta Tags for SEO & GEO -->
+    <title>Color Mosaic Strategy Guide: Master Tetris & Match-3 Puzzle Mechanics | PuzzleHub</title>
+    <meta name="description" content="Master Color Mosaic with our ultimate strategy guide. Learn spatial placement tips, Match-3 color chain reaction setups, high score tactics, and board management strategies.">
+    <meta name="keywords" content="Color Mosaic game, Color Mosaic strategy guide, Tetris match 3 puzzle, block puzzle tips, color matching logic game, free online brain teaser, Color Mosaic walkthrough, high score puzzle tactics">
+    <meta name="author" content="PuzzleHub">
+
+    <!-- Open Graph / Social Media Schema -->
+    <meta property="og:title" content="Color Mosaic Strategy Guide: Master the Ultimate Tetris & Match-3 Hybrid">
+    <meta property="og:description" content="Dive into Color Mosaic with our deep-dive expert strategy guide. Learn spatial planning, color combo triggers, and long-term grid survival.">
+    <meta property="og:image" content="https://puzzlechallengehub.com/image/Color-Mosaic-512x384.jpg">
+    <meta property="og:type" content="article">
+
+    <!-- Structured Data (JSON-LD) for Search Engine & GEO Boost -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Color Mosaic",
+          "operatingSystem": "Web Browser, iOS, Android, Windows, macOS",
+          "applicationCategory": "GameApplication",
+          "genre": "Logic Puzzle / Match-3 / Block Puzzle",
+          "image": "https://puzzlechallengehub.com/image/Color-Mosaic-512x384.jpg",
+          "url": "https://puzzlechallengehub.com/recommendation/color-mosaic-guide",
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do you clear blocks in Color Mosaic?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Blocks are cleared whenever 3 or more adjacent small tiles of the exact same color touch horizontally or vertically on the grid. Unlike standard Tetris games, you do not need to fill an entire line to pop colored groups."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a time limit in Color Mosaic?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, Color Mosaic features zero time limits. Players can take as much time as needed to analyze the board layout, plan piece placements, and set up multi-color combo chains."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does Color Mosaic end?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The game continues indefinitely as long as you have room on the board. Game over occurs only when none of the available polyomino shapes in your selection tray can fit onto the remaining empty spaces on the grid."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -44,16 +104,17 @@
         .publish-date, .game-category { display: flex; align-items: center; gap: 6px; }
 
         .guide-content { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
-        .guide-content h2 { font-size: 1.5rem; margin: 1.5rem 0 1rem; color: var(--accent-primary); }
-        .guide-content p { margin-bottom: 1rem; line-height: 1.8; }
+        .guide-content h2 { font-size: 1.5rem; margin: 1.8rem 0 1rem; color: var(--accent-primary); }
+        .guide-content h3 { font-size: 1.2rem; margin: 1.4rem 0 0.6rem; color: var(--accent-secondary); }
+        .guide-content p { margin-bottom: 1.2rem; line-height: 1.8; color: var(--text-light); }
 
-        .article-img { display: block; margin: 20px auto; max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+        .article-img { display: block; margin: 20px auto; max-width: 50%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
         
         .video-container { 
             position: relative; 
             width: 100%; 
             padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            margin: 1.5rem 0; 
+            margin: 1.8rem 0; 
             border-radius: 12px; 
             overflow: hidden; 
             border: 1px solid var(--border-color); 
@@ -93,6 +154,14 @@
             border-color: transparent transparent transparent #fff;
         }
 
+        .highlight-box {
+            background: rgba(123, 97, 255, 0.08);
+            border-left: 4px solid var(--accent-primary);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+
         .tips-list { margin: 1rem 0 1.5rem 1.5rem; }
         .tips-list li { margin-bottom: 0.8rem; }
 
@@ -114,15 +183,6 @@
         .modal-control-btn:hover { background: var(--accent-primary); border-color: var(--accent-primary); }
         .game-iframe { width: 100%; height: 100%; border: none; display: block; background: #000; }
 
-        footer { border-top: 1px solid var(--border-color); padding: 3rem 5%; text-align: center; color: var(--text-dim); margin-top: 4rem; }
-
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; text-align: center; }
-            .game-card { flex-direction: column; text-align: center; }
-            .game-thumbnail { width: 100%; max-width: 200px; }
-            .play-btn { width: 100%; justify-content: center; }
-        }
-		
         .similar-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
         .section-title { font-size: 1.2rem; margin-bottom: 1.2rem; color: var(--text-light); display: flex; align-items: center; gap: 8px; }
         
@@ -163,12 +223,16 @@
             line-height: 1.2;
         }
 
-        @media (max-width: 600px) {
+        footer { border-top: 1px solid var(--border-color); padding: 3rem 5%; text-align: center; color: var(--text-dim); margin-top: 4rem; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .game-card { flex-direction: column; text-align: center; }
+            .game-thumbnail { width: 100%; max-width: 200px; }
+            .play-btn { width: 100%; justify-content: center; }
             .similar-grid { gap: 8px; }
             .similar-name { font-size: 0.75rem; }
         }
-
-        footer { text-align: center; padding: 3rem 0; color: var(--text-dim); font-size: 0.9rem; }
     </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -192,86 +256,93 @@
 
     <main class="container">
         <div class="guide-header">
-            <h1>Block Pop Strategy Guide: Master the Ultimate Tetris & Match-3 Hybrid</h1>
+            <h1>Color Mosaic Strategy Guide: Master the Art of Tetris Block Placement & Match-3 Chains</h1>
             <div class="guide-meta">
-                <span class="publish-date"><i class="fas fa-calendar"></i> Published: 07 April 2026</span>
-                <span class="game-category"><i class="fas fa-cubes"></i> Category: Logic / Hybrid Puzzle</span>
+                <span class="publish-date"><i class="fas fa-calendar"></i> Published: 31 August 2026</span>
+                <span class="game-category"><i class="fas fa-cubes"></i> Category: Casual Logic / Match-3 Hybrid</span>
             </div>
         </div>
 
         <article class="guide-content">
-            <p>The casual gaming market is absolutely flooded with standard block puzzles and repetitive match-3 games. But what happens when a developer decides to violently collide these two legendary genres into a single, cohesive experience? The result is <strong>Block Pop</strong>. This game takes the spatial awareness required for placing Tetris-style geometric shapes and injects the color-matching synergy of your favorite candy-crushing games. It is a brilliant, deceptively difficult puzzle game that will severely punish players who only think in one dimension.</p>
+            <p>The casual gaming ecosystem is packed with standard geometric block games and repetitive match-3 titles. However, every so often, a clever title emerges that takes the best elements of spatial planning and color coordination, fusing them into a single, beautifully tranquil experience. That title is <strong>Color Mosaic</strong>. Combining the deliberate polyomino drag-and-drop gameplay of Tetris-inspired block puzzles with the vibrant thrill of adjacent Match-3 mechanics, Color Mosaic demands a fresh strategic perspective from modern puzzle fans.</p>
 
-            <p>If you find yourself constantly hitting a brick wall in Endless mode or struggling to clear the mid-game campaign levels, you are likely playing it like a traditional block puzzle. In this massive, 1000+ word deep dive, we are going to completely rewire how you look at the grid. We will explore the dual-engine mechanics, dissect the differences between the 100-level campaign and the grueling Endless mode, and teach you exactly when to spend your hard-earned coins on game-saving power-ups. Let’s start popping.</p>
+            <p>If you find your board constantly filling up too fast, leaving you trapped with unusable large shapes, you are likely treating Color Mosaic like a basic monochrome block builder. In this exhaustive, strategy-focused guide, we will break down the fundamental rules, explore spatial management tactics, analyze combo setups, and teach you how to turn peaceful untimed turns into sky-high record runs.</p>
 
-            <h2>Phase 1: The Dual-Engine Mechanics</h2>
-            <p>To succeed in Block Pop, you must master two completely different sets of rules simultaneously. At the bottom of your screen, you are presented with a queue of 3 randomly generated, multi-colored geometric blocks. Unlike rigid traditional games, Block Pop gives you immense freedom: you can click to physically rotate these blocks before you drag and drop them anywhere on the grid.</p>
+            <h2>Phase 1: Understanding the Hybrid Mechanics</h2>
+            <p>To consistently excel in Color Mosaic, you must shift your thinking away from strict row-clearing and focus on color adjacency network building. Every turn presents you with a choice of geometric polyomino shapes at the bottom of the board. Unlike rigid traditional falling-block puzzles, you have total control over where and when you place these colorful pieces on the open grid.</p>
 
-            <img src="https://puzzlechallengehub.com/image/Block-Pop-ScreenShot-01.jpg" alt="How to play Block Pop showing the block rotation and placement rules" class="article-img">
+            <img src="https://puzzlechallengehub.com/image/Color-Mosaic-ScreenShot-1.jpg" alt="Color Mosaic gameplay board showing block placement and multi-color matching grid setup" class="article-img">
 
-            <p><strong>Rule 1: The Line Clear.</strong> Just like classic 1010! or Tetris, if you fill an entire horizontal row or vertical column with blocks—regardless of their color—that entire line will vaporize, freeing up critical real estate.</p>
+            <p><strong>Rule 1: Spatial Placement.</strong> You can drag any available shape from your selection tray into any empty grid slots that accommodate its exact physical footprint. Once placed, a piece remains fixed unless popped by a color match.</p>
 
-            <img src="https://puzzlechallengehub.com/image/Block-Pop-ScreenShot-02.jpg" alt="Core gameplay of Block Pop showing color clustering and line clearing" class="article-img">
-
-            <p><strong>Rule 2: The Color Pop.</strong> This is the twist that breaks peoples' brains. Every block is composed of smaller, colored squares. If you place a shape so that 3 or more squares of the <em>exact same color</em> are touching each other adjacently (horizontally or vertically), those specific colored squares will instantly pop and disappear, even if the row isn't completely full.</p>
+            <p><strong>Rule 2: The Color Pop Condition.</strong> Each shape is composed of individual multi-colored tiles. Whenever <strong>3 or more adjacent small tiles of the exact same color connect</strong> vertically, horizontally, or in L-shaped clusters, those connected color regions immediately pop and clear from the board.</p>
 
             <div class="highlight-box">
-                <strong>Advanced Strategy: The Double-Dip Synergy</strong><br>
-                Amateurs try to build full lines and occasionally get a color match by accident. Professionals actively set up "Double-Dips." This means deliberately placing a block to complete a vertical column, while intentionally making sure the colored edge of that block completes a 3-color match on an adjacent row. This triggers massive chain reactions, clearing huge chunks of the board in a single, devastating move.
+                <strong>Core Strategic Synergy: Dual-Function Placements</strong><br>
+                Novice players focus solely on dropping a piece where it physically fits. Advanced players analyze the color margins of every piece in their inventory. A master move involves dropping a multi-colored block so its left side completes a 3-tile Red group while its top edge simultaneously completes a 3-tile Blue group, clearing both sections in a single turn and opening up massive board space.
             </div>
 
-            <h2>Phase 2: The Two Arenas (Campaign vs. Endless)</h2>
-            <p>Block Pop splits its gameplay into two distinct arenas, and you must adjust your playstyle accordingly.</p>
+            <h2>Phase 2: Master Class in Spatial Management & Board Architecture</h2>
+            <p>Running out of physical grid space is the primary reason games end in Color Mosaic. Because shapes spawn in varying sizes—from small 2-tile lines to massive 3x3 blocks—keeping open real estate is crucial for survival.</p>
 
-            <p><strong>The Campaign (100 Levels):</strong> This mode presents you with highly specific, handcrafted challenges. You might be asked to "Clear 40 Red Blocks" or "Achieve 5,000 Points." In Campaign mode, survival is secondary. If you need 5 more green blocks to win, you should actively ignore perfect line placements if it means you can trigger a messy, inefficient green color match to finish the level. Secure the objective at all costs.</p>
+            <h3>1. Maintain the "Golden Safety Zone"</h3>
+            <p>Never fill the center of your board indiscriminately. Always keep a continuous 3x3 open quadrant (typically in one of the top or bottom corners). This open zone serves as an emergency landing pad for awkward, bulky polyominos that could otherwise instantly cause a gridlock game over.</p>
 
-            <p><strong>Endless Mode:</strong> This is the true test of endurance. There is no finish line. The game only ends when the board enters a state of Gridlock—meaning you cannot legally place any of the 3 blocks currently sitting in your queue. In Endless mode, your primary focus shifts to <em>preservation of space</em>. You must aggressively pursue line clears to keep the center of the board empty. The longer you survive, the more coins you farm at the final score tally.</p>
+            <h3>2. Avoid "Color Fragmentation"</h3>
+            <p>Resist the urge to drop mismatched colored pieces randomly across the grid just to clear your tray. Placing an isolated yellow tile in the middle of red clusters creates "dead space"—isolated tiles that require multiple turns to surround and match. Group similar colors in clean neighborhoods so future pieces can clear them easily.</p>
 
-            <h2>Gameplay Walkthrough: The Hybrid Mindset</h2>
-            <p>Understanding the dual ruleset is one thing, but seeing it executed at high speeds is another. Watch this brief gameplay demonstration below. Pay close attention to how the player rotates the incoming pieces, not just to make them fit, but to ensure the colors align perfectly with the existing structures on the grid.</p>
+            <h3>3. Perimeter and Edge Cleaning</h3>
+            <p>Corners and grid edges are notorious traps for stranded single tiles. Prioritize building color chains along the outer perimeters of the board. Clearing the boundaries keeps your active workspace in the middle wide open, maximizing visual clarity and physical placement options.</p>
 
-            <div class="video-container" id="video-wrapper" data-vid="M_GhJ6k_nH8">
-                <img src="https://img.youtube.com/vi/M_GhJ6k_nH8/maxresdefault.jpg" alt="Block Pop Gameplay Walkthrough and Power-up Strategy" class="video-placeholder">
+            <h2>Phase 3: High-Score Combos & Chain Reactions</h2>
+            <p>Score gains in Color Mosaic escalate exponentially when you clear multiple color clusters in quick succession or set up cascading chain reactions.</p>
+
+            <ul class="tips-list">
+                <li><strong>The Multi-Group Anchor:</strong> Look for opportunities to place a single block that bridges two distinct color clusters. Clearing two 3-block sets at once yields significantly higher bonus points than clearing them in separate turns.</li>
+                <li><strong>Pre-Planning the Tray Sequence:</strong> Color Mosaic always displays multiple shapes in your bottom dock. Before committing to your first move, mentally test the placement of all available pieces. Sequence your drops so piece #1 sets up the color match for piece #2.</li>
+                <li><strong>Leverage the Untimed Atmosphere:</strong> There is no ticking clock pushing you to make fast mistakes. Take your time, inspect the board state, evaluate color connections, and play at your most comfortable cognitive rhythm.</li>
+            </ul>
+
+            <h2>Gameplay Walkthrough: High-Challenge Showcase</h2>
+            <p>Watching high-level grid management in action is the fastest way to refine your strategy. Watch the gameplay challenge video below to see real-time block placements, spatial maneuvering, and color combo clearing in motion.</p>
+
+            <div class="video-container" id="video-wrapper" data-vid="JH0SCm_Tdgc">
+                <img src="https://img.youtube.com/vi/JH0SCm_Tdgc/hqdefault.jpg" alt="Color Mosaic Gameplay Challenge Video Demonstration" class="video-placeholder">
                 <div class="play-button"></div>
             </div>
 
-            <h2>Phase 3: Mastering the Power-Up Economy</h2>
-            <p>As the board fills up, human error is inevitable. You will eventually place a block that blocks your own progress. When Gridlock approaches, you must dip into your stash of coins (earned through Endless runs and Campaign victories) to purchase one of three lifesavers. Knowing <em>which</em> tool to buy is the difference between a new high score and an immediate Game Over.</p>
+            <h2>Cognitive & Mental Fitness Benefits</h2>
+            <p>Engaging regularly with Color Mosaic isn't just entertaining—it offers a rewarding mental workout. The game actively exercises several key cognitive skills:</p>
+            <ul>
+                <li><strong>Spatial Visualization:</strong> Mentally fitting irregular 2D geometric blocks onto an active grid sharpens spatial reasoning.</li>
+                <li><strong>Visual Processing:</strong> Scanning complex multi-colored boards improves fast pattern recognition and visual clutter filtering.</li>
+                <li><strong>Executive Planning:</strong> Managing space reservations while planning multi-turn color combos exercises working memory and risk evaluation.</li>
+            </ul>
 
-            <h3>1. The Hammer (Surgical Precision)</h3>
-            <p>The Hammer allows you to select any single, specific 1x1 block on the grid and smash it into dust.</p>
+            <h2>Frequently Asked Questions (FAQ)</h2>
 
-            <img src="https://puzzlechallengehub.com/image/Block-Pop-ScreenShot-03.jpg" alt="Using the Hammer power-up to destroy a single blocking square" class="article-img">
+            <h3>Q: What makes Color Mosaic different from standard Tetris?</h3>
+            <p>A: Standard Tetris requires you to form unbroken horizontal lines across the entire board to clear blocks. Color Mosaic allows you to clear space anywhere on the grid simply by connecting 3 or more adjacent small blocks of the same color, regardless of whether a line is completely filled.</p>
 
-            <p><strong>When to use it:</strong> Use the Hammer when you have a massive, awkwardly shaped block in your queue (like a large L-shape) that is being blocked from fitting into a perfect gap by exactly one rogue square. Do not use the Hammer to just clear random space; use it to enable the placement of a queue-blocking giant.</p>
+            <h3>Q: Can I play Color Mosaic for free on mobile devices and computers?</h3>
+            <p>A: Yes! Color Mosaic is built in lightweight HTML5, making it completely free to play directly inside any modern web browser across desktop PCs, laptops, iPads, and mobile smartphones without downloading any apps.</p>
 
-            <h3>2. The Bomb (The Panic Button)</h3>
-            <p>The Bomb is your heavy artillery. Dropping it on the board will instantly vaporize everything within a 3x3 radius of the impact zone.</p>
+            <h3>Q: How can I achieve a higher score in Color Mosaic?</h3>
+            <p>A: To maximize your high score, focus on creating multi-color combos (clearing more than one color cluster in a single placement) and maintaining continuous open grid space so you can survive longer into the game.</p>
 
-            <img src="https://puzzlechallengehub.com/image/Block-Pop-ScreenShot-04.jpg" alt="Detonating the Bomb power-up to clear a massive 3x3 area" class="article-img">
-
-            <p><strong>When to use it:</strong> This is your nuclear option. If you are entirely gridlocked and none of your 3 queued pieces can be placed, drop the bomb in the most densely packed corner of the board. However, be warned: the Bomb destroys everything indiscriminately. It will obliterate any careful color-matching setups you were trying to build, so use it only when survival is on the line.</p>
-
-            <h3>3. The Refresh (The Queue Reset)</h3>
-            <p>The Refresh button completely scraps the 3 geometric blocks currently sitting in your bottom queue and randomly generates 3 brand new ones.</p>
-
-            <img src="https://puzzlechallengehub.com/image/Block-Pop-ScreenShot-05.jpg" alt="Using the Refresh power-up to swap out unplayable queue blocks" class="article-img">
-
-            <p><strong>When to use it:</strong> This is arguably the most strategic and cost-effective power-up in the game. If your board has plenty of open space, but the game cruelly gives you three massive 3x3 squares that physically cannot fit, do not waste money bombing the board. Simply hit Refresh. It changes the geometry of the problem rather than forcing you to destroy your carefully planned grid.</p>
-
-            <h2>Final Thoughts on the Grid</h2>
-            <p>Block Pop is a masterpiece of cognitive dissonance, forcing you to constantly switch your brain between building solid walls and connecting colored dots. By rotating pieces to maximize color synergy, treating Endless mode as a pure space-management exercise, and intelligently spending your coins on Refreshes and Hammers rather than panicked Bombs, you will shatter your previous high scores. Stop treating it like just another Tetris clone, embrace the colors, and start popping!</p>
+            <h2>Final Verdict: Relaxing Yet Brain-Teasing Excellence</h2>
+            <p>With its soothing visual design, charming color palettes, and deep tactical layer, <strong>Color Mosaic</strong> stands out as a standout choice for casual gamers and puzzle purists alike. By keeping your board clear, planning your tray drops, and setting up dual-color pops, you will shatter your personal bests and master the grid. Jump into the game above and start matching today!</p>
         </article>
 
         <div class="game-link-section">
-            <h3 class="game-link-title">Ready to Experience the Hybrid Puzzle?</h3>
+            <h3 class="game-link-title">Ready to Test Your Color Matching Skills?</h3>
             <div class="game-card">
-                <img src="https://puzzlechallengehub.com/image/Block-Pop-512x384.jpg" alt="Block Pop Game Icon" class="game-thumbnail">
+                <img src="https://puzzlechallengehub.com/image/Color-Mosaic-512x384.jpg" alt="Color Mosaic Game Cover Image" class="game-thumbnail">
                 <div class="game-info">
-                    <h3 class="game-title">Block Pop</h3>
-                    <p class="game-desc">Dive into the ultimate fusion of Tetris mechanics and Match-3 color clearing! Rotate your blocks, manage your grid, unleash powerful bombs, and conquer 100 levels or survive the endless mode.</p>
+                    <h3 class="game-title">Color Mosaic</h3>
+                    <p class="game-desc">Enjoy this relaxing yet challenging logic puzzle game! Drag multi-colored polyomino blocks onto the board, match 3 or more adjacent tiles of the same color, clear space, and chase the ultimate high score.</p>
                     <button class="play-btn" id="openGameModal">
-                        <i class="fas fa-play"></i> Play Block Pop Free
+                        <i class="fas fa-play"></i> Play Color Mosaic Free
                     </button>
                 </div>
             </div>
@@ -280,11 +351,11 @@
         <section class="similar-section">
             <h3 class="section-title"><i class="fas fa-th-large"></i> Similar Puzzles</h3>
             <div class="similar-grid">
-                <a href="https://puzzlechallengehub.com/recommendation/color-mosaic-strategy-guide" class="similar-card">
+                <a href="https://puzzlechallengehub.com/recommendation/soda-block-jam-guide" class="similar-card">
                     <div class="similar-img-wrapper">
-                        <img src="https://puzzlechallengehub.com/image/Color-Mosaic-512x384.jpg" alt="Color Mosaic">
+                        <img src="https://img.gamemonetize.com/sx9e751be41mwvzz7w9ynub5ejuhxm6d/512x384.jpg" alt="Soda Block Jam">
                     </div>
-                    <span class="similar-name">Color Mosaic Strategy Guide: Master the Art of Tetris Block Placement & Match-3 Chains</span>
+                    <span class="similar-name">Soda Block Jam Challenge: Non-Stop! How Far Can You Go?</span>
                 </a>
 
                 <a href="https://puzzlechallengehub.com/recommendation/tetris-hint-guide" class="similar-card">
@@ -314,7 +385,7 @@
                     <i class="fas fa-expand"></i>
                 </button>
             </div>
-            <iframe class="game-iframe" id="gameIframe" src="about:blank" data-src="https://blockpop.puzzlechallengehub.com/" allowfullscreen loading="lazy" referrerpolicy="origin-when-cross-origin"></iframe>
+            <iframe class="game-iframe" id="gameIframe" src="about:blank" data-src="https://html5.gamemonetize.co/g6mf3gukavqcg53vulqeuas5f80fiqn9/" allowfullscreen loading="lazy" referrerpolicy="origin-when-cross-origin"></iframe>
         </div>
     </div>
 
@@ -339,6 +410,7 @@
     </footer>
 
     <script>
+        // Interactive YouTube Embed Handler
         const videoWrapper = document.getElementById('video-wrapper');
         if (videoWrapper) {
             videoWrapper.addEventListener('click', function() {
@@ -351,6 +423,7 @@
             });
         }
 
+        // Game Modal Trigger Logic
         const openGameModalBtn = document.getElementById('openGameModal');
         const gameModalOverlay = document.getElementById('gameModalOverlay');
         const closeGameModalBtn = document.getElementById('closeGameModal');
@@ -385,6 +458,10 @@
 
         document.addEventListener('fullscreenchange', () => {
             fullscreenGameBtn.innerHTML = document.fullscreenElement ? '<i class="fas fa-compress"></i>' : '<i class="fas fa-expand"></i>';
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && gameModalOverlay.style.display === 'flex') closeGameModal();
         });
     </script>
 	
