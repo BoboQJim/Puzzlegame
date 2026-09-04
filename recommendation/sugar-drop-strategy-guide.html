@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://puzzlechallengehub.com/favicon.ico">
+    <link rel="canonical" href="https://puzzlechallengehub.com/recommendation/sugar-drop-strategy-guide">
+    
+    <!-- Primary Meta Tags for SEO & GEO -->
+    <title>Sugar Drop Strategy Guide: Master Candy Block Grid Puzzles & High Scores | PuzzleHub</title>
+    <meta name="description" content="Master Sugar Drop with our ultimate strategy guide. Learn spatial placement tactics, grid space management, multi-line combo triggers, and high-score survival tips for this addictive candy block puzzle.">
+    <meta name="keywords" content="Sugar Drop, Sugar Drop game, Sugar Drop strategy guide, candy block puzzle, block elimination game, grid puzzle tactics, free online puzzle, H5 candy game, high score puzzle tips">
+    <meta name="author" content="PuzzleHub">
+
+    <!-- Open Graph / Social Media Schema -->
+    <meta property="og:title" content="Sugar Drop Strategy Guide: Master Candy Block Grid Puzzles & High Scores">
+    <meta property="og:description" content="Dive deep into Sugar Drop with our expert walkthrough and strategy guide. Master grid architecture, setup multi-line candy combos, and avoid deadlock traps.">
+    <meta property="og:image" content="https://puzzlechallengehub.com/image/Sugar-Drop-512x384.jpg">
+    <meta property="og:type" content="article">
+
+    <!-- Structured Data (JSON-LD) for Search Engine & GEO Boost -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Sugar Drop",
+          "operatingSystem": "Web Browser, iOS, Android, Windows, macOS",
+          "applicationCategory": "GameApplication",
+          "genre": "Logic Puzzle / Block Puzzle / Match-3",
+          "image": "https://puzzlechallengehub.com/image/Sugar-Drop-512x384.jpg",
+          "url": "https://puzzlechallengehub.com/recommendation/sugar-drop-strategy-guide",
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do you clear blocks in Sugar Drop?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Blocks are cleared in Sugar Drop by completely filling any full horizontal row or vertical column across the grid board. Once a line is fully populated with candy blocks, it automatically pops and vacates space."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What causes a Game Over in Sugar Drop?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A game over occurs when the grid becomes too congested and none of the three available candy shapes in your active tray fit into any remaining open spaces on the board."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are there time limits in Sugar Drop?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, Sugar Drop is an untimed turn-based puzzle game. You can spend as much time as you need analyzing the grid layout, evaluating piece geometry, and planning multi-line combo sequences."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you rotate pieces in Sugar Drop?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In standard Sugar Drop rules, candy blocks appear in fixed orientations. Success relies on strategic positioning and board spatial maintenance rather than shape rotation."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --bg-card: #161b22;
+            --accent-primary: #7b61ff;
+            --accent-secondary: #917cff;
+            --accent-gradient: linear-gradient(135deg, #7b61ff 0%, #5a3dff 100%);
+            --accent-gradient-hover: linear-gradient(135deg, #917cff 0%, #7b61ff 100%);
+            --text-light: #f0f6fc;
+            --text-dim: #8b949e;
+            --border-color: #30363d;
+            --glass: rgba(10, 11, 16, 0.85);
+            --modal-overlay: rgba(0, 0, 0, 0.7);
+            --btn-shadow: 0 4px 15px rgba(123, 97, 255, 0.3);
+            --btn-shadow-hover: 0 6px 20px rgba(123, 97, 255, 0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
+
+        header { background: var(--glass); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); padding: 1rem 5%; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-icon { width: 35px; height: 35px; background: var(--accent-primary); border-radius: 8px; display: grid; place-items: center; font-weight: bold; color: white; box-shadow: 0 0 15px rgba(123, 97, 255, 0.4); }
+        .brand-name { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text-light); }
+        .back-link { color: var(--accent-primary); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .back-link:hover { color: var(--accent-secondary); }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem 5%; }
+        .guide-header { margin-bottom: 2rem; }
+        .guide-meta { display: flex; align-items: center; gap: 1rem; color: var(--text-dim); font-size: 0.9rem; margin: 1rem 0 2rem; }
+        .publish-date, .game-category { display: flex; align-items: center; gap: 6px; }
+
+        .guide-content { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+        .guide-content h2 { font-size: 1.5rem; margin: 1.8rem 0 1rem; color: var(--accent-primary); }
+        .guide-content h3 { font-size: 1.2rem; margin: 1.4rem 0 0.6rem; color: var(--accent-secondary); }
+        .guide-content p { margin-bottom: 1.2rem; line-height: 1.8; color: var(--text-light); }
+
+        .article-img { display: block; margin: 20px auto; max-width: 50%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+        
+        .video-container { 
+            position: relative; 
+            width: 100%; 
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            margin: 1.8rem 0; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            border: 1px solid var(--border-color); 
+            background: #000;
+            cursor: pointer;
+        }
+        .video-container iframe, 
+        .video-container .video-placeholder { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover;
+        }
+        .video-container .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 68px;
+            height: 48px;
+            background-color: rgba(33, 33, 33, 0.8);
+            border-radius: 12px;
+            z-index: 5;
+            display: grid;
+            place-items: center;
+            transition: all 0.3s ease;
+        }
+        .video-container:hover .play-button {
+            background-color: #f00;
+        }
+        .video-container .play-button::before {
+            content: '';
+            border-style: solid;
+            border-width: 10px 0 10px 16px;
+            border-color: transparent transparent transparent #fff;
+        }
+
+        .highlight-box {
+            background: rgba(123, 97, 255, 0.08);
+            border-left: 4px solid var(--accent-primary);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .tips-list { margin: 1rem 0 1.5rem 1.5rem; }
+        .tips-list li { margin-bottom: 0.8rem; }
+
+        .game-link-section { background: linear-gradient(135deg, rgba(123, 97, 255, 0.1) 0%, rgba(123, 97, 255, 0.05) 100%); border: 1px solid rgba(123, 97, 255, 0.2); border-radius: 16px; padding: 2rem; margin-bottom: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
+        .game-link-title { font-size: 1.3rem; font-weight: 700; }
+        .game-card { display: flex; gap: 1.5rem; align-items: center; }
+        .game-thumbnail { width: 200px; height: 150px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+        .game-info { flex-grow: 1; }
+        .game-title { font-weight: 700; margin-bottom: 0.3rem; }
+        .game-desc { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem; }
+
+        .play-btn { background: var(--accent-gradient); color: white; padding: 12px 32px; border-radius: 50px; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; display: inline-flex; align-items: center; gap: 10px; box-shadow: var(--btn-shadow); text-decoration: none; font-size: 1rem; }
+        .play-btn:hover { background: var(--accent-gradient-hover); box-shadow: var(--btn-shadow-hover); transform: translateY(-2px); }
+
+        .game-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay); backdrop-filter: blur(4px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 2rem 5%; }
+        .game-modal { width: 100%; max-width: 800px; background: var(--bg-card); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); position: relative; height: 90vh; max-height: 600px; }
+        .modal-controls { position: absolute; top: 15px; right: 15px; display: flex; gap: 10px; z-index: 2001; }
+        .modal-control-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-dark); color: var(--text-light); border: 1px solid var(--border-color); display: grid; place-items: center; cursor: pointer; transition: 0.3s; }
+        .modal-control-btn:hover { background: var(--accent-primary); border-color: var(--accent-primary); }
+        .game-iframe { width: 100%; height: 100%; border: none; display: block; background: #000; }
+
+        .similar-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .section-title { font-size: 1.2rem; margin-bottom: 1.2rem; color: var(--text-light); display: flex; align-items: center; gap: 8px; }
+        
+        .similar-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 12px; 
+        }
+
+        .similar-card {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+        .similar-card:hover { transform: translateY(-3px); }
+
+        .similar-img-wrapper {
+            width: 100%;
+            aspect-ratio: 4/3; 
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        .similar-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+        .similar-name {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-align: left;
+
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .game-card { flex-direction: column; text-align: center; }
+            .game-thumbnail { width: 100%; max-width: 200px; }
+            .play-btn { width: 100%; justify-content: center; }
+        }
+
+        @media (max-width: 600px) {
+            .similar-grid { gap: 8px; }
+            .similar-name { font-size: 0.75rem; }
+        }
+
+        footer { border-top: 1px solid var(--border-color); padding: 3rem 5%; text-align: center; color: var(--text-dim); margin-top: 4rem; font-size: 0.9rem; }
+    </style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "v7w38tv951");
+</script>
+
+</head>
+<body>
+    <header>
+        <a href="/" class="brand">
+            <div class="logo-icon">P</div>
+            <span class="brand-name">PuzzleHub</span>
+        </a>
+        <a href="/recommendation" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
+    </header>
+
+    <main class="container">
+        <div class="guide-header">
+            <h1>Sugar Drop Strategy Guide: Master Candy Block Grid Placement & High-Score Chains</h1>
+            <div class="guide-meta">
+                <span class="publish-date"><i class="fas fa-calendar"></i> Published: 04 September 2026</span>
+                <span class="game-category"><i class="fas fa-candy-cane"></i> Category: Casual Logic / Candy Block Elimination</span>
+            </div>
+        </div>
+
+        <article class="guide-content">
+            <p>At first glance, casual block puzzle games might all seem straightforward. However, every once in a while, a title comes along that strikes an ideal balance between vibrant, tactile satisfaction and deep strategic decision-making. <strong>Sugar Drop</strong> is precisely that game. Wrapped in a charming, sugar-coated visual package featuring candy-themed tiles and delightful pop animations, Sugar Drop delivers an addictive puzzle experience where every single piece placement carries immense weight.</p>
+
+            <p>If you have ever found your board suddenly jammed with awkward shapes, forcing an unexpected game over, you know that reckless dragging will only get you so far. To push your personal best into the upper echelons of global leaderboards, you need more than just good luck—you need a structured operational framework for spatial management, risk mitigation, and combo generation. In this comprehensive guide, we will break down the essential mechanics of Sugar Drop, share advanced board control techniques, and show you how to execute high-value candy chain reactions.</p>
+
+            <h2>Phase 1: Deconstructing Core Mechanics & Board Rules</h2>
+            <p>The beauty of Sugar Drop lies in its accessible ruleset combined with strategic depth. Unlike classic gravity-bound falling block games like Tetris, Sugar Drop gives you complete spatial freedom. You are presented with a clean grid board and a selection tray at the bottom containing three distinct candy block configurations. Your objective is simple yet exacting: drag and drop these polyomino candy shapes onto open grid slots to complete full horizontal rows or vertical columns.</p>
+
+            <p>Whenever a complete line (either row or column) is filled without any empty spaces remaining, those tiles instantly pop, triggering juicy visual feedback and rewarding you with instant score points. Crucially, clearing lines frees up vital board space, allowing you to cycle through your piece tray and draw new block sets.</p>
+
+            <div class="highlight-box">
+                <strong>The Unforgiving Rule of Sugar Drop: Deadlock Avoidance</strong><br>
+                Unlike games with safety buffers or piece rotations, Sugar Drop ends the second your active tray contains a piece that physically cannot fit anywhere on the board. A single misplaced 3x3 block or long 5-tile bar placed without foresight can lock up your entire board state. Every placement must maintain flexible space for incoming pieces!
+            </div>
+
+            <h2>Phase 2: Master Class in Grid Spatial Management</h2>
+            <p>High scores in Sugar Drop are built on proactive layout construction rather than reactive emergency saves. To maintain long play sessions, adopt the spatial discipline practiced by puzzle grandmasters.</p>
+
+            <img src="https://puzzlechallengehub.com/image/Sugar-Drop-ScreenShot-1.jpg" alt="Sugar Drop active gameplay grid displaying colorful candy block placement and combo opportunity" class="article-img">
+
+            <h3>1. Prioritize Center Real Estate Maintenance</h3>
+            <p>The center of the board is your most flexible operational area. It intersects with multiple horizontal and vertical clearing paths simultaneously. Try to stack your persistent building blocks along the edges and corners of the grid while keeping the central 4x4 zone as open as possible. A clear center makes it drastically easier to drop large or asymmetrical shapes when they appear in your tray.</p>
+
+            <h3>2. Eliminate "Dead Cells" Immediately</h3>
+            <p>A "dead cell" is an isolated single empty slot surrounded by placed candy blocks. Because single 1x1 blocks appear infrequently, trapped empty slots reduce your functional line-building capacity. Always scan the board for potential 1-tile gaps before dropping a piece, and structure your placements so that every open space remains accessible to standard 2-tile or L-shaped blocks.</p>
+
+            <h3>3. Maintain Dual-Line Thresholds</h3>
+            <p>Instead of clearing lines the exact moment they are complete, construct your grid so that multiple parallel rows or intersecting columns are all sitting at 80% to 90% completion (just needing a single block to pop). This setup allows you to drop a strategic anchor block that triggers massive simultaneous clears.</p>
+
+            <h2>Phase 3: Triggering Explosive Candy Combos & Chain Reactions</h2>
+            <p>Points in Sugar Drop increase exponentially when you clear multiple lines in a single drop or achieve back-to-back line pops over successive turns. Understanding how score multipliers work is the single biggest key to topping the leaderboard.</p>
+
+            <ul class="tips-list">
+                <li><strong>The Cross-Clear Setup (Simultaneous Row + Column):</strong> The highest value single-move play occurs when a single tile completes both a vertical column and a horizontal row at their intersection point. This cross-clearing move awards massive bonus multipliers and instantly cleans out large sections of your workspace.</li>
+                <li><strong>Tray Forecasting Strategy:</strong> Never place your first candy block without analyzing all three available shapes in your bottom dock. Mentally sequence your move order: drop Piece A to bridge a gap, drop Piece B to trigger the line pop, and save Piece C for the newly opened territory.</li>
+                <li><strong>Color & Theme Aesthetics:</strong> Sugar Drop features six stunning candy visual themes. Take advantage of the pleasant visual cues and satisfying sound effects to establish a relaxed, methodical rhythm. Because there is no ticking game clock, take all the time you need to double-check your math before placing a piece.</li>
+            </ul>
+
+            <h2>Gameplay Walkthrough: Live Challenge Showcase</h2>
+            <p>To truly grasp the flow of high-level Sugar Drop play, observe how experienced players manage tight space constraints during tough piece draws. Watch the gameplay video below to see real-time block placement, multi-line combo triggers, and high-score survival maneuvers in action.</p>
+
+            <div class="video-container" id="video-wrapper" data-vid="GRxvriI15ko">
+                <img src="https://img.youtube.com/vi/GRxvriI15ko/hqdefault.jpg" alt="Sugar Drop High Score Gameplay Challenge Showcase" class="video-placeholder">
+                <div class="play-button"></div>
+            </div>
+
+            <h2>Cognitive & Brain Training Benefits of Sugar Drop</h2>
+            <p>Beyond being an ultra-satisfying casual game to unwind with, Sugar Drop acts as a fantastic cognitive exercise for players of all ages. Regular play stimulates multiple mental functions:</p>
+            <ul>
+                <li><strong>Spatial Visualization:</strong> Mentally rotating and fitting irregular geometric polyominos onto a fixed 2D grid improves visual-spatial intelligence.</li>
+                <li><strong>Forward-Thinking & Risk Assessment:</strong> Evaluating potential piece draws and managing board capacity enhances working memory and decision-making speed.</li>
+                <li><strong>Pattern Recognition:</strong> Rapidly spotting near-complete lines across busy, colorful board states trains visual scanning efficiency.</li>
+            </ul>
+
+            <h2>Frequently Asked Questions (FAQ)</h2>
+
+            <h3>Q: How is Sugar Drop different from traditional Tetris?</h3>
+            <p>A: In classic Tetris, blocks continuously fall from the top under time pressure, and you can rotate them as they descend. In Sugar Drop, you have unlimited time to drag and drop stationary candy shapes onto an open grid from a selection tray. You clear space by filling complete rows or columns anywhere on the board.</p>
+
+            <h3>Q: Is Sugar Drop completely free to play without installation?</h3>
+            <p>A: Yes! Sugar Drop is built using modern HTML5 web technology. You can play it instantly inside any web browser on desktop PCs, laptops, tablets, or smartphones without downloading any app or software.</p>
+
+            <h3>Q: What is the best strategy when given three large 3x3 blocks?</h3>
+            <p>A: Large 3x3 shapes are the most dangerous blocks in Sugar Drop. Always maintain at least one wide-open 3x3 section on your grid specifically to absorb these massive pieces. If you get caught without space, try to place smaller pieces first to complete a line that clears enough room for the large block.</p>
+
+            <h2>Final Verdict: A Delightfully Sweet Puzzle Masterpiece</h2>
+            <p>With its vibrant candy aesthetics, crisp elimination sound effects, and deeply satisfying logic gameplay, <strong>Sugar Drop</strong> is a standout puzzle experience. It is easy enough for anyone to pick up in seconds, yet offers infinite strategic depth for puzzle enthusiasts chasing that perfect run. Apply the spatial management tips, plan your combo chains, and jump into Sugar Drop today to see how high you can score!</p>
+        </article>
+
+        <div class="game-link-section">
+            <h3 class="game-link-title">Ready for the Sweetest Puzzle Challenge?</h3>
+            <div class="game-card">
+                <img src="https://puzzlechallengehub.com/image/Sugar-Drop-512x384.jpg" alt="Sugar Drop Game Cover Artwork" class="game-thumbnail">
+                <div class="game-info">
+                    <h3 class="game-title">Sugar Drop</h3>
+                    <p class="game-desc">Immerse yourself in this charming candy block elimination puzzle! Drag sweet sugar shapes onto the grid, complete rows and columns to trigger satisfying pops, unlock 6 colorful themes, and chase high score perfection.</p>
+                    <button class="play-btn" id="openGameModal">
+                        <i class="fas fa-play"></i> Play Sugar Drop Free
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <section class="similar-section">
+            <h3 class="section-title"><i class="fas fa-th-large"></i> Similar Puzzles</h3>
+            <div class="similar-grid">
+                <a href="https://puzzlechallengehub.com/recommendation/soda-block-jam-guide" class="similar-card">
+                    <div class="similar-img-wrapper">
+                        <img src="https://img.gamemonetize.com/sx9e751be41mwvzz7w9ynub5ejuhxm6d/512x384.jpg" alt="Soda Block Jam">
+                    </div>
+                    <span class="similar-name">Soda Block Jam Challenge: Non-Stop! How Far Can You Go?</span>
+                </a>
+
+                <a href="https://puzzlechallengehub.com/recommendation/tetris-hint-guide" class="similar-card">
+                    <div class="similar-img-wrapper">
+                        <img src="https://img.gamemonetize.com/fobiaimq9ucohvvjn5mn6kg5i1q6ekaz/512x384.jpg" alt="Tetris Hint">
+                    </div>
+                    <span class="similar-name">Tetris Hint Strategy Guide: Master the Rotation Puzzle</span>
+                </a>
+
+                <a href="https://puzzlechallengehub.com/recommendation/sand-blast-guide" class="similar-card">
+                    <div class="similar-img-wrapper">
+                        <img src="https://img.gamemonetize.com/ehpcosrryb6e0q9lbqfbp84npyj3eiup/512x384.jpg" alt="Sand Blast">
+                    </div>
+                    <span class="similar-name">Sand Blast Strategy Guide: The Ultimate Sand Tetris Experience</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div class="game-modal-overlay" id="gameModalOverlay">
+        <div class="game-modal" id="gameModal">
+            <div class="modal-controls">
+                <button class="modal-control-btn" id="closeGameModal" title="Close Game">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button class="modal-control-btn" id="fullscreenGameBtn" title="Toggle Fullscreen">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+            <iframe class="game-iframe" id="gameIframe" src="about:blank" data-src="https://html5.gamemonetize.co/hruvokintdgntinvmcz1rf1n10ajp3b3/" allowfullscreen loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-socials" style="margin-bottom: 20px; display: flex; justify-content: center; gap: 20px;">
+            <a href="https://www.facebook.com/puzzlehubgames" target="_blank" title="Facebook" style="color: var(--text-dim); font-size: 1.5rem; transition: 0.3s;">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.youtube.com/@PuzzleGamesGuideVideo" target="_blank" title="YouTube" style="color: var(--text-dim); font-size: 1.5rem; transition: 0.3s;">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+
+        <p>&copy; 2026 PuzzleHub Gaming Platform</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Play the latest HTML5 games for free. No installation required.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">
+            <a href="/privacy-policy.html" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a> | 
+            <a href="/terms-of-service.html" style="color: var(--text-dim); text-decoration: none;">Terms of Service</a> | 
+            <a href="/about-us.html" style="color: var(--text-dim); text-decoration: none;">About Us</a> | 
+            <a href="/contact-us.html" style="color: var(--text-dim); text-decoration: none;">Contact Us</a>
+        </p>
+    </footer>
+
+    <script>
+        const videoWrapper = document.getElementById('video-wrapper');
+        if (videoWrapper) {
+            videoWrapper.addEventListener('click', function() {
+                const vid = this.getAttribute('data-vid');
+                this.innerHTML = `<iframe width="100%" height="100%" 
+                    src="https://www.youtube.com/embed/${vid}?autoplay=1&rel=0" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+            });
+        }
+
+        const openGameModalBtn = document.getElementById('openGameModal');
+        const gameModalOverlay = document.getElementById('gameModalOverlay');
+        const closeGameModalBtn = document.getElementById('closeGameModal');
+        const fullscreenGameBtn = document.getElementById('fullscreenGameBtn');
+        const gameModal = document.getElementById('gameModal');
+        const gameIframe = document.getElementById('gameIframe');
+
+        openGameModalBtn.addEventListener('click', () => {
+            gameModalOverlay.style.display = 'flex';
+            const targetUrl = gameIframe.getAttribute('data-src');
+            if (gameIframe.src !== targetUrl) {
+                gameIframe.src = targetUrl;
+            }
+        });
+
+        const closeGameModal = () => {
+            gameModalOverlay.style.display = 'none';
+            gameIframe.src = 'about:blank';
+            if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+        };
+
+        closeGameModalBtn.addEventListener('click', closeGameModal);
+        gameModalOverlay.addEventListener('click', (e) => { if (e.target === gameModalOverlay) closeGameModal(); });
+
+        fullscreenGameBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                gameModal.requestFullscreen().catch(err => console.error(err));
+            } else {
+                document.exitFullscreen().catch(err => console.error(err));
+            }
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+            fullscreenGameBtn.innerHTML = document.fullscreenElement ? '<i class="fas fa-compress"></i>' : '<i class="fas fa-expand"></i>';
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && gameModalOverlay.style.display === 'flex') closeGameModal();
+        });
+    </script>
+	
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAmeasLSfP2N6aDTaHv2g83HXA9fMPVZFE",
+    authDomain: "puzzlechallengehub.firebaseapp.com",
+    projectId: "puzzlechallengehub",
+    storageBucket: "puzzlechallengehub.firebasestorage.app",
+    messagingSenderId: "112608986588",
+    appId: "1:112608986588:web:acc32a06b94fd65f46bb19",
+    measurementId: "G-SX634LMH5N"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>
